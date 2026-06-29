@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "extended-euclidean",
+  "name": "Extended Euclidean Algorithm",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find GCD(a,b) and Bézout coefficients x,y such that ax + by = GCD(a,b).",
+  "intuition": "Like the standard Euclidean algorithm but tracks how each remainder can be expressed as a linear combination of a and b. Back-substitute from base case to get Bézout coefficients.",
+  "complexity": {
+    "time_best": "O(log min(a,b))",
+    "time_average": "O(log min(a,b))",
+    "time_worst": "O(log min(a,b))",
+    "space": "O(log min(a,b))"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Input magnitude",
+      "min": 3,
+      "max": 8,
+      "default": 5
+    }
+  },
+  "tags": ["number-theory", "gcd", "bezout", "extended-euclidean", "cryptography"],
+  "references": []
+}

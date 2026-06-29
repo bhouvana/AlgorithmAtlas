@@ -1,0 +1,39 @@
+services:
+
+  # ── Backend API ──────────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - SQLITE_URL=sqlite+aiosqlite:////data/atlas.db
+      - PLUGIN_ROOT=/plugins
+      - LOG_LEVEL=INFO
+      - CORS_ORIGINS=["http://localhost:5173","http://localhost:3000","http://frontend:3000"]
+    volumes:
+      - atlas_data:/data
+      - ./plugins:/plugins:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    restart: unless-stopped
+
+  # ── Frontend (production build served by nginx) ───────────────────────────────
+  frontend:
+    build:
+      context: .
+      dockerfile: apps/frontend/Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  atlas_data:

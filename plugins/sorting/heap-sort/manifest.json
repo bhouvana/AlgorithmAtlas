@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "heap-sort",
+  "name": "Heap Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Builds a max-heap from the array, then repeatedly extracts the maximum element to the sorted portion.",
+  "intuition": "Build a tournament bracket (max-heap), keep extracting the champion (max element) to the end, rebuild the bracket, repeat.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(1)"
+  },
+  "tags": ["comparison", "in-place", "unstable", "heap", "selection"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 100,
+      "default": 20,
+      "label": "Array Size"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

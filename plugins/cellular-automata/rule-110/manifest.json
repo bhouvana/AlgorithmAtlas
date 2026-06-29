@@ -1,0 +1,9 @@
+{
+  "slug": "rule-110",
+  "name": "Wolfram Rule 110",
+  "category": "cellular-automata",
+  "tags": ["cellular-automata", "wolfram", "1d", "turing-complete", "simulation"],
+  "complexity": "O(n²)",
+  "visualization": "PARTICLE_FIELD",
+  "description": "Wolfram Rule 110 is a Turing-complete 1D cellular automaton that produces complex glider-like patterns at the boundary between order and chaos."
+}

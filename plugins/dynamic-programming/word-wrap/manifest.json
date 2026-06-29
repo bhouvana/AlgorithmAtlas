@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "word-wrap",
+  "name": "Word Wrap DP",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Minimize total line overflow penalty when wrapping words to fit a fixed line width.",
+  "intuition": "DP over word prefixes: dp[i] = min cost to wrap words[0..i-1]. Cost of putting words i..j on one line is (lineWidth - used)^3 if it fits, else infinity. The cubic penalty strongly discourages overflow.",
+  "complexity": {
+    "time_best": "O(n^2)",
+    "time_average": "O(n^2)",
+    "time_worst": "O(n^2)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "word-wrap", "text-formatting", "optimization"],
+  "references": []
+}

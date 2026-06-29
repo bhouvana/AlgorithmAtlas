@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "string-hashing",
+  "name": "String Hashing (Polynomial Rolling Hash)",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Compute polynomial rolling hash for each prefix: H(s[0..i]) = s[0]*p^i + ... + s[i]*p^0 mod m.",
+  "intuition": "Assign each prefix a hash value. Extending by one character multiplies by base and adds the new char value — O(1) per extension. Two equal substrings share the same hash with high probability.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["string", "hashing", "rolling-hash", "polynomial"],
+  "references": []
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "fibonacci-dp",
+  "name": "Fibonacci (DP)",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Computes Fibonacci numbers using a bottom-up DP table, showing how each value is derived from the previous two.",
+  "intuition": "Instead of recomputing fib(n-1) and fib(n-2) recursively (exponential time), store every sub-result once. Each cell costs O(1) and we only pay it once — the textbook example of memoization turning exponential into linear.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "n": {
+      "type": "integer",
+      "label": "n (compute fib[n])",
+      "min": 5,
+      "max": 20,
+      "default": 10
+    }
+  },
+  "tags": ["dynamic-programming", "fibonacci", "memoization", "bottom-up", "sequence"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Dynamic Programming — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dynamic_programming"
+    }
+  ]
+}

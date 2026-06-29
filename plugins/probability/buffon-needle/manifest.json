@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "buffon-needle",
+  "name": "Buffon's Needle",
+  "version": "1.0.0",
+  "category": "probability",
+  "visualization_type": "PROBABILITY_SPACE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Estimates π using Buffon's 18th-century experiment: dropping needles of length 1 on a floor with parallel lines spaced 2 apart. The crossing probability is 1/π.",
+  "intuition": "Drop a toothpick on hardwood flooring. If the gaps are twice the toothpick length, the fraction of cracks it crosses encodes π — geometry and probability in perfect harmony.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "tags": ["probability", "monte-carlo", "simulation", "pi", "buffon"],
+  "parameters": {
+    "n": {
+      "type": "integer",
+      "min": 100,
+      "max": 10000,
+      "default": 2000,
+      "label": "Total Needles"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

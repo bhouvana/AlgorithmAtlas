@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "cycle-detection",
+  "name": "Cycle Detection (Directed)",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Detect cycles in a directed graph using DFS with 3-color marking (WHITE/GRAY/BLACK).",
+  "intuition": "WHITE = unvisited, GRAY = in current DFS path, BLACK = fully processed. A back edge (current node → GRAY ancestor) means a cycle was found.",
+  "complexity": {
+    "time_best": "O(V+E)",
+    "time_average": "O(V+E)",
+    "time_worst": "O(V+E)",
+    "space": "O(V)"
+  },
+  "parameters": {
+    "node_count": {
+      "type": "integer",
+      "label": "Node count",
+      "min": 4,
+      "max": 9,
+      "default": 6
+    }
+  },
+  "tags": ["graph", "cycle-detection", "dfs", "directed"],
+  "references": []
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "paxos",
+  "name": "Paxos Consensus",
+  "category": "distributed-systems",
+  "visualization_type": "NETWORK_TOPOLOGY",
+  "description": "Basic Paxos: proposer sends Prepare(n), acceptors respond Promise, proposer sends Accept(n,v), acceptors send Accepted.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "tags": ["distributed", "consensus", "paxos", "fault-tolerance"],
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "class_name": "Paxos"
+}

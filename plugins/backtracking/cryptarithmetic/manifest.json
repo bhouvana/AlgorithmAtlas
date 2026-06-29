@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "cryptarithmetic",
+  "name": "Cryptarithmetic",
+  "version": "1.0.0",
+  "category": "backtracking",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Solve SEND + MORE = MONEY by assigning unique digits 0-9 to each letter.",
+  "intuition": "8 unique letters = 8 variables. Try all permutations of 8 digits from 0-9 with backtracking. Prune early when partial assignment violates column constraints. Leading digits cannot be 0.",
+  "complexity": {
+    "time_best": "O(10!)",
+    "time_average": "O(10!)",
+    "time_worst": "O(10!)",
+    "space": "O(letters)"
+  },
+  "parameters": {},
+  "tags": ["backtracking", "cryptarithmetic", "constraint-satisfaction", "search"],
+  "references": []
+}

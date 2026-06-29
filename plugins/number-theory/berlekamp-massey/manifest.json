@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "berlekamp-massey",
+  "name": "Berlekamp-Massey Algorithm",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find the shortest linear-feedback shift register (LFSR) that generates a given binary sequence.",
+  "intuition": "Maintain the current shortest LFSR polynomial C(x). For each new term of the sequence, compute the discrepancy. If non-zero, update C(x) using a copy of the previous polynomial shifted to correct the error.",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["number-theory", "berlekamp-massey", "lfsr", "sequence", "coding-theory"],
+  "references": []
+}

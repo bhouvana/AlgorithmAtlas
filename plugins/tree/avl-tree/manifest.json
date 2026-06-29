@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "avl-tree",
+  "name": "AVL Tree (Self-Balancing BST)",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "TREE",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Insert keys into an AVL tree, maintaining height-balance by rotating subtrees.",
+  "intuition": "After each BST insert, walk back up the path. At any node where |height(left) - height(right)| > 1, perform a rotation (LL/RR/LR/RL) to restore balance. This keeps the tree height ≤ 1.44 log₂ n.",
+  "complexity": {
+    "time_best": "O(log n)",
+    "time_average": "O(log n)",
+    "time_worst": "O(log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Values to insert",
+      "min": 4,
+      "max": 10,
+      "default": 7
+    }
+  },
+  "tags": ["tree", "avl", "balanced-bst", "rotation"],
+  "references": []
+}

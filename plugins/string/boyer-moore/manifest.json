@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "boyer-moore",
+  "name": "Boyer-Moore String Search",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Pattern search using the bad-character heuristic: compare right-to-left and shift by the bad-character table on mismatch.",
+  "intuition": "Compare the pattern from right to left. On mismatch at text[i], look up how far right to shift so the mismatched character aligns with its rightmost occurrence in the pattern.",
+  "complexity": {
+    "time_best": "O(n/m)",
+    "time_average": "O(n+m)",
+    "time_worst": "O(nm)",
+    "space": "O(alphabet)"
+  },
+  "parameters": {
+    "text_length": {
+      "type": "integer",
+      "label": "Text length",
+      "min": 16,
+      "max": 32,
+      "default": 20
+    }
+  },
+  "tags": ["string", "pattern-matching", "boyer-moore", "bad-character"],
+  "references": []
+}

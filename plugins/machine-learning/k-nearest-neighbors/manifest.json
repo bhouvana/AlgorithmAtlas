@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "k-nearest-neighbors",
+  "name": "K-Nearest Neighbors (1D)",
+  "version": "1.0.0",
+  "category": "machine-learning",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Classify a query point using the k training points closest to it.",
+  "intuition": "Represent each training point as a bar whose height is its distance from the query. The k shortest bars are the nearest neighbours. Majority class among them wins.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "n_samples": {
+      "type": "integer",
+      "label": "Training samples",
+      "min": 10,
+      "max": 30,
+      "default": 20
+    },
+    "k": {
+      "type": "integer",
+      "label": "k (neighbours)",
+      "min": 1,
+      "max": 7,
+      "default": 3
+    }
+  },
+  "tags": ["machine-learning", "knn", "classification", "distance"],
+  "references": []
+}

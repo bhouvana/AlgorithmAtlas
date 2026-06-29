@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "cartesian-tree",
+  "name": "Cartesian Tree",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Build a Cartesian tree from an array using a stack-based O(n) algorithm.",
+  "intuition": "A Cartesian tree satisfies BST order on indices (left child < parent < right child) and min-heap order on values (parent ≤ children). Built in O(n) by processing elements left-to-right with a monotone stack.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["tree", "cartesian-tree", "heap", "bst", "stack", "data-structure"],
+  "references": []
+}

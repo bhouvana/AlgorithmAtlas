@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "id": "counting-sort",
+  "name": "Counting Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Non-comparison sort that counts occurrences of each value, then reconstructs the sorted array from counts.",
+  "intuition": "Count how many 1s, 2s, 3s… are in the pile, then place that many of each value back in order — no comparisons needed.",
+  "complexity": {
+    "time_best": "O(n + k)",
+    "time_average": "O(n + k)",
+    "time_worst": "O(n + k)",
+    "space": "O(k)"
+  },
+  "tags": ["non-comparison", "stable", "integer", "linear"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 100,
+      "default": 20,
+      "label": "Array Size"
+    },
+    "max_value": {
+      "type": "integer",
+      "min": 5,
+      "max": 50,
+      "default": 20,
+      "label": "Max Value (k)"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

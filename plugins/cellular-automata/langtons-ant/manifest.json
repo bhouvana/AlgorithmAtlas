@@ -1,0 +1,9 @@
+{
+  "slug": "langtons-ant",
+  "name": "Langton's Ant",
+  "category": "cellular-automata",
+  "tags": ["cellular-automata", "turing-machine", "emergent", "simulation"],
+  "complexity": "O(steps)",
+  "visualization": "PARTICLE_FIELD",
+  "description": "Langton's Ant is a 2D Turing machine that follows two simple rules — right-turn on white cells, left-turn on black — yet spontaneously builds an infinite diagonal highway after ~10,000 chaotic steps."
+}

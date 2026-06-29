@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "huffman-coding",
+  "name": "Huffman Coding",
+  "version": "1.0.0",
+  "category": "greedy",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Build an optimal prefix-free code by greedily merging the two lowest-frequency symbols.",
+  "intuition": "Put all symbols in a min-heap by frequency. Repeatedly merge the two lowest-frequency nodes into a new parent node with combined frequency. The final tree gives optimal prefix codes.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of symbols",
+      "min": 4,
+      "max": 8,
+      "default": 6
+    }
+  },
+  "tags": ["greedy", "huffman", "compression", "prefix-free-code", "min-heap"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Huffman coding — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Huffman_coding"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "diffie-hellman",
+  "name": "Diffie-Hellman Key Exchange",
+  "version": "1.0.0",
+  "category": "cryptography",
+  "visualization_type": "STATE_MACHINE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Demonstrates the Diffie-Hellman key exchange protocol: Alice and Bob agree on public parameters (p, g), each choose a secret exponent, exchange public values, and independently compute the same shared secret.",
+  "intuition": "Alice and Bob mix their private colors into a shared public color, send the mixture to each other, then mix in their private color again — the result is identical without either ever sending their private color.",
+  "complexity": {
+    "time_best": "O(log p)",
+    "time_average": "O(log p)",
+    "time_worst": "O(log p)",
+    "space": "O(1)"
+  },
+  "tags": ["cryptography", "key-exchange", "diffie-hellman", "number-theory", "intermediate"],
+  "parameters": {
+    "p": {
+      "type": "integer",
+      "min": 7,
+      "max": 97,
+      "default": 23,
+      "label": "Prime modulus p"
+    },
+    "g": {
+      "type": "integer",
+      "min": 2,
+      "max": 10,
+      "default": 5,
+      "label": "Generator g"
+    }
+  },
+  "benchmark_enabled": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "karatsuba",
+  "name": "Karatsuba Multiplication",
+  "version": "1.0.0",
+  "category": "divide-and-conquer",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Fast integer multiplication: split numbers in half and use 3 multiplications instead of 4.",
+  "intuition": "Write x = x_H·B^m + x_L. Standard: 4 multiplications. Karatsuba: z0=x_L·y_L, z2=x_H·y_H, z1=(x_L+x_H)(y_L+y_H)-z0-z2. Result = z2·B^2m + z1·B^m + z0.",
+  "complexity": {
+    "time_best": "O(n^1.585)",
+    "time_average": "O(n^1.585)",
+    "time_worst": "O(n^1.585)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["divide-and-conquer", "multiplication", "karatsuba", "arithmetic"],
+  "references": []
+}

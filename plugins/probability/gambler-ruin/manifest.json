@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "id": "gambler-ruin",
+  "name": "Gambler's Ruin",
+  "version": "1.0.0",
+  "category": "probability",
+  "visualization_type": "PROBABILITY_SPACE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Simulates the gambler's ruin problem: a gambler starts with $10, targets $20, and plays coin flips until bust or win. Empirical win rate converges to the analytical formula.",
+  "intuition": "Even fair coin flips lead to ruin against a fixed target because the gambler's finite wealth means they can go broke, while the target is safe once reached.",
+  "complexity": {
+    "time_best": "O(trials)",
+    "time_average": "O(trials × n²)",
+    "time_worst": "O(∞)",
+    "space": "O(n)"
+  },
+  "tags": ["probability", "gambler-ruin", "simulation", "random-walk", "martingale"],
+  "parameters": {
+    "trials": {
+      "type": "integer",
+      "min": 50,
+      "max": 2000,
+      "default": 500,
+      "label": "Number of Games"
+    },
+    "p": {
+      "type": "float",
+      "min": 0.3,
+      "max": 0.7,
+      "default": 0.5,
+      "label": "Win Probability per Flip"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

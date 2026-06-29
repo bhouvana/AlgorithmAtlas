@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "fibonacci-search",
+  "name": "Fibonacci Search",
+  "version": "1.0.0",
+  "category": "searching",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "A divide-and-conquer search that uses Fibonacci numbers to determine split points, avoiding division.",
+  "intuition": "Use consecutive Fibonacci numbers to divide the array asymmetrically. Eliminates the smaller Fibonacci-sized portion each step, converging like binary search.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(log n)",
+    "time_worst": "O(log n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 10,
+      "max": 40,
+      "default": 20
+    }
+  },
+  "tags": ["searching", "sorted", "fibonacci", "divide-and-conquer"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Fibonacci search — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fibonacci_search_technique"
+    }
+  ]
+}

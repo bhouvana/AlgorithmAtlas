@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "run-length-encoding",
+  "name": "Run-Length Encoding",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Compress a string by replacing consecutive identical characters with a count and character.",
+  "intuition": "Scan left to right, tracking run length. When character changes (or end of string), emit (count, char). Effective for strings with many repeated characters.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["string", "compression", "run-length", "encoding"],
+  "references": []
+}

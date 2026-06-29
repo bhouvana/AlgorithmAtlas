@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "shell-sort",
+  "name": "Shell Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Generalization of insertion sort that allows the exchange of elements far apart, using a decreasing gap sequence.",
+  "intuition": "First do a coarse insertion sort with a large step size, then progressively smaller steps until you do a regular insertion sort.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log² n)",
+    "time_worst": "O(n²)",
+    "space": "O(1)"
+  },
+  "tags": ["comparison", "in-place", "unstable", "gap-sequence", "generalization"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 100,
+      "default": 20,
+      "label": "Array Size"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

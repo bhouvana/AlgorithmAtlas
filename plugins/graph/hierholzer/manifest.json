@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "hierholzer",
+  "name": "Hierholzer's Algorithm (Euler Circuit)",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find an Euler circuit in a graph (visiting every edge exactly once) using Hierholzer's algorithm.",
+  "intuition": "Start anywhere and follow edges until you return to start (a sub-circuit). If any visited vertex has unused edges, splice in a new sub-circuit from there. Repeat until all edges used.",
+  "complexity": {
+    "time_best": "O(V + E)",
+    "time_average": "O(V + E)",
+    "time_worst": "O(V + E)",
+    "space": "O(E)"
+  },
+  "parameters": {},
+  "tags": ["graph", "euler-circuit", "hierholzer", "traversal"],
+  "references": []
+}

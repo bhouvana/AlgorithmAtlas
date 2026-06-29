@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "ant-colony",
+  "name": "Ant Colony Optimization",
+  "version": "1.0.0",
+  "category": "optimization",
+  "visualization_type": "CURVE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Solves TSP on 5 pentagon cities. Ants deposit pheromone on shorter tours; evaporation focuses the colony on better routes over time.",
+  "intuition": "Real ants find the shortest path to food by reinforcing shorter trails — the colony collectively converges on the optimal route.",
+  "complexity": {
+    "time_best": "O(iterations × ants × cities²)",
+    "time_average": "O(iterations × ants × cities²)",
+    "time_worst": "O(iterations × ants × cities²)",
+    "space": "O(cities²)"
+  },
+  "tags": ["optimization", "metaheuristic", "swarm", "tsp", "combinatorial"],
+  "parameters": {
+    "iterations": {
+      "type": "integer",
+      "min": 10,
+      "max": 150,
+      "default": 80,
+      "label": "Iterations"
+    },
+    "ants": {
+      "type": "integer",
+      "min": 2,
+      "max": 30,
+      "default": 10,
+      "label": "Ants per Iteration"
+    }
+  },
+  "benchmark_enabled": false
+}

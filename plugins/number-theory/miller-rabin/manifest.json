@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "miller-rabin",
+  "name": "Miller-Rabin Primality Test",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Probabilistic primality test: decompose n-1 as 2^r * d and check witnesses.",
+  "intuition": "Write n-1 = 2^r * d. For each witness a, compute a^d mod n. If it's 1 or n-1, n might be prime. Otherwise square repeatedly: if we reach n-1 before 1, n might be prime; otherwise n is composite.",
+  "complexity": {
+    "time_best": "O(k log² n)",
+    "time_average": "O(k log² n)",
+    "time_worst": "O(k log² n)",
+    "space": "O(1)"
+  },
+  "parameters": {},
+  "tags": ["number-theory", "primality", "miller-rabin", "probabilistic"],
+  "references": []
+}

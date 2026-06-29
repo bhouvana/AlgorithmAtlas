@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "merkle-tree",
+  "name": "Merkle Tree",
+  "version": "1.0.0",
+  "category": "cryptography",
+  "visualization_type": "STATE_MACHINE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Builds a binary Merkle tree over 8 leaf data items by repeatedly hashing pairs of nodes upward until a single root hash is produced.",
+  "intuition": "Like a chain of receipts — each parent proves both children are unchanged. Tampering with any leaf invalidates every ancestor up to the root, making fraud detectable in O(log n) checks.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "tags": ["cryptography", "merkle", "hash", "blockchain", "intermediate"],
+  "parameters": {},
+  "benchmark_enabled": false
+}

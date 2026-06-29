@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "kruskals-mst",
+  "name": "Kruskal's MST",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Builds a minimum spanning tree by sorting all edges and greedily adding the cheapest that doesn't form a cycle.",
+  "intuition": "Sort edges by weight. Add each edge if it connects two different components (use Union-Find). Skip edges within the same component — they'd create a cycle.",
+  "complexity": {
+    "time_best": "O(E log E)",
+    "time_average": "O(E log E)",
+    "time_worst": "O(E log E)",
+    "space": "O(V)"
+  },
+  "parameters": {
+    "node_count": {
+      "type": "integer",
+      "label": "Node count",
+      "min": 4,
+      "max": 10,
+      "default": 7
+    }
+  },
+  "tags": ["graph", "mst", "greedy", "union-find", "spanning-tree", "weighted"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Kruskal's algorithm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kruskal%27s_algorithm"
+    }
+  ]
+}

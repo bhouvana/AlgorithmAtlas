@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "wildcard-matching",
+  "name": "Wildcard Pattern Matching",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Check if a string matches a pattern with '?' (any single char) and '*' (any sequence).",
+  "intuition": "dp[i][j] = does s[0..i-1] match p[0..j-1]? If p[j-1]='*', dp[i][j] = dp[i-1][j] OR dp[i][j-1]. If '?' or match, dp[i][j] = dp[i-1][j-1].",
+  "complexity": {
+    "time_best": "O(m·n)",
+    "time_average": "O(m·n)",
+    "time_worst": "O(m·n)",
+    "space": "O(m·n)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "wildcard", "pattern-matching", "string"],
+  "references": []
+}

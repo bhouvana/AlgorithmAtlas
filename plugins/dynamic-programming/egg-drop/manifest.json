@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "egg-drop",
+  "name": "Egg Drop Problem",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the minimum number of trials needed to determine the critical floor in the worst case with k eggs and n floors.",
+  "intuition": "dp[k][t] = maximum floors we can check with k eggs and t trials. With k eggs and t trials, we can check dp[k-1][t-1] floors below (if egg breaks) and dp[k][t-1] floors above (if egg survives), plus 1 for the current floor.",
+  "complexity": {
+    "time_best": "O(kn)",
+    "time_average": "O(kn)",
+    "time_worst": "O(kn)",
+    "space": "O(kn)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "egg-drop", "decision-theory", "puzzle"],
+  "references": []
+}

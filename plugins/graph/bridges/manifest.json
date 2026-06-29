@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "bridges",
+  "name": "Bridge Finding",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find all bridges (cut edges) in an undirected graph using Tarjan's DFS.",
+  "intuition": "An edge (u,v) is a bridge if removing it disconnects the graph. DFS assigns discovery time and low value; edge (u,v) is a bridge when low[v] > disc[u], meaning no back edge from v's subtree reaches u or above.",
+  "complexity": {
+    "time_best": "O(V+E)",
+    "time_average": "O(V+E)",
+    "time_worst": "O(V+E)",
+    "space": "O(V)"
+  },
+  "parameters": {
+    "node_count": {
+      "type": "integer",
+      "label": "Node count",
+      "min": 5,
+      "max": 10,
+      "default": 7
+    }
+  },
+  "tags": ["graph", "bridges", "cut-edges", "dfs", "tarjan"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Bridge (graph theory) — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bridge_(graph_theory)"
+    }
+  ]
+}

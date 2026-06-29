@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "word-search",
+  "name": "Word Search (Backtracking)",
+  "version": "1.0.0",
+  "category": "backtracking",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Search for a word in a 2D character grid using backtracking DFS.",
+  "intuition": "For each cell matching the first letter, DFS in all 4 directions to spell the word. Mark cells visited to avoid reuse; backtrack if path fails.",
+  "complexity": {
+    "time_best": "O(m·n·4^L)",
+    "time_average": "O(m·n·4^L)",
+    "time_worst": "O(m·n·4^L)",
+    "space": "O(L)"
+  },
+  "parameters": {},
+  "tags": ["backtracking", "word-search", "grid", "dfs"],
+  "references": []
+}

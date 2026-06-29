@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "number-of-divisors",
+  "name": "Number of Divisors (Sieve)",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Count the number of divisors for all integers from 1 to n using a sieve approach.",
+  "intuition": "For each d from 1 to n, increment divisor count for all multiples of d. Similar to Sieve of Eratosthenes — O(n log n) total because sum of 1/d = O(log n). The number with most divisors in [1,n] is a highly composite number.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Compute up to n",
+      "min": 20,
+      "max": 50,
+      "default": 30
+    }
+  },
+  "tags": ["number-theory", "divisors", "sieve", "arithmetic-functions"],
+  "references": []
+}

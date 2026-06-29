@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "point-in-polygon",
+  "name": "Point in Polygon (Ray Casting)",
+  "version": "1.0.0",
+  "category": "computational-geometry",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Determine whether a point lies inside a polygon using the ray-casting algorithm.",
+  "intuition": "Cast a horizontal ray from the query point to +∞. Count how many polygon edges it crosses. An odd count means the point is inside; even means outside.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["computational-geometry", "ray-casting", "polygon", "point-location"],
+  "references": []
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "id": "gcd-euclidean",
+  "name": "Euclidean GCD",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Computes the greatest common divisor of two numbers by repeated division remainders.",
+  "intuition": "gcd(a, b) = gcd(b, a mod b). The remainder shrinks until zero — the last non-zero value is the GCD. Two-bar visualization shows a and b shrinking each step.",
+  "complexity": {
+    "time_best": "O(log min(a,b))",
+    "time_average": "O(log min(a,b))",
+    "time_worst": "O(log min(a,b))",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "a": {
+      "type": "integer",
+      "label": "a",
+      "min": 10,
+      "max": 200,
+      "default": 48
+    },
+    "b": {
+      "type": "integer",
+      "label": "b",
+      "min": 10,
+      "max": 200,
+      "default": 18
+    }
+  },
+  "tags": ["number-theory", "math", "gcd", "euclidean", "recursive"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Euclidean algorithm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Euclidean_algorithm"
+    }
+  ]
+}

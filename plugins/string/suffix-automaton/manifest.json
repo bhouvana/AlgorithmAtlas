@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "suffix-automaton",
+  "name": "Suffix Automaton",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Build a suffix automaton (DAWG) that compactly represents all substrings of a string.",
+  "intuition": "Each state represents a set of end positions (endpos) of some substrings. Online construction: for each new character, extend the automaton by following suffix links. The resulting DAWG has O(n) states and O(n) transitions.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["string", "suffix-automaton", "dawg", "substring", "online-construction"],
+  "references": []
+}

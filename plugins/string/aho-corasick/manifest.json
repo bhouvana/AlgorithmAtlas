@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "aho-corasick",
+  "name": "Aho-Corasick",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Search for multiple patterns simultaneously in O(n + m + k) using an automaton.",
+  "intuition": "Build a trie of all patterns. Add failure links so the automaton can fall back without missing matches. Scan the text once — any state that has output represents a pattern match.",
+  "complexity": {
+    "time_best": "O(n + m + k)",
+    "time_average": "O(n + m + k)",
+    "time_worst": "O(n + m + k)",
+    "space": "O(m)"
+  },
+  "parameters": {},
+  "tags": ["string", "aho-corasick", "pattern-matching", "trie", "automaton"],
+  "references": []
+}

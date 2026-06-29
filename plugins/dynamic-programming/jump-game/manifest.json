@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "jump-game",
+  "name": "Jump Game",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Determine the minimum number of jumps to reach the last index, where each element gives the max jump length.",
+  "intuition": "Use BFS or greedy: track the farthest reachable position from the current window. When you exhaust the current window, increment the jump count. The DP table stores min jumps to reach each index.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array length",
+      "min": 5,
+      "max": 12,
+      "default": 8
+    }
+  },
+  "tags": ["dynamic-programming", "greedy", "jump", "array"],
+  "references": []
+}

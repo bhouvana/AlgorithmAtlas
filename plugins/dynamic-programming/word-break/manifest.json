@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "word-break",
+  "name": "Word Break",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Determine if a string can be segmented into words from a dictionary using DP.",
+  "intuition": "dp[i] = True if the substring s[0..i-1] can be formed from dictionary words. For each position i, check if dp[j] is True and s[j..i-1] is in the dictionary.",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "String length",
+      "min": 4,
+      "max": 10,
+      "default": 7
+    }
+  },
+  "tags": ["dynamic-programming", "word-break", "string", "dictionary"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Word break problem — LeetCode #139",
+      "url": "https://leetcode.com/problems/word-break/"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "longest-common-subsequence",
+  "name": "Longest Common Subsequence",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Finds the longest subsequence common to two strings using a 2D DP table.",
+  "intuition": "Build a table where dp[i][j] = length of LCS of s1[:i] and s2[:j]. If characters match, extend the diagonal; otherwise take the max of left or above. The 2D table makes subproblem reuse visible.",
+  "complexity": {
+    "time_best": "O(m·n)",
+    "time_average": "O(m·n)",
+    "time_worst": "O(m·n)",
+    "space": "O(m·n)"
+  },
+  "parameters": {
+    "string_length": {
+      "type": "integer",
+      "label": "String length",
+      "min": 4,
+      "max": 10,
+      "default": 6
+    }
+  },
+  "tags": ["dynamic-programming", "string", "subsequence", "lcs", "2d-table"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Longest Common Subsequence — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Longest_common_subsequence"
+    }
+  ]
+}

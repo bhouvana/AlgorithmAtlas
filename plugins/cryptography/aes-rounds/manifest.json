@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "aes-rounds",
+  "name": "AES Rounds (Simplified)",
+  "version": "1.0.0",
+  "category": "cryptography",
+  "visualization_type": "STATE_MACHINE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Pedagogical AES-128 demonstration showing the four operations per round — SubBytes (S-box substitution), ShiftRows (row rotation), MixColumns (column mixing), and AddRoundKey (XOR with round key) — for the first 3 rounds.",
+  "intuition": "AES builds security through layers: SubBytes adds non-linearity, ShiftRows diffuses bytes across rows, MixColumns mixes columns, and AddRoundKey injects the secret. Combining these operations makes each output bit depend on every input bit.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(1)",
+    "time_worst": "O(1)",
+    "space": "O(1)"
+  },
+  "tags": ["cryptography", "aes", "symmetric", "block-cipher", "advanced"],
+  "parameters": {},
+  "benchmark_enabled": false
+}

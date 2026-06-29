@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "id": "linear-search",
+  "name": "Linear Search",
+  "version": "1.0.0",
+  "category": "searching",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Scans every element one by one until the target is found or the array is exhausted.",
+  "intuition": "Check each book on the shelf one by one from left to right until you find the one you want.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "tags": ["searching", "unsorted", "sequential", "beginner"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 100,
+      "default": 20,
+      "label": "Array Size"
+    },
+    "target_position": {
+      "type": "choice",
+      "choices": ["first", "middle", "last", "missing"],
+      "default": "middle",
+      "label": "Target Position"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

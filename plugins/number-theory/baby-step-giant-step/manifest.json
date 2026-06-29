@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "baby-step-giant-step",
+  "name": "Baby-Step Giant-Step",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Solve the discrete logarithm g^x ≡ h (mod p) in O(√p) time using meet-in-the-middle.",
+  "intuition": "Write x = im - j where m = ⌈√p⌉. Baby steps: precompute h·g^j for j=0..m-1. Giant steps: compute g^(im) for i=0..m, look up in the table. When a match is found, x = im - j.",
+  "complexity": {
+    "time_best": "O(√p)",
+    "time_average": "O(√p)",
+    "time_worst": "O(√p)",
+    "space": "O(√p)"
+  },
+  "parameters": {},
+  "tags": ["number-theory", "discrete-logarithm", "baby-step-giant-step", "meet-in-the-middle", "modular-arithmetic"],
+  "references": []
+}

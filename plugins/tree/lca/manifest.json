@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "lca",
+  "name": "Lowest Common Ancestor",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "TREE",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the lowest (deepest) node that is an ancestor of both given nodes in a binary tree.",
+  "intuition": "Walk up from both nodes simultaneously. The first node they have in common is the LCA. Or: during DFS, if the current node is either query node, or if the left and right subtrees each return a query node, the current node is the LCA.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(h)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of nodes",
+      "min": 5,
+      "max": 12,
+      "default": 7
+    }
+  },
+  "tags": ["tree", "lca", "ancestor", "dfs", "binary-tree"],
+  "references": []
+}

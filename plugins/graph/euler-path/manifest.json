@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "euler-path",
+  "name": "Eulerian Path (Hierholzer)",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find an Eulerian path that visits every edge exactly once using Hierholzer's algorithm.",
+  "intuition": "Start from a vertex with odd degree (or any vertex if all degrees are even). Follow edges greedily. When stuck, backtrack to find the next unvisited edge. The Eulerian path exists iff the graph has exactly 0 or 2 odd-degree vertices.",
+  "complexity": {
+    "time_best": "O(E)",
+    "time_average": "O(E)",
+    "time_worst": "O(E)",
+    "space": "O(E)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of nodes",
+      "min": 4,
+      "max": 8,
+      "default": 5
+    }
+  },
+  "tags": ["graph", "euler-path", "hierholzer", "edges"],
+  "references": []
+}

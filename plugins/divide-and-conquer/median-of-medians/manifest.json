@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "median-of-medians",
+  "name": "Median of Medians (Introselect)",
+  "version": "1.0.0",
+  "category": "divide-and-conquer",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Select the k-th smallest element in O(n) worst-case using the median-of-medians pivot strategy.",
+  "intuition": "Divide into groups of 5. Find median of each group. Recursively find the median of those medians — guarantees good pivot balance. Partition around this pivot: recurse into correct half.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(log n)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 10,
+      "max": 25,
+      "default": 15
+    }
+  },
+  "tags": ["divide-and-conquer", "selection", "median-of-medians", "order-statistics"],
+  "references": []
+}

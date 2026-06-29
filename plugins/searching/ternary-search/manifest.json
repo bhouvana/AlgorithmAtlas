@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "id": "ternary-search",
+  "name": "Ternary Search",
+  "version": "1.0.0",
+  "category": "searching",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Divides the search range into three parts, eliminating one-third per step.",
+  "intuition": "Like binary search but cuts the range into thirds at each step. Finds the target in O(log₃ n) comparisons — slightly more comparisons per step but smaller range reduction.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(log n)",
+    "time_worst": "O(log n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 10,
+      "max": 40,
+      "default": 20
+    },
+    "target_position": {
+      "type": "string",
+      "label": "Target",
+      "options": ["first", "middle", "last", "missing"],
+      "default": "middle"
+    }
+  },
+  "tags": ["searching", "sorted", "divide-and-conquer"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Ternary search — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ternary_search"
+    }
+  ]
+}

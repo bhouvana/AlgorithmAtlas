@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "unique-paths",
+  "name": "Unique Paths (Grid DP)",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Count the number of unique paths from top-left to bottom-right of an m×n grid, moving only right or down.",
+  "intuition": "dp[i][j] = dp[i-1][j] + dp[i][j-1]. The first row and first column are all 1 (only one way to reach them). Fill row by row.",
+  "complexity": {
+    "time_best": "O(m×n)",
+    "time_average": "O(m×n)",
+    "time_worst": "O(m×n)",
+    "space": "O(m×n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Grid dimension (n×n)",
+      "min": 3,
+      "max": 6,
+      "default": 4
+    }
+  },
+  "tags": ["dynamic-programming", "grid", "counting", "paths"],
+  "references": []
+}

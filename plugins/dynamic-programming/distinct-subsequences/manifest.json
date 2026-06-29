@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "distinct-subsequences",
+  "name": "Distinct Subsequences Count",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Count the number of distinct ways a target string t appears as a subsequence of source string s.",
+  "intuition": "dp[i][j] = ways t[0..j-1] appears in s[0..i-1]. If s[i]==t[j]: dp[i][j] = dp[i-1][j-1] + dp[i-1][j] (include or skip this match). Otherwise dp[i][j] = dp[i-1][j].",
+  "complexity": {
+    "time_best": "O(m·n)",
+    "time_average": "O(m·n)",
+    "time_worst": "O(m·n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "subsequences", "string-dp", "counting"],
+  "references": []
+}

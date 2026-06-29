@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "id": "poisson-process",
+  "name": "Poisson Process",
+  "version": "1.0.0",
+  "category": "probability",
+  "visualization_type": "PROBABILITY_SPACE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Simulates a Poisson process with rate λ events/second using exponential inter-arrival times (-ln(U)/λ). The empirical mean inter-arrival converges to 1/λ.",
+  "intuition": "Bus arrivals, radioactive decays, web requests — all follow Poisson processes. Memoryless exponential gaps between events mean the next one is always equally likely.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "tags": ["probability", "poisson-process", "simulation", "exponential", "arrival"],
+  "parameters": {
+    "duration": {
+      "type": "float",
+      "min": 5.0,
+      "max": 60.0,
+      "default": 20.0,
+      "label": "Duration (seconds)"
+    },
+    "rate": {
+      "type": "float",
+      "min": 0.5,
+      "max": 10.0,
+      "default": 3.0,
+      "label": "Rate λ (events/second)"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

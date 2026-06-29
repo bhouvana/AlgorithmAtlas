@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "graph-coloring",
+  "name": "Graph Coloring (Backtracking)",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Color a graph with the minimum number of colors such that no two adjacent vertices share a color.",
+  "intuition": "Try assigning colors 1..k to each vertex. For each vertex, try each color, check if any neighbor has that color, and backtrack if stuck.",
+  "complexity": {
+    "time_best": "O(k^V)",
+    "time_average": "O(k^V)",
+    "time_worst": "O(k^V)",
+    "space": "O(V)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of nodes",
+      "min": 4,
+      "max": 7,
+      "default": 5
+    }
+  },
+  "tags": ["graph", "coloring", "backtracking", "chromatic-number"],
+  "references": []
+}

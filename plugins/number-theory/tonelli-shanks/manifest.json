@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "tonelli-shanks",
+  "name": "Tonelli-Shanks Algorithm",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Compute the square root of n modulo an odd prime p (find x such that x² ≡ n mod p).",
+  "intuition": "Write p-1 = Q·2^S. Find a quadratic non-residue z. Iteratively reduce the 'exponent of 2' in the order of the current candidate until x² ≡ n.",
+  "complexity": {
+    "time_best": "O(log² p)",
+    "time_average": "O(log² p)",
+    "time_worst": "O(log² p)",
+    "space": "O(1)"
+  },
+  "parameters": {},
+  "tags": ["number-theory", "tonelli-shanks", "modular-arithmetic", "square-root", "prime"],
+  "references": []
+}

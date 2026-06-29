@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "naive-bayes",
+  "name": "Naive Bayes (Gaussian 1D)",
+  "version": "1.0.0",
+  "category": "machine-learning",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Binary classification using Gaussian Naive Bayes on 1D features.",
+  "intuition": "Model each class as a Gaussian. For a new point x, pick the class that maximises P(class) × P(x | class). The class with higher prior × likelihood wins.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "n_samples": {
+      "type": "integer",
+      "label": "Training samples",
+      "min": 10,
+      "max": 30,
+      "default": 20
+    }
+  },
+  "tags": ["machine-learning", "naive-bayes", "classification", "probability"],
+  "references": []
+}

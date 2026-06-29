@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "link-cut-tree",
+  "name": "Link-Cut Tree",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Dynamic tree data structure supporting link, cut, and path-aggregate queries in O(log n) amortized time via splay trees.",
+  "intuition": "Maintain a forest via preferred-path decomposition. Each preferred path is stored as a splay tree (auxiliary tree). The access() operation reassigns preferred paths, bringing a node to the root of its auxiliary tree in O(log n) amortized time.",
+  "complexity": {
+    "time_best": "O(log n) amortized",
+    "time_average": "O(log n) amortized",
+    "time_worst": "O(log n) amortized",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["tree", "link-cut-tree", "splay-tree", "dynamic-trees", "advanced"],
+  "references": []
+}

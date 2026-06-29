@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "prims-mst",
+  "name": "Prim's MST",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Builds a minimum spanning tree by greedily adding the cheapest edge connecting the MST to a new node.",
+  "intuition": "Grow the MST from a seed node. At each step, pick the cheapest edge that connects the current MST to an outside node. Like Dijkstra but tracking edge cost to MST rather than distance from source.",
+  "complexity": {
+    "time_best": "O((V + E) log V)",
+    "time_average": "O((V + E) log V)",
+    "time_worst": "O((V + E) log V)",
+    "space": "O(V)"
+  },
+  "parameters": {
+    "node_count": {
+      "type": "integer",
+      "label": "Node count",
+      "min": 4,
+      "max": 10,
+      "default": 7
+    }
+  },
+  "tags": ["graph", "mst", "greedy", "spanning-tree", "weighted"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Prim's algorithm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Prim%27s_algorithm"
+    }
+  ]
+}

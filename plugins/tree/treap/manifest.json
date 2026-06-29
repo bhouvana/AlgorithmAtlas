@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "treap",
+  "name": "Treap (Randomized BST)",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "A randomized BST that maintains both BST ordering (by key) and min-heap ordering (by random priority).",
+  "intuition": "Each node has a random priority. The tree satisfies: BST property on keys AND min-heap on priorities. Random priorities ensure expected O(log n) height. Rotations maintain both properties on insert/delete.",
+  "complexity": {
+    "time_best": "O(log n)",
+    "time_average": "O(log n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Insertions",
+      "min": 5,
+      "max": 10,
+      "default": 7
+    }
+  },
+  "tags": ["tree", "treap", "randomized", "bst", "heap"],
+  "references": []
+}

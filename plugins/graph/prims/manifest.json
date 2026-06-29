@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "prims",
+  "name": "Prim's Minimum Spanning Tree",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the minimum spanning tree of a weighted undirected graph using Prim's algorithm.",
+  "intuition": "Start with any node. Greedily add the lowest-weight edge connecting the MST to a non-MST vertex. Repeat until all vertices are included.",
+  "complexity": {
+    "time_best": "O((V+E) log V)",
+    "time_average": "O((V+E) log V)",
+    "time_worst": "O(E log V)",
+    "space": "O(V+E)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of nodes",
+      "min": 4,
+      "max": 8,
+      "default": 6
+    }
+  },
+  "tags": ["graph", "mst", "prims", "greedy", "spanning-tree"],
+  "references": []
+}

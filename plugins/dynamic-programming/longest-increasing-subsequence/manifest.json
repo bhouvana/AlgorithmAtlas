@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "longest-increasing-subsequence",
+  "name": "Longest Increasing Subsequence",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the length of the longest strictly increasing subsequence using DP in O(n²).",
+  "intuition": "For each element, dp[i] = 1 + max(dp[j]) for all j < i where arr[j] < arr[i]. The answer is the maximum value in the dp array.",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 5,
+      "max": 12,
+      "default": 8
+    }
+  },
+  "tags": ["dynamic-programming", "lis", "subsequence", "classic"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Longest increasing subsequence — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Longest_increasing_subsequence"
+    }
+  ]
+}

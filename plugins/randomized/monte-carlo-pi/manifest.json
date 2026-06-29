@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "monte-carlo-pi",
+  "name": "Monte Carlo π Estimation",
+  "version": "1.0.0",
+  "category": "randomized",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Estimate π by throwing random darts at a unit square and counting hits inside the quarter-circle.",
+  "intuition": "A quarter-circle of radius 1 fits inside a 1×1 square. The fraction of random points inside the circle approaches π/4. So π ≈ 4 × (hits / total).",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "dart_count": {
+      "type": "integer",
+      "label": "Number of darts",
+      "min": 20,
+      "max": 200,
+      "default": 80
+    }
+  },
+  "tags": ["randomized", "monte-carlo", "pi", "probability", "simulation"],
+  "references": []
+}

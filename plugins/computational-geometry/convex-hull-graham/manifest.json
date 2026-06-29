@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "convex-hull-graham",
+  "name": "Convex Hull — Graham Scan",
+  "version": "1.0.0",
+  "category": "computational-geometry",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the convex hull of a 2D point set using Graham Scan in O(n log n).",
+  "intuition": "Sort points by polar angle from the bottom-most point. Maintain a stack: at each new point, pop the stack while the turn is clockwise, then push.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "point_count": {
+      "type": "integer",
+      "label": "Number of points",
+      "min": 5,
+      "max": 18,
+      "default": 10
+    }
+  },
+  "tags": ["computational-geometry", "convex-hull", "graham-scan", "divide-and-conquer"],
+  "references": []
+}

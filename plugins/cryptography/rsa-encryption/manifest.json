@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "rsa-encryption",
+  "name": "RSA Encryption & Decryption",
+  "version": "1.0.0",
+  "category": "cryptography",
+  "visualization_type": "STATE_MACHINE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Encrypts a numeric message M using RSA public key (n, e) via modular exponentiation C = M^e mod n, then decrypts with private key (n, d) to recover M' = C^d mod n.",
+  "intuition": "Fast modular exponentiation breaks the exponent into a chain of squarings. Encryption and decryption are symmetric operations — only the exponent differs — but without d it is computationally infeasible to reverse C.",
+  "complexity": {
+    "time_best": "O(log e · log² n)",
+    "time_average": "O(log e · log² n)",
+    "time_worst": "O(log e · log² n)",
+    "space": "O(log n)"
+  },
+  "tags": ["cryptography", "rsa", "public-key", "modular-exponentiation", "intermediate"],
+  "parameters": {
+    "message": {
+      "type": "integer",
+      "min": 2,
+      "max": 3232,
+      "default": 65,
+      "label": "Message M"
+    }
+  },
+  "benchmark_enabled": false
+}

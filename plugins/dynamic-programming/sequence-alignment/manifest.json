@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "sequence-alignment",
+  "name": "Sequence Alignment (Needleman-Wunsch)",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Global sequence alignment using the Needleman-Wunsch algorithm.",
+  "intuition": "Build a scoring matrix where dp[i][j] = best alignment score for s1[0..i-1] and s2[0..j-1]. Score = +1 for match, -1 for mismatch, -2 for gap. Trace back from dp[m][n] to find optimal alignment.",
+  "complexity": {
+    "time_best": "O(m·n)",
+    "time_average": "O(m·n)",
+    "time_worst": "O(m·n)",
+    "space": "O(m·n)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "sequence-alignment", "needleman-wunsch", "bioinformatics", "edit-distance"],
+  "references": []
+}

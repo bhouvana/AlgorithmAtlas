@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "k-means",
+  "name": "K-Means Clustering",
+  "version": "1.0.0",
+  "category": "machine-learning",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Partition 1D data into k clusters by iteratively updating centroids and reassigning points.",
+  "intuition": "Initialize k centroids randomly. Repeat: assign each point to nearest centroid, then recompute each centroid as the mean of its cluster. Stop when assignments stop changing.",
+  "complexity": {
+    "time_best": "O(nkT)",
+    "time_average": "O(nkT)",
+    "time_worst": "O(nkT)",
+    "space": "O(n + k)"
+  },
+  "parameters": {
+    "point_count": {
+      "type": "integer",
+      "label": "Number of points",
+      "min": 8,
+      "max": 20,
+      "default": 12
+    },
+    "k": {
+      "type": "integer",
+      "label": "Number of clusters (k)",
+      "min": 2,
+      "max": 4,
+      "default": 3
+    }
+  },
+  "tags": ["machine-learning", "k-means", "clustering", "unsupervised"],
+  "references": []
+}

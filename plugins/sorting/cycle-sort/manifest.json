@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "id": "cycle-sort",
+  "name": "Cycle Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "In-place sort that minimizes the number of writes — optimal for write-heavy media.",
+  "intuition": "Each element is placed in its correct position directly. Find how many elements are smaller than the current one to determine its position. Rotate cycles of misplaced elements until all are in place.",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {"type": "integer", "label": "Array size", "min": 5, "max": 16, "default": 8}
+  },
+  "tags": ["sorting", "comparison", "in-place", "cycle", "writes"],
+  "references": []
+}

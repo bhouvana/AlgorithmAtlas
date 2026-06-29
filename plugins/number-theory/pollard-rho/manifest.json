@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "pollard-rho",
+  "name": "Pollard's Rho Factorization",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Factor a composite number using Pollard's rho algorithm and Floyd's cycle detection.",
+  "intuition": "Apply f(x) = x^2 + 1 mod n iteratively. Two pointers (tortoise/hare) detect a cycle. gcd(|x-y|, n) gives a non-trivial factor when the cycle is found in a factor's residues.",
+  "complexity": {
+    "time_best": "O(n^(1/4))",
+    "time_average": "O(n^(1/4))",
+    "time_worst": "O(n^(1/2))",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Composite number to factor",
+      "min": 10,
+      "max": 99,
+      "default": 77
+    }
+  },
+  "tags": ["number-theory", "factorization", "pollard-rho", "gcd", "cycle-detection"],
+  "references": []
+}

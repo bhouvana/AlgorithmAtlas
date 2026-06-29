@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "permutations",
+  "name": "Permutations (Backtracking)",
+  "version": "1.0.0",
+  "category": "backtracking",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Generate all permutations of an array using backtracking with in-place swapping.",
+  "intuition": "Fix each element at each position by swapping it with the current position index, recurse, then swap back (backtrack). This generates all n! orderings.",
+  "complexity": {
+    "time_best": "O(n·n!)",
+    "time_average": "O(n·n!)",
+    "time_worst": "O(n·n!)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 3,
+      "max": 7,
+      "default": 4
+    }
+  },
+  "tags": ["backtracking", "permutations", "combinatorics", "recursion"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Heap's algorithm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Heap%27s_algorithm"
+    }
+  ]
+}

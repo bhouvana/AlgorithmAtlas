@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "subset-sum",
+  "name": "Subset Sum",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Determine whether a subset of the given numbers sums exactly to the target.",
+  "intuition": "dp[i][j] = true if some subset of the first i elements sums to j. Either skip element i (dp[i-1][j]) or include it (dp[i-1][j-arr[i-1]]).",
+  "complexity": {
+    "time_best": "O(n×W)",
+    "time_average": "O(n×W)",
+    "time_worst": "O(n×W)",
+    "space": "O(n×W)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Element count",
+      "min": 3,
+      "max": 7,
+      "default": 5
+    }
+  },
+  "tags": ["dynamic-programming", "subset-sum", "knapsack", "np-hard"],
+  "references": []
+}

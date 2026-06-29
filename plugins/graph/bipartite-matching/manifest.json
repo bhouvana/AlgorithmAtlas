@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "bipartite-matching",
+  "name": "Bipartite Matching (Augmenting Paths)",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find a maximum matching in a bipartite graph by repeatedly augmenting along free paths.",
+  "intuition": "Alternate between matched and unmatched edges along a path from a free left node to a free right node. Flipping matched/unmatched increases the matching by 1. Repeat until no augmenting path exists.",
+  "complexity": {
+    "time_best": "O(V × E)",
+    "time_average": "O(V × E)",
+    "time_worst": "O(V × E)",
+    "space": "O(V + E)"
+  },
+  "parameters": {},
+  "tags": ["graph", "bipartite", "matching", "augmenting-path"],
+  "references": []
+}

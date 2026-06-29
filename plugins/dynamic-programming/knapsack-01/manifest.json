@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "id": "knapsack-01",
+  "name": "0/1 Knapsack",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Selects items to maximize value without exceeding a weight capacity using 2D DP.",
+  "intuition": "dp[i][w] = max value using first i items with capacity w. Either skip item i, or include it (if it fits). The 2D table makes the include/exclude decisions visible.",
+  "complexity": {
+    "time_best": "O(n·W)",
+    "time_average": "O(n·W)",
+    "time_worst": "O(n·W)",
+    "space": "O(n·W)"
+  },
+  "parameters": {
+    "item_count": {
+      "type": "integer",
+      "label": "Items",
+      "min": 3,
+      "max": 6,
+      "default": 4
+    },
+    "capacity": {
+      "type": "integer",
+      "label": "Capacity",
+      "min": 6,
+      "max": 12,
+      "default": 8
+    }
+  },
+  "tags": ["dynamic-programming", "optimization", "knapsack", "combinatorics"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Knapsack problem — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Knapsack_problem"
+    }
+  ]
+}

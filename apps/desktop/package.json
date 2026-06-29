@@ -1,0 +1,16 @@
+{
+  "name": "@algorithm-atlas/desktop",
+  "version": "0.4.3",
+  "private": true,
+  "scripts": {
+    "dev":   "cargo tauri dev",
+    "build": "cargo tauri build",
+    "icon":  "cargo tauri icon ../../apps/frontend/public/logo.svg"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

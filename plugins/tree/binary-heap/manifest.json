@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "binary-heap",
+  "name": "Binary Heap Operations",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "TREE",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Demonstrate insert and extract-min operations on a binary min-heap.",
+  "intuition": "A min-heap is a complete binary tree where each node is ≤ its children. Insert at the end and sift-up; extract-min by replacing root with last element and sifting down.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(log n)",
+    "time_worst": "O(log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of elements",
+      "min": 5,
+      "max": 12,
+      "default": 7
+    }
+  },
+  "tags": ["tree", "heap", "priority-queue", "sift"],
+  "references": []
+}

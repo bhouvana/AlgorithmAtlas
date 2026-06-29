@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "huffman-with-decode",
+  "name": "Huffman Decode",
+  "version": "1.0.0",
+  "category": "greedy",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Demonstrate Huffman encoding and decoding for a fixed string.",
+  "intuition": "Build Huffman tree (greedy min-heap). Encode each character. Then decode the bit string by traversing the tree. Visualizes compression ratio: bits used vs. naive 8 bits/char.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["greedy", "huffman", "compression", "encoding", "tree"],
+  "references": []
+}

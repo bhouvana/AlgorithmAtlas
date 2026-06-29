@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "random-forest",
+  "name": "Random Forest",
+  "version": "1.0.0",
+  "category": "machine-learning",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Train an ensemble of decision trees using bootstrap sampling and random feature selection.",
+  "intuition": "Each tree is trained on a random bootstrap sample (with replacement). At each node split, only a random subset of features is considered. Final prediction = majority vote. More trees → lower variance, but diminishing returns.",
+  "complexity": {
+    "time_best": "O(n·trees·log n)",
+    "time_average": "O(n·trees·log n)",
+    "time_worst": "O(n^2·trees)",
+    "space": "O(trees·depth)"
+  },
+  "parameters": {},
+  "tags": ["machine-learning", "random-forest", "ensemble", "decision-tree", "bagging"],
+  "references": []
+}

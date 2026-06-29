@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "bst-search",
+  "name": "BST Search",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "TREE",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Search for a key in a Binary Search Tree by comparing at each node and going left or right.",
+  "intuition": "At each node: if key == node, found. If key < node, go left. If key > node, go right. At most O(h) comparisons where h is tree height.",
+  "complexity": {
+    "time_best": "O(log n)",
+    "time_average": "O(log n)",
+    "time_worst": "O(n)",
+    "space": "O(h)"
+  },
+  "parameters": {
+    "node_count": {
+      "type": "integer",
+      "label": "Tree size",
+      "min": 5,
+      "max": 15,
+      "default": 10
+    }
+  },
+  "tags": ["tree", "bst", "search", "binary-search-tree"],
+  "references": []
+}

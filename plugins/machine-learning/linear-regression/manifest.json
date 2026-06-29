@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "linear-regression",
+  "name": "Linear Regression (Gradient Descent)",
+  "version": "1.0.0",
+  "category": "machine-learning",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Fit a line y = wx + b to noisy data using batch gradient descent on MSE loss.",
+  "intuition": "The MSE loss is convex in (w, b). Compute partial derivatives ∂L/∂w and ∂L/∂b across all samples, then step w and b downhill.",
+  "complexity": {
+    "time_best": "O(nT)",
+    "time_average": "O(nT)",
+    "time_worst": "O(nT)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "sample_count": {
+      "type": "integer",
+      "label": "Training samples",
+      "min": 5,
+      "max": 16,
+      "default": 10
+    }
+  },
+  "tags": ["machine-learning", "linear-regression", "gradient-descent", "regression"],
+  "references": []
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "staircase",
+  "name": "Staircase (Climbing Stairs)",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Count the number of ways to climb n stairs taking 1 or 2 steps at a time.",
+  "intuition": "dp[i] = dp[i-1] + dp[i-2] — each stair i can be reached from i-1 (one step) or i-2 (two steps). It's Fibonacci with a different base.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Stairs (n)",
+      "min": 4,
+      "max": 15,
+      "default": 10
+    }
+  },
+  "tags": ["dynamic-programming", "fibonacci", "staircase", "combinatorics"],
+  "references": []
+}

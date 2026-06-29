@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "polygon-area",
+  "name": "Polygon Area — Shoelace Formula",
+  "version": "1.0.0",
+  "category": "computational-geometry",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Compute polygon area using the Shoelace (Gauss) formula in O(n).",
+  "intuition": "Sum signed triangle areas between each edge and the origin. The absolute value of half the sum gives the polygon area.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "vertex_count": {
+      "type": "integer",
+      "label": "Polygon vertices",
+      "min": 3,
+      "max": 12,
+      "default": 6
+    }
+  },
+  "tags": ["computational-geometry", "polygon", "shoelace", "area"],
+  "references": []
+}

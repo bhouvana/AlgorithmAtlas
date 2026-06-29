@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "level-order",
+  "name": "Level-Order Traversal (BFS)",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "TREE",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Visit all nodes level by level (breadth-first) in a binary tree.",
+  "intuition": "Use a queue. Enqueue the root, then repeatedly dequeue a node, visit it, and enqueue its children. This processes all nodes at depth d before any node at depth d+1.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of nodes",
+      "min": 5,
+      "max": 15,
+      "default": 7
+    }
+  },
+  "tags": ["tree", "bfs", "level-order", "traversal", "queue"],
+  "references": []
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "gift-wrapping",
+  "name": "Convex Hull — Gift Wrapping (Jarvis March)",
+  "version": "1.0.0",
+  "category": "computational-geometry",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the convex hull using the gift-wrapping (Jarvis March) algorithm in O(nh).",
+  "intuition": "Start from the leftmost point. At each step, pick the point that makes the smallest counter-clockwise angle — like wrapping a string around the point set.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(nh)",
+    "time_worst": "O(n²)",
+    "space": "O(h)"
+  },
+  "parameters": {
+    "point_count": {
+      "type": "integer",
+      "label": "Number of points",
+      "min": 5,
+      "max": 18,
+      "default": 10
+    }
+  },
+  "tags": ["computational-geometry", "convex-hull", "jarvis-march", "gift-wrapping"],
+  "references": []
+}

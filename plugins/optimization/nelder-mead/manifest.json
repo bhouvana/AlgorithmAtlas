@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "nelder-mead",
+  "name": "Nelder-Mead Simplex",
+  "version": "1.0.0",
+  "category": "optimization",
+  "visualization_type": "CURVE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Minimizes f(x)=(x-2)²+1 using a 2-point simplex in 1D. Applies reflect, expand, contract, and shrink operations iteratively.",
+  "intuition": "An amoeba that reshapes to move toward lower function values — reflects bad points across the best and expands promising directions.",
+  "complexity": {
+    "time_best": "O(steps)",
+    "time_average": "O(steps)",
+    "time_worst": "O(steps)",
+    "space": "O(1)"
+  },
+  "tags": ["optimization", "simplex", "derivative-free", "direct-search"],
+  "parameters": {
+    "steps": {
+      "type": "integer",
+      "min": 5,
+      "max": 100,
+      "default": 50,
+      "label": "Steps"
+    }
+  },
+  "benchmark_enabled": false
+}

@@ -1,0 +1,9 @@
+{
+  "slug": "seeds",
+  "name": "Seeds Automaton",
+  "category": "cellular-automata",
+  "tags": ["cellular-automata", "simulation", "fractal", "2d", "explosive"],
+  "complexity": "O(n²)",
+  "visualization": "PARTICLE_FIELD",
+  "description": "The Seeds automaton (B2/S) births dead cells with exactly 2 live neighbors while killing all live cells, producing explosive ever-expanding fractal growth patterns that never stabilize."
+}

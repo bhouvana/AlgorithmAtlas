@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "sieve-of-eratosthenes",
+  "name": "Sieve of Eratosthenes",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Finds all primes up to N by repeatedly striking out multiples of each discovered prime.",
+  "intuition": "Start at 2. Mark all its multiples composite. Move to the next unmarked number (it's prime). Repeat until p² > N.",
+  "complexity": {
+    "time_best": "O(n log log n)",
+    "time_average": "O(n log log n)",
+    "time_worst": "O(n log log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "limit": {
+      "type": "integer",
+      "label": "Upper limit N",
+      "min": 20,
+      "max": 50,
+      "default": 30
+    }
+  },
+  "tags": ["number-theory", "prime", "sieve", "math"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Sieve of Eratosthenes — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "rabin-karp",
+  "name": "Rabin-Karp String Search",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Rolling-hash string search — advances the window in O(1) per step using a polynomial hash.",
+  "intuition": "Hash the pattern and the first window. Slide the window: subtract the outgoing char, multiply, add the incoming char. Only check character-by-character on a hash match.",
+  "complexity": {
+    "time_best": "O(n + m)",
+    "time_average": "O(n + m)",
+    "time_worst": "O(n·m)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "text_length": {
+      "type": "integer",
+      "label": "Text length",
+      "min": 16,
+      "max": 32,
+      "default": 20
+    }
+  },
+  "tags": ["string", "pattern-matching", "rolling-hash", "rabin-karp"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Rabin-Karp algorithm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm"
+    }
+  ]
+}

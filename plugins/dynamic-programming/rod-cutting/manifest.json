@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "rod-cutting",
+  "name": "Rod Cutting",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the maximum revenue from cutting a rod of length n into pieces using DP.",
+  "intuition": "dp[i] = max revenue for rod of length i. For each length i, try every cut j: dp[i] = max(price[j] + dp[i-j]). Build bottom-up from dp[0]=0.",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Rod length",
+      "min": 4,
+      "max": 10,
+      "default": 7
+    }
+  },
+  "tags": ["dynamic-programming", "rod-cutting", "optimization", "classic"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Rod cutting — Introduction to Algorithms (CLRS)",
+      "url": "https://en.wikipedia.org/wiki/Cutting_stock_problem"
+    }
+  ]
+}

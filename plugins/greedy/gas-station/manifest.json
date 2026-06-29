@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "gas-station",
+  "name": "Gas Station",
+  "version": "1.0.0",
+  "category": "greedy",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the starting gas station from which you can complete a circular route.",
+  "intuition": "If the total gas ≥ total cost, a solution exists. Track running net_gas. When it goes negative, the current station can't be the start; try the next one. The last candidate is the answer.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of stations",
+      "min": 4,
+      "max": 10,
+      "default": 6
+    }
+  },
+  "tags": ["greedy", "gas-station", "circular", "array"],
+  "references": []
+}

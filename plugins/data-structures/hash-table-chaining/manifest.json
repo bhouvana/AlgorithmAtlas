@@ -1,0 +1,17 @@
+{
+  "slug": "hash-table-chaining",
+  "name": "Hash Table (Separate Chaining)",
+  "category": "data-structures",
+  "visualization_type": "ARRAY_BARS",
+  "description": "Hash table that resolves collisions via separate chaining. Each bucket holds a linked list of entries that hashed to that slot. Insert O(1) amortised; Lookup O(1) average.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(1)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "tags": ["data-structures", "hash-table", "chaining", "collision-resolution"],
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "class_name": "HashTableChaining"
+}

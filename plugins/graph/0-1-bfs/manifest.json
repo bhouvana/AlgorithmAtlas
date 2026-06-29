@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "0-1-bfs",
+  "name": "0-1 BFS (Deque BFS)",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find shortest paths in a graph with 0 or 1 edge weights using a double-ended queue.",
+  "intuition": "Extend BFS with a deque: 0-weight edges push the neighbour to the front (free move), 1-weight edges push to the back (costs one step). This maintains the invariant that all nodes in the deque have distance d or d+1.",
+  "complexity": {
+    "time_best": "O(V + E)",
+    "time_average": "O(V + E)",
+    "time_worst": "O(V + E)",
+    "space": "O(V)"
+  },
+  "parameters": {},
+  "tags": ["graph", "bfs", "shortest-path", "deque"],
+  "references": []
+}

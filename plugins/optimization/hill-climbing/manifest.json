@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "id": "hill-climbing",
+  "name": "Hill Climbing",
+  "version": "1.0.0",
+  "category": "optimization",
+  "visualization_type": "CURVE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Maximizes f(x)=sin(x)·cos(x/2)+0.5 on [0, 2π] by greedily accepting moves to better neighbors.",
+  "intuition": "Like a hiker in fog who always steps toward higher ground — reaches a local peak but may miss the global summit.",
+  "complexity": {
+    "time_best": "O(steps)",
+    "time_average": "O(steps)",
+    "time_worst": "O(steps)",
+    "space": "O(1)"
+  },
+  "tags": ["optimization", "local-search", "greedy", "metaheuristic"],
+  "parameters": {
+    "steps": {
+      "type": "integer",
+      "min": 10,
+      "max": 200,
+      "default": 100,
+      "label": "Steps"
+    },
+    "step_size": {
+      "type": "float",
+      "min": 0.01,
+      "max": 1.0,
+      "default": 0.1,
+      "label": "Step Size"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": false
+}

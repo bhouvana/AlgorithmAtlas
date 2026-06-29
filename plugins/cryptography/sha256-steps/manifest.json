@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "sha256-steps",
+  "name": "SHA-256 Hash Function",
+  "version": "1.0.0",
+  "category": "cryptography",
+  "visualization_type": "STATE_MACHINE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Pedagogical walk-through of SHA-256: pre-processing (padding and length encoding), message schedule expansion (W[0]..W[63]), and the 64-round compression function updating the 8-word state (a,b,c,d,e,f,g,h).",
+  "intuition": "SHA-256 scrambles data through 64 rounds of bitwise mixing using fractional parts of cube roots as constants. Each round feeds the output back in — like shuffling a deck 64 times — so a single bit change avalanches through the entire hash.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "tags": ["cryptography", "hash", "sha256", "one-way", "advanced"],
+  "parameters": {},
+  "benchmark_enabled": false
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "hash-table-probing",
+  "name": "Hash Table (Linear Probing)",
+  "category": "data-structures",
+  "visualization_type": "ARRAY_BARS",
+  "description": "Open-addressing hash table with linear probing. On collision, scan slots (i+1) % M until empty. Shows primary clustering effect. Lookup O(1) amortised.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(1)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "tags": ["data-structures", "hash-table", "linear-probing", "open-addressing"],
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "class_name": "HashTableLinearProbing"
+}

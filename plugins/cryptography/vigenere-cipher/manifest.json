@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "id": "vigenere-cipher",
+  "name": "Vigenère Cipher",
+  "version": "1.0.0",
+  "category": "cryptography",
+  "visualization_type": "STATE_MACHINE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "A polyalphabetic substitution cipher that encrypts text using a repeating keyword, applying a different Caesar shift for each letter.",
+  "intuition": "Each plaintext character is shifted by the value of the corresponding keyword character. Because the shift changes with each letter, frequency analysis — which breaks Caesar — fails.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "tags": ["cryptography", "cipher", "polyalphabetic", "classical", "intermediate"],
+  "parameters": {
+    "key": {
+      "type": "string",
+      "default": "LEMON",
+      "label": "Encryption Key"
+    }
+  },
+  "benchmark_enabled": false
+}

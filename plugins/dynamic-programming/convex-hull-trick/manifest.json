@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "convex-hull-trick",
+  "name": "Convex Hull Trick (DP Optimization)",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Optimize DP transitions of the form dp[j] = min over i<j of (dp[i] + b[i]*x[j]) from O(n²) to O(n) by maintaining a convex hull of lines.",
+  "intuition": "Each state i defines a line y = b[i]*x + dp[i]. The optimal i for query x[j] is the line minimizing y at x=x[j]. Maintain these lines as a lower convex hull. Query with a pointer that moves monotonically when queries are sorted.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "convex-hull-trick", "cht", "optimization", "lines"],
+  "references": []
+}

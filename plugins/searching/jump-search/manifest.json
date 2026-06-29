@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "id": "jump-search",
+  "name": "Jump Search",
+  "version": "1.0.0",
+  "category": "searching",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Jumps ahead by √n steps to find the block containing the target, then does linear search within that block.",
+  "intuition": "Flip through a book √n pages at a time until you overshoot, then backtrack page by page.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(√n)",
+    "time_worst": "O(√n)",
+    "space": "O(1)"
+  },
+  "tags": ["searching", "sorted", "block", "sqrt-decomposition"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 4,
+      "max": 100,
+      "default": 25,
+      "label": "Array Size"
+    },
+    "target_position": {
+      "type": "choice",
+      "choices": ["first", "middle", "last", "missing"],
+      "default": "middle",
+      "label": "Target Position"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

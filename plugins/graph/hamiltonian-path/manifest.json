@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "hamiltonian-path",
+  "name": "Hamiltonian Path (Backtracking)",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find a path that visits every vertex in a graph exactly once using backtracking.",
+  "intuition": "Try extending the current path by adding an unvisited adjacent vertex. Backtrack when stuck. On small graphs, Warnsdorff-like heuristics speed up finding a Hamiltonian path.",
+  "complexity": {
+    "time_best": "O(V!)",
+    "time_average": "O(V!)",
+    "time_worst": "O(V!)",
+    "space": "O(V)"
+  },
+  "parameters": {},
+  "tags": ["graph", "hamiltonian-path", "backtracking", "np-complete"],
+  "references": []
+}

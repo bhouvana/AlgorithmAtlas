@@ -1,0 +1,9 @@
+{
+  "slug": "rule-30",
+  "name": "Wolfram Rule 30",
+  "category": "cellular-automata",
+  "tags": ["cellular-automata", "wolfram", "1d", "chaos", "simulation"],
+  "complexity": "O(n²)",
+  "visualization": "PARTICLE_FIELD",
+  "description": "Wolfram Rule 30 is a 1D elementary cellular automaton that produces chaotic, pseudo-random output from a single living center cell, with each row representing one generation."
+}

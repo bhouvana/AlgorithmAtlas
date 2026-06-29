@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "particle-swarm",
+  "name": "Particle Swarm Optimization",
+  "version": "1.0.0",
+  "category": "optimization",
+  "visualization_type": "CURVE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Minimizes f(x,y)=(x-1)²+(y-2)² projected to 1D. Six particles share knowledge of the global best position found.",
+  "intuition": "A flock of birds searching for food — each remembers its personal best but is drawn toward the swarm's best discovery.",
+  "complexity": {
+    "time_best": "O(iterations × particles)",
+    "time_average": "O(iterations × particles)",
+    "time_worst": "O(iterations × particles)",
+    "space": "O(particles)"
+  },
+  "tags": ["optimization", "metaheuristic", "swarm", "population-based"],
+  "parameters": {
+    "iterations": {
+      "type": "integer",
+      "min": 10,
+      "max": 120,
+      "default": 60,
+      "label": "Iterations"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": false
+}

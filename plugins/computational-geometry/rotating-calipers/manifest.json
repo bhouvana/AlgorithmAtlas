@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "rotating-calipers",
+  "name": "Rotating Calipers",
+  "version": "1.0.0",
+  "category": "computational-geometry",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find the diameter of a convex polygon using the rotating calipers technique.",
+  "intuition": "Place two parallel supporting lines (calipers) against the convex hull. Rotate them together, tracking the pair of farthest points (antipodal pairs). The maximum distance found is the polygon diameter.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["computational-geometry", "convex-hull", "rotating-calipers", "diameter", "antipodal"],
+  "references": []
+}

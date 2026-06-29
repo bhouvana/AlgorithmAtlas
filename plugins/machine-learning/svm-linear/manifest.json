@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "svm-linear",
+  "name": "Linear SVM",
+  "version": "1.0.0",
+  "category": "machine-learning",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Train a linear SVM using subgradient descent to find the maximum-margin hyperplane.",
+  "intuition": "Hinge loss: max(0, 1 - y*(w·x+b)). Add L2 regularization. Subgradient: if margin satisfied, pull w toward 0; if violated, push w in direction of correct class. Iterate until margin converges.",
+  "complexity": {
+    "time_best": "O(n·iter)",
+    "time_average": "O(n·iter)",
+    "time_worst": "O(n·iter)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["machine-learning", "svm", "classification", "margin", "gradient-descent"],
+  "references": []
+}

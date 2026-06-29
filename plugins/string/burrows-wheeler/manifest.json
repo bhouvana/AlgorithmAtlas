@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "burrows-wheeler",
+  "name": "Burrows-Wheeler Transform",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Compute the Burrows-Wheeler Transform (BWT) of a string, then recover the original via inverse BWT.",
+  "intuition": "Generate all cyclic rotations of the string, sort them lexicographically, and take the last column as the BWT. The BWT groups similar characters together, enabling compression. The inverse reconstructs the original string from just the BWT output.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n²)"
+  },
+  "parameters": {},
+  "tags": ["string", "burrows-wheeler", "bwt", "compression", "transform"],
+  "references": []
+}

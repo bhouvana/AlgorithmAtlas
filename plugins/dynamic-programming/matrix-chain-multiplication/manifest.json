@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "matrix-chain-multiplication",
+  "name": "Matrix Chain Multiplication",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the optimal parenthesization to minimize scalar multiplications when multiplying a chain of matrices.",
+  "intuition": "dp[i][j] = minimum cost to multiply matrices i through j. Fill the table by chain length: for each split point k, dp[i][j] = min(dp[i][k] + dp[k+1][j] + p[i]*p[k+1]*p[j+1]).",
+  "complexity": {
+    "time_best": "O(n³)",
+    "time_average": "O(n³)",
+    "time_worst": "O(n³)",
+    "space": "O(n²)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of matrices",
+      "min": 3,
+      "max": 6,
+      "default": 4
+    }
+  },
+  "tags": ["dynamic-programming", "matrix-chain", "optimization", "classic"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Matrix chain multiplication — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Matrix_chain_multiplication"
+    }
+  ]
+}

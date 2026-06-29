@@ -1,0 +1,9 @@
+{
+  "slug": "raft-leader-election",
+  "name": "Raft Leader Election",
+  "category": "distributed-systems",
+  "tags": ["distributed", "consensus", "raft", "election", "fault-tolerance"],
+  "complexity": "O(n)",
+  "visualization": "NETWORK_TOPOLOGY",
+  "description": "Demonstrates the Raft consensus leader election algorithm. Five nodes start as followers. One node times out, becomes a candidate, solicits votes via RequestVote RPCs, and wins a majority to become the cluster leader."
+}

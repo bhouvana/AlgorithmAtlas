@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "closest-pair",
+  "name": "Closest Pair of Points",
+  "version": "1.0.0",
+  "category": "computational-geometry",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the closest pair of points in 2D using brute-force comparison, highlighting each pair considered.",
+  "intuition": "Compare every pair of points to find the minimum distance. O(n²) brute force is clear to visualize; divide-and-conquer achieves O(n log n).",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "point_count": {
+      "type": "integer",
+      "label": "Number of points",
+      "min": 5,
+      "max": 14,
+      "default": 8
+    }
+  },
+  "tags": ["computational-geometry", "closest-pair", "brute-force"],
+  "references": []
+}

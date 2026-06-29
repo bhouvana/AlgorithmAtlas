@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "line-segment-intersection",
+  "name": "Line Segment Intersection Test",
+  "version": "1.0.0",
+  "category": "computational-geometry",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Determine whether two line segments intersect using cross-product orientation tests.",
+  "intuition": "Two segments AB and CD intersect if A and B are on opposite sides of CD, AND C and D are on opposite sides of AB. The cross product encodes which side a point is on.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(1)",
+    "time_worst": "O(1)",
+    "space": "O(1)"
+  },
+  "parameters": {},
+  "tags": ["computational-geometry", "line-segment", "intersection", "orientation"],
+  "references": []
+}

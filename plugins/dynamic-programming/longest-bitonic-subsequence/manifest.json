@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "longest-bitonic-subsequence",
+  "name": "Longest Bitonic Subsequence",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the longest subsequence that first increases then decreases using DP.",
+  "intuition": "Compute LIS ending at each index, and LDS starting at each index. For each pivot i, bitonic length = LIS[i] + LDS[i] - 1. Answer is max over all i.",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 8,
+      "max": 16,
+      "default": 10
+    }
+  },
+  "tags": ["dynamic-programming", "bitonic", "subsequence", "lis", "lds"],
+  "references": []
+}

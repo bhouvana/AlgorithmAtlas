@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "id": "selection-sort",
+  "name": "Selection Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "execution_target": "wasm",
+  "wasm_module": "wasm_engine",
+  "entry_point": "algorithm.py",
+  "description": "Repeatedly selects the minimum element from the unsorted portion and moves it to the front.",
+  "intuition": "Imagine you're sorting playing cards by always scanning the remaining pile for the lowest card and placing it next.",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(1)"
+  },
+  "tags": ["comparison", "in-place", "unstable", "quadratic"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 100,
+      "default": 20,
+      "label": "Array Size"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

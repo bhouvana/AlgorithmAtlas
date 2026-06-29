@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "chinese-remainder",
+  "name": "Chinese Remainder Theorem",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find x such that x ≡ r_i (mod m_i) for all i, using pairwise coprime moduli.",
+  "intuition": "Compute M = ∏m_i. For each congruence, find M_i = M/m_i and its modular inverse y_i mod m_i. Then x = (∑ r_i · M_i · y_i) mod M.",
+  "complexity": {
+    "time_best": "O(n log(max_m))",
+    "time_average": "O(n log(max_m))",
+    "time_worst": "O(n log(max_m))",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["number-theory", "chinese-remainder", "modular-arithmetic", "congruences"],
+  "references": []
+}

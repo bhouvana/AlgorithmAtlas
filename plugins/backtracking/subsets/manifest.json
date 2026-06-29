@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "subsets",
+  "name": "Subsets (Power Set)",
+  "version": "1.0.0",
+  "category": "backtracking",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Generate all 2^n subsets of an array using backtracking (include/exclude each element).",
+  "intuition": "At each index, branch twice: include the current element in the subset, or exclude it. Recursing through all indices generates all 2^n possible subsets.",
+  "complexity": {
+    "time_best": "O(2^n)",
+    "time_average": "O(2^n)",
+    "time_worst": "O(2^n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 3,
+      "max": 6,
+      "default": 4
+    }
+  },
+  "tags": ["backtracking", "subsets", "power-set", "combinatorics"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Power set — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Power_set"
+    }
+  ]
+}

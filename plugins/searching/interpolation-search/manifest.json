@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "id": "interpolation-search",
+  "name": "Interpolation Search",
+  "version": "1.0.0",
+  "category": "searching",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Like binary search but probes at a position estimated by interpolating the target's likely location based on value distribution.",
+  "intuition": "If you're looking for 'Zebra' in a dictionary, skip close to the end rather than the middle — you know roughly where Z words live.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(log log n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "tags": ["searching", "sorted", "interpolation", "uniform-distribution"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 4,
+      "max": 100,
+      "default": 20,
+      "label": "Array Size"
+    },
+    "target_position": {
+      "type": "choice",
+      "choices": ["first", "middle", "last", "missing"],
+      "default": "middle",
+      "label": "Target Position"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

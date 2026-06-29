@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "combination-sum",
+  "name": "Combination Sum",
+  "version": "1.0.0",
+  "category": "backtracking",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find all combinations of candidates that sum to a target, with each candidate usable multiple times.",
+  "intuition": "At each step, try adding a candidate to the current combination. If the running sum equals the target, record the combination. If it exceeds the target, backtrack. Reuse is allowed so the same index can be explored again.",
+  "complexity": {
+    "time_best": "O(n^(t/m))",
+    "time_average": "O(n^(t/m))",
+    "time_worst": "O(n^(t/m))",
+    "space": "O(t/m)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Candidate count",
+      "min": 3,
+      "max": 6,
+      "default": 4
+    }
+  },
+  "tags": ["backtracking", "combination", "sum", "recursion"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Combination sum — LeetCode #39",
+      "url": "https://leetcode.com/problems/combination-sum/"
+    }
+  ]
+}

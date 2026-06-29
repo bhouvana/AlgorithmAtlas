@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "peak-element",
+  "name": "Find Peak Element",
+  "version": "1.0.0",
+  "category": "searching",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find any peak element (greater than its neighbors) in O(log n) using binary search.",
+  "intuition": "If arr[mid] < arr[mid+1], a peak must exist in the right half. If arr[mid] < arr[mid-1], a peak is in the left half. Otherwise arr[mid] is a peak.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(log n)",
+    "time_worst": "O(log n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 4,
+      "max": 16,
+      "default": 8
+    }
+  },
+  "tags": ["searching", "peak-element", "binary-search", "divide-and-conquer"],
+  "references": []
+}

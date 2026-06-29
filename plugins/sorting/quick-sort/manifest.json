@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "id": "quick-sort",
+  "name": "Quick Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "execution_target": "wasm",
+  "wasm_module": "wasm_engine",
+  "entry_point": "algorithm.py",
+  "description": "Picks a pivot element and partitions the array so all elements smaller than the pivot are to its left, larger to its right, then recurses.",
+  "intuition": "Choose a dividing line (pivot), push everything smaller to the left and everything larger to the right, then repeat for each side.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n²)",
+    "space": "O(log n)"
+  },
+  "tags": ["comparison", "divide-and-conquer", "in-place", "unstable", "recursive"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 64,
+      "default": 16,
+      "label": "Array Size"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    },
+    "pivot_strategy": {
+      "type": "choice",
+      "choices": ["last", "first", "median_of_three"],
+      "default": "median_of_three",
+      "label": "Pivot Strategy"
+    }
+  },
+  "benchmark_enabled": true
+}

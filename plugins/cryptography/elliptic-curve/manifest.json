@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "elliptic-curve",
+  "name": "Elliptic Curve Point Addition",
+  "version": "1.0.0",
+  "category": "cryptography",
+  "visualization_type": "STATE_MACHINE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Demonstrates elliptic curve scalar multiplication over a small prime field: computes kG for k = 1..10 on the curve y² ≡ x³ - x + 1 (mod 23), showing each point addition step.",
+  "intuition": "Adding a point to itself on the curve repeatedly is easy to compute forward but impossible to reverse without knowing k — this 'trapdoor' property is the foundation of elliptic curve cryptography.",
+  "complexity": {
+    "time_best": "O(log k)",
+    "time_average": "O(log k)",
+    "time_worst": "O(log k)",
+    "space": "O(1)"
+  },
+  "tags": ["cryptography", "elliptic-curve", "ecc", "public-key", "advanced"],
+  "parameters": {},
+  "benchmark_enabled": false
+}

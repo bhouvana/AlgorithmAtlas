@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "knight-tour",
+  "name": "Knight's Tour",
+  "version": "1.0.0",
+  "category": "backtracking",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find a sequence of knight moves on a chessboard that visits every square exactly once.",
+  "intuition": "Backtracking DFS with Warnsdorff's heuristic: always move to the square with the fewest onward moves. This dramatically reduces backtracking on 5x5 and 6x6 boards.",
+  "complexity": {
+    "time_best": "O(8^(n²))",
+    "time_average": "O(8^(n²))",
+    "time_worst": "O(8^(n²))",
+    "space": "O(n²)"
+  },
+  "parameters": {},
+  "tags": ["backtracking", "knight-tour", "chess", "warnsdorff"],
+  "references": []
+}

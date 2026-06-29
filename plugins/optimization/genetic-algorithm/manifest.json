@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "id": "genetic-algorithm",
+  "name": "Genetic Algorithm",
+  "version": "1.0.0",
+  "category": "optimization",
+  "visualization_type": "CURVE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Maximizes f(x)=-(x-3)²+9 on [-1,7] using a population evolved through selection, crossover, and mutation.",
+  "intuition": "Evolution in miniature — survival of the fittest guides a population toward optimal solutions over successive generations.",
+  "complexity": {
+    "time_best": "O(generations × pop_size)",
+    "time_average": "O(generations × pop_size)",
+    "time_worst": "O(generations × pop_size)",
+    "space": "O(pop_size)"
+  },
+  "tags": ["optimization", "metaheuristic", "evolutionary", "population-based"],
+  "parameters": {
+    "generations": {
+      "type": "integer",
+      "min": 10,
+      "max": 100,
+      "default": 50,
+      "label": "Generations"
+    },
+    "pop_size": {
+      "type": "integer",
+      "min": 4,
+      "max": 30,
+      "default": 10,
+      "label": "Population Size"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": false
+}

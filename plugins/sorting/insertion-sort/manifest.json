@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "id": "insertion-sort",
+  "name": "Insertion Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "execution_target": "wasm",
+  "wasm_module": "wasm_engine",
+  "entry_point": "algorithm.py",
+  "description": "Builds the sorted array one element at a time by inserting each element into its correct position.",
+  "intuition": "Like sorting a hand of cards — pick up each new card and slide it into the right spot among the already-sorted cards.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(1)"
+  },
+  "tags": ["comparison", "in-place", "stable", "adaptive", "online"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 100,
+      "default": 20,
+      "label": "Array Size"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

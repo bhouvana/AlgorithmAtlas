@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "karger-mincut",
+  "name": "Karger's Min-Cut",
+  "version": "1.0.0",
+  "category": "randomized",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find the minimum cut of an undirected graph using Karger's randomized contraction algorithm.",
+  "intuition": "Repeatedly pick a random edge and contract its endpoints into a super-node (merging adjacency lists, removing self-loops). When two nodes remain, the edges between them are the cut. Repeat many times and take the minimum.",
+  "complexity": {
+    "time_best": "O(V^2)",
+    "time_average": "O(V^2 log V)",
+    "time_worst": "O(V^2 log V)",
+    "space": "O(V + E)"
+  },
+  "parameters": {},
+  "tags": ["randomized", "karger", "min-cut", "graph", "contraction"],
+  "references": []
+}

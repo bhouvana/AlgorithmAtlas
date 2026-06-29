@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "lucas-theorem",
+  "name": "Lucas' Theorem",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Compute C(n, k) mod p for prime p using Lucas' Theorem.",
+  "intuition": "Write n and k in base p. Lucas says C(n,k) ≡ ∏ C(n_i, k_i) (mod p), where n_i, k_i are the digits. Uses Pascal's triangle mod p for small digit combinations.",
+  "complexity": {
+    "time_best": "O(p² + log_p(n))",
+    "time_average": "O(p² + log_p(n))",
+    "time_worst": "O(p² + log_p(n))",
+    "space": "O(p²)"
+  },
+  "parameters": {},
+  "tags": ["number-theory", "lucas-theorem", "binomial-coefficient", "modular-arithmetic"],
+  "references": []
+}

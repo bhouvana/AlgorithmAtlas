@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "palindrome-partitioning",
+  "name": "Palindrome Partitioning",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find minimum cuts to partition a string into palindromes.",
+  "intuition": "dp[i] = min cuts for s[0..i]. First precompute palindrome[i][j]. Then dp[i] = min(dp[j-1]+1) for each j where s[j..i] is a palindrome. Bar chart shows dp values as the DP fills.",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(n²)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "palindrome", "string", "min-cut"],
+  "references": []
+}

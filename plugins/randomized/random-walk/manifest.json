@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "random-walk",
+  "name": "Random Walk (2D)",
+  "version": "1.0.0",
+  "category": "randomized",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Simulate a 2D random walk on a grid: at each step, move to a random neighbour.",
+  "intuition": "Starting from the origin, choose a random direction (up/down/left/right) at every step. After many steps the walker covers a region proportional to √steps — demonstrating Brownian motion and diffusion.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "steps": {
+      "type": "integer",
+      "label": "Number of steps",
+      "min": 20,
+      "max": 100,
+      "default": 50
+    }
+  },
+  "tags": ["randomized", "random-walk", "simulation", "probability"],
+  "references": []
+}

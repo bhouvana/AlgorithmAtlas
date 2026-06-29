@@ -1,0 +1,9 @@
+{
+  "slug": "raft-log-replication",
+  "name": "Raft Log Replication",
+  "category": "distributed-systems",
+  "tags": ["distributed", "consensus", "raft", "replication", "log"],
+  "complexity": "O(n)",
+  "visualization": "TIMELINE",
+  "description": "A pre-elected Raft leader replicates 5 client commands to 4 followers using AppendEntries RPCs. Entries are committed once a quorum (majority) of nodes acknowledge them, ensuring durability and consistency."
+}

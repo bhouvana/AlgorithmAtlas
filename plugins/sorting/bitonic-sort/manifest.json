@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "bitonic-sort",
+  "name": "Bitonic Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Sort by constructing a bitonic sequence and recursively sorting its halves in opposite directions.",
+  "intuition": "First make the sequence bitonic (ascending then descending) using pairwise comparisons at different levels, then merge to sort. Works in O(n log²n) and is parallelizable.",
+  "complexity": {
+    "time_best": "O(n log²n)",
+    "time_average": "O(n log²n)",
+    "time_worst": "O(n log²n)",
+    "space": "O(n log n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size (power of 2)",
+      "min": 4,
+      "max": 16,
+      "default": 8
+    }
+  },
+  "tags": ["sorting", "bitonic", "parallel", "network-sort"],
+  "references": []
+}

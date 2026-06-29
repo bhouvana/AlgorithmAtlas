@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "simulated-annealing",
+  "name": "Simulated Annealing",
+  "version": "1.0.0",
+  "category": "randomized",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Minimize a multi-modal 1D energy function using simulated annealing with a geometric cooling schedule.",
+  "intuition": "Start hot: accept any move. Cool gradually: only accept worse moves with probability e^(-ΔE/T). At low temperature, only improvements accepted — settles at global minimum.",
+  "complexity": {
+    "time_best": "O(iters)",
+    "time_average": "O(iters)",
+    "time_worst": "O(iters)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["randomized", "simulated-annealing", "optimization", "metaheuristic"],
+  "references": []
+}

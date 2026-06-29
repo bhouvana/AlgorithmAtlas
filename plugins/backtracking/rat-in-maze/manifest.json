@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "rat-in-maze",
+  "name": "Rat in a Maze",
+  "version": "1.0.0",
+  "category": "backtracking",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find a path from the top-left to the bottom-right of a maze using backtracking.",
+  "intuition": "Try each direction (right, down, left, up) from the current cell. If you hit a wall or already visited cell, backtrack and try another direction. Continue until you reach the goal or exhaust all options.",
+  "complexity": {
+    "time_best": "O(2^(n²))",
+    "time_average": "O(2^(n²))",
+    "time_worst": "O(2^(n²))",
+    "space": "O(n²)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Grid size (n×n)",
+      "min": 4,
+      "max": 8,
+      "default": 6
+    }
+  },
+  "tags": ["backtracking", "maze", "pathfinding", "grid"],
+  "references": []
+}

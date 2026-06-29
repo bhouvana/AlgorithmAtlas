@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "unbounded-knapsack",
+  "name": "Unbounded Knapsack",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Maximize total value when items can be used unlimited times, given a weight capacity.",
+  "intuition": "dp[w] = max value with capacity w. For each capacity and each item: if item fits, try including another copy. dp[w] = max(dp[w], dp[w-weight]+value). Unlike 0/1 knapsack, we look backwards instead of keeping separate rows.",
+  "complexity": {
+    "time_best": "O(n·W)",
+    "time_average": "O(n·W)",
+    "time_worst": "O(n·W)",
+    "space": "O(W)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Max weight capacity",
+      "min": 10,
+      "max": 20,
+      "default": 15
+    }
+  },
+  "tags": ["dynamic-programming", "knapsack", "unbounded", "optimization"],
+  "references": []
+}

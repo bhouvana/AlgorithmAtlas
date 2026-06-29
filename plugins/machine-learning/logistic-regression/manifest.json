@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "logistic-regression",
+  "name": "Logistic Regression (Gradient Descent)",
+  "version": "1.0.0",
+  "category": "machine-learning",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Train a binary logistic regression classifier using gradient descent on 1D data.",
+  "intuition": "Model P(y=1|x) = σ(w·x + b) where σ is the sigmoid function. Each iteration: compute predictions, compute cross-entropy loss, update w and b proportionally to the gradient.",
+  "complexity": {
+    "time_best": "O(n·iters)",
+    "time_average": "O(n·iters)",
+    "time_worst": "O(n·iters)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Training examples",
+      "min": 10,
+      "max": 30,
+      "default": 20
+    }
+  },
+  "tags": ["machine-learning", "logistic-regression", "gradient-descent", "classification"],
+  "references": []
+}

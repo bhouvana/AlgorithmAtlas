@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "n-queens",
+  "name": "N-Queens",
+  "version": "1.0.0",
+  "category": "backtracking",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Place N queens on an N×N chessboard so no two queens threaten each other.",
+  "intuition": "Try placing a queen in each row one at a time. At each step, check if the placement is safe (no attacks on same column or diagonal). If not, backtrack and try the next column.",
+  "complexity": {
+    "time_best": "O(N!)",
+    "time_average": "O(N!)",
+    "time_worst": "O(N!)",
+    "space": "O(N)"
+  },
+  "parameters": {
+    "board_size": {
+      "type": "integer",
+      "label": "Board size (N)",
+      "min": 4,
+      "max": 8,
+      "default": 6
+    }
+  },
+  "tags": ["backtracking", "constraint-satisfaction", "n-queens", "chess"],
+  "references": [
+    {
+      "type": "article",
+      "title": "N-queens problem — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Eight_queens_puzzle"
+    }
+  ]
+}

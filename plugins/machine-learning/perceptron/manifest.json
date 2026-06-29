@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "perceptron",
+  "name": "Perceptron Learning Algorithm",
+  "version": "1.0.0",
+  "category": "machine-learning",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Learn a linear binary classifier by updating weights whenever a sample is misclassified.",
+  "intuition": "For each misclassified sample (x, y): w ← w + y·x. The algorithm converges if the data is linearly separable.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n·T)",
+    "time_worst": "O(n·T)",
+    "space": "O(d)"
+  },
+  "parameters": {
+    "sample_count": {
+      "type": "integer",
+      "label": "Training samples",
+      "min": 6,
+      "max": 16,
+      "default": 10
+    }
+  },
+  "tags": ["machine-learning", "perceptron", "classification", "linear-model"],
+  "references": []
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "fractional-knapsack",
+  "name": "Fractional Knapsack",
+  "version": "1.0.0",
+  "category": "greedy",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Maximize value in a knapsack by taking fractions of items, sorted by value/weight ratio.",
+  "intuition": "Sort items by value-per-unit-weight descending. Take as much of the highest-ratio item as possible, then the next, until the knapsack is full. Taking fractions is allowed.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of items",
+      "min": 4,
+      "max": 10,
+      "default": 6
+    }
+  },
+  "tags": ["greedy", "fractional-knapsack", "optimization", "ratio"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Fractional knapsack problem — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Continuous_knapsack_problem"
+    }
+  ]
+}

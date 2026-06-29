@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "coin-change-ways",
+  "name": "Coin Change II (Number of Ways)",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Count the number of distinct ways to make a target amount using unlimited coins.",
+  "intuition": "dp[i][j] = ways to make amount j using coins[0..i]. For each coin, either skip it (dp[i-1][j]) or use it (dp[i][j-coin]). Builds a 2D table.",
+  "complexity": {
+    "time_best": "O(n·amount)",
+    "time_average": "O(n·amount)",
+    "time_worst": "O(n·amount)",
+    "space": "O(n·amount)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "coin-change", "combinations", "unbounded-knapsack"],
+  "references": []
+}

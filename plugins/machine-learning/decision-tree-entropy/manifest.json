@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "decision-tree-entropy",
+  "name": "Decision Tree — Information Gain",
+  "version": "1.0.0",
+  "category": "machine-learning",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find the optimal binary split threshold for 1D data using information gain (entropy reduction).",
+  "intuition": "Entropy H measures impurity. For each candidate split threshold, compute weighted entropy of the two halves. Pick the split that reduces entropy the most.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "sample_count": {
+      "type": "integer",
+      "label": "Training samples",
+      "min": 8,
+      "max": 20,
+      "default": 12
+    }
+  },
+  "tags": ["machine-learning", "decision-tree", "entropy", "information-gain"],
+  "references": []
+}

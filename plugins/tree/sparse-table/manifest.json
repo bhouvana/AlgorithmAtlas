@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "sparse-table",
+  "name": "Sparse Table (Range Minimum Query)",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Preprocess an array in O(n log n) for O(1) range minimum queries using overlapping power-of-2 ranges.",
+  "intuition": "For each position i and power j, store the minimum of the range [i, i + 2^j - 1]. Any range [l, r] can be answered in O(1) by overlapping two precomputed ranges of length 2^⌊log2(r-l+1)⌋.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n log n)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 8,
+      "max": 16,
+      "default": 12
+    }
+  },
+  "tags": ["tree", "sparse-table", "range-query", "rmq", "preprocessing"],
+  "references": []
+}

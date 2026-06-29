@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "id": "bubble-sort",
+  "name": "Bubble Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "execution_target": "wasm",
+  "wasm_module": "wasm_engine",
+  "entry_point": "algorithm.py",
+  "description": "A simple comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.",
+  "intuition": "Imagine bubbles rising to the surface: after each full pass through the array, the largest unsorted element 'bubbles up' to its final position at the end. The sorted region grows from right to left with each pass.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(1)"
+  },
+  "references": [
+    {
+      "title": "Introduction to Algorithms, 4th Edition — Section 2.2",
+      "type": "book"
+    },
+    {
+      "title": "The Art of Computer Programming, Vol. 3 — Sorting and Searching",
+      "type": "book"
+    }
+  ],
+  "tags": ["sorting", "comparison", "in-place", "stable", "beginner"],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "array_size": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 200,
+        "default": 20,
+        "label": "Array Size"
+      },
+      "input_order": {
+        "type": "string",
+        "enum": ["random", "sorted", "reverse", "nearly_sorted"],
+        "default": "random",
+        "label": "Input Order"
+      }
+    },
+    "required": ["array_size"]
+  },
+  "benchmark_enabled": true,
+  "rust_accelerated": false
+}

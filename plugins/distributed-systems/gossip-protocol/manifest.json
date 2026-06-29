@@ -1,0 +1,17 @@
+{
+  "slug": "gossip-protocol",
+  "name": "Gossip Protocol",
+  "category": "distributed-systems",
+  "visualization_type": "NETWORK_TOPOLOGY",
+  "description": "Epidemic gossip protocol: one infected node spreads information to random neighbors; information spreads exponentially until all nodes are infected.",
+  "complexity": {
+    "time_best": "O(log n)",
+    "time_average": "O(log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "tags": ["distributed", "gossip", "epidemic", "information-dissemination"],
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "class_name": "GossipProtocol"
+}

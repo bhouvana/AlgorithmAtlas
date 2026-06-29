@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "tarjan-scc",
+  "name": "Tarjan's SCC",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find all strongly connected components in a directed graph using Tarjan's algorithm.",
+  "intuition": "DFS assigns each node a discovery time and a low-link value. When a node's low-link equals its discovery time, it is the root of an SCC — pop the stack to collect the component.",
+  "complexity": {
+    "time_best": "O(V+E)",
+    "time_average": "O(V+E)",
+    "time_worst": "O(V+E)",
+    "space": "O(V)"
+  },
+  "parameters": {
+    "node_count": {
+      "type": "integer",
+      "label": "Node count",
+      "min": 4,
+      "max": 9,
+      "default": 6
+    }
+  },
+  "tags": ["graph", "scc", "strongly-connected", "dfs", "tarjan"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Tarjan's strongly connected components algorithm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm"
+    }
+  ]
+}

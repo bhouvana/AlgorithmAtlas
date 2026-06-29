@@ -1,0 +1,102 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  # ─── Algorithm Correctness Gate ─────────────────────────────────────────────
+  # Every PR that touches plugins/ must pass this before merge.
+  algorithm-correctness:
+    name: Algorithm Correctness
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install Plugin SDK
+        run: pip install -e packages/plugin-sdk/python
+
+      - name: Run all algorithm tests
+        run: |
+          pip install pytest
+          pytest plugins/ -v --tb=short \
+            --ignore=plugins/.keep \
+            -x  # Stop on first failure — correctness is non-negotiable
+
+  # ─── Backend ────────────────────────────────────────────────────────────────
+  backend:
+    name: Backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install SDK + backend
+        run: |
+          pip install -e packages/plugin-sdk/python
+          pip install -e "apps/backend[dev]"
+
+      - name: Type check
+        run: mypy apps/backend/algorithm_atlas --ignore-missing-imports
+
+      - name: Lint
+        run: ruff check apps/backend/algorithm_atlas
+
+      - name: Unit tests
+        run: pytest apps/backend/tests/unit -v --tb=short
+
+  # ─── Frontend ────────────────────────────────────────────────────────────────
+  frontend:
+    name: Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: apps/frontend/package-lock.json
+
+      - run: npm ci
+        working-directory: apps/frontend
+
+      - name: Type check
+        run: npm run typecheck
+        working-directory: apps/frontend
+
+      - name: Build
+        run: npm run build
+        working-directory: apps/frontend
+
+  # ─── Rust Engine ─────────────────────────────────────────────────────────────
+  rust:
+    name: Rust Engine
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: packages/rust-engine
+
+      - name: Clippy
+        run: cargo clippy -- -D warnings
+        working-directory: packages/rust-engine
+
+      - name: Tests
+        run: cargo test
+        working-directory: packages/rust-engine

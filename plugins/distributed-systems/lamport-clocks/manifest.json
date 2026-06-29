@@ -1,0 +1,17 @@
+{
+  "slug": "lamport-clocks",
+  "name": "Lamport Clocks",
+  "category": "distributed-systems",
+  "visualization_type": "TIMELINE",
+  "description": "Scalar Lamport clocks: on send LC=LC+1; on receive LC=max(local,received)+1. Provides a partial ordering of events in distributed systems.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(1)",
+    "time_worst": "O(1)",
+    "space": "O(n)"
+  },
+  "tags": ["distributed", "logical-clocks", "ordering", "causality"],
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "class_name": "LamportClocks"
+}

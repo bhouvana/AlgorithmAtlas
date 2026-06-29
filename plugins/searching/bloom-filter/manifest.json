@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "bloom-filter",
+  "name": "Bloom Filter",
+  "version": "1.0.0",
+  "category": "searching",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Probabilistic membership data structure using a bit array and k hash functions. No false negatives, small false positive rate.",
+  "intuition": "Insert: set k bit positions. Query: check all k positions — if any is 0, element definitely absent. If all are 1, element probably present (false positives possible). More bits = lower false positive rate.",
+  "complexity": {
+    "time_best": "O(k)",
+    "time_average": "O(k)",
+    "time_worst": "O(k)",
+    "space": "O(m)"
+  },
+  "parameters": {},
+  "tags": ["searching", "bloom-filter", "probabilistic", "hashing", "data-structure"],
+  "references": []
+}

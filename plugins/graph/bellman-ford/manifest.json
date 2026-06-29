@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "bellman-ford",
+  "name": "Bellman-Ford Shortest Path",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Finds shortest paths from a source node and detects negative-weight cycles.",
+  "intuition": "Relax all edges V-1 times. Unlike Dijkstra, handles negative weights. A final pass detects negative cycles — if any distance still decreases, a cycle exists.",
+  "complexity": {
+    "time_best": "O(V · E)",
+    "time_average": "O(V · E)",
+    "time_worst": "O(V · E)",
+    "space": "O(V)"
+  },
+  "parameters": {
+    "node_count": {
+      "type": "integer",
+      "label": "Node count",
+      "min": 4,
+      "max": 8,
+      "default": 6
+    }
+  },
+  "tags": ["graph", "shortest-path", "dynamic-programming", "negative-weights", "weighted"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Bellman-Ford algorithm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm"
+    }
+  ]
+}

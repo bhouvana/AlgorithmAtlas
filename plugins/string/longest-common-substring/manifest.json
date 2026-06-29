@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "longest-common-substring",
+  "name": "Longest Common Substring",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the longest string that is a contiguous substring of both input strings.",
+  "intuition": "dp[i][j] = length of longest common suffix of s1[0..i-1] and s2[0..j-1]. If s1[i-1]==s2[j-1], dp[i][j] = dp[i-1][j-1]+1; else 0.",
+  "complexity": {
+    "time_best": "O(m·n)",
+    "time_average": "O(m·n)",
+    "time_worst": "O(m·n)",
+    "space": "O(m·n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "String length",
+      "min": 4,
+      "max": 8,
+      "default": 6
+    }
+  },
+  "tags": ["string", "longest-common-substring", "dynamic-programming", "suffix"],
+  "references": []
+}

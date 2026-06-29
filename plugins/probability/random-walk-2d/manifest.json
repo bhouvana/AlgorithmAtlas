@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "random-walk-2d",
+  "name": "2D Random Walk",
+  "version": "1.0.0",
+  "category": "probability",
+  "visualization_type": "PROBABILITY_SPACE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "A particle steps randomly in one of four cardinal directions at each tick. After n steps the expected distance from the origin is √n.",
+  "intuition": "Imagine a drunk person on a city grid. Every intersection they pick a random direction — yet on average they end up √n blocks from where they started.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "tags": ["probability", "random-walk", "simulation", "diffusion", "stochastic"],
+  "parameters": {
+    "steps": {
+      "type": "integer",
+      "min": 50,
+      "max": 2000,
+      "default": 500,
+      "label": "Steps"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

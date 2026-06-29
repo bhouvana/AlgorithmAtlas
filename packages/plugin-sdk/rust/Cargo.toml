@@ -1,0 +1,8 @@
+[package]
+name = "algorithm-atlas-sdk"
+version = "0.1.0"
+edition = "2021"
+description = "Rust types and trait for Algorithm Atlas plugins (mirrors the Python SDK)"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }

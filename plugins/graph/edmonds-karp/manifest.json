@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "edmonds-karp",
+  "name": "Edmonds-Karp Algorithm",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find max-flow using BFS to find augmenting paths (Edmonds-Karp = Ford-Fulkerson with BFS).",
+  "intuition": "BFS finds shortest augmenting path each iteration. Augment along that path. BFS guarantees O(VE) augmentations and O(VE^2) total time — polynomial unlike DFS-based Ford-Fulkerson.",
+  "complexity": {
+    "time_best": "O(VE^2)",
+    "time_average": "O(VE^2)",
+    "time_worst": "O(VE^2)",
+    "space": "O(V+E)"
+  },
+  "parameters": {},
+  "tags": ["graph", "max-flow", "edmonds-karp", "ford-fulkerson", "bfs", "network-flow"],
+  "references": []
+}

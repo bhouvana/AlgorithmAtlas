@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "id": "radix-sort",
+  "name": "Radix Sort (LSD)",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Non-comparison sort that groups elements by individual digits from least significant to most significant.",
+  "intuition": "Sort by the ones digit, then tens digit, then hundreds — each pass using a stable sort, until the whole array is sorted.",
+  "complexity": {
+    "time_best": "O(nk)",
+    "time_average": "O(nk)",
+    "time_worst": "O(nk)",
+    "space": "O(n + k)"
+  },
+  "tags": ["non-comparison", "stable", "integer", "linear", "lsd"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 100,
+      "default": 20,
+      "label": "Array Size"
+    },
+    "max_value": {
+      "type": "integer",
+      "min": 10,
+      "max": 999,
+      "default": 100,
+      "label": "Max Value"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

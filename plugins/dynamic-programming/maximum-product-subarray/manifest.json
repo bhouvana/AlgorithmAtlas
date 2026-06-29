@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "maximum-product-subarray",
+  "name": "Maximum Product Subarray",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the contiguous subarray with the largest product.",
+  "intuition": "Track both max_so_far and min_so_far at each position (negatives can become max after another negative). Update both at each step.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 4,
+      "max": 12,
+      "default": 8
+    }
+  },
+  "tags": ["dynamic-programming", "product-subarray", "linear-dp", "kadane-variant"],
+  "references": []
+}

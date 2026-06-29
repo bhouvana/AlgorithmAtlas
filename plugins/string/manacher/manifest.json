@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "manacher",
+  "name": "Manacher's Algorithm",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the longest palindromic substring in O(n) using the mirror property.",
+  "intuition": "Maintain a center and right boundary of the current rightmost palindrome. Each new center can use the mirror's radius as a starting estimate, avoiding redundant comparisons.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "text_length": {
+      "type": "integer",
+      "label": "String length",
+      "min": 8,
+      "max": 20,
+      "default": 12
+    }
+  },
+  "tags": ["string", "palindrome", "manacher", "linear"],
+  "references": []
+}

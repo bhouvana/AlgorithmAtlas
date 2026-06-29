@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "kmp",
+  "name": "KMP String Search",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Knuth-Morris-Pratt string search — finds pattern in text in O(n+m) using a failure function.",
+  "intuition": "Precompute how far to shift on mismatch so no character is compared twice. The failure function encodes the longest proper prefix that is also a suffix.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n + m)",
+    "time_worst": "O(n + m)",
+    "space": "O(m)"
+  },
+  "parameters": {
+    "text_length": {
+      "type": "integer",
+      "label": "Text length",
+      "min": 16,
+      "max": 32,
+      "default": 20
+    }
+  },
+  "tags": ["string", "pattern-matching", "kmp", "failure-function"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Knuth-Morris-Pratt algorithm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "preorder-traversal",
+  "name": "Preorder Traversal",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "TREE",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Visits the root first, then recursively traverses the left and right subtrees.",
+  "intuition": "A pre-order traversal is like reading a table of contents: you see the chapter title (root) before any of its sections (children). It produces the order in which nodes are first encountered during a DFS.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(h)"
+  },
+  "parameters": {
+    "node_count": {
+      "type": "integer",
+      "label": "Node count",
+      "min": 5,
+      "max": 15,
+      "default": 9
+    }
+  },
+  "tags": ["tree", "traversal", "preorder", "dfs", "serialization"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Tree Traversal — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tree_traversal"
+    }
+  ]
+}

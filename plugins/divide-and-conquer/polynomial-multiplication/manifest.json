@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "polynomial-multiplication",
+  "name": "Polynomial Multiplication (FFT)",
+  "version": "1.0.0",
+  "category": "divide-and-conquer",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Multiply two polynomials in O(n log n) using the Fast Fourier Transform.",
+  "intuition": "Convert polynomials to point-value form at n roots of unity (FFT). Multiply pointwise O(n). Convert back to coefficient form (inverse FFT). Total O(n log n) vs O(n^2) naive.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["divide-and-conquer", "fft", "polynomial", "convolution", "number-theory"],
+  "references": []
+}

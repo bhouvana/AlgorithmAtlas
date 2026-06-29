@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "two-sum",
+  "name": "Two Sum",
+  "version": "1.0.0",
+  "category": "searching",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find two indices in an array that add up to a target value.",
+  "intuition": "Use a hash map to store complement values. For each element, check if its complement (target - element) is already in the map. O(n) time.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 4,
+      "max": 12,
+      "default": 8
+    }
+  },
+  "tags": ["searching", "two-sum", "hash-map", "complement"],
+  "references": []
+}

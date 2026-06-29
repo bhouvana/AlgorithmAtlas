@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "morris-traversal",
+  "name": "Morris Inorder Traversal",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "TREE",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Traverse a binary tree inorder without recursion or a stack using O(1) extra space.",
+  "intuition": "Temporarily link each node to its inorder predecessor. When a node's left subtree is exhausted, print the node and follow the right pointer. Restore the tree structure afterward.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of nodes",
+      "min": 5,
+      "max": 12,
+      "default": 7
+    }
+  },
+  "tags": ["tree", "morris", "inorder", "threaded-tree", "space-efficient"],
+  "references": []
+}

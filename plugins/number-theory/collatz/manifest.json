@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "collatz",
+  "name": "Collatz Sequence",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Visualize the Collatz sequence: n → n/2 if even, 3n+1 if odd. Conjectured to always reach 1.",
+  "intuition": "Simple rule: even → halve, odd → triple and add one. Despite the simple rule, predicting the stopping time is still an unsolved problem. Some numbers take surprisingly long paths.",
+  "complexity": {
+    "time_best": "O(log n)",
+    "time_average": "O(log n)",
+    "time_worst": "O(unknown)",
+    "space": "O(sequence length)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Starting number",
+      "min": 2,
+      "max": 99,
+      "default": 27
+    }
+  },
+  "tags": ["number-theory", "collatz", "sequence", "conjecture"],
+  "references": []
+}

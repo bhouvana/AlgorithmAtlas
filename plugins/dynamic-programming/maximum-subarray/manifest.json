@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "maximum-subarray",
+  "name": "Maximum Subarray (Kadane's)",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the contiguous subarray with the largest sum using Kadane's O(n) algorithm.",
+  "intuition": "At each element, decide whether to extend the previous subarray or start fresh. dp[i] = max(arr[i], dp[i-1] + arr[i]). Track the global maximum as you go.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 5,
+      "max": 15,
+      "default": 10
+    }
+  },
+  "tags": ["dynamic-programming", "kadane", "maximum-subarray", "greedy"],
+  "references": []
+}

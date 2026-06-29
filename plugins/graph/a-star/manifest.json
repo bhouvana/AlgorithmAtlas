@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "id": "a-star",
+  "name": "A* Pathfinding",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRID",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Finds the shortest path on a grid using a heuristic (Manhattan distance) to guide exploration.",
+  "intuition": "Like Dijkstra but smarter: prioritize cells that are both close to the start AND close to the goal. f = g + h where g = cost from start, h = Manhattan distance to goal.",
+  "complexity": {
+    "time_best": "O(E)",
+    "time_average": "O(E log V)",
+    "time_worst": "O(E log V)",
+    "space": "O(V)"
+  },
+  "parameters": {
+    "grid_size": {
+      "type": "integer",
+      "label": "Grid size",
+      "min": 6,
+      "max": 12,
+      "default": 9
+    },
+    "wall_density": {
+      "type": "integer",
+      "label": "Wall density %",
+      "min": 10,
+      "max": 35,
+      "default": 20
+    }
+  },
+  "tags": ["graph", "pathfinding", "heuristic", "grid", "a-star"],
+  "references": [
+    {
+      "type": "article",
+      "title": "A* search algorithm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/A*_search_algorithm"
+    }
+  ]
+}

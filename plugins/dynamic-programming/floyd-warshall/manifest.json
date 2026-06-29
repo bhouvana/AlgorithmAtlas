@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "floyd-warshall",
+  "name": "Floyd-Warshall All-Pairs Shortest Paths",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Finds shortest paths between every pair of nodes in O(V³) using DP.",
+  "intuition": "For each intermediate node k, relax all pairs (i, j): if going through k is shorter, update dist[i][j]. The 2D table shows all pairwise distances converging.",
+  "complexity": {
+    "time_best": "O(V³)",
+    "time_average": "O(V³)",
+    "time_worst": "O(V³)",
+    "space": "O(V²)"
+  },
+  "parameters": {
+    "node_count": {
+      "type": "integer",
+      "label": "Nodes",
+      "min": 4,
+      "max": 6,
+      "default": 5
+    }
+  },
+  "tags": ["dynamic-programming", "graph", "shortest-path", "all-pairs"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Floyd-Warshall algorithm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm"
+    }
+  ]
+}

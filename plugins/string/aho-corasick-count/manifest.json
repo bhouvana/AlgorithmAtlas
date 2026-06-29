@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "aho-corasick-count",
+  "name": "Aho-Corasick Pattern Count",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Count all occurrences of multiple patterns in a text using the Aho-Corasick automaton with failure links.",
+  "intuition": "Build a trie of all patterns and add failure links (like KMP). Process the text in one pass: follow trie edges, fall back via failure links on mismatch, and count matches at each state (including via suffix links).",
+  "complexity": {
+    "time_best": "O(n + m + z)",
+    "time_average": "O(n + m + z)",
+    "time_worst": "O(n + m + z)",
+    "space": "O(m)"
+  },
+  "parameters": {},
+  "tags": ["string", "aho-corasick", "pattern-matching", "multi-pattern", "automaton"],
+  "references": []
+}

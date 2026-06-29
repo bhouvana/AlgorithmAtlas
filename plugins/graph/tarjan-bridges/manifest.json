@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "tarjan-bridges",
+  "name": "Tarjan's Bridge Finding",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find all bridges in an undirected graph using Tarjan's algorithm.",
+  "intuition": "A bridge is an edge whose removal disconnects the graph. DFS assigns discovery times; low[] = min reachable discovery time via back-edges. Edge (u,v) is a bridge if low[v] > disc[u].",
+  "complexity": {
+    "time_best": "O(V + E)",
+    "time_average": "O(V + E)",
+    "time_worst": "O(V + E)",
+    "space": "O(V)"
+  },
+  "parameters": {},
+  "tags": ["graph", "tarjan", "bridge", "dfs", "connectivity"],
+  "references": []
+}

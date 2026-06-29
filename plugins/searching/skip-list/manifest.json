@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "skip-list",
+  "name": "Skip List (Probabilistic Search)",
+  "version": "1.0.0",
+  "category": "searching",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "A probabilistic multi-level linked list that supports O(log n) search, insert, and delete in expected time.",
+  "intuition": "Multiple sorted linked lists, each a subset of the level below. Search starts at top (fewest nodes), drops down when the next node is too large. Like binary search but for linked lists.",
+  "complexity": {
+    "time_best": "O(log n)",
+    "time_average": "O(log n)",
+    "time_worst": "O(n)",
+    "space": "O(n log n)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Elements",
+      "min": 8,
+      "max": 15,
+      "default": 10
+    }
+  },
+  "tags": ["searching", "skip-list", "probabilistic", "linked-list"],
+  "references": []
+}

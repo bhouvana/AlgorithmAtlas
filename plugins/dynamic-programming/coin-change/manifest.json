@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "coin-change",
+  "name": "Coin Change (Min Coins)",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Finds the minimum number of coins needed to make a target amount using bottom-up DP.",
+  "intuition": "dp[a] = min coins to make amount a. For each amount, try every coin: dp[a] = min(dp[a], dp[a - coin] + 1). Fills a 1D table left-to-right, each cell showing the optimal coin count.",
+  "complexity": {
+    "time_best": "O(amount · coins)",
+    "time_average": "O(amount · coins)",
+    "time_worst": "O(amount · coins)",
+    "space": "O(amount)"
+  },
+  "parameters": {
+    "target_amount": {
+      "type": "integer",
+      "label": "Target amount",
+      "min": 8,
+      "max": 20,
+      "default": 12
+    }
+  },
+  "tags": ["dynamic-programming", "greedy", "coins", "optimization", "bottom-up"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Change-making problem — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Change-making_problem"
+    }
+  ]
+}

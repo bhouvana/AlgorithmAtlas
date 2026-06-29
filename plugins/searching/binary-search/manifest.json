@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "id": "binary-search",
+  "name": "Binary Search",
+  "version": "1.0.0",
+  "category": "searching",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Repeatedly halves the search range by comparing the target to the middle element of a sorted array.",
+  "intuition": "Open a dictionary to the middle — if your word comes before, search the left half; if after, search the right half.",
+  "complexity": {
+    "time_best": "O(1)",
+    "time_average": "O(log n)",
+    "time_worst": "O(log n)",
+    "space": "O(1)"
+  },
+  "tags": ["searching", "sorted", "divide-and-conquer", "logarithmic"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 100,
+      "default": 20,
+      "label": "Array Size"
+    },
+    "target_position": {
+      "type": "choice",
+      "choices": ["first", "middle", "last", "missing"],
+      "default": "middle",
+      "label": "Target Position"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

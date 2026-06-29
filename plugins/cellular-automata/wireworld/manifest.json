@@ -1,0 +1,9 @@
+{
+  "slug": "wireworld",
+  "name": "WireWorld",
+  "category": "cellular-automata",
+  "tags": ["cellular-automata", "circuit", "simulation", "logic", "digital"],
+  "complexity": "O(n²)",
+  "visualization": "PARTICLE_FIELD",
+  "description": "WireWorld is a cellular automaton that simulates digital circuits: electron signals (head/tail pairs) travel along conductor wires through four-state rules powerful enough to construct logic gates and Turing-complete computers."
+}

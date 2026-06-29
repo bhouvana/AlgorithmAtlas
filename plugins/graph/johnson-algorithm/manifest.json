@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "johnson-algorithm",
+  "name": "Johnson's Algorithm",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "All-pairs shortest paths for sparse graphs using Bellman-Ford reweighting and Dijkstra.",
+  "intuition": "Add a virtual node q connected to every node with weight 0. Run Bellman-Ford from q to get potentials h[v]. Reweight edges: w'(u,v) = w(u,v) + h[u] - h[v] ≥ 0. Run Dijkstra from each node on reweighted graph.",
+  "complexity": {
+    "time_best": "O(V^2 log V + VE)",
+    "time_average": "O(V^2 log V + VE)",
+    "time_worst": "O(V^2 log V + VE)",
+    "space": "O(V^2)"
+  },
+  "parameters": {},
+  "tags": ["graph", "shortest-path", "all-pairs", "johnson", "dijkstra", "bellman-ford"],
+  "references": []
+}

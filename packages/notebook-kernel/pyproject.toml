@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "algorithm-atlas-notebook"
+version = "0.4.1"
+description = "Jupyter-compatible notebook interface for Algorithm Atlas"
+requires-python = ">=3.11"
+dependencies = [
+    "algorithm-atlas-sdk",
+    "IPython>=8",
+]
+
+[project.optional-dependencies]
+dev = ["jupyter", "notebook"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["algorithm_atlas_notebook*"]

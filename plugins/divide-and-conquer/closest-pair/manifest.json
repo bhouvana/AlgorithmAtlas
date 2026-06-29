@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "closest-pair",
+  "name": "Closest Pair of Points",
+  "version": "1.0.0",
+  "category": "divide-and-conquer",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the pair of points with minimum Euclidean distance using divide-and-conquer.",
+  "intuition": "Sort points by x-coordinate. Divide into left/right halves; find min distance d in each. Then check the strip of width 2d around the midline — any closer pair must be in this strip.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of points",
+      "min": 4,
+      "max": 10,
+      "default": 6
+    }
+  },
+  "tags": ["divide-and-conquer", "geometry", "closest-pair", "recursion"],
+  "references": []
+}

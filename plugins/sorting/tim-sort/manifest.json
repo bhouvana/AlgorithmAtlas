@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "tim-sort",
+  "name": "Tim Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Hybrid algorithm combining Insertion Sort for small runs and Merge Sort for combining runs, as used in Python and Java.",
+  "intuition": "Find naturally-ordered 'runs' in the data, extend short runs with insertion sort, then merge all runs with merge sort.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "tags": ["comparison", "stable", "hybrid", "adaptive", "real-world"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 100,
+      "default": 32,
+      "label": "Array Size"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

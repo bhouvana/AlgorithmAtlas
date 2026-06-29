@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "interval-tree",
+  "name": "Interval Tree",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Build an interval tree and query all overlapping intervals in O(log n + k) time.",
+  "intuition": "Augmented BST: each node stores an interval [lo,hi] sorted by lo. Each node also stores max_hi — the maximum hi in its subtree. To find overlaps with query [ql,qr]: recurse left if left.max_hi >= ql, check current node, recurse right if node.lo <= qr.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(log n + k)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["tree", "interval-tree", "augmented-bst", "range-query", "data-structure"],
+  "references": []
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "bitmask-tsp",
+  "name": "Bitmask DP — Traveling Salesman",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Exact TSP solution for small n using bitmask dynamic programming in O(2^n · n²).",
+  "intuition": "dp[mask][i] = minimum cost to visit all cities in mask, ending at city i. Fill table by extending each partial tour to unvisited cities. Reconstruct optimal path at the end.",
+  "complexity": {
+    "time_best": "O(2^n · n²)",
+    "time_average": "O(2^n · n²)",
+    "time_worst": "O(2^n · n²)",
+    "space": "O(2^n · n)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "tsp", "bitmask", "combinatorial", "exact"],
+  "references": []
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Algorithm Atlas",
+  "version": "0.4.3",
+  "identifier": "dev.algorithmatlas",
+  "build": {
+    "beforeDevCommand": "cd ../frontend && npm run dev",
+    "devUrl":           "http://localhost:5173",
+    "beforeBuildCommand": "cd ../frontend && npm run build:wasm && npm run build",
+    "frontendDist":     "../frontend/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title":     "Algorithm Atlas",
+        "width":     1280,
+        "height":    840,
+        "minWidth":  900,
+        "minHeight": 600,
+        "resizable": true,
+        "center":    true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active":  true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "category": "DeveloperTool",
+    "shortDescription": "Interactive encyclopedia of algorithms and computational thinking",
+    "longDescription":  "Algorithm Atlas is an interactive platform for visualizing, benchmarking, and understanding algorithms. WASM-enabled algorithms run entirely offline in the browser.",
+    "copyright":        "Algorithm Atlas contributors"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "reservoir-sampling",
+  "name": "Reservoir Sampling",
+  "version": "1.0.0",
+  "category": "randomized",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Uniformly sample k items from a stream of unknown length n in O(n) time and O(k) space.",
+  "intuition": "Keep first k items. For each new item i > k, replace a random reservoir slot with probability k/i. Each item ends up with equal probability k/n of being in the final sample.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(k)"
+  },
+  "parameters": {
+    "stream_size": {
+      "type": "integer",
+      "label": "Stream size",
+      "min": 10,
+      "max": 30,
+      "default": 20
+    },
+    "reservoir_size": {
+      "type": "integer",
+      "label": "Reservoir size (k)",
+      "min": 3,
+      "max": 8,
+      "default": 5
+    }
+  },
+  "tags": ["randomized", "reservoir-sampling", "streaming", "probability"],
+  "references": []
+}

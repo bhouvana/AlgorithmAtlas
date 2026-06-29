@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "gradient-descent-1d",
+  "name": "Gradient Descent (1D)",
+  "version": "1.0.0",
+  "category": "optimization",
+  "visualization_type": "CURVE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Minimizes f(x)=x²-4x+5 by iteratively stepping opposite the gradient. Converges to the global minimum at x=2.",
+  "intuition": "A ball rolling down a smooth hill always moves in the steepest downhill direction and settles at the lowest point.",
+  "complexity": {
+    "time_best": "O(steps)",
+    "time_average": "O(steps)",
+    "time_worst": "O(steps)",
+    "space": "O(1)"
+  },
+  "tags": ["optimization", "gradient", "calculus", "convex", "1d"],
+  "parameters": {
+    "lr": {
+      "type": "float",
+      "min": 0.01,
+      "max": 0.95,
+      "default": 0.3,
+      "label": "Learning Rate"
+    },
+    "steps": {
+      "type": "integer",
+      "min": 5,
+      "max": 100,
+      "default": 50,
+      "label": "Steps"
+    }
+  },
+  "benchmark_enabled": false
+}

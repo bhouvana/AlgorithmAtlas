@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "optimal-bst",
+  "name": "Optimal BST (Knuth's Algorithm)",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find the binary search tree with minimum expected search cost given key frequencies, using Knuth's O(n³) DP.",
+  "intuition": "dp[i][j] = min expected cost for BST containing keys i..j. Try each key k as root: cost = dp[i][k-1] + dp[k+1][j] + sum_of_weights[i..j]. Knuth's optimization limits k search range to O(1) amortized.",
+  "complexity": {
+    "time_best": "O(n³)",
+    "time_average": "O(n³)",
+    "time_worst": "O(n³)",
+    "space": "O(n²)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "optimal-bst", "knuth", "binary-search-tree", "classic"],
+  "references": []
+}

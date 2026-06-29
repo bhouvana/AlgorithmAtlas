@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "diameter",
+  "name": "Diameter of a Tree",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "TREE",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the longest path between any two nodes in a binary tree.",
+  "intuition": "The diameter either passes through the root (left_height + right_height) or lies entirely in the left or right subtree. DFS computes the height of each subtree and updates the maximum diameter seen.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(h)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of nodes",
+      "min": 5,
+      "max": 12,
+      "default": 7
+    }
+  },
+  "tags": ["tree", "diameter", "dfs", "binary-tree", "longest-path"],
+  "references": []
+}

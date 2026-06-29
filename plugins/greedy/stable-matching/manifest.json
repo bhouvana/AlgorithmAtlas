@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "stable-matching",
+  "name": "Stable Matching (Gale-Shapley)",
+  "version": "1.0.0",
+  "category": "greedy",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find a stable matching between two equal-sized sets using the Gale-Shapley algorithm.",
+  "intuition": "Unmatched proposers propose to their next preference. Receivers tentatively accept the best offer seen so far and reject current match if better arrives. Terminates in O(n²) proposals with a stable, proposer-optimal matching.",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(n²)"
+  },
+  "parameters": {},
+  "tags": ["greedy", "stable-matching", "gale-shapley", "bipartite"],
+  "references": []
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "id": "birthday-paradox",
+  "name": "Birthday Paradox",
+  "version": "1.0.0",
+  "category": "probability",
+  "visualization_type": "PROBABILITY_SPACE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Simulates the birthday problem: in a group of n people, what is the probability that at least two share a birthday? Only 23 people gives >50% chance.",
+  "intuition": "With 23 people there are 253 possible pairs of birthdays — not 23. The many pairs collectively push collision probability past 50%, defying intuition.",
+  "complexity": {
+    "time_best": "O(trials × group_size)",
+    "time_average": "O(trials × group_size)",
+    "time_worst": "O(trials × group_size)",
+    "space": "O(group_size)"
+  },
+  "tags": ["probability", "birthday-paradox", "simulation", "combinatorics", "collision"],
+  "parameters": {
+    "trials": {
+      "type": "integer",
+      "min": 100,
+      "max": 5000,
+      "default": 1000,
+      "label": "Trials"
+    },
+    "group_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 60,
+      "default": 23,
+      "label": "Group Size"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

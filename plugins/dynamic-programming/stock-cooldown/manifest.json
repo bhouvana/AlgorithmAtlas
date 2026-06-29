@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "stock-cooldown",
+  "name": "Stock Trading with Cooldown",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Maximize stock profit with 1-day cooldown after selling using DP state machine.",
+  "intuition": "Three states: held (own stock), sold (just sold, must cool down), rest (no stock, ready to buy). Transitions: held→sold (sell), sold→rest (cool down), rest→held (buy). DP fills each day.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "stock", "cooldown", "state-machine"],
+  "references": []
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "trie",
+  "name": "Trie (Prefix Tree)",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "TREE",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Build a trie from a list of words, then search for prefixes.",
+  "intuition": "A trie stores characters at each node. To insert a word, walk character by character, creating nodes as needed. Mark the last node as end-of-word. Search works the same way — if all characters are found, the prefix/word exists.",
+  "complexity": {
+    "time_best": "O(L) per operation",
+    "time_average": "O(L) per operation",
+    "time_worst": "O(L) per operation",
+    "space": "O(n × L)"
+  },
+  "parameters": {},
+  "tags": ["tree", "trie", "prefix-tree", "string", "search"],
+  "references": []
+}

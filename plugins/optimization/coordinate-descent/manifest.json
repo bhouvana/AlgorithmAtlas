@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "coordinate-descent",
+  "name": "Coordinate Descent",
+  "version": "1.0.0",
+  "category": "optimization",
+  "visualization_type": "CURVE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Minimizes f(x,y)=x²+2y²+xy by alternating exact line searches along each coordinate axis.",
+  "intuition": "Tune two knobs alternately — each turn brings one variable to its optimum given the other, spiraling to the global minimum.",
+  "complexity": {
+    "time_best": "O(steps)",
+    "time_average": "O(steps)",
+    "time_worst": "O(steps)",
+    "space": "O(1)"
+  },
+  "tags": ["optimization", "coordinate-descent", "convex", "analytic"],
+  "parameters": {
+    "steps": {
+      "type": "integer",
+      "min": 4,
+      "max": 80,
+      "default": 40,
+      "label": "Steps"
+    }
+  },
+  "benchmark_enabled": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "prime-factorization",
+  "name": "Prime Factorization",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Decompose a number into its prime factors using trial division.",
+  "intuition": "Divide by 2 repeatedly, then by each odd number up to √n. Each time a divisor p divides n, record it as a factor and divide n by p until it no longer divides. If n > 1 remains, it's a prime factor itself.",
+  "complexity": {
+    "time_best": "O(√n)",
+    "time_average": "O(√n)",
+    "time_worst": "O(√n)",
+    "space": "O(log n)"
+  },
+  "parameters": {},
+  "tags": ["number-theory", "factorization", "primes", "trial-division"],
+  "references": []
+}

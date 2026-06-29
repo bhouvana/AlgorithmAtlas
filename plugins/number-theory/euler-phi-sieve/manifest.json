@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "euler-phi-sieve",
+  "name": "Euler's Totient Sieve",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Compute Euler's totient φ(n) for all n from 1 to N using a linear sieve.",
+  "intuition": "φ(n) counts integers in [1,n] coprime to n. Start with φ[i]=i, then for each prime p, reduce every multiple by factor (p-1)/p. Primes can be detected because their φ equals themselves minus 1.",
+  "complexity": {
+    "time_best": "O(n log log n)",
+    "time_average": "O(n log log n)",
+    "time_worst": "O(n log log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "n": {
+      "type": "integer",
+      "label": "Compute up to N",
+      "min": 10,
+      "max": 50,
+      "default": 30
+    }
+  },
+  "tags": ["number-theory", "euler-totient", "sieve", "prime"],
+  "references": []
+}

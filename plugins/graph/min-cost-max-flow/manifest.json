@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "min-cost-max-flow",
+  "name": "Min-Cost Max-Flow",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find maximum flow with minimum cost using SPFA to find cheapest augmenting paths (successive shortest paths).",
+  "intuition": "Repeatedly find the min-cost augmenting path via SPFA (Bellman-Ford BFS on residual graph). Augment along it. The total flow is maximized while total cost is minimized.",
+  "complexity": {
+    "time_best": "O(VE² log V)",
+    "time_average": "O(VE² log V)",
+    "time_worst": "O(VE² log V)",
+    "space": "O(V+E)"
+  },
+  "parameters": {},
+  "tags": ["graph", "min-cost-max-flow", "network-flow", "spfa", "shortest-path"],
+  "references": []
+}

@@ -1,0 +1,9 @@
+{
+  "slug": "boids",
+  "name": "Boids Flocking",
+  "category": "cellular-automata",
+  "tags": ["cellular-automata", "flocking", "simulation", "emergent", "boids"],
+  "complexity": "O(boids²)",
+  "visualization": "PARTICLE_FIELD",
+  "description": "A discrete grid approximation of Craig Reynolds' Boids flocking algorithm: 20 agents navigate a 40×40 grid using cohesion, separation, and alignment rules that produce emergent flocking behavior without any central coordination."
+}

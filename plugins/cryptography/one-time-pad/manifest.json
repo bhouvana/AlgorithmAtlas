@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "one-time-pad",
+  "name": "One-Time Pad (OTP)",
+  "version": "1.0.0",
+  "category": "cryptography",
+  "visualization_type": "STATE_MACHINE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Demonstrates the One-Time Pad cipher: XOR each plaintext byte with a corresponding random key byte to produce ciphertext, then XOR with the same key to decrypt — the only provably unbreakable cipher.",
+  "intuition": "XOR is its own inverse: A⊕K=C and C⊕K=A. Because the key is truly random and never reused, the ciphertext reveals zero information about the plaintext — every possible message is equally likely.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "tags": ["cryptography", "otp", "xor", "information-theoretic", "beginner"],
+  "parameters": {
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": false
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "activity-selection",
+  "name": "Activity Selection",
+  "version": "1.0.0",
+  "category": "greedy",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Select the maximum number of non-overlapping activities sorted by finish time.",
+  "intuition": "Sort activities by finish time. Greedily pick each activity if its start time is ≥ the finish time of the last selected activity. This locally optimal choice leads to a globally optimal solution.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of activities",
+      "min": 5,
+      "max": 15,
+      "default": 8
+    }
+  },
+  "tags": ["greedy", "activity-selection", "interval-scheduling", "optimization"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Activity selection problem — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Activity_selection_problem"
+    }
+  ]
+}

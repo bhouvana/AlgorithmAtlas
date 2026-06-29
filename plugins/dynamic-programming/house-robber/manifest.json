@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "house-robber",
+  "name": "House Robber",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the maximum amount you can rob from non-adjacent houses.",
+  "intuition": "dp[i] = max(dp[i-1], dp[i-2] + nums[i]). Either skip house i (take dp[i-1]) or rob it (dp[i-2] + value).",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Number of houses",
+      "min": 4,
+      "max": 12,
+      "default": 8
+    }
+  },
+  "tags": ["dynamic-programming", "house-robber", "linear-dp", "fibonacci-like"],
+  "references": []
+}

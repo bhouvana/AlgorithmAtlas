@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "id": "merge-sort",
+  "name": "Merge Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "execution_target": "wasm",
+  "wasm_module": "wasm_engine",
+  "entry_point": "algorithm.py",
+  "description": "Divide-and-conquer algorithm that recursively splits the array in half, sorts each half, then merges them back together.",
+  "intuition": "Split a deck of cards into two piles, recursively sort each pile, then carefully interleave the two sorted piles into one.",
+  "complexity": {
+    "time_best": "O(n log n)",
+    "time_average": "O(n log n)",
+    "time_worst": "O(n log n)",
+    "space": "O(n)"
+  },
+  "tags": ["comparison", "divide-and-conquer", "stable", "recursive"],
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "min": 2,
+      "max": 64,
+      "default": 16,
+      "label": "Array Size"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "strassen",
+  "name": "Strassen Matrix Multiplication",
+  "version": "1.0.0",
+  "category": "divide-and-conquer",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Multiply two 4×4 matrices using Strassen's algorithm with 7 multiplications instead of 8.",
+  "intuition": "Divide each matrix into 2×2 blocks. Compute 7 clever sub-products (M1..M7) using only 7 multiplications. Recombine to get the 4 result blocks. O(n^2.807) vs naive O(n^3).",
+  "complexity": {
+    "time_best": "O(n^2.807)",
+    "time_average": "O(n^2.807)",
+    "time_worst": "O(n^2.807)",
+    "space": "O(n^2)"
+  },
+  "parameters": {},
+  "tags": ["divide-and-conquer", "strassen", "matrix-multiplication", "fast-multiplication"],
+  "references": []
+}

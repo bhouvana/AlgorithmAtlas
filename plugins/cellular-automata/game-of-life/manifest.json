@@ -1,0 +1,9 @@
+{
+  "slug": "game-of-life",
+  "name": "Conway's Game of Life",
+  "category": "cellular-automata",
+  "tags": ["cellular-automata", "simulation", "emergent", "2d", "classic"],
+  "complexity": "O(n²)",
+  "visualization": "PARTICLE_FIELD",
+  "description": "Conway's Game of Life is a zero-player cellular automaton where complex emergent behavior arises from four simple rules governing cell birth and death based on neighbor counts."
+}

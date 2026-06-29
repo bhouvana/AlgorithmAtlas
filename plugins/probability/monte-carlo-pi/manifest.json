@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "monte-carlo-pi",
+  "name": "Monte Carlo Pi Estimation",
+  "version": "1.0.0",
+  "category": "probability",
+  "visualization_type": "PROBABILITY_SPACE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Estimates π by throwing random darts at a unit square and counting how many land inside the inscribed quarter circle.",
+  "intuition": "If you throw darts randomly at a square, the fraction that land in the inscribed circle approximates π/4 — so π ≈ 4 × hits/total.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "tags": ["probability", "monte-carlo", "simulation", "pi", "estimation"],
+  "parameters": {
+    "n": {
+      "type": "integer",
+      "min": 100,
+      "max": 10000,
+      "default": 2000,
+      "label": "Total Trials"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

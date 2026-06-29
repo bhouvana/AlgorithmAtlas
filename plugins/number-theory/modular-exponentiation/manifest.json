@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "modular-exponentiation",
+  "name": "Modular Exponentiation",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Compute (base^exp) mod m efficiently using repeated squaring in O(log exp) steps.",
+  "intuition": "If exp is even: (base^exp) mod m = (base^(exp/2))^2 mod m. If odd: multiply by base. This halves the exponent each step, giving O(log exp) multiplications instead of O(exp).",
+  "complexity": {
+    "time_best": "O(log exp)",
+    "time_average": "O(log exp)",
+    "time_worst": "O(log exp)",
+    "space": "O(log exp)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Exponent bits",
+      "min": 4,
+      "max": 12,
+      "default": 8
+    }
+  },
+  "tags": ["number-theory", "modular-exponentiation", "fast-power", "cryptography"],
+  "references": []
+}

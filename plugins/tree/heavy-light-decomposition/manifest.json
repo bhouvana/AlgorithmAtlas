@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "heavy-light-decomposition",
+  "name": "Heavy-Light Decomposition",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Decompose a tree into chains of heavy edges, enabling O(log² n) path queries and updates.",
+  "intuition": "Each node takes the edge to its heaviest child (largest subtree) as its heavy edge, forming chains. Any root-to-leaf path crosses at most O(log n) chains. Path queries decompose into O(log n) chain queries.",
+  "complexity": {
+    "time_best": "O(n) build, O(log² n) per query",
+    "time_average": "O(n) build, O(log² n) per query",
+    "time_worst": "O(n) build, O(log² n) per query",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["tree", "heavy-light-decomposition", "hld", "path-query", "chains"],
+  "references": []
+}

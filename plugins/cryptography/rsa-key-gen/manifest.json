@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "rsa-key-gen",
+  "name": "RSA Key Generation",
+  "version": "1.0.0",
+  "category": "cryptography",
+  "visualization_type": "STATE_MACHINE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Step-by-step RSA public/private key generation: choose primes p and q, compute modulus n and Euler's totient φ(n), select public exponent e, and derive the private exponent d via the Extended Euclidean Algorithm.",
+  "intuition": "RSA security rests on the difficulty of factoring n = p·q. Knowing p and q lets you compute φ(n) and invert e mod φ(n) to get d — but without the primes, inverting e is computationally infeasible for large n.",
+  "complexity": {
+    "time_best": "O(log² n)",
+    "time_average": "O(log² n)",
+    "time_worst": "O(log² n)",
+    "space": "O(log n)"
+  },
+  "tags": ["cryptography", "rsa", "public-key", "number-theory", "intermediate"],
+  "parameters": {
+    "p": {
+      "type": "integer",
+      "min": 5,
+      "max": 100,
+      "default": 61,
+      "label": "Prime p"
+    },
+    "q": {
+      "type": "integer",
+      "min": 5,
+      "max": 100,
+      "default": 53,
+      "label": "Prime q"
+    }
+  },
+  "benchmark_enabled": false
+}

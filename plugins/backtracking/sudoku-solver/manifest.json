@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "sudoku-solver",
+  "name": "Sudoku Solver",
+  "version": "1.0.0",
+  "category": "backtracking",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Solve a 9×9 Sudoku puzzle using backtracking — try digits 1-9 in each empty cell and backtrack on conflict.",
+  "intuition": "Find the first empty cell. Try placing digits 1–9 one at a time. Check if the digit is valid (not in the same row, column, or 3×3 box). If valid, place it and recurse. If no digit works, erase and backtrack.",
+  "complexity": {
+    "time_best": "O(9^m) where m = empty cells",
+    "time_average": "O(9^m)",
+    "time_worst": "O(9^m)",
+    "space": "O(m)"
+  },
+  "parameters": {},
+  "tags": ["backtracking", "sudoku", "constraint-satisfaction", "puzzle"],
+  "references": []
+}

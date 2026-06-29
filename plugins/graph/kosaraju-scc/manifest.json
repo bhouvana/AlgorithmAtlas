@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "kosaraju-scc",
+  "name": "Kosaraju's SCC",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find strongly connected components in a directed graph using two DFS passes.",
+  "intuition": "First DFS on original graph pushes nodes to a stack in finish order. Second DFS on reversed graph pops from stack — each DFS tree in pass 2 is one SCC.",
+  "complexity": {
+    "time_best": "O(V+E)",
+    "time_average": "O(V+E)",
+    "time_worst": "O(V+E)",
+    "space": "O(V+E)"
+  },
+  "parameters": {},
+  "tags": ["graph", "scc", "dfs", "directed", "kosaraju"],
+  "references": []
+}

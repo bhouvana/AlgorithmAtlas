@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "euler-totient",
+  "name": "Euler's Totient Function",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Compute φ(n) — the count of integers from 1 to n that are coprime with n.",
+  "intuition": "Factorize n into its prime factors. Apply the formula φ(n) = n × ∏(1 - 1/p) for each distinct prime factor p. Each prime factor p reduces the count by a factor of (p-1)/p.",
+  "complexity": {
+    "time_best": "O(√n)",
+    "time_average": "O(√n)",
+    "time_worst": "O(√n)",
+    "space": "O(1)"
+  },
+  "parameters": {},
+  "tags": ["number-theory", "euler-totient", "phi", "coprime"],
+  "references": []
+}

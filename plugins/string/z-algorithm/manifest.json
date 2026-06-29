@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "id": "z-algorithm",
+  "name": "Z-Algorithm String Search",
+  "version": "1.0.0",
+  "category": "string",
+  "visualization_type": "ARRAY_BARS_SEARCH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Finds all occurrences of a pattern in text in O(n+m) using the Z-array.",
+  "intuition": "The Z-array: Z[i] = length of longest substring starting at i that is also a prefix of the string. Prepend pattern+'$'+text, then Z[i] = pattern length means a match at that position.",
+  "complexity": {
+    "time_best": "O(n + m)",
+    "time_average": "O(n + m)",
+    "time_worst": "O(n + m)",
+    "space": "O(n + m)"
+  },
+  "parameters": {
+    "text_length": {
+      "type": "integer",
+      "label": "Text length",
+      "min": 16,
+      "max": 32,
+      "default": 20
+    }
+  },
+  "tags": ["string", "pattern-matching", "z-array", "prefix-matching"],
+  "references": [
+    {
+      "type": "article",
+      "title": "Z-function — cp-algorithms.com",
+      "url": "https://cp-algorithms.com/string/z-function.html"
+    }
+  ]
+}

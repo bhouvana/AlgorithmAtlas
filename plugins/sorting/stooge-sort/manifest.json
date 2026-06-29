@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "stooge-sort",
+  "name": "Stooge Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "A recursive sorting algorithm with O(n^2.7) time complexity.",
+  "intuition": "If arr[lo] > arr[hi], swap them. Recursively sort the first 2/3, then last 2/3, then first 2/3 again. Correct but inefficient — mainly of theoretical interest.",
+  "complexity": {
+    "time_best": "O(n^2.7)",
+    "time_average": "O(n^2.7)",
+    "time_worst": "O(n^2.7)",
+    "space": "O(log n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 3,
+      "max": 8,
+      "default": 5
+    }
+  },
+  "tags": ["sorting", "stooge-sort", "recursive", "theoretical"],
+  "references": []
+}

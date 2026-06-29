@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "brownian-motion",
+  "name": "Brownian Motion",
+  "version": "1.0.0",
+  "category": "probability",
+  "visualization_type": "PROBABILITY_SPACE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Simulates 2D Brownian motion using Box-Muller Gaussian increments. The x-position histogram reveals the emerging normal distribution and the variance grows linearly with time.",
+  "intuition": "Like pollen grains jittering on water, each step is an independent Gaussian push. The variance of displacement equals the number of steps — the central limit theorem made visible.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "tags": ["probability", "brownian-motion", "simulation", "gaussian", "stochastic"],
+  "parameters": {
+    "steps": {
+      "type": "integer",
+      "min": 50,
+      "max": 1000,
+      "default": 300,
+      "label": "Steps"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

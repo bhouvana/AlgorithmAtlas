@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "bidirectional-bfs",
+  "name": "Bidirectional BFS",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find shortest path between source and target by simultaneously expanding BFS from both ends.",
+  "intuition": "Run two BFS frontiers from source (forward) and target (backward). When they meet, combine paths. If the graph has branching factor b and solution depth d, standard BFS explores O(b^d) nodes vs O(2·b^(d/2)) for bidirectional.",
+  "complexity": {
+    "time_best": "O(b^(d/2))",
+    "time_average": "O(b^(d/2))",
+    "time_worst": "O(V+E)",
+    "space": "O(b^(d/2))"
+  },
+  "parameters": {},
+  "tags": ["graph", "bfs", "shortest-path", "bidirectional", "search"],
+  "references": []
+}

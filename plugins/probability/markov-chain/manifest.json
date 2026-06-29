@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "markov-chain",
+  "name": "Markov Chain Weather Model",
+  "version": "1.0.0",
+  "category": "probability",
+  "visualization_type": "PROBABILITY_SPACE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Simulates a 3-state Markov chain (Sunny/Cloudy/Rainy) and shows empirical frequencies converging to the stationary distribution.",
+  "intuition": "A Markov chain has no memory — tomorrow's weather depends only on today's. After many steps, the time spent in each state stabilizes to a fixed ratio.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(1)"
+  },
+  "tags": ["probability", "markov-chain", "simulation", "stationary-distribution", "stochastic"],
+  "parameters": {
+    "steps": {
+      "type": "integer",
+      "min": 20,
+      "max": 1000,
+      "default": 200,
+      "label": "Steps"
+    },
+    "seed": {
+      "type": "integer",
+      "min": 0,
+      "max": 9999,
+      "default": 42,
+      "label": "Random Seed"
+    }
+  },
+  "benchmark_enabled": true
+}

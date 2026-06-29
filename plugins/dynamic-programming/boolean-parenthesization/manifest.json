@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "boolean-parenthesization",
+  "name": "Boolean Parenthesization",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Count the number of ways to parenthesize a boolean expression so that it evaluates to True.",
+  "intuition": "dp_true[i][j] = ways substring i..j evaluates to True. For each split point k and each operator, combine counts from left (i..k) and right (k+1..j) sub-expressions.",
+  "complexity": {
+    "time_best": "O(n³)",
+    "time_average": "O(n³)",
+    "time_worst": "O(n³)",
+    "space": "O(n²)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "boolean", "parenthesization", "counting", "classic"],
+  "references": []
+}

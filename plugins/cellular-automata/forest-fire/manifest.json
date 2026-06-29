@@ -1,0 +1,9 @@
+{
+  "slug": "forest-fire",
+  "name": "Forest Fire Model",
+  "category": "cellular-automata",
+  "tags": ["cellular-automata", "stochastic", "simulation", "fire", "ecology"],
+  "complexity": "O(n²)",
+  "visualization": "PARTICLE_FIELD",
+  "description": "The Forest Fire model is a stochastic cellular automaton that simulates wildfire ecology: trees grow on empty ground, spread fire to neighbors, and can be struck by lightning, eventually reaching a self-organized critical state."
+}

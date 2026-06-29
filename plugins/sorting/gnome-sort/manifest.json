@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "gnome-sort",
+  "name": "Gnome Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Sort by moving backwards to insert each element in its correct position, similar to insertion sort but only one step at a time.",
+  "intuition": "Like a gnome sorting flower pots: if the current pot is in order, move forward; otherwise, swap it backward until it's in the right place, then continue forward.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 5,
+      "max": 20,
+      "default": 10
+    }
+  },
+  "tags": ["sorting", "comparison", "in-place", "gnome"],
+  "references": []
+}

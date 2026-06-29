@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "goldbach",
+  "name": "Goldbach's Conjecture",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Verify Goldbach's conjecture: every even number > 2 is the sum of two primes.",
+  "intuition": "Sieve primes up to n. For each even number 4..n, find all pairs (p, q) where p+q=n and both are prime. Goldbach's conjecture remains unproven but holds for all checked values up to 4×10^18.",
+  "complexity": {
+    "time_best": "O(n log log n)",
+    "time_average": "O(n log log n)",
+    "time_worst": "O(n log log n)",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Upper bound (even numbers up to this)",
+      "min": 10,
+      "max": 60,
+      "default": 40
+    }
+  },
+  "tags": ["number-theory", "goldbach", "primes", "conjecture", "sieve"],
+  "references": []
+}

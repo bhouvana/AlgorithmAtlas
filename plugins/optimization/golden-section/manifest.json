@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "golden-section",
+  "name": "Golden Section Search",
+  "version": "1.0.0",
+  "category": "optimization",
+  "visualization_type": "CURVE",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "description": "Minimizes f(x)=(x-3)² on [0,6] by narrowing a bracket using the golden ratio, converging without derivatives.",
+  "intuition": "Like binary search for a minimum — each step eliminates a golden-ratio fraction of the remaining interval with only two function evaluations.",
+  "complexity": {
+    "time_best": "O(log(1/tolerance))",
+    "time_average": "O(log(1/tolerance))",
+    "time_worst": "O(log(1/tolerance))",
+    "space": "O(1)"
+  },
+  "tags": ["optimization", "golden-ratio", "bracket", "derivative-free", "unimodal"],
+  "parameters": {
+    "tolerance": {
+      "type": "float",
+      "min": 0.0001,
+      "max": 0.5,
+      "default": 0.01,
+      "label": "Convergence Tolerance"
+    }
+  },
+  "benchmark_enabled": false
+}

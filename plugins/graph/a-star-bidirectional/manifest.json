@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "a-star-bidirectional",
+  "name": "Bidirectional A*",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find shortest path using A* search from both source and target simultaneously.",
+  "intuition": "Run A* forward (from source) and backward (from target) alternating steps. Meet in the middle for O(b^(d/2)) complexity. Heuristic: Euclidean distance to goal.",
+  "complexity": {
+    "time_best": "O(b^(d/2))",
+    "time_average": "O(b^(d/2))",
+    "time_worst": "O(V+E)",
+    "space": "O(b^(d/2))"
+  },
+  "parameters": {},
+  "tags": ["graph", "a-star", "shortest-path", "bidirectional", "heuristic"],
+  "references": []
+}

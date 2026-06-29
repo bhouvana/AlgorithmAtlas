@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "palindrome-subsequence",
+  "name": "Longest Palindromic Subsequence",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the longest subsequence of a string that is a palindrome.",
+  "intuition": "dp[i][j] = LPS length for s[i..j]. If s[i]==s[j]: dp[i][j]=dp[i+1][j-1]+2. Else: dp[i][j]=max(dp[i+1][j], dp[i][j-1]). Fill diagonally.",
+  "complexity": {
+    "time_best": "O(n²)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(n²)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "String length",
+      "min": 5,
+      "max": 8,
+      "default": 6
+    }
+  },
+  "tags": ["dynamic-programming", "palindrome", "subsequence", "string"],
+  "references": []
+}

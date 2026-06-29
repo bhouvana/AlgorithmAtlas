@@ -1,0 +1,17 @@
+{
+  "slug": "red-black-tree",
+  "name": "Red-Black Tree",
+  "category": "data-structures",
+  "visualization_type": "TREE",
+  "description": "Self-balancing BST where every node is red or black. 5 invariants ensure O(log n) height. Insert uses rotations and recoloring to restore balance.",
+  "complexity": {
+    "time_best": "O(log n)",
+    "time_average": "O(log n)",
+    "time_worst": "O(log n)",
+    "space": "O(n)"
+  },
+  "tags": ["data-structures", "red-black-tree", "balanced-bst", "self-balancing"],
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
+  "class_name": "RedBlackTree"
+}

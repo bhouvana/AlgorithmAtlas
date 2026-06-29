@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "segment-tree",
+  "name": "Segment Tree",
+  "version": "1.0.0",
+  "category": "tree",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Build a segment tree for range-sum queries, then demonstrate a point update and range query.",
+  "intuition": "Each node stores the sum of a range of elements. Build bottom-up from leaves. Range queries combine O(log n) nodes. Point updates propagate upward in O(log n).",
+  "complexity": {
+    "time_best": "O(n) build, O(log n) query/update",
+    "time_average": "O(n) build, O(log n) query/update",
+    "time_worst": "O(n) build, O(log n) query/update",
+    "space": "O(n)"
+  },
+  "parameters": {
+    "array_size": {
+      "type": "integer",
+      "label": "Array size",
+      "min": 4,
+      "max": 8,
+      "default": 6
+    }
+  },
+  "tags": ["tree", "segment-tree", "range-query", "data-structure"],
+  "references": []
+}

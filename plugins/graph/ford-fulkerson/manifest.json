@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "ford-fulkerson",
+  "name": "Ford-Fulkerson Max Flow",
+  "version": "1.0.0",
+  "category": "graph",
+  "visualization_type": "GRAPH",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Find the maximum flow in a directed capacity network from source to sink.",
+  "intuition": "Repeatedly find augmenting paths from source to sink using DFS. Push flow equal to the bottleneck capacity. Repeat until no augmenting path exists.",
+  "complexity": {
+    "time_best": "O(E * max_flow)",
+    "time_average": "O(E * max_flow)",
+    "time_worst": "O(E * max_flow)",
+    "space": "O(V + E)"
+  },
+  "parameters": {},
+  "tags": ["graph", "max-flow", "ford-fulkerson", "network-flow", "augmenting-path"],
+  "references": []
+}

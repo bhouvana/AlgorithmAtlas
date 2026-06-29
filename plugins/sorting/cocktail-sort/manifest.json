@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "id": "cocktail-sort",
+  "name": "Cocktail Shaker Sort",
+  "version": "1.0.0",
+  "category": "sorting",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Bidirectional bubble sort: bubble largest element right, then smallest element left, in alternating passes.",
+  "intuition": "Like bubble sort but in both directions: forward pass moves the maximum to the right, backward pass moves the minimum to the left. Converges faster than one-directional bubble sort.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n²)",
+    "time_worst": "O(n²)",
+    "space": "O(1)"
+  },
+  "parameters": {
+    "array_size": {"type": "integer", "label": "Array size", "min": 5, "max": 20, "default": 10}
+  },
+  "tags": ["sorting", "comparison", "in-place", "cocktail", "bidirectional"],
+  "references": []
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "id": "decode-ways",
+  "name": "Decode Ways",
+  "version": "1.0.0",
+  "category": "dynamic-programming",
+  "visualization_type": "MATRIX",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": true,
+  "description": "Count the number of ways to decode a digit string into letters (A=1...Z=26).",
+  "intuition": "dp[i] = ways to decode s[0..i-1]. dp[i] += dp[i-1] if s[i-1] is valid single digit, dp[i] += dp[i-2] if s[i-2..i-1] forms a valid two-digit code (10-26).",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "parameters": {},
+  "tags": ["dynamic-programming", "string", "decode-ways", "fibonacci-like"],
+  "references": []
+}

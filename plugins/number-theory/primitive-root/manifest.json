@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "primitive-root",
+  "name": "Primitive Root Finder",
+  "version": "1.0.0",
+  "category": "number-theory",
+  "visualization_type": "ARRAY_BARS",
+  "entry_point": "algorithm.py",
+  "benchmark_enabled": false,
+  "description": "Find the smallest primitive root modulo a prime p.",
+  "intuition": "g is a primitive root mod p if the order of g is phi(p)=p-1. Instead of checking all p-1 powers, it suffices to verify g^((p-1)/q) ≢ 1 for all prime factors q of p-1. The smallest such g is the primitive root.",
+  "complexity": {
+    "time_best": "O(sqrt(p))",
+    "time_average": "O(p^0.25 log p)",
+    "time_worst": "O(p)",
+    "space": "O(log p)"
+  },
+  "parameters": {
+    "size": {
+      "type": "integer",
+      "label": "Prime p",
+      "min": 5,
+      "max": 97,
+      "default": 41
+    }
+  },
+  "tags": ["number-theory", "primitive-root", "modular-arithmetic", "group-theory"],
+  "references": []
+}
