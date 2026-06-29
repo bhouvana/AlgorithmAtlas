@@ -100,10 +100,9 @@ WORKDIR /app
 COPY packages/plugin-sdk/python /sdk
 RUN python3.11 -m pip install --no-cache-dir /sdk
 
-COPY apps/backend/pyproject.toml .
+COPY apps/backend .
 RUN python3.11 -m pip install --no-cache-dir ".[dev]"
 
-COPY apps/backend .
 COPY plugins /plugins
 
 ENV PLUGIN_ROOT=/plugins \
