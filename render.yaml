@@ -1,20 +1,15 @@
 services:
-  # ── Backend — FastAPI + uvicorn ───────────────────────────────────────────────
+  # ── Backend — FastAPI in Docker (all 17 language runtimes) ───────────────────
   - type: web
     name: algorithm-atlas-api
-    env: python
+    env: docker
     plan: free
     region: oregon
-    buildCommand: bash scripts/build_backend.sh
-    startCommand: >-
-      bash -c 'export PATH="$HOME/.cargo/bin:$PATH" &&
-      uvicorn algorithm_atlas.main:app --host 0.0.0.0 --port $PORT'
-    healthCheckPath: /health
+    dockerfilePath: ./apps/backend/Dockerfile
+    # dockerContext defaults to repo root — needed so COPY plugins/ works
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
       - key: PLUGIN_ROOT
-        value: /opt/render/project/src/plugins
+        value: /plugins
       - key: SQLITE_URL
         value: sqlite+aiosqlite:///./atlas.db
       - key: LOG_LEVEL
