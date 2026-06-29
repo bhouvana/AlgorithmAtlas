@@ -12,6 +12,8 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
 
+**[🌐 Live Demo →](https://algorithm-atlas.onrender.com)**
+
 </div>
 
 ---

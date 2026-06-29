@@ -5,8 +5,8 @@
  * WebSocket URLs are constructed here so the base URL is configured once.
  */
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? '';
-const WS_BASE = import.meta.env.VITE_WS_URL ?? 'ws://localhost:8000';
+const BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000';
+const WS_BASE = import.meta.env.VITE_WS_URL ?? BASE_URL.replace(/^https/, 'wss').replace(/^http/, 'ws');
 
 // ──────────────────────────────────────────────────────────────────────────────
 // Types (mirrors backend Pydantic models)
