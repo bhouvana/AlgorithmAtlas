@@ -95,17 +95,38 @@ RUN echo "=== Runtime check ===" \
     && echo "=== All runtimes OK ==="
 
 # ── 9. Python application ─────────────────────────────────────────────────────
+# Bootstrap a modern pip for Python 3.11 (system python3-pip on Ubuntu 22.04
+# can't parse [project] table from pyproject.toml, so deps are silently skipped)
+RUN python3.11 -m ensurepip --upgrade \
+    && python3.11 -m pip install --upgrade --quiet pip setuptools wheel
+
 WORKDIR /app
 
 COPY packages/plugin-sdk/python /sdk
-RUN python3.11 -m pip install --no-cache-dir /sdk
-
 COPY apps/backend .
-RUN python3.11 -m pip install --no-cache-dir ".[dev]"
-
 COPY plugins /plugins
 
-ENV PLUGIN_ROOT=/plugins \
+# Install all backend dependencies explicitly so they land in Python 3.11's
+# site-packages regardless of the pyproject.toml parsing issue above.
+RUN python3.11 -m pip install --no-cache-dir \
+    "fastapi>=0.111.0" \
+    "uvicorn[standard]>=0.29.0" \
+    "pydantic>=2.7.0" \
+    "pydantic-settings>=2.3.0" \
+    "loguru>=0.7.2" \
+    "jsonschema>=4.22.0" \
+    "numpy>=1.26.0" \
+    "scipy>=1.13.0" \
+    "networkx>=3.3" \
+    "sympy>=1.12.0" \
+    "sqlalchemy>=2.0.0" \
+    "aiosqlite>=0.20.0" \
+    "alembic>=1.13.0"
+
+# PYTHONPATH exposes algorithm_atlas (source) and algorithm_atlas_sdk (sdk source)
+# without requiring pip to successfully install the local packages.
+ENV PYTHONPATH=/app:/sdk \
+    PLUGIN_ROOT=/plugins \
     PORT=8000 \
     LOG_LEVEL=INFO \
     SQLITE_URL=sqlite+aiosqlite:///./atlas.db
