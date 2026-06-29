@@ -20,16 +20,17 @@ interface LangDef {
   label: string;
   monacoId: string;
   ext: string;        // file extension for the tab
-  dot: string;        // tailwind bg color class for status dot
+  dot: string;        // tailwind bg color class for status dot (fallback)
   badge: string;      // tailwind text color class for badge text
   accentHex: string;  // raw hex for dynamic inline styles
+  devicon: string;    // devicon CSS class
   starter: string;
 }
 
 const LANGS: LangDef[] = [
   {
     id: 'python', label: 'Python', monacoId: 'python', ext: 'py',
-    dot: 'bg-blue-400', badge: 'text-blue-400', accentHex: '#60a5fa',
+    dot: 'bg-blue-400', badge: 'text-blue-400', accentHex: '#60a5fa', devicon: 'devicon-python-plain colored',
     starter:
 `# Python 3  —  Ctrl+Enter to run
 def fibonacci(n: int) -> int:
@@ -43,7 +44,7 @@ for i in range(10):
   },
   {
     id: 'javascript', label: 'JavaScript', monacoId: 'javascript', ext: 'js',
-    dot: 'bg-yellow-400', badge: 'text-yellow-400', accentHex: '#facc15',
+    dot: 'bg-yellow-400', badge: 'text-yellow-400', accentHex: '#facc15', devicon: 'devicon-javascript-plain colored',
     starter:
 `// JavaScript (Node.js)  —  Ctrl+Enter to run
 const fibonacci = (n) => {
@@ -58,7 +59,7 @@ for (let i = 0; i < 10; i++) {
   },
   {
     id: 'typescript', label: 'TypeScript', monacoId: 'typescript', ext: 'ts',
-    dot: 'bg-sky-400', badge: 'text-sky-400', accentHex: '#38bdf8',
+    dot: 'bg-sky-400', badge: 'text-sky-400', accentHex: '#38bdf8', devicon: 'devicon-typescript-plain colored',
     starter:
 `// TypeScript (tsx)  —  Ctrl+Enter to run
 const fibonacci = (n: number): number => {
@@ -73,7 +74,7 @@ for (let i = 0; i < 10; i++) {
   },
   {
     id: 'cpp', label: 'C++', monacoId: 'cpp', ext: 'cpp',
-    dot: 'bg-violet-400', badge: 'text-violet-400', accentHex: '#a78bfa',
+    dot: 'bg-violet-400', badge: 'text-violet-400', accentHex: '#a78bfa', devicon: 'devicon-cplusplus-plain colored',
     starter:
 `// C++17  —  Ctrl+Enter to run
 #include <iostream>
@@ -91,7 +92,7 @@ int main() {
   },
   {
     id: 'c', label: 'C', monacoId: 'c', ext: 'c',
-    dot: 'bg-zinc-400', badge: 'text-zinc-400', accentHex: '#a1a1aa',
+    dot: 'bg-zinc-400', badge: 'text-zinc-400', accentHex: '#a1a1aa', devicon: 'devicon-c-plain colored',
     starter:
 `/* C17  —  Ctrl+Enter to run */
 #include <stdio.h>
@@ -110,7 +111,7 @@ int main(void) {
   },
   {
     id: 'java', label: 'Java', monacoId: 'java', ext: 'java',
-    dot: 'bg-orange-400', badge: 'text-orange-400', accentHex: '#fb923c',
+    dot: 'bg-orange-400', badge: 'text-orange-400', accentHex: '#fb923c', devicon: 'devicon-java-plain colored',
     starter:
 `// Java  —  Ctrl+Enter to run
 public class Main {
@@ -128,7 +129,7 @@ public class Main {
   },
   {
     id: 'go', label: 'Go', monacoId: 'go', ext: 'go',
-    dot: 'bg-cyan-400', badge: 'text-cyan-400', accentHex: '#22d3ee',
+    dot: 'bg-cyan-400', badge: 'text-cyan-400', accentHex: '#22d3ee', devicon: 'devicon-go-plain colored',
     starter:
 `// Go  —  Ctrl+Enter to run
 package main
@@ -151,7 +152,7 @@ func main() {
   },
   {
     id: 'rust', label: 'Rust', monacoId: 'rust', ext: 'rs',
-    dot: 'bg-orange-600', badge: 'text-orange-500', accentHex: '#ea580c',
+    dot: 'bg-orange-600', badge: 'text-orange-500', accentHex: '#ea580c', devicon: 'devicon-rust-plain colored',
     starter:
 `// Rust  —  Ctrl+Enter to run
 fn fibonacci(n: u64) -> u64 {
@@ -168,7 +169,7 @@ fn main() {
   },
   {
     id: 'shell', label: 'Shell', monacoId: 'shell', ext: 'sh',
-    dot: 'bg-emerald-400', badge: 'text-emerald-400', accentHex: '#34d399',
+    dot: 'bg-emerald-400', badge: 'text-emerald-400', accentHex: '#34d399', devicon: 'devicon-bash-plain colored',
     starter:
 `# Shell (Bash / cmd)  —  Ctrl+Enter to run
 echo "System info:"
@@ -181,7 +182,7 @@ done`,
   },
   {
     id: 'ruby', label: 'Ruby', monacoId: 'ruby', ext: 'rb',
-    dot: 'bg-red-400', badge: 'text-red-400', accentHex: '#f87171',
+    dot: 'bg-red-400', badge: 'text-red-400', accentHex: '#f87171', devicon: 'devicon-ruby-plain colored',
     starter:
 `# Ruby  —  Ctrl+Enter to run
 def fibonacci(n)
@@ -196,7 +197,7 @@ end`,
   },
   {
     id: 'kotlin', label: 'Kotlin', monacoId: 'kotlin', ext: 'kt',
-    dot: 'bg-purple-500', badge: 'text-purple-400', accentHex: '#a855f7',
+    dot: 'bg-purple-500', badge: 'text-purple-400', accentHex: '#a855f7', devicon: 'devicon-kotlin-plain colored',
     starter:
 `// Kotlin  —  Ctrl+Enter to run
 fun fibonacci(n: Int): Int {
@@ -213,7 +214,7 @@ fun main() {
   },
   {
     id: 'swift', label: 'Swift', monacoId: 'swift', ext: 'swift',
-    dot: 'bg-rose-400', badge: 'text-rose-400', accentHex: '#fb7185',
+    dot: 'bg-rose-400', badge: 'text-rose-400', accentHex: '#fb7185', devicon: 'devicon-swift-plain colored',
     starter:
 `// Swift  —  Ctrl+Enter to run
 func fibonacci(_ n: Int) -> Int {
@@ -228,7 +229,7 @@ for i in 0..<10 {
   },
   {
     id: 'r', label: 'R', monacoId: 'r', ext: 'r',
-    dot: 'bg-blue-500', badge: 'text-blue-500', accentHex: '#3b82f6',
+    dot: 'bg-blue-500', badge: 'text-blue-500', accentHex: '#3b82f6', devicon: 'devicon-r-plain colored',
     starter:
 `# R  —  Ctrl+Enter to run
 fibonacci <- function(n) {
@@ -245,7 +246,7 @@ for (i in 0:9) {
   },
   {
     id: 'csharp', label: 'C#', monacoId: 'csharp', ext: 'cs',
-    dot: 'bg-fuchsia-400', badge: 'text-fuchsia-400', accentHex: '#e879f9',
+    dot: 'bg-fuchsia-400', badge: 'text-fuchsia-400', accentHex: '#e879f9', devicon: 'devicon-csharp-plain colored',
     starter:
 `// C#  —  Ctrl+Enter to run
 using System;
@@ -265,7 +266,7 @@ class Program {
   },
   {
     id: 'php', label: 'PHP', monacoId: 'php', ext: 'php',
-    dot: 'bg-indigo-400', badge: 'text-indigo-400', accentHex: '#818cf8',
+    dot: 'bg-indigo-400', badge: 'text-indigo-400', accentHex: '#818cf8', devicon: 'devicon-php-plain colored',
     starter:
 `<?php
 // PHP  —  Ctrl+Enter to run
@@ -283,7 +284,7 @@ for ($i = 0; $i < 10; $i++) {
   },
   {
     id: 'scala', label: 'Scala', monacoId: 'scala', ext: 'scala',
-    dot: 'bg-red-600', badge: 'text-red-500', accentHex: '#dc2626',
+    dot: 'bg-red-600', badge: 'text-red-500', accentHex: '#dc2626', devicon: 'devicon-scala-plain colored',
     starter:
 `// Scala  —  Ctrl+Enter to run
 def fibonacci(n: Int): Int = {
@@ -298,7 +299,7 @@ for (i <- 0 until 10) {
   },
   {
     id: 'perl', label: 'Perl', monacoId: 'perl', ext: 'pl',
-    dot: 'bg-slate-400', badge: 'text-slate-400', accentHex: '#94a3b8',
+    dot: 'bg-slate-400', badge: 'text-slate-400', accentHex: '#94a3b8', devicon: 'devicon-perl-plain colored',
     starter:
 `# Perl  —  Ctrl+Enter to run
 use strict;
@@ -396,7 +397,7 @@ function LangPicker({ current, onChange }: { current: LangDef; onChange: (l: Lan
         onClick={() => setOpen((v) => !v)}
         className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1A1A2A] border border-white/10 hover:border-white/20 transition-colors text-sm"
       >
-        <span className={cn('w-2 h-2 rounded-full', current.dot)} />
+        <i className={cn(current.devicon, 'text-base leading-none')} />
         <span className="text-white font-medium">{current.label}</span>
         <ChevronDown className={cn('w-3.5 h-3.5 text-zinc-500 transition-transform', open && 'rotate-180')} />
       </button>
@@ -412,7 +413,7 @@ function LangPicker({ current, onChange }: { current: LangDef; onChange: (l: Lan
                 l.id === current.id ? 'text-white' : 'text-zinc-400 hover:text-white',
               )}
             >
-              <span className={cn('w-2 h-2 rounded-full flex-shrink-0', l.dot)} />
+              <i className={cn(l.devicon, 'text-base leading-none flex-shrink-0')} />
               <span>{l.label}</span>
               {l.id === current.id && <span className="ml-auto text-indigo-400">✓</span>}
             </button>
@@ -617,7 +618,7 @@ export function NotebookPage() {
           className="flex items-center gap-2 px-4 border-r border-white/8 relative"
           style={{ borderBottom: `2px solid ${lang.accentHex}` }}
         >
-          <span className={cn('w-2 h-2 rounded-full flex-shrink-0', lang.dot)} />
+          <i className={cn(lang.devicon, 'text-base leading-none flex-shrink-0')} />
           <span className="text-sm text-white font-mono tracking-wide">{filename}</span>
         </div>
 
@@ -840,7 +841,7 @@ export function NotebookPage() {
       >
         <div className="flex items-center gap-3">
           <span className={cn('flex items-center gap-1.5 font-semibold', lang.badge)}>
-            <span className={cn('w-1.5 h-1.5 rounded-full', lang.dot)} />
+            <i className={cn(lang.devicon, 'text-sm leading-none')} />
             {lang.label}
           </span>
           <span className="text-zinc-600">{filename}</span>
