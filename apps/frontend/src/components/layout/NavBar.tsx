@@ -82,7 +82,7 @@ export function NavBar() {
 
           {/* Right: GitHub */}
           <a
-            href="https://github.com"
+            href="https://github.com/bhouvana/AlgorithmAtlas"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center w-8 h-8 rounded-xl text-zinc-400 hover:text-white hover:bg-white/5 transition-all duration-200 flex-shrink-0"
