@@ -101,7 +101,7 @@ COPY packages/plugin-sdk/python /sdk
 RUN python3.11 -m pip install --no-cache-dir /sdk
 
 COPY apps/backend/pyproject.toml .
-RUN python3.11 -m pip install --no-cache-dir -e ".[dev]"
+RUN python3.11 -m pip install --no-cache-dir ".[dev]"
 
 COPY apps/backend .
 COPY plugins /plugins
