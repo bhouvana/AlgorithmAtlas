@@ -47,7 +47,6 @@ RUN curl -fsSL \
     "https://github.com/JetBrains/kotlin/releases/download/v2.0.20/kotlin-compiler-2.0.20.zip" \
     -o /tmp/kotlin.zip \
     && unzip -q /tmp/kotlin.zip -d /usr/local/ \
-    && mv /usr/local/kotlinc /usr/local/kotlinc \
     && ln -sf /usr/local/kotlinc/bin/kotlinc /usr/local/bin/kotlinc \
     && ln -sf /usr/local/kotlinc/bin/kotlin   /usr/local/bin/kotlin \
     && rm /tmp/kotlin.zip
