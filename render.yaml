@@ -27,7 +27,6 @@ services:
   - type: web
     name: algorithm-atlas
     env: static
-    plan: free
     rootDir: apps/frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
