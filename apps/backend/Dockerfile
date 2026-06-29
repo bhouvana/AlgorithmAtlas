@@ -97,7 +97,7 @@ RUN echo "=== Runtime check ===" \
 # ── 9. Python application ─────────────────────────────────────────────────────
 # Bootstrap a modern pip for Python 3.11 (system python3-pip on Ubuntu 22.04
 # can't parse [project] table from pyproject.toml, so deps are silently skipped)
-RUN python3.11 -m ensurepip --upgrade \
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11 \
     && python3.11 -m pip install --upgrade --quiet pip setuptools wheel
 
 WORKDIR /app
