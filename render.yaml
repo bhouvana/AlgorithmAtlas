@@ -16,23 +16,18 @@ services:
       - key: PLUGIN_ROOT
         value: /opt/render/project/src/plugins
       - key: SQLITE_URL
-        value: sqlite+aiosqlite:////var/data/atlas.db
+        value: sqlite+aiosqlite:///./atlas.db
       - key: LOG_LEVEL
         value: INFO
       # Update this after the frontend is deployed with the actual URL
       - key: CORS_ORIGINS
         value: https://algorithm-atlas.onrender.com
-    disk:
-      name: atlas-data
-      mountPath: /var/data
-      sizeGB: 1
 
   # ── Frontend — React / Vite static site ──────────────────────────────────────
   - type: web
     name: algorithm-atlas
     env: static
     plan: free
-    region: oregon
     rootDir: apps/frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
