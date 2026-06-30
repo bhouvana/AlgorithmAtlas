@@ -20,7 +20,12 @@ class Settings(BaseSettings):
     PORT: int = 8000
 
     # CORS — in production, restrict to your frontend origin
-    CORS_ORIGINS: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173"]
+    CORS_ORIGINS: list[str] = [
+        "http://localhost:5173", "http://127.0.0.1:5173",
+        "http://localhost:5174", "http://127.0.0.1:5174",
+        "http://localhost:5175", "http://127.0.0.1:5175",
+        "http://localhost:5176", "http://127.0.0.1:5176",
+    ]
 
     # Plugin discovery root — 4 levels up from config.py reaches algorithm-atlas/
     PLUGIN_ROOT: Path = Path(__file__).parent.parent.parent.parent / "plugins"
@@ -34,8 +39,13 @@ class Settings(BaseSettings):
     # Redis (Phase 1+)
     REDIS_URL: str = "redis://localhost:6379/0"
 
+    # Atlas AI — Groq LLM provider
+    GROQ_API_KEY: str = ""
+    GROQ_MODEL: str = "llama-3.3-70b-versatile"
+
     class Config:
-        env_file = ".env"
+        # Walk up to find .env at the repo root (algorithm-atlas/) regardless of CWD
+        env_file = str(Path(__file__).parent.parent.parent.parent / ".env")
         env_file_encoding = "utf-8"
 
 

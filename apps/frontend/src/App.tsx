@@ -10,6 +10,8 @@ import { LandingPage } from './landing/LandingPage';
 import { GridBackground } from './components/ui/GridBackground';
 import { LearningPage } from './learning/LearningPage';
 import { LessonPage } from './learning/LessonPage';
+import { AtlasAI } from './ai/AtlasAI';
+import { AtlasPage } from './ai/page/AtlasPage';
 
 function AppLayout() {
   return (
@@ -27,8 +29,11 @@ function AppLayout() {
           <Route path="/experiments" element={<div className="pt-20"><ExperimentsPage /></div>} />
           <Route path="/learning" element={<div className="pt-20"><LearningPage /></div>} />
           <Route path="/learning/:id" element={<div className="pt-20"><LessonPage /></div>} />
+          <Route path="/atlas" element={<AtlasPage />} />
         </Routes>
       </main>
+      {/* Atlas AI — mounted once, floats above all pages */}
+      <AtlasAI />
     </div>
   );
 }

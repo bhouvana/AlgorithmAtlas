@@ -6,12 +6,16 @@
  * Layout: IDE split — editor left, output right (Programiz-style).
  */
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import Editor, { type OnMount } from '@monaco-editor/react';
-import { Play, Save, ChevronDown, Trash2, X, Clock, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Play, Save, ChevronDown, Trash2, X, Clock, AlertCircle, CheckCircle2, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { api, type ExperimentSummary } from '../core/api/client';
 import { cn } from '../lib/utils';
+import { NotebookBridgeContext } from './NotebookBridgeContext';
+import { registerAtlasCompletionProvider } from '../ai/notebook/InlineCompletionProvider';
+import { useAtlasContext } from '../ai/useAtlasContext';
+import { useAtlasStore } from '../ai/store';
 
 // ── Language registry ──────────────────────────────────────────────────────────
 
@@ -488,15 +492,42 @@ export function NotebookPage() {
   const [showLoad, setShowLoad] = useState(false);
   const [saving, setSaving]     = useState(false);
   const [toast, setToast]       = useState<string | null>(null);
-  const editorRef   = useRef<Parameters<OnMount>[0] | null>(null);
-  const outputRef   = useRef<HTMLDivElement>(null);
-  const toastTimer  = useRef<ReturnType<typeof setTimeout>>();
-  const dragRef     = useRef<{ startX: number; startPct: number; containerW: number } | null>(null);
+  const [inlineCompletionEnabled, setInlineCompletionEnabled] = useState(false);
+  const editorRef       = useRef<Parameters<OnMount>[0] | null>(null);
+  const outputRef       = useRef<HTMLDivElement>(null);
+  const toastTimer      = useRef<ReturnType<typeof setTimeout>>();
+  const dragRef         = useRef<{ startX: number; startPct: number; containerW: number } | null>(null);
+  const completionDisposable = useRef<{ dispose(): void } | null>(null);
+  const completionEnabledRef = useRef(false);
+  const atlasContextRef = useRef<ReturnType<typeof useAtlasContext> | null>(null);
+  const monacoRef       = useRef<typeof import('monaco-editor') | null>(null);
+  const deferredWriteRef = useRef<{ code: string; language: string } | null>(null);
+
+  // Read the current atlas context (kept in a ref so the completion provider can access it)
+  const atlasContext = useAtlasContext();
+  atlasContextRef.current = atlasContext;
 
   const flash = (msg: string) => {
     setToast(msg);
     clearTimeout(toastTimer.current);
     toastTimer.current = setTimeout(() => setToast(null), 3000);
+  };
+
+  const applyAtlasWrite = (w: { code: string; language: string }) => {
+    const matchedLang = LANGS.find(
+      (l) => l.id === w.language || l.monacoId === w.language || l.label.toLowerCase() === w.language.toLowerCase()
+    ) ?? LANGS[0];
+    setLang(matchedLang);
+    setCode(w.code);
+    if (editorRef.current) {
+      if (monacoRef.current) {
+        const model = editorRef.current.getModel();
+        if (model) monacoRef.current.editor.setModelLanguage(model, matchedLang.monacoId);
+      }
+      editorRef.current.setValue(w.code);
+      editorRef.current.focus();
+      flash(`Atlas wrote ${matchedLang.label} code to the editor`);
+    }
   };
 
   // Auto-scroll output on new run
@@ -528,10 +559,33 @@ export function NotebookPage() {
     }
   }, [running, lang, code]);
 
+  // Sync enabled ref whenever the state toggle changes
+  useEffect(() => {
+    completionEnabledRef.current = inlineCompletionEnabled;
+  }, [inlineCompletionEnabled]);
+
   const handleEditorMount: OnMount = (editor, monaco) => {
     editorRef.current = editor;
+    monacoRef.current = monaco;
     editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => { runCode(); });
-    editor.focus();
+
+    // Apply any Atlas write that arrived before Monaco was ready
+    if (deferredWriteRef.current) {
+      const w = deferredWriteRef.current;
+      deferredWriteRef.current = null;
+      applyAtlasWrite(w);
+    } else {
+      editor.focus();
+    }
+
+    // Register Atlas inline completion provider for the current language
+    completionDisposable.current?.dispose();
+    completionDisposable.current = registerAtlasCompletionProvider(
+      monaco,
+      lang.monacoId,
+      atlasContextRef as { current: import('../ai/types').AtlasContext | null },
+      completionEnabledRef,
+    );
   };
 
   const handleLangChange = (next: LangDef) => {
@@ -542,7 +596,51 @@ export function NotebookPage() {
       setCode(next.starter);
       editorRef.current?.setValue(next.starter);
     }
+
+    // Re-register the completion provider for the new language
+    if (monacoRef.current) {
+      completionDisposable.current?.dispose();
+      completionDisposable.current = registerAtlasCompletionProvider(
+        monacoRef.current,
+        next.monacoId,
+        atlasContextRef as { current: import('../ai/types').AtlasContext | null },
+        completionEnabledRef,
+      );
+    }
   };
+
+  // Cleanup completion provider on unmount
+  useEffect(() => {
+    return () => { completionDisposable.current?.dispose(); };
+  }, []);
+
+  // Apply Atlas AI editor writes (from chat "write to editor" commands)
+  useEffect(() => {
+    // Check immediately — handles the navigate→mount race where pendingEditorWrite
+    // was already set in the store before this component mounted and subscribed.
+    const already = useAtlasStore.getState().pendingEditorWrite;
+    if (already) {
+      useAtlasStore.getState().setPendingEditorWrite(null);
+      if (editorRef.current) {
+        applyAtlasWrite(already);
+      } else {
+        deferredWriteRef.current = already;
+      }
+    }
+
+    const unsub = useAtlasStore.subscribe((state) => {
+      const w = state.pendingEditorWrite;
+      if (!w) return;
+      useAtlasStore.getState().setPendingEditorWrite(null);
+      if (editorRef.current) {
+        applyAtlasWrite(w);
+      } else {
+        deferredWriteRef.current = w;
+      }
+    });
+    return unsub;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSave = async (name: string, notes: string) => {
     setSaving(true);
@@ -607,7 +705,15 @@ export function NotebookPage() {
   const filename = `main.${lang.ext}`;
   const lastRun = runs[runs.length - 1];
 
+  const bridgeValue = useMemo(() => ({
+    language: lang.id,
+    source: editorRef.current?.getValue() ?? code,
+    lastOutput: lastRun?.output ?? '',
+    lastError: lastRun?.error ?? '',
+  }), [lang.id, code, lastRun]);
+
   return (
+    <NotebookBridgeContext.Provider value={bridgeValue}>
     <div className="flex flex-col" style={{ height: 'calc(100vh - 5rem)' }}>
 
       {/* ── Top bar: file tab + language picker + Run button ──────────── */}
@@ -861,11 +967,24 @@ export function NotebookPage() {
             <kbd className="px-1 py-0.5 bg-white/5 rounded text-[9px]">Ctrl+Enter</kbd>
             {' run'}
           </span>
+          {/* Atlas AI inline completion toggle */}
+          <button
+            onClick={() => setInlineCompletionEnabled((v) => !v)}
+            title={inlineCompletionEnabled ? 'Atlas AI completions ON — click to disable' : 'Atlas AI completions OFF — click to enable'}
+            className={cn(
+              'flex items-center gap-1 transition-colors',
+              inlineCompletionEnabled ? 'text-indigo-400' : 'text-zinc-700 hover:text-zinc-500',
+            )}
+          >
+            <Sparkles className="w-3 h-3" />
+            <span>{inlineCompletionEnabled ? 'AI' : 'AI off'}</span>
+          </button>
         </div>
       </div>
 
       {/* Dialogs */}
       {showSave && <SaveDialog onSave={handleSave} onClose={() => setShowSave(false)} saving={saving} />}
     </div>
+    </NotebookBridgeContext.Provider>
   );
 }

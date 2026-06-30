@@ -16,6 +16,10 @@ services:
         value: INFO
       - key: CORS_ORIGINS
         value: '["https://algorithm-atlas.onrender.com"]'
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
 
   # ── Frontend — React / Vite static site ──────────────────────────────────────
   - type: web

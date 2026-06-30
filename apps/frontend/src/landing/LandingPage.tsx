@@ -10,6 +10,7 @@ import {
   Terminal,
   ChevronDown,
   GraduationCap,
+  Sparkles,
 } from 'lucide-react';
 
 function GitHubIcon({ size = 16 }: { size?: number }) {
@@ -364,6 +365,14 @@ const FEATURES: Feature[] = [
     description:
       'WebAssembly-powered engine runs native-speed code in the browser. Zero latency, zero setup.',
     color: 'text-emerald-400',
+  },
+  {
+    icon: <Sparkles size={28} />,
+    title: 'Atlas AI — Your Algorithmic Co-pilot',
+    description:
+      'Ask Atlas anything about algorithms, complexity, or code. It navigates pages, writes code directly into the notebook editor, explains concepts step by step, and even runs mock technical interviews — all in natural language.',
+    span: 'col',
+    color: 'text-indigo-400',
   },
 ];
 

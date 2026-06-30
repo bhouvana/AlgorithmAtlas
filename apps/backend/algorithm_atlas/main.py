@@ -19,6 +19,7 @@ from loguru import logger
 from .api.v1.router import api_router
 from .config import get_settings
 from .database import init_db
+from .models import atlas_memory as _  # noqa: F401 — ensure table is registered
 from .plugins.loader import PluginLoader
 from .plugins.registry import get_registry
 

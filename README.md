@@ -11,6 +11,7 @@
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
+[![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-F55036?style=flat-square&logo=groq&logoColor=white)](https://groq.com)
 
 **[🌐 Live Demo →](https://algorithm-atlas.onrender.com)**
 
@@ -70,6 +71,21 @@ Progress is tracked locally with XP, level-ups, bookmarks, and per-lesson comple
 
 Three new tracks connect algorithms to daily life: **Algorithms in the Wild** (how Google, GPS, Netflix, ZIP, passwords, and autocomplete work), **Algorithmic Thinking** (recursion, divide & conquer, two pointers, sliding window, greedy, prefix sums), and **Practical Patterns** (bit manipulation, monotonic stack, intervals, amortized analysis, cache locality).
 
+### Atlas AI — Your Algorithmic Co-pilot
+A full conversational AI assistant powered by **Groq + LLaMA 3.3 70B** that lives inside the workspace. Atlas understands your current context (which algorithm page you're on, what code is in the notebook, your learning progress) and acts on it:
+
+| Capability | Example |
+|------------|---------|
+| **Navigate** | "Open Dijkstra" → takes you directly to the algorithm page |
+| **Write code** | "Write N-Queens in Perl in the notebook" → switches language, writes code, navigates to Notebook |
+| **Explain** | "Explain how Quicksort's partition step works" |
+| **Debug** | "Why is my recursion hitting a stack overflow?" |
+| **Teach** | "Walk me through this algorithm like I'm new to graphs" |
+| **Interview** | "Give me a mock FAANG interview problem on trees" |
+| **Search** | "What sorting algorithm is best for nearly-sorted data?" |
+
+Atlas streams responses token by token (SSE) and embeds structured action events in the stream — navigation, editor writes, terminal commands — executed silently on the client without breaking the conversation flow.
+
 ### Structured Algorithm Catalog
 - 250+ algorithms across 20 categories
 - Filterable by category, time complexity, and tags
@@ -115,6 +131,7 @@ algorithm-atlas/
 | Alembic | Database migrations |
 | NumPy / SciPy / NetworkX / SymPy | Algorithm computation |
 | Uvicorn | ASGI server |
+| Groq SDK + LLaMA 3.3 70B | Atlas AI language model |
 
 ---
 
@@ -184,6 +201,15 @@ WebSocket messages: `play`, `pause`, `step_forward`, `step_backward`, `seek`, `r
 |--------|------|-------------|
 | `POST` | `/notebook/run` | Execute code snippet (17 languages) |
 | `POST` | `/notebook/run-cell/{exp_id}/{cell_id}` | Execute saved cell |
+
+### Atlas AI
+| Method | Path | Description |
+|--------|------|-------------|
+| `POST` | `/ai/chat` | Streaming SSE chat — request body `{message, context, history}` |
+| `POST` | `/ai/complete` | Synchronous inline code completion for the notebook editor |
+| `GET` | `/ai/memory` | Read user memory entries (`?user_id=…`) |
+| `POST` | `/ai/memory` | Write / update a memory key |
+| `DELETE` | `/ai/memory` | Delete a memory key |
 
 ### Experiments
 | Method | Path | Description |
@@ -279,6 +305,8 @@ docker compose up --build
 | `PORT` | `8000` | Server port |
 | `LOG_LEVEL` | `DEBUG` | Logging level |
 | `CORS_ORIGINS` | `http://localhost:5173` | Allowed frontend origins |
+| `GROQ_API_KEY` | *(required)* | Groq API key for Atlas AI — get one free at [console.groq.com](https://console.groq.com) |
+| `GROQ_MODEL` | `llama-3.3-70b-versatile` | Groq model ID used by Atlas AI |
 
 ### Frontend
 | Variable | Default | Description |
@@ -314,9 +342,16 @@ algorithm-atlas/
 │   └── backend/
 │       ├── algorithm_atlas/
 │       │   ├── main.py             # FastAPI app factory
-│       │   ├── config.py           # Pydantic settings
+│       │   ├── config.py           # Pydantic settings (reads GROQ_API_KEY)
 │       │   ├── database.py         # Async SQLAlchemy engine
 │       │   ├── api/v1/             # REST + WebSocket routers
+│       │   │   └── ai.py           # SSE chat, inline completion, memory endpoints
+│       │   ├── ai/                 # Atlas AI subsystem
+│       │   │   ├── agents/         # GeneralAgent, NotebookAgent, SearchAgent, …
+│       │   │   ├── orchestrator.py # Routes messages to the right agent
+│       │   │   ├── provider.py     # Groq SDK wrapper (streaming + sync)
+│       │   │   ├── memory.py       # Per-user persistent memory (SQLite)
+│       │   │   └── context_builder.py
 │       │   ├── models/             # SQLAlchemy ORM models
 │       │   ├── plugins/            # Plugin loader + registry
 │       │   ├── simulation/         # FrameBuffer + SimulationController
@@ -381,7 +416,7 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-Built with React, FastAPI, and a love for algorithms.
+Built with React, FastAPI, Groq AI, and a love for algorithms.
 
 **[⬡ Algorithm Atlas](https://github.com/bhouvana/AlgorithmAtlas)**
 
