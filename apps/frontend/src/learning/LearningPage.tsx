@@ -313,7 +313,7 @@ export function LearningPage() {
       {/* ── CTA at bottom ────────────────────────────────────────────────── */}
       <div className="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-6 text-center">
         <div className="text-2xl mb-2">🏆</div>
-        <h3 className="text-white font-bold mb-1">All 53 modules available</h3>
+        <h3 className="text-white font-bold mb-1">All 73 modules available</h3>
         <p className="text-zinc-400 text-sm mb-4">
           Every lesson is packed with explanations, code examples, complexity analysis, real-world applications, and a quiz.
         </p>
