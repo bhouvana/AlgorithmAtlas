@@ -78,9 +78,6 @@ Progress is tracked locally with XP, level-ups, bookmarks, and per-lesson comple
 ### Experiments & Persistence
 Save algorithm runs as named experiments. Each experiment stores its parameters, seed, and a set of notebook cells (code + output). Cells can be re-executed at any time. SQLite-backed, zero-config.
 
-### Higgsfield-Style Grid Background
-All pages feature an animated grid background with a cursor-following indigo spotlight — dim rounded-square grid always visible, bright indigo tiles revealed via CSS `mask-image` radial gradient, lerped with `requestAnimationFrame` for buttery smooth trailing.
-
 ---
 
 ## Architecture
