@@ -136,7 +136,7 @@ const CATALOG_MAP: Record<string, CatalogEntry> = {
   'how-gps-works':            { slug: 'dijkstra',         vizType: 'GRAPH',             target: 'server' },
   'how-netflix-recommends':   { slug: 'bfs',              vizType: 'GRAPH',             target: 'server' },
   'how-compression-works':    { slug: 'huffman-coding',   vizType: 'ARRAY_BARS',        target: 'server' },
-  'how-passwords-stay-safe':  { slug: 'hash-table-chaining', vizType: 'ARRAY_BARS',    target: 'server' },
+  'how-passwords-stay-safe':  { slug: 'huffman-coding',    vizType: 'ARRAY_BARS',        target: 'server' },
   'how-social-networks-work': { slug: 'bfs',              vizType: 'GRAPH',             target: 'server' },
   'how-autocomplete-works':   { slug: 'trie',             vizType: 'TREE',              target: 'server' },
   // Thinking Track
