@@ -212,7 +212,7 @@ function ConceptSection({ data }: { data: LessonData }) {
           {data.concept.keyPoints.map((kp) => (
             <div key={kp.title} className="rounded-xl border border-white/8 bg-zinc-900/40 p-4">
               <div className="font-semibold text-white text-sm mb-1">{kp.title}</div>
-              {kp.code && <div className="font-mono text-indigo-300 text-sm mb-2">{kp.code}</div>}
+              {kp.code && <pre className="font-mono text-indigo-300 text-xs mb-2 overflow-x-auto leading-relaxed whitespace-pre">{kp.code}</pre>}
               <div className="text-zinc-400 text-xs">{kp.desc}</div>
             </div>
           ))}
@@ -272,7 +272,7 @@ function VisualizationSection({
                         className="text-zinc-400 text-xs mt-2">
                         {s.desc}
                         {s.code && (
-                          <code className="block mt-2 font-mono text-indigo-300 bg-indigo-500/10 px-2 py-1 rounded">{s.code}</code>
+                          <pre className="block mt-2 font-mono text-indigo-300 bg-indigo-500/10 px-2 py-1 rounded text-xs overflow-x-auto whitespace-pre leading-relaxed">{s.code}</pre>
                         )}
                       </motion.div>
                     )}
@@ -310,7 +310,7 @@ function VisualizationSection({
                   className="text-zinc-400 text-xs mt-2">
                   {s.desc}
                   {s.code && (
-                    <code className="block mt-2 font-mono text-indigo-300 bg-indigo-500/10 px-2 py-1 rounded">{s.code}</code>
+                    <pre className="block mt-2 font-mono text-indigo-300 bg-indigo-500/10 px-2 py-1 rounded text-xs overflow-x-auto whitespace-pre leading-relaxed">{s.code}</pre>
                   )}
                 </motion.div>
               )}
