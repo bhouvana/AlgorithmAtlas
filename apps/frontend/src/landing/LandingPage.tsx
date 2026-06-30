@@ -9,6 +9,7 @@ import {
   Library,
   Terminal,
   ChevronDown,
+  GraduationCap,
 } from 'lucide-react';
 
 function GitHubIcon({ size = 16 }: { size?: number }) {
@@ -220,8 +221,13 @@ function HeroSection() {
               Explore Algorithms
             </Button>
           </Link>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-            <Button variant="secondary" size="lg" icon={<GitHubIcon size={16} />}>
+          <Link to="/learning">
+            <Button variant="secondary" size="lg" icon={<GraduationCap size={16} />}>
+              Start Learning
+            </Button>
+          </Link>
+          <a href="https://github.com/bhouvana/AlgorithmAtlas" target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" size="lg" icon={<GitHubIcon size={16} />}>
               View on GitHub
             </Button>
           </a>
@@ -260,7 +266,7 @@ interface StatItem {
 
 const STATS: StatItem[] = [
   { value: 250, suffix: '+', label: 'Algorithms', color: 'from-indigo-400 to-indigo-300' },
-  { value: 19, suffix: '', label: 'Categories', color: 'from-blue-400 to-cyan-300' },
+  { value: 53, suffix: '', label: 'Lessons', color: 'from-emerald-400 to-teal-300' },
   { value: 13, suffix: '', label: 'Viz Types', color: 'from-purple-400 to-pink-300' },
   { value: 17, suffix: '', label: 'Languages', color: 'from-cyan-400 to-teal-300' },
 ];
@@ -324,6 +330,14 @@ const FEATURES: Feature[] = [
     span: 'col',
   },
   {
+    icon: <GraduationCap size={28} />,
+    title: 'Structured Learning Paths',
+    description:
+      '53 guided lessons across 9 tracks — from Big-O fundamentals to advanced graph theory. Every lesson includes interactive visualizations, code examples, complexity analysis, and a 6-question quiz.',
+    color: 'text-emerald-400',
+    span: 'col',
+  },
+  {
     icon: <BookOpen size={28} />,
     title: 'Interactive Notebook',
     description:
@@ -331,19 +345,18 @@ const FEATURES: Feature[] = [
     color: 'text-purple-400',
   },
   {
-    icon: <Zap size={28} />,
-    title: 'Polyglot Notebook',
-    description:
-      '17 languages in one IDE-style editor — Python, C++, Rust, Kotlin, Swift, Go, and more. Run code instantly.',
-    color: 'text-amber-400',
-  },
-  {
     icon: <Library size={28} />,
     title: '250+ Algorithms',
     description:
       'Sorting, searching, graphs, dynamic programming, cryptography, distributed systems, and more — all in one place.',
     color: 'text-cyan-400',
-    span: 'col',
+  },
+  {
+    icon: <Zap size={28} />,
+    title: 'Polyglot Notebook',
+    description:
+      '17 languages in one IDE-style editor — Python, C++, Rust, Kotlin, Swift, Go, and more. Run code instantly.',
+    color: 'text-amber-400',
   },
   {
     icon: <Terminal size={28} />,
@@ -502,6 +515,12 @@ function FooterSection() {
               className="text-zinc-400 hover:text-white text-sm transition-colors duration-200"
             >
               Catalog
+            </Link>
+            <Link
+              to="/learning"
+              className="text-zinc-400 hover:text-white text-sm transition-colors duration-200"
+            >
+              Learning
             </Link>
             <Link
               to="/compare"

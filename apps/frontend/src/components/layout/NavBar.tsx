@@ -12,6 +12,7 @@ function GitHubIcon({ size = 16 }: { size?: number }) {
 import { cn } from '../../lib/utils';
 
 const NAV_LINKS = [
+  { to: '/learning', label: 'Learning' },
   { to: '/algorithms', label: 'Catalog' },
   { to: '/compare', label: 'Compare' },
   { to: '/notebook', label: 'Notebook' },

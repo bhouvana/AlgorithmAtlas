@@ -20,6 +20,9 @@ function makeTile(stroke: string): string {
 const DIM_TILE    = makeTile('rgba(255,255,255,0.018)');         // near-invisible base
 const BRIGHT_TILE = makeTile('rgba(148,163,252,0.40)');          // indigo-300, cursor-revealed
 
+// Mask that keeps grid visible only along left/right edges, fades out in center
+const SIDES_MASK = 'linear-gradient(to right, black 0%, black 6%, transparent 20%, transparent 80%, black 94%, black 100%)';
+
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export function GridBackground() {
@@ -47,10 +50,9 @@ export function GridBackground() {
       const y = Math.round(cy);
 
       if (brightRef.current) {
-        // Mask reveals bright tiles only within radius of cursor
-        const m = `radial-gradient(220px circle at ${x}px ${y}px, black 0%, transparent 100%)`;
-        brightRef.current.style.maskImage       = m;
-        brightRef.current.style.webkitMaskImage = m;
+        // Intersect cursor radius with sides-only mask
+        brightRef.current.style.maskImage = `radial-gradient(220px circle at ${x}px ${y}px, black 0%, transparent 100%), ${SIDES_MASK}`;
+        brightRef.current.style.maskComposite = 'intersect';
       }
 
       if (glowRef.current) {
@@ -74,11 +76,16 @@ export function GridBackground() {
 
   return (
     <>
-      {/* Layer 1 — dim rounded grid, always visible */}
+      {/* Layer 1 — dim rounded grid, visible only on left/right edges */}
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0"
-        style={{ zIndex: 0, backgroundImage: DIM_TILE, backgroundSize: tileSize }}
+        style={{
+          zIndex: 0,
+          backgroundImage: DIM_TILE,
+          backgroundSize: tileSize,
+          maskImage: SIDES_MASK,
+        }}
       />
 
       {/* Layer 2 — bright indigo rounded grid, revealed by cursor mask */}
@@ -90,8 +97,8 @@ export function GridBackground() {
           zIndex: 0,
           backgroundImage: BRIGHT_TILE,
           backgroundSize: tileSize,
-          maskImage:       `radial-gradient(220px circle at -9999px -9999px, black 0%, transparent 100%)`,
-          WebkitMaskImage: `radial-gradient(220px circle at -9999px -9999px, black 0%, transparent 100%)`,
+          maskImage: `radial-gradient(220px circle at -9999px -9999px, black 0%, transparent 100%), ${SIDES_MASK}`,
+          maskComposite: 'intersect',
         }}
       />
 

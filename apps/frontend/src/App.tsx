@@ -8,6 +8,8 @@ import { ExperimentsPage } from './experiments/ExperimentsPage';
 import { NavBar } from './components/layout/NavBar';
 import { LandingPage } from './landing/LandingPage';
 import { GridBackground } from './components/ui/GridBackground';
+import { LearningPage } from './learning/LearningPage';
+import { LessonPage } from './learning/LessonPage';
 
 function AppLayout() {
   return (
@@ -23,6 +25,8 @@ function AppLayout() {
           <Route path="/compare" element={<div className="pt-20"><ComparisonPage /></div>} />
           <Route path="/notebook" element={<div className="pt-20"><NotebookPage /></div>} />
           <Route path="/experiments" element={<div className="pt-20"><ExperimentsPage /></div>} />
+          <Route path="/learning" element={<div className="pt-20"><LearningPage /></div>} />
+          <Route path="/learning/:id" element={<div className="pt-20"><LessonPage /></div>} />
         </Routes>
       </main>
     </div>
