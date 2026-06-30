@@ -273,7 +273,7 @@ function VisualizationSection({
             <div className="w-6 h-6 rounded-full bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-xs font-bold text-indigo-300 flex-shrink-0 mt-0.5">{s.n}</div>
             <div className="flex-1 min-w-0">
               <div className="font-medium text-white text-sm">{s.label}</div>
-              {activeKey === s.n && (
+              {openSteps.has(s.n) && (
                 <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}
                   className="text-zinc-400 text-xs mt-2">
                   {s.desc}
@@ -283,7 +283,7 @@ function VisualizationSection({
                 </motion.div>
               )}
             </div>
-            <span className="text-zinc-600 text-xs">{activeKey === s.n ? '▲' : '▼'}</span>
+            <span className="text-zinc-600 text-xs">{openSteps.has(s.n) ? '▲' : '▼'}</span>
           </div>
         </motion.button>
       ))}
