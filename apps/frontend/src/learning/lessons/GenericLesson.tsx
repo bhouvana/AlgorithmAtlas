@@ -131,6 +131,29 @@ const CATALOG_MAP: Record<string, CatalogEntry> = {
   // Advanced Graph
   'network-flow':          { slug: 'ford-fulkerson',                 vizType: 'GRAPH',             target: 'server' },
   'suffix-arrays':         { slug: 'suffix-array',                   vizType: 'MATRIX',            target: 'server' },
+  // Real-World Track
+  'how-google-search-works':  { slug: 'bfs',              vizType: 'GRAPH',             target: 'server' },
+  'how-gps-works':            { slug: 'dijkstra',         vizType: 'GRAPH',             target: 'server' },
+  'how-netflix-recommends':   { slug: 'bfs',              vizType: 'GRAPH',             target: 'server' },
+  'how-compression-works':    { slug: 'huffman-coding',   vizType: 'ARRAY_BARS',        target: 'server' },
+  'how-passwords-stay-safe':  { slug: 'hash-table-chaining', vizType: 'ARRAY_BARS',    target: 'server' },
+  'how-social-networks-work': { slug: 'bfs',              vizType: 'GRAPH',             target: 'server' },
+  'how-autocomplete-works':   { slug: 'trie',             vizType: 'TREE',              target: 'server' },
+  // Thinking Track
+  'recursion':                { slug: 'merge-sort',       vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'divide-and-conquer':       { slug: 'merge-sort',       vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'two-pointers':             { slug: 'bubble-sort',      vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'sliding-window':           { slug: 'bubble-sort',      vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'greedy-thinking':          { slug: 'activity-selection', vizType: 'ARRAY_BARS',      target: 'server' },
+  'prefix-sums':              { slug: 'bubble-sort',      vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'brute-force-to-optimal':   { slug: 'merge-sort',       vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  // Patterns Track
+  'bit-manipulation':         { slug: 'bubble-sort',      vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'monotonic-stack':          { slug: 'dfs',              vizType: 'GRAPH',             target: 'server' },
+  'interval-scheduling':      { slug: 'activity-selection', vizType: 'ARRAY_BARS',      target: 'server' },
+  'recursion-to-iteration':   { slug: 'dfs',              vizType: 'GRAPH',             target: 'server' },
+  'amortized-analysis':       { slug: 'bubble-sort',      vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'cache-and-locality':       { slug: 'bubble-sort',      vizType: 'ARRAY_BARS',        target: 'wasm'   },
 };
 
 // ── Shared quiz renderer ─────────────────────────────────────────────────────

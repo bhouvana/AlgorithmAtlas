@@ -22,7 +22,7 @@
 
 Algorithm Atlas is a full-stack, real-time algorithm visualization platform built for students, engineers, and the algorithmically curious. Every algorithm is a live, interactive experience — not a static diagram.
 
-- **Learn through 53 guided lessons** across 9 curriculum tracks — from Big O fundamentals to advanced graph algorithms, each with interactive visualizations, code examples, complexity analysis, and 6-question quizzes
+- **Learn through 73 guided lessons** across 12 curriculum tracks — from Big O fundamentals to cache locality and real-world applications, each with interactive visualizations, code examples, complexity analysis, and 6-question quizzes
 - **Step through 250+ algorithms** frame by frame via WebSocket-driven animations
 - **Compare two algorithms side by side** with synchronized playback controls
 - **Execute code in 17 languages** from a Monaco-powered in-browser IDE (Polyglot Notebook)
@@ -55,8 +55,8 @@ A full Programiz-style split-pane IDE with Monaco Editor on the left and output 
 
 Each language runs in an isolated subprocess with a 10-second timeout. Compiled languages (C++, Java, Rust, Kotlin) go through a compile → run pipeline. TypeScript runs via `npx tsx` with zero-install.
 
-### Structured Learning Paths 
-53 guided lessons across 9 tracks — Foundations, Sorting, Searching, Trees, Graphs, Dynamic Programming, Greedy, Backtracking, and Advanced Topics. Every lesson follows a consistent 5-tab layout:
+### Structured Learning Paths (New)
+73 guided lessons across 12 tracks — Foundations, Sorting, Searching, Trees, Graphs, Dynamic Programming, Greedy, Backtracking, Advanced Topics, Algorithms in the Wild, Algorithmic Thinking, and Practical Patterns. Every lesson follows a consistent 5-tab layout:
 
 | Tab | Content |
 |-----|---------|
@@ -67,6 +67,8 @@ Each language runs in an isolated subprocess with a 10-second timeout. Compiled 
 | Quiz | 6 interactive questions with instant feedback and explanations |
 
 Progress is tracked locally with XP, level-ups, bookmarks, and per-lesson completion state.
+
+Three new tracks connect algorithms to daily life: **Algorithms in the Wild** (how Google, GPS, Netflix, ZIP, passwords, and autocomplete work), **Algorithmic Thinking** (recursion, divide & conquer, two pointers, sliding window, greedy, prefix sums), and **Practical Patterns** (bit manipulation, monotonic stack, intervals, amortized analysis, cache locality).
 
 ### Structured Algorithm Catalog
 - 250+ algorithms across 20 categories
@@ -298,7 +300,7 @@ algorithm-atlas/
 │   │   │   ├── notebook/           # Polyglot IDE (17 languages)
 │   │   │   ├── experiments/        # Saved experiment runs
 │   │   │   ├── landing/            # Home page
-│   │   │   ├── learning/           # 53-lesson curriculum (9 tracks, 5-tab GenericLesson)
+│   │   │   ├── learning/           # 73-lesson curriculum (12 tracks, 5-tab GenericLesson)
 │   │   │   ├── simulation/         # WebSocket simulation controller
 │   │   │   ├── visualization/      # 13 algorithm renderers
 │   │   │   ├── components/
