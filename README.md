@@ -55,7 +55,7 @@ A full Programiz-style split-pane IDE with Monaco Editor on the left and output 
 
 Each language runs in an isolated subprocess with a 10-second timeout. Compiled languages (C++, Java, Rust, Kotlin) go through a compile → run pipeline. TypeScript runs via `npx tsx` with zero-install.
 
-### Structured Learning Paths (New)
+### Structured Learning Paths 
 53 guided lessons across 9 tracks — Foundations, Sorting, Searching, Trees, Graphs, Dynamic Programming, Greedy, Backtracking, and Advanced Topics. Every lesson follows a consistent 5-tab layout:
 
 | Tab | Content |
