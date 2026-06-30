@@ -7,12 +7,7 @@ import { useProgressStore, useModuleProgress, xpForNextLevel, xpProgressPercent 
 import { GenericLesson } from './lessons/GenericLesson';
 import { lessonRegistry } from './data/lessons';
 
-const LESSON_MAP: Record<string, React.LazyExoticComponent<() => JSX.Element>> = {
-  'big-o-notation':  lazy(() => import('./lessons/BigOLesson').then((m) => ({ default: m.BigOLesson }))),
-  'arrays':          lazy(() => import('./lessons/ArraysLesson').then((m) => ({ default: m.ArraysLesson }))),
-  'bubble-sort':     lazy(() => import('./lessons/BubbleSortLesson').then((m) => ({ default: m.BubbleSortLesson }))),
-  'binary-search':   lazy(() => import('./lessons/BinarySearchLesson').then((m) => ({ default: m.BinarySearchLesson }))),
-};
+const LESSON_MAP: Record<string, React.LazyExoticComponent<() => JSX.Element>> = {};
 
 function XPBar({ xp }: { xp: number }) {
   const pct = xpProgressPercent(xp);

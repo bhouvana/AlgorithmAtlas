@@ -1,17 +1,18 @@
 {
-  "slug": "linked-list",
+  "schema_version": "1.0",
+  "id": "linked-list",
   "name": "Linked List",
+  "version": "1.0.0",
   "category": "data-structures",
   "visualization_type": "ARRAY_BARS",
   "description": "A singly linked list where each node holds a value and a pointer to the next node. Demonstrates O(n) traversal, O(1) insertion/deletion given a pointer, and O(n) search.",
+  "execution_target": "server",
+  "entry_point": "algorithm.py",
   "complexity": {
     "time_best": "O(1)",
     "time_average": "O(n)",
     "time_worst": "O(n)",
     "space": "O(n)"
   },
-  "tags": ["data-structures", "linked-list", "pointer", "linear"],
-  "execution_target": "server",
-  "entry_point": "algorithm.py",
-  "class_name": "LinkedList"
+  "tags": ["data-structures", "linked-list", "pointer", "linear"]
 }

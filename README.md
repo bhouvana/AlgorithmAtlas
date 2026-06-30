@@ -2,7 +2,7 @@
 
 # ⬡ Algorithm Atlas
 
-**An interactive algorithmic encyclopedia — visualize, compare, and run 220+ algorithms in real time**
+**An interactive algorithmic encyclopedia — visualize, compare, learn, and run 250+ algorithms in real time**
 
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
@@ -22,11 +22,12 @@
 
 Algorithm Atlas is a full-stack, real-time algorithm visualization platform built for students, engineers, and the algorithmically curious. Every algorithm is a live, interactive experience — not a static diagram.
 
-- **Step through 220+ algorithms** frame by frame via WebSocket-driven animations
+- **Learn through 53 guided lessons** across 9 curriculum tracks — from Big O fundamentals to advanced graph algorithms, each with interactive visualizations, code examples, complexity analysis, and 6-question quizzes
+- **Step through 250+ algorithms** frame by frame via WebSocket-driven animations
 - **Compare two algorithms side by side** with synchronized playback controls
 - **Execute code in 17 languages** from a Monaco-powered in-browser IDE (Polyglot Notebook)
 - **Save and revisit experiments** with persistent notebook cells backed by SQLite
-- **Browse a structured catalog** of 220 algorithms across 20 categories with full complexity analysis, references, and source code
+- **Browse a structured catalog** of 250+ algorithms across 20 categories with full complexity analysis, references, and source code
 
 ---
 
@@ -54,8 +55,21 @@ A full Programiz-style split-pane IDE with Monaco Editor on the left and output 
 
 Each language runs in an isolated subprocess with a 10-second timeout. Compiled languages (C++, Java, Rust, Kotlin) go through a compile → run pipeline. TypeScript runs via `npx tsx` with zero-install.
 
+### Structured Learning Paths (New)
+53 guided lessons across 9 tracks — Foundations, Sorting, Searching, Trees, Graphs, Dynamic Programming, Greedy, Backtracking, and Advanced Topics. Every lesson follows a consistent 5-tab layout:
+
+| Tab | Content |
+|-----|---------|
+| Concept | Overview + key-point cards |
+| Visualization | Live `SimulationCanvas` using the catalog plugin for the algorithm — full playback controls |
+| Examples | Annotated code examples with complexity badges |
+| Complexity | Big O table + real-world applications + common mistakes |
+| Quiz | 6 interactive questions with instant feedback and explanations |
+
+Progress is tracked locally with XP, level-ups, bookmarks, and per-lesson completion state.
+
 ### Structured Algorithm Catalog
-- 220 algorithms across 20 categories
+- 250+ algorithms across 20 categories
 - Filterable by category, time complexity, and tags
 - Paginated (24 per page) for smooth performance
 - Every algorithm card shows: name, category accent, description, complexity badge, and tags
@@ -287,6 +301,7 @@ algorithm-atlas/
 │   │   │   ├── notebook/           # Polyglot IDE (17 languages)
 │   │   │   ├── experiments/        # Saved experiment runs
 │   │   │   ├── landing/            # Home page
+│   │   │   ├── learning/           # 53-lesson curriculum (9 tracks, 5-tab GenericLesson)
 │   │   │   ├── simulation/         # WebSocket simulation controller
 │   │   │   ├── visualization/      # 13 algorithm renderers
 │   │   │   ├── components/

@@ -1775,4 +1775,193 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       },
     ],
   },
+
+  'binary-search': {
+    concept: {
+      overview:
+        'Binary Search finds a target in a SORTED array by repeatedly halving the search space. Compare target to the middle element: if equal you\'re done, if smaller search left half, if larger search right half. O(log n) — 1 million elements needs at most 20 comparisons.',
+      keyPoints: [
+        {
+          title: 'Requires Sorted',
+          desc: 'Binary search only works on sorted arrays. Applying it to unsorted data produces incorrect results.',
+        },
+        {
+          title: 'O(log n)',
+          desc: 'Each comparison halves the remaining search space, giving O(log n) time — 1 million elements needs at most 20 comparisons.',
+        },
+        {
+          title: 'Mid Formula',
+          desc: 'Use mid = low + (high - low) / 2 to avoid integer overflow instead of (low + high) / 2.',
+        },
+      ],
+    },
+    steps: [
+      {
+        n: '1',
+        label: 'Set Bounds',
+        desc: 'Initialise low = 0 and high = n - 1, covering the full array.',
+      },
+      {
+        n: '2',
+        label: 'Find Mid',
+        desc: 'Compute mid = low + (high - low) // 2 to get the middle index without overflow.',
+      },
+      {
+        n: '3',
+        label: 'Compare',
+        desc: 'If arr[mid] == target: element found — return mid.',
+      },
+      {
+        n: '4',
+        label: 'Halve',
+        desc: 'If target < arr[mid]: set high = mid - 1 (search left half). Otherwise set low = mid + 1 (search right half).',
+      },
+      {
+        n: '5',
+        label: 'Repeat or Fail',
+        desc: 'Continue the loop while low <= high. If the loop exits without a match, return -1 to signal the target is absent.',
+      },
+    ],
+    codeExamples: [
+      {
+        label: 'Binary Search — iterative',
+        code: [
+          'def binary_search(arr, target):',
+          '    low, high = 0, len(arr) - 1',
+          '    while low <= high:',
+          '        mid = low + (high - low) // 2',
+          '        if arr[mid] == target:',
+          '            return mid',
+          '        elif target < arr[mid]:',
+          '            high = mid - 1',
+          '        else:',
+          '            low = mid + 1',
+          '    return -1',
+          '',
+          '# Example',
+          'nums = [1, 3, 5, 7, 9, 11, 13]',
+          'print(binary_search(nums, 7))   # 3',
+          'print(binary_search(nums, 6))   # -1',
+        ].join('\n'),
+        complexity: 'Time O(log n) | Space O(1)',
+        variant: 'default',
+      },
+      {
+        label: 'Binary Search — recursive',
+        code: [
+          'def binary_search_recursive(arr, target, low=0, high=None):',
+          '    if high is None:',
+          '        high = len(arr) - 1',
+          '    if low > high:',
+          '        return -1',
+          '    mid = low + (high - low) // 2',
+          '    if arr[mid] == target:',
+          '        return mid',
+          '    elif target < arr[mid]:',
+          '        return binary_search_recursive(arr, target, low, mid - 1)',
+          '    else:',
+          '        return binary_search_recursive(arr, target, mid + 1, high)',
+          '',
+          '# Note: recursive version uses O(log n) call-stack space',
+          'nums = [2, 4, 6, 8, 10]',
+          'print(binary_search_recursive(nums, 6))  # 2',
+          'print(binary_search_recursive(nums, 5))  # -1',
+        ].join('\n'),
+        complexity: 'Time O(log n) | Space O(log n) recursive call stack',
+        variant: 'good',
+      },
+    ],
+    complexity: {
+      rows: [
+        { case: 'Best Case', value: 'O(1)', color: 'text-emerald-400', note: 'Target is the middle element on the first check' },
+        { case: 'Average Case', value: 'O(log n)', color: 'text-cyan-400', note: 'Search space halves each iteration' },
+        { case: 'Worst Case', value: 'O(log n)', color: 'text-cyan-400', note: 'Target is at an edge or absent — log n iterations' },
+        { case: 'Space (iterative)', value: 'O(1)', color: 'text-emerald-400', note: 'Only a handful of index variables; no extra allocation' },
+      ],
+      note: 'The recursive variant uses O(log n) call-stack space. Prefer the iterative version when memory is a concern.',
+    },
+    realWorld: [
+      {
+        title: 'Database Index Lookup',
+        desc: 'B-trees use binary search at each node level to locate keys, enabling O(log n) row lookups on indexed columns.',
+      },
+      {
+        title: 'std::lower_bound / Python bisect',
+        desc: 'C++ STL\'s std::lower_bound and Python\'s bisect module provide binary search on sorted containers, used everywhere from standard library internals to competitive programming.',
+      },
+    ],
+    commonMistakes: [
+      {
+        wrong: 'Applying binary search to an unsorted array',
+        explain: 'Binary search relies on sorted order to decide which half to eliminate. On an unsorted array the comparison result is meaningless and the algorithm may miss the target entirely.',
+      },
+      {
+        wrong: 'Computing mid as (low + high) / 2',
+        right: 'mid = low + (high - low) / 2',
+        explain: 'When low and high are large integers, low + high can overflow a 32-bit integer. Subtracting first keeps the intermediate value within bounds.',
+      },
+      {
+        wrong: 'Using < instead of <= in the loop condition (while low < high)',
+        explain: 'The loop must run while low <= high. Using strict < causes the algorithm to skip the last remaining element when low == high, potentially missing the target.',
+      },
+    ],
+    quiz: [
+      {
+        q: 'What precondition must the input satisfy before applying binary search?',
+        options: [
+          'The array must contain only distinct integers',
+          'The array must be sorted',
+          'The array must have an even number of elements',
+          'The array must be stored in a linked list',
+        ],
+        correct: 1,
+        explanation: 'Binary search requires a sorted array. It exploits the ordering to discard half the remaining elements with each comparison. On unsorted data the algorithm may produce incorrect results.',
+      },
+      {
+        q: 'How many comparisons does binary search need at most to find a target in an array of 256 elements?',
+        options: ['256', '128', '16', '8'],
+        correct: 3,
+        explanation: 'log₂ 256 = 8. Binary search halves the search space each step, so it needs at most 8 comparisons to locate (or rule out) any element in 256 items.',
+      },
+      {
+        q: 'Which formula correctly computes the middle index without risking integer overflow?',
+        options: [
+          'mid = (low + high) / 2',
+          'mid = low + (high - low) / 2',
+          'mid = high - low / 2',
+          'mid = (high - low) * 2',
+        ],
+        correct: 1,
+        explanation: 'low + (high - low) / 2 first computes the difference (which is always smaller than each bound alone), then adds it to low. This keeps all intermediate values within the integer range, avoiding overflow that (low + high) / 2 can cause when both bounds are large.',
+      },
+      {
+        q: 'What does binary search return when the target is not found in the array?',
+        options: [
+          'The index of the closest element',
+          'The value 0',
+          '-1 to indicate the target is absent',
+          'It raises an exception',
+        ],
+        correct: 2,
+        explanation: 'By convention binary search returns -1 when the target is not found. The loop exits when low > high, meaning the entire search space has been exhausted without a match.',
+      },
+      {
+        q: 'What is the space complexity of the iterative binary search implementation?',
+        options: ['O(n)', 'O(log n)', 'O(1)', 'O(n log n)'],
+        correct: 2,
+        explanation: 'The iterative version uses only a fixed number of variables (low, high, mid) regardless of input size, giving O(1) space. The recursive version, by contrast, uses O(log n) call-stack frames.',
+      },
+      {
+        q: 'Which real-world use case is most directly powered by binary search?',
+        options: [
+          'Finding the shortest path in a road network',
+          'Locating a record by primary key in a B-tree database index',
+          'Rendering pixels on a screen',
+          'Sending packets across a network',
+        ],
+        correct: 1,
+        explanation: 'Database B-tree indexes apply binary search at each node level to narrow down to the target key in O(log n) comparisons. This is the canonical real-world application of binary search in production systems.',
+      },
+    ],
+  },
 };

@@ -67,10 +67,19 @@ interface CatalogEntry {
 }
 
 const CATALOG_MAP: Record<string, CatalogEntry> = {
-  // Foundations
+  // Foundations — conceptual lessons use bubble-sort / bfs / bfs as illustrative demos
+  'what-is-an-algorithm':  { slug: 'bubble-sort',                    vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'big-o-notation':        { slug: 'bubble-sort',                    vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'time-vs-space':         { slug: 'merge-sort',                     vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'arrays':                { slug: 'bubble-sort',                    vizType: 'ARRAY_BARS',        target: 'wasm'   },
   'linked-lists':          { slug: 'linked-list',                    vizType: 'ARRAY_BARS',        target: 'server' },
+  'stacks':                { slug: 'dfs',                            vizType: 'GRAPH',             target: 'server' },
+  'queues':                { slug: 'bfs',                            vizType: 'GRAPH',             target: 'server' },
   'hash-tables':           { slug: 'hash-table-chaining',            vizType: 'ARRAY_BARS',        target: 'server' },
   'strings':               { slug: 'z-algorithm',                    vizType: 'ARRAY_BARS_SEARCH', target: 'server' },
+  // Custom lessons (previously LESSON_MAP — now use catalog viz)
+  'bubble-sort':           { slug: 'bubble-sort',                    vizType: 'ARRAY_BARS',        target: 'wasm'   },
+  'binary-search':         { slug: 'binary-search',                  vizType: 'ARRAY_BARS_SEARCH', target: 'server' },
   // Sorting
   'selection-sort':        { slug: 'selection-sort',                 vizType: 'ARRAY_BARS',        target: 'wasm'   },
   'insertion-sort':        { slug: 'insertion-sort',                 vizType: 'ARRAY_BARS',        target: 'wasm'   },

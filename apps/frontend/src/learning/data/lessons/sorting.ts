@@ -1160,6 +1160,203 @@ print(counting_sort(scores))  # [1, 2, 2, 3, 3, 4, 8]`,
     ],
   },
 
+  'bubble-sort': {
+    concept: {
+      overview:
+        'Bubble Sort repeatedly scans the array, comparing adjacent pairs and swapping them if out of order. After each full pass, the largest unsorted element "bubbles up" to its correct position at the end. With early-exit optimization, an already-sorted array is detected in O(n).',
+      keyPoints: [
+        {
+          title: 'In-Place',
+          desc: 'O(1) extra space — all swaps happen directly within the original array without any auxiliary storage.',
+        },
+        {
+          title: 'Stable',
+          desc: 'Equal elements are never swapped past each other (only strict > triggers a swap), so their relative order is preserved.',
+        },
+        {
+          title: 'Early Exit',
+          desc: 'If a full pass completes without a single swap, the array is already sorted. This optimisation makes bubble sort O(n) on already-sorted input.',
+        },
+      ],
+    },
+    steps: [
+      {
+        n: '1',
+        label: 'Compare Adjacent',
+        desc: 'Compare arr[i] and arr[i+1] for each consecutive pair in the current unsorted range.',
+        code: 'if arr[i] > arr[i + 1]: swap',
+      },
+      {
+        n: '2',
+        label: 'Swap if Needed',
+        desc: 'If the left element is greater than the right, swap them so the larger value moves one step to the right.',
+        code: 'arr[i], arr[i + 1] = arr[i + 1], arr[i]',
+      },
+      {
+        n: '3',
+        label: 'Bubble Up',
+        desc: 'After one full pass, the largest element in the unsorted region has bubbled all the way to its correct position at the end.',
+      },
+      {
+        n: '4',
+        label: 'Shrink Range',
+        desc: 'The last j elements are guaranteed to be in their final sorted positions, so the next pass only needs to scan up to index n - j - 1.',
+        code: 'for i in range(n - 1 - j):  # shrink upper bound each pass',
+      },
+      {
+        n: '5',
+        label: 'Early Exit',
+        desc: 'Track whether any swap occurred during a pass. If no swap happened, the array is already sorted — stop immediately instead of continuing unnecessary passes.',
+        code: 'swapped = False\n# ... inner loop ...\nif not swapped: break',
+      },
+    ],
+    codeExamples: [
+      {
+        label: 'Bubble Sort — Basic O(n²)',
+        complexity: 'O(n²)',
+        variant: 'default',
+        code: `def bubble_sort_basic(arr):
+    n = len(arr)
+    for j in range(n - 1):
+        for i in range(n - 1 - j):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+    return arr
+
+# Example
+arr = [5, 3, 8, 1, 2]
+bubble_sort_basic(arr)
+# Result: [1, 2, 3, 5, 8]`,
+      },
+      {
+        label: 'Bubble Sort — Optimized (early exit + shrinking range)',
+        complexity: 'O(n) best / O(n²) worst',
+        variant: 'good',
+        code: `def bubble_sort(arr):
+    n = len(arr)
+    for j in range(n - 1):
+        swapped = False
+        # Shrink the upper bound each pass
+        for i in range(n - 1 - j):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swapped = True
+        # Early exit: no swap means already sorted
+        if not swapped:
+            break
+    return arr
+
+# Already-sorted input finishes in a single O(n) pass
+arr = [1, 2, 3, 4, 5]
+bubble_sort(arr)  # exits after one pass — O(n)`,
+      },
+    ],
+    complexity: {
+      rows: [
+        { case: 'Worst Case',   value: 'O(n²)', color: 'text-orange-400', note: 'Reverse-sorted input — every pair needs a swap on every pass' },
+        { case: 'Average Case', value: 'O(n²)', color: 'text-orange-400', note: 'Random input — n*(n-1)/2 comparisons on average' },
+        { case: 'Best Case',    value: 'O(n)',  color: 'text-emerald-400', note: 'Already-sorted input with early-exit optimisation — single pass' },
+        { case: 'Space',        value: 'O(1)',  color: 'text-emerald-400', note: 'In-place; only a swap temp and a boolean flag are needed' },
+      ],
+      note: 'Bubble sort is rarely used in production because even its optimised form is O(n²) average and worst case. Its main practical value is on nearly-sorted data where early exit kicks in quickly, and as a teaching algorithm.',
+    },
+    realWorld: [
+      {
+        title: 'Teaching Tool',
+        desc: 'Bubble sort is one of the simplest algorithms to visualise and understand, making it a standard first sorting algorithm in CS101 courses worldwide.',
+      },
+      {
+        title: 'Nearly-Sorted Data',
+        desc: 'With early exit, bubble sort detects and finishes already- or nearly-sorted arrays in O(n) time, making it competitive with insertion sort for small perturbations in an otherwise ordered list.',
+      },
+    ],
+    commonMistakes: [
+      {
+        wrong: '# No early-exit flag — always runs all n-1 passes',
+        right:  'swapped = False  # track per pass; break if no swap occurred',
+        explain: 'Without an early-exit flag, bubble sort always performs n*(n-1)/2 comparisons even on an already-sorted array, losing the O(n) best-case advantage entirely.',
+      },
+      {
+        wrong: 'for i in range(n - 1):  # inner bound never shrinks',
+        right:  'for i in range(n - 1 - j):  # shrink by j each outer pass',
+        explain: 'After j outer passes, the last j elements are in their final positions. Not shrinking the inner loop\'s upper bound wastes time re-examining elements that are already correctly placed.',
+      },
+      {
+        wrong: '# Using bubble sort on a large (n > 10,000) dataset',
+        right:  '# Use merge sort, heap sort, or Timsort for large inputs',
+        explain: 'Bubble sort\'s O(n²) average complexity makes it impractically slow for large arrays. Even on modern hardware, sorting 100,000 elements takes ~10 billion operations versus ~1.7 million for O(n log n) algorithms.',
+      },
+    ],
+    quiz: [
+      {
+        q: 'What is the worst-case time complexity of bubble sort and what input triggers it?',
+        options: [
+          'O(n) — a reverse-sorted array where all pairs need swapping',
+          'O(n log n) — random input with many duplicates',
+          'O(n²) — a reverse-sorted array where every pair must be swapped on every pass',
+          'O(n²) — an already-sorted array because the algorithm cannot detect it',
+        ],
+        correct: 2,
+        explanation: 'When the array is in reverse order, every adjacent pair is out of order on every pass. The total number of swaps and comparisons sums to n*(n-1)/2, giving O(n²) worst-case time.',
+      },
+      {
+        q: 'When does bubble sort achieve its best-case O(n) time complexity?',
+        options: [
+          'When the array has no duplicate elements',
+          'When the array is already sorted in ascending order and the early-exit optimisation is implemented',
+          'When the array has exactly two elements',
+          'When the array is sorted in descending order',
+        ],
+        correct: 1,
+        explanation: 'With the early-exit flag, a single pass over an already-sorted array finds no swaps and immediately breaks out of the outer loop. Only n-1 comparisons are made, giving O(n) best-case time. Without the flag, best case is still O(n²).',
+      },
+      {
+        q: 'Why is it called "bubble sort"?',
+        options: [
+          'Because it was invented by a researcher named Bubble',
+          'Because it uses a bubble (temporary variable) to hold values during swaps',
+          'Because larger elements gradually "bubble up" toward the end of the array after each pass',
+          'Because it sorts data in bubble-shaped groups',
+        ],
+        correct: 2,
+        explanation: 'After each full pass, the largest remaining unsorted element has been moved one position at a time all the way to its correct position at the right end of the unsorted region — visually resembling a bubble rising to the surface.',
+      },
+      {
+        q: 'Is bubble sort a stable sorting algorithm?',
+        options: [
+          'No — swapping adjacent elements always changes relative order',
+          'Yes — it only swaps when arr[i] > arr[i+1] (strict greater-than), so equal elements are never swapped past each other',
+          'It depends on whether the early-exit optimisation is enabled',
+          'No — stability is only possible with O(n log n) algorithms',
+        ],
+        correct: 1,
+        explanation: 'The swap condition is strict: arr[i] > arr[i+1]. When two elements are equal, no swap occurs, so they remain in their original relative order. This makes bubble sort stable.',
+      },
+      {
+        q: 'What is the space complexity of bubble sort?',
+        options: [
+          'O(n) — it needs a copy of the array to perform comparisons',
+          'O(log n) — for the implicit recursion stack',
+          'O(1) — it sorts in-place using only a boolean flag and a temporary swap variable',
+          'O(n²) — one temporary value per comparison',
+        ],
+        correct: 2,
+        explanation: 'Bubble sort is an in-place algorithm. It only requires a constant number of extra variables (a loop index, a boolean swapped flag, and a temporary value during swaps) regardless of the input size, so auxiliary space is O(1).',
+      },
+      {
+        q: 'Why is bubble sort rarely used in production code despite being easy to implement?',
+        options: [
+          'It is not stable, which disqualifies it from most use cases',
+          'It requires O(n) extra space, making it memory-inefficient',
+          'Its O(n²) average and worst-case time complexity makes it impractically slow compared to O(n log n) algorithms like merge sort or Timsort for any non-trivial input size',
+          'It cannot handle arrays containing duplicate values',
+        ],
+        correct: 2,
+        explanation: 'Bubble sort\'s O(n²) average performance means sorting 100,000 elements requires roughly 5 billion operations, while merge sort needs only about 1.7 million. For nearly-sorted small arrays the early-exit optimisation helps, but even then insertion sort is generally faster in practice because it makes fewer writes per pass.',
+      },
+    ],
+  },
+
   'radix-sort': {
     concept: {
       overview:

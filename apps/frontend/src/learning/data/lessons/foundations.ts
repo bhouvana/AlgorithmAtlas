@@ -1098,6 +1098,382 @@ export const foundationsLessons: Record<string, LessonData> = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────
+  'big-o-notation': {
+    concept: {
+      overview:
+        "Big O notation is the universal language for measuring how an algorithm's runtime scales with input size. It describes the shape of growth — not the exact execution time on any particular machine. We drop constants and lower-order terms because they become irrelevant as n grows large: what matters is whether your algorithm is linear, quadratic, logarithmic, or exponential.",
+      keyPoints: [
+        {
+          title: 'Drop Constants',
+          desc: 'O(5n) and O(100n) are both written as O(n). Constants depend on the machine, the language, and the compiler — they tell us nothing about how the algorithm scales. Only the growth shape matters.',
+          code: '5n  →  O(n)     (constant dropped)\n100n²  →  O(n²)  (constant dropped)',
+        },
+        {
+          title: 'Drop Non-Dominants',
+          desc: 'O(n² + n) simplifies to O(n²) because for large n the n term is dwarfed by n². We keep only the fastest-growing term — the one that dominates the cost at scale.',
+          code: 'n² + n  →  O(n²)  (n is non-dominant)',
+        },
+        {
+          title: 'Worst Case',
+          desc: 'Big O describes the ceiling — the worst-case number of operations. Knowing the worst case lets you make guarantees about your algorithm regardless of what input it receives.',
+        },
+      ],
+    },
+    steps: [
+      {
+        n: '1',
+        label: 'O(1) — Constant',
+        desc: 'The operation takes the same amount of time no matter how large the input is. Array index access and hash table lookups are classic examples — they jump directly to the result without scanning.',
+        code: 'arr[5]          # O(1) — direct memory offset\nmy_dict["key"]  # O(1) — hash to bucket',
+      },
+      {
+        n: '2',
+        label: 'O(log n) — Logarithmic',
+        desc: 'The algorithm halves (or otherwise reduces) the problem size at each step. Binary search on a sorted array of 1,000,000 elements takes at most 20 comparisons. Logarithmic algorithms scale beautifully.',
+        code: '# Binary search: halves search space each step\n# n=1,000,000  →  ≈20 steps\n# n=1,000,000,000  →  ≈30 steps',
+      },
+      {
+        n: '3',
+        label: 'O(n) — Linear',
+        desc: 'The algorithm must inspect each element once. Finding the maximum value in an unsorted array requires checking every element — you cannot skip any because the max could be anywhere.',
+        code: 'def find_max(arr):\n    best = arr[0]\n    for x in arr:   # O(n) — one pass\n        if x > best: best = x\n    return best',
+      },
+      {
+        n: '4',
+        label: 'O(n log n) — Linearithmic',
+        desc: 'This is the complexity of efficient comparison-based sorting algorithms like merge sort and quicksort (average case). It is also proven to be the theoretical lower bound for comparison sorting — you cannot do better in the general case.',
+        code: '# Merge sort: divide (log n levels) × merge (O(n) per level)\n# Quicksort average: O(n log n)\n# Python sorted(), list.sort(): Timsort = O(n log n)',
+      },
+      {
+        n: '5',
+        label: 'O(n²) — Quadratic',
+        desc: 'A nested loop where both dimensions scale with n. Bubble sort, insertion sort, and selection sort are classic examples. Fine for small inputs (n < 1000), but becomes prohibitively slow as n grows — doubling n quadruples the work.',
+        code: 'for i in range(n):       # outer loop: n times\n    for j in range(n):   # inner loop: n times\n        process(i, j)    # total: n² operations',
+      },
+      {
+        n: '6',
+        label: 'O(2ⁿ) — Exponential',
+        desc: 'Each additional input element doubles the work. Naive recursive Fibonacci recomputes the same subproblems over and over — fib(50) makes trillions of calls. Exponential algorithms are practically unusable beyond n ≈ 30 without optimization.',
+        code: 'def fib(n):              # O(2^n) — exponential!\n    if n <= 1: return n\n    return fib(n-1) + fib(n-2)  # two recursive calls each time',
+      },
+    ],
+    codeExamples: [
+      {
+        label: 'O(1) — Constant time array access',
+        code:
+'arr = [10, 20, 30, 40, 50]\n' +
+'\n' +
+'# Direct memory offset: base + i × element_size\n' +
+'# Same speed whether the array has 5 or 5 million elements\n' +
+'value = arr[4]   # O(1) — always exactly one operation\n' +
+'print(value)     # 50',
+        complexity: 'O(1)',
+        variant: 'good',
+      },
+      {
+        label: 'O(n) — Linear search',
+        code:
+'def linear_search(arr, target):\n' +
+'    # Must check each element in sequence\n' +
+'    # Worst case: target is last or not present\n' +
+'    for i, val in enumerate(arr):  # O(n) comparisons\n' +
+'        if val == target:\n' +
+'            return i\n' +
+'    return -1\n' +
+'\n' +
+'data = [3, 7, 1, 9, 4, 6, 2]\n' +
+'print(linear_search(data, 9))  # 3 (found at index 3)',
+        complexity: 'O(n) time, O(1) space',
+        variant: 'default',
+      },
+      {
+        label: 'O(n²) — Nested loops',
+        code:
+'def find_pairs_summing_to(arr, target):\n' +
+'    # Check every pair — O(n²)\n' +
+'    pairs = []\n' +
+'    for i in range(len(arr)):\n' +
+'        for j in range(i + 1, len(arr)):  # nested loop\n' +
+'            if arr[i] + arr[j] == target:\n' +
+'                pairs.append((arr[i], arr[j]))\n' +
+'    return pairs\n' +
+'\n' +
+'# Note: a hash table can solve this in O(n) time instead\n' +
+'print(find_pairs_summing_to([1, 2, 3, 4], 5))  # [(1,4),(2,3)]',
+        complexity: 'O(n²) time — consider O(n) hash approach',
+        variant: 'warn',
+      },
+    ],
+    complexity: {
+      rows: [
+        { case: 'O(1) — Constant',      value: 'O(1)',       color: 'text-emerald-400', note: 'Array index, hash lookup — fastest possible' },
+        { case: 'O(log n) — Logarithmic', value: 'O(log n)', color: 'text-cyan-400',    note: 'Binary search — halves problem each step' },
+        { case: 'O(n) — Linear',        value: 'O(n)',       color: 'text-violet-400',  note: 'Single pass through input — find max, linear search' },
+        { case: 'O(n log n) — Linearithmic', value: 'O(n log n)', color: 'text-amber-400', note: 'Merge sort, Timsort — optimal comparison sort' },
+        { case: 'O(n²) — Quadratic',    value: 'O(n²)',      color: 'text-orange-400',  note: 'Nested loops — bubble sort, brute-force pairs' },
+        { case: 'O(2ⁿ) — Exponential',  value: 'O(2ⁿ)',      color: 'text-red-400',     note: 'Naive Fibonacci — unusable beyond n≈30' },
+      ],
+      note: 'Each class represents an order-of-magnitude difference in scalability. An O(n²) algorithm on n=1,000,000 elements performs a trillion operations; an O(n log n) algorithm performs only about 20 million.',
+    },
+    realWorld: [
+      {
+        title: 'Database Indexing',
+        desc: 'A full table scan to find a row is O(n) — it reads every row. A B-tree index reduces this to O(log n). For a table with 10 million rows that is the difference between 10 million disk reads and about 23. This is why indexes exist.',
+      },
+      {
+        title: 'Sorting in the Standard Library',
+        desc: "Python's sorted() and list.sort() use Timsort, which runs in O(n log n). This is not an accident — it is provably optimal for comparison-based sorting. Languages from Java to JavaScript converged on O(n log n) algorithms for the same reason.",
+      },
+    ],
+    commonMistakes: [
+      {
+        wrong: 'Keeping lower-order terms: writing O(n² + n) instead of O(n²)',
+        right: 'O(n²)',
+        explain: 'For large n, n² completely dominates n. When n=1000, n²=1,000,000 and n=1,000 — the n term is 0.1% of the total. Drop it.',
+      },
+      {
+        wrong: 'Confusing average case with worst case: saying "quicksort is O(n log n)"',
+        explain: 'Quicksort is O(n log n) on average but O(n²) in the worst case (sorted input with bad pivot choice). Big O without qualification means worst case. Always state the case explicitly when it matters.',
+      },
+    ],
+    quiz: [
+      {
+        q: 'What is the time complexity of accessing an element in an array by index, e.g. arr[42]?',
+        options: ['O(n) — must scan to position 42', 'O(log n) — binary search to find it', 'O(1) — direct memory offset', 'O(42) — depends on the index'],
+        correct: 2,
+        explanation: 'Array elements are stored in contiguous memory. The address of element i is simply base + i × element_size — a single arithmetic operation regardless of array size. That is O(1).',
+      },
+      {
+        q: 'A function has two nested loops, each running n times. What is its time complexity?',
+        options: ['O(2n)', 'O(n)', 'O(n²)', 'O(n + n)'],
+        correct: 2,
+        explanation: 'The inner loop body executes n × n = n² times. We drop the constant coefficient (1), giving O(n²). This is quadratic — doubling n quadruples the runtime.',
+      },
+      {
+        q: 'Binary search on a sorted array of 1,000,000 elements takes at most how many comparisons?',
+        options: ['1,000,000', '500,000', 'About 20', 'About 1,000'],
+        correct: 2,
+        explanation: 'Binary search halves the search space at each step: log₂(1,000,000) ≈ 20. After 20 comparisons at most, the target is either found or confirmed absent. This is the power of O(log n).',
+      },
+      {
+        q: 'What does O(log n) mean intuitively?',
+        options: [
+          'The algorithm reads half the input each time it runs',
+          'The problem size is halved (or similarly reduced) at each step, so the number of steps grows very slowly',
+          'The algorithm has a logarithm written somewhere in the code',
+          'The runtime decreases as n increases',
+        ],
+        correct: 1,
+        explanation: "O(log n) means the input size is reduced by a constant factor (often halved) each step. Binary search discards half the remaining candidates every comparison. Even for n = 1 billion, you need only ≈30 steps.",
+      },
+      {
+        q: 'What does "drop constants" mean in Big O analysis?',
+        options: [
+          'Ignore all numbers in the code',
+          'Write O(n) instead of O(5n) because constants do not affect the growth rate',
+          'Delete constant-time operations from the algorithm',
+          'Only count operations that run more than once',
+        ],
+        correct: 1,
+        explanation: 'O(5n) and O(1000n) both describe linear growth. The constant factor depends on hardware and implementation details — it tells us nothing about how the algorithm scales. We simplify to O(n) to focus on the growth shape.',
+      },
+      {
+        q: 'Which complexity class is the proven lower bound for comparison-based sorting algorithms?',
+        options: ['O(n)', 'O(n log n)', 'O(n²)', 'O(log n)'],
+        correct: 1,
+        explanation: 'Information theory proves that any comparison-based sort must make at least Ω(n log n) comparisons in the worst case. Merge sort and Timsort achieve this bound. You cannot sort by comparisons faster than O(n log n) in general.',
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  'arrays': {
+    concept: {
+      overview:
+        'An array is a contiguous block of memory holding elements of the same type, laid out one after another with no gaps. Because each element occupies a fixed number of bytes, you can jump to any element in O(1) using pointer arithmetic: address = base + i × elementSize. This makes arrays the fastest data structure for index-based access and the foundation of most higher-level data structures.',
+      keyPoints: [
+        {
+          title: 'O(1) Access',
+          desc: 'Random access is instant because the memory address of element i is computed directly: addr = base + i × size. No searching, no pointer chasing — a single arithmetic operation.',
+          code: 'addr = base + i × elementSize  # O(1) always',
+        },
+        {
+          title: 'O(n) Search',
+          desc: 'If the array is unsorted, finding an element requires a linear scan — you must check each element one by one. A sorted array can use binary search (O(log n)), but that requires maintaining sort order.',
+        },
+        {
+          title: 'O(n) Insert',
+          desc: 'Inserting at the front or middle requires shifting all subsequent elements one position to the right to make room. The number of shifts is proportional to the remaining length — O(n).',
+          code: '# Insert at index 0: shift every element right by 1\n# [1,2,3] → insert 0 → [0,1,2,3] — 3 shifts',
+        },
+      ],
+    },
+    steps: [
+      {
+        n: '1',
+        label: 'Access by Index — O(1)',
+        desc: 'The CPU computes the target address from base pointer + index × element size. This is a single arithmetic instruction — it takes the same time whether the array has 10 or 10 million elements.',
+        code: 'arr = [10, 20, 30, 40, 50]\nval = arr[3]   # addr = base + 3×4 bytes → 40 (O(1))',
+      },
+      {
+        n: '2',
+        label: 'Linear Search — O(n)',
+        desc: 'Without an index or sorted order, finding a specific value means checking each element from left to right until a match is found or the array is exhausted. Worst case visits all n elements.',
+        code: 'def search(arr, target):\n    for i, v in enumerate(arr):  # up to n iterations\n        if v == target: return i\n    return -1',
+      },
+      {
+        n: '3',
+        label: 'Insert at Front — O(n)',
+        desc: 'To make room at index 0, every existing element must shift one position to the right. With n elements, that is n shifts. This is the most expensive common array operation.',
+        code: '# Python list insert at front\narr.insert(0, new_value)  # O(n) — shifts all elements right',
+      },
+      {
+        n: '4',
+        label: 'Append to End — O(1) Amortized',
+        desc: 'Dynamic arrays (Python list, JavaScript Array, C++ vector) allocate extra capacity and double it when full. Most appends just place the element at the next slot — O(1). Occasional doublings cost O(n) but happen so rarely the amortized cost per append is O(1).',
+        code: 'arr.append(value)   # O(1) amortized\n# When capacity is exceeded, array doubles: rare O(n) resize',
+      },
+      {
+        n: '5',
+        label: 'Delete — O(n)',
+        desc: 'Deleting from the middle or front leaves a gap. All elements after the deleted position must shift one place to the left to close it. Deleting from the end is O(1) — no shifting needed.',
+        code: 'del arr[0]          # O(n) — all elements shift left\narr.pop()           # O(1) — remove last element, no shift',
+      },
+    ],
+    codeExamples: [
+      {
+        label: 'O(1) index access and O(n) search',
+        code:
+'arr = [15, 3, 9, 27, 6, 12]\n' +
+'\n' +
+'# O(1) — direct address computation\nprint(arr[3])           # 27, instant regardless of size\n' +
+'\n' +
+'# O(n) — linear scan (unsorted array)\ndef find(arr, target):\n    for i, v in enumerate(arr):\n        if v == target:\n            return i\n    return -1\n' +
+'\n' +
+'print(find(arr, 27))    # 3  (found at index 3)',
+        complexity: 'Access: O(1) | Search: O(n)',
+        variant: 'good',
+      },
+      {
+        label: 'O(n) insert at front — shifting elements',
+        code:
+'arr = [1, 2, 3, 4, 5]\n' +
+'\n' +
+'# Inserting at front shifts every element right\n# Before: [1, 2, 3, 4, 5]\n# After:  [0, 1, 2, 3, 4, 5]  — 5 elements shifted\narr.insert(0, 0)  # O(n)\nprint(arr)        # [0, 1, 2, 3, 4, 5]\n' +
+'\n' +
+'# If you frequently insert at the front, use a deque instead:\nfrom collections import deque\nd = deque([1, 2, 3, 4, 5])\nd.appendleft(0)   # O(1) — no shifting',
+        complexity: 'O(n) for insert at front',
+        variant: 'warn',
+      },
+      {
+        label: 'O(1) amortized append — dynamic array growth',
+        code:
+'import sys\n' +
+'\n' +
+'arr = []\nfor i in range(9):\n    old_size = sys.getsizeof(arr)\n    arr.append(i)\n    new_size = sys.getsizeof(arr)\n    grew = "← RESIZED" if new_size > old_size else ""\n    print(f"appended {i}: size={new_size} bytes {grew}")\n' +
+'\n' +
+'# Python lists over-allocate capacity and resize infrequently\n# Each append is O(1) amortized even though resizes are O(n)',
+        complexity: 'O(1) amortized per append',
+        variant: 'default',
+      },
+    ],
+    complexity: {
+      rows: [
+        { case: 'Access arr[i]',     value: 'O(1)',    color: 'text-emerald-400', note: 'Direct address — base + i × size' },
+        { case: 'Search (unsorted)', value: 'O(n)',    color: 'text-violet-400',  note: 'Linear scan — must check every element' },
+        { case: 'Insert at front',   value: 'O(n)',    color: 'text-orange-400',  note: 'All elements shift right by one position' },
+        { case: 'Append to end',     value: 'O(1)*',  color: 'text-cyan-400',    note: 'Amortized — occasional O(n) resize but rare' },
+        { case: 'Space',             value: 'O(n)',    color: 'text-violet-400',  note: 'One slot per element stored' },
+      ],
+      note: '* Amortized O(1): dynamic arrays double capacity when full. The costly resize happens so rarely that the average cost per append across any n appends is O(1).',
+    },
+    realWorld: [
+      {
+        title: 'CPU Caches',
+        desc: "Arrays store elements contiguously in memory. When the CPU fetches arr[0] it loads an entire cache line (~64 bytes) into L1 cache, so arr[1], arr[2], arr[3] etc. are already warm. This spatial locality makes sequential array access dramatically faster than pointer-chasing structures like linked lists.",
+      },
+      {
+        title: 'Dynamic Arrays in Standard Libraries',
+        desc: "Python's list, JavaScript's Array, and C++'s vector are all dynamic arrays under the hood. They start with a small capacity and double when full, giving O(1) amortized append with the convenience of arbitrary size. Nearly every program uses them constantly.",
+      },
+    ],
+    commonMistakes: [
+      {
+        wrong: 'Inserting at the front of an array inside a loop: O(n) × O(n) = O(n²)',
+        right: 'Use collections.deque for frequent front insertions — appendleft() is O(1)',
+        explain: 'Each arr.insert(0, x) shifts all existing elements right — O(n). Doing this inside a loop of n iterations gives O(n²) total. For n=100,000 that is 10 billion operations instead of 100,000.',
+      },
+      {
+        wrong: 'Mutating an array while iterating over it',
+        explain: 'Inserting or deleting elements during a for-loop changes the indices of subsequent elements, causing skipped or double-processed items. Always iterate over a copy or collect indices first: for item in arr[:]: or indices = [i for i, v in enumerate(arr) if condition].',
+      },
+    ],
+    quiz: [
+      {
+        q: 'Why is arr[i] O(1) for any index i?',
+        options: [
+          'The array keeps a sorted index for fast lookup',
+          'The CPU computes the exact memory address using base + i × elementSize — one arithmetic operation',
+          'Arrays cache the last accessed element',
+          'Python optimizes index access with a hash table',
+        ],
+        correct: 1,
+        explanation: 'Array elements are stored at fixed, equally-spaced memory addresses. Given the base address and element size, the address of element i is base + i × size — computable in one instruction, independent of n.',
+      },
+      {
+        q: 'You need a data structure that supports very frequent insertions at the front. What should you use instead of an array?',
+        options: [
+          'A larger array with extra space at the beginning',
+          'A hash table',
+          'A deque (double-ended queue)',
+          'A sorted array',
+        ],
+        correct: 2,
+        explanation: 'collections.deque supports O(1) appendleft() by maintaining pointers to both ends of a doubly-linked block structure. Array insert at front is O(n) — use a deque when front insertions are frequent.',
+      },
+      {
+        q: 'What does "amortized O(1)" mean for dynamic array append?',
+        options: [
+          'Every single append is exactly O(1)',
+          'The append is O(1) on average across many operations — occasional O(n) resizes are so rare the average cost is O(1)',
+          'The array pre-allocates n slots at creation to guarantee O(1)',
+          'Amortized means the cost is spread to other operations',
+        ],
+        correct: 1,
+        explanation: 'When a dynamic array is full it doubles capacity and copies all elements (O(n)). But doubling happens exponentially rarely — after n appends total resize work is O(n), so the average cost per append is O(n)/n = O(1). This is amortized constant time.',
+      },
+      {
+        q: 'Why are arrays more cache-friendly than linked lists for sequential access?',
+        options: [
+          'Arrays use less total memory',
+          'Array elements are contiguous in memory so the CPU cache pre-loads adjacent elements automatically',
+          'Linked lists require more comparisons per element',
+          'Arrays use a hash function to choose memory locations',
+        ],
+        correct: 1,
+        explanation: 'The CPU fetches memory in cache lines (~64 bytes). Contiguous array elements all land in the same cache lines, so after reading arr[0] the next several elements are already cached. Linked list nodes scatter across the heap — each node access likely causes a cache miss.',
+      },
+      {
+        q: 'What is the worst-case time complexity of linear search on an unsorted array of n elements?',
+        options: ['O(1)', 'O(log n)', 'O(n)', 'O(n²)'],
+        correct: 2,
+        explanation: 'In the worst case the target is the last element or not present at all, requiring n comparisons. There is no shortcut on an unsorted array — every element could be the answer.',
+      },
+      {
+        q: 'Why is inserting an element at the front of an array O(n)?',
+        options: [
+          'The array must be re-sorted after every insertion',
+          'Every existing element must shift one position to the right to make room at index 0',
+          'The array must allocate new memory for each insertion',
+          'Front insertion requires scanning the array first',
+        ],
+        correct: 1,
+        explanation: 'There is no gap at index 0. To place a new element there, every one of the n existing elements must move one slot to the right. That is n write operations — O(n). Appending to the end requires no shifting, so it is O(1) amortized.',
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
   'hash-tables': {
     concept: {
       overview:
