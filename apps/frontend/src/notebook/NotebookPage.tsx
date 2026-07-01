@@ -791,9 +791,26 @@ export function NotebookPage() {
 
         <div className="flex-1" />
 
-        {/* Right cluster: lang picker + Load + Save + Run */}
+        {/* Right cluster: lang picker + AI toggle + Load + Save + Run */}
         <div className="flex items-center gap-2 px-3">
           <LangPicker current={lang} onChange={handleLangChange} />
+
+          {/* AI inline-completion toggle — right next to the language picker */}
+          <button
+            onClick={() => setInlineCompletionEnabled((v) => !v)}
+            title={inlineCompletionEnabled
+              ? 'Atlas AI predictions ON — Tab to accept · click to disable'
+              : 'Atlas AI predictions OFF — click to enable'}
+            className={cn(
+              'flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all',
+              inlineCompletionEnabled
+                ? 'bg-indigo-600/20 border-indigo-500/40 text-indigo-300 hover:bg-indigo-600/30'
+                : 'bg-[#1A1A2A] border-white/8 text-zinc-500 hover:text-zinc-300 hover:border-white/15',
+            )}
+          >
+            <Sparkles className="w-3 h-3" />
+            {inlineCompletionEnabled ? 'AI on' : 'AI'}
+          </button>
 
           <div className="w-px h-5 bg-white/10" />
 
@@ -871,6 +888,7 @@ export function NotebookPage() {
               guides: { bracketPairs: true, indentation: true },
               suggest: { showSnippets: true },
               quickSuggestions: { other: true, comments: false, strings: false },
+              inlineSuggest: { enabled: true },
               overviewRulerBorder: false,
               overviewRulerLanes: 0,
               hideCursorInOverviewRuler: true,
@@ -1021,18 +1039,10 @@ export function NotebookPage() {
             <kbd className="px-1 py-0.5 bg-white/5 rounded text-[9px]">Ctrl+Enter</kbd>
             {' run'}
           </span>
-          {/* Atlas AI inline completion toggle */}
-          <button
-            onClick={() => setInlineCompletionEnabled((v) => !v)}
-            title={inlineCompletionEnabled ? 'Atlas AI completions ON — click to disable' : 'Atlas AI completions OFF — click to enable'}
-            className={cn(
-              'flex items-center gap-1 transition-colors',
-              inlineCompletionEnabled ? 'text-indigo-400' : 'text-zinc-700 hover:text-zinc-500',
-            )}
-          >
+          <span className={cn('flex items-center gap-1', inlineCompletionEnabled ? 'text-indigo-400' : 'text-zinc-700')}>
             <Sparkles className="w-3 h-3" />
-            <span>{inlineCompletionEnabled ? 'AI' : 'AI off'}</span>
-          </button>
+            {inlineCompletionEnabled ? 'AI predictions on' : 'AI predictions off'}
+          </span>
         </div>
       </div>
 
