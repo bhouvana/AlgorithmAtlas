@@ -6,13 +6,12 @@
  * Layout: IDE split — editor left, output right (Programiz-style).
  */
 
-import { useState, useRef, useCallback, useEffect, useMemo } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import Editor, { type OnMount } from '@monaco-editor/react';
 import { Play, Save, ChevronDown, Trash2, X, Clock, AlertCircle, CheckCircle2, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { api, type ExperimentSummary } from '../core/api/client';
 import { cn } from '../lib/utils';
-import { NotebookBridgeContext } from './NotebookBridgeContext';
 import { registerAtlasCompletionProvider } from '../ai/notebook/InlineCompletionProvider';
 import { useAtlasContext } from '../ai/useAtlasContext';
 import { useAtlasStore } from '../ai/store';
@@ -668,6 +667,18 @@ export function NotebookPage() {
     return () => { completionDisposable.current?.dispose(); };
   }, []);
 
+  // Sync notebook state into Zustand so AtlasAI (outside this tree) always has fresh context
+  const setNotebookBridge = useAtlasStore((s) => s.setNotebookBridge);
+  useEffect(() => {
+    setNotebookBridge({
+      language: lang.id,
+      source: code,
+      lastOutput: lastRun?.output ?? '',
+      lastError: lastRun?.error ?? '',
+    });
+  }, [lang.id, code, lastRun, setNotebookBridge]);
+  useEffect(() => () => { setNotebookBridge(null); }, [setNotebookBridge]);
+
   // Apply Atlas AI editor writes (from chat "write to editor" commands)
   useEffect(() => {
     // Check immediately — handles the navigate→mount race where pendingEditorWrite
@@ -759,15 +770,8 @@ export function NotebookPage() {
   const filename = `main.${lang.ext}`;
   const lastRun = runs[runs.length - 1];
 
-  const bridgeValue = useMemo(() => ({
-    language: lang.id,
-    source: editorRef.current?.getValue() ?? code,
-    lastOutput: lastRun?.output ?? '',
-    lastError: lastRun?.error ?? '',
-  }), [lang.id, code, lastRun]);
-
   return (
-    <NotebookBridgeContext.Provider value={bridgeValue}>
+    <>
     <div className="flex flex-col" style={{ height: 'calc(100vh - 5rem)' }}>
 
       {/* ── Top bar: file tab + language picker + Run button ──────────── */}
@@ -1049,6 +1053,6 @@ export function NotebookPage() {
       {/* Dialogs */}
       {showSave && <SaveDialog onSave={handleSave} onClose={() => setShowSave(false)} saving={saving} />}
     </div>
-    </NotebookBridgeContext.Provider>
+    </>
   );
 }

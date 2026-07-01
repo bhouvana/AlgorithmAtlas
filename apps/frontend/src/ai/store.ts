@@ -51,6 +51,8 @@ interface AtlasState {
   hasNewSuggestion: boolean;
   interview: InterviewState;
 
+  notebookBridge: { language: string; source: string; lastOutput: string; lastError: string } | null;
+
   // ── actions ──
   open: (mode?: AtlasMode) => void;
   close: () => void;
@@ -79,6 +81,8 @@ interface AtlasState {
   setPendingNavigation: (path: string | null) => void;
   setProactiveHint: (hint: string | null) => void;
   setHasNewSuggestion: (v: boolean) => void;
+
+  setNotebookBridge: (bridge: { language: string; source: string; lastOutput: string; lastError: string } | null) => void;
 
   startInterview: (problem: InterviewProblem) => void;
   revealNextHint: () => void;
@@ -121,6 +125,7 @@ export const useAtlasStore = create<AtlasState>()(
         proactiveHint: null,
         hasNewSuggestion: false,
         interview: { active: false, problem: null, startedAt: null, hintsRevealed: 0 },
+        notebookBridge: null,
 
         open: (mode) =>
           set((s) => ({
@@ -204,6 +209,7 @@ export const useAtlasStore = create<AtlasState>()(
         setPendingNavigation:  (path) => set({ pendingNavigation: path }),
         setProactiveHint:    (hint) => set({ proactiveHint: hint }),
         setHasNewSuggestion: (v)    => set({ hasNewSuggestion: v }),
+        setNotebookBridge:   (bridge) => set({ notebookBridge: bridge }),
 
         startInterview: (problem) =>
           set({ interview: { active: true, problem, startedAt: Date.now(), hintsRevealed: 0 } }),
@@ -237,6 +243,7 @@ export const useAtlasStore = create<AtlasState>()(
         state.isStreaming = false;
         state.pendingEditorWrite = null;
         state.pendingNavigation = null;
+        state.notebookBridge = null;
         state.conversations = state.conversations.map((c) => ({
           ...c,
           messages: c.messages.map((m) =>

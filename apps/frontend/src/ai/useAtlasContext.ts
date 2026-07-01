@@ -6,15 +6,14 @@
  *   - useParams()            → algorithm slug
  *   - useSimulationStore()   → visualization state + current frame
  *   - useProgressStore()     → XP, level, completedLessons
- *   - NotebookBridgeContext  → language, source, lastOutput, lastError
+ *   - useAtlasStore          → notebook bridge (language, source, lastOutput, lastError)
  *   - getOrCreateUserId()    → anonymous persistent user ID
  */
 import { useLocation, useParams } from 'react-router-dom';
-import { useContext } from 'react';
 
 import { useSimulationStore } from '../core/store/simulationStore';
 import { useProgressStore } from '../learning/store/progressStore';
-import { NotebookBridgeContext } from '../notebook/NotebookBridgeContext';
+import { useAtlasStore } from './store';
 import { getOrCreateUserId } from './api';
 import type { AtlasContext } from './types';
 
@@ -36,7 +35,7 @@ export function useAtlasContext(): AtlasContext {
 
   const sim = useSimulationStore();
   const progress = useProgressStore();
-  const notebook = useContext(NotebookBridgeContext);
+  const notebookBridge = useAtlasStore((s) => s.notebookBridge);
 
   const page = derivePage(pathname);
   const userId = getOrCreateUserId();
@@ -70,12 +69,12 @@ export function useAtlasContext(): AtlasContext {
   };
 
   // ── Notebook context ───────────────────────────────────────────────────────
-  const notebookCtx = notebook
+  const notebookCtx = notebookBridge
     ? {
-        language: notebook.language,
-        source: notebook.source,
-        lastOutput: notebook.lastOutput,
-        lastError: notebook.lastError,
+        language: notebookBridge.language,
+        source: notebookBridge.source,
+        lastOutput: notebookBridge.lastOutput,
+        lastError: notebookBridge.lastError,
       }
     : undefined;
 

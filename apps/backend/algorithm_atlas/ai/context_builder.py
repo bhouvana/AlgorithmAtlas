@@ -132,11 +132,11 @@ def context_to_text(ctx: AtlasContext) -> str:
         line_count = len(n.source.splitlines()) if n.source else 0
         parts.append(f"Notebook language: {n.language} ({line_count} lines of code).")
         if n.source:
-            parts.append(f"Current code:\n```{n.language}\n{n.source[:1200]}\n```")
+            parts.append(f"Current code:\n```{n.language}\n{n.source[:3000]}\n```")
         if n.lastError:
-            parts.append(f"Last execution error: {n.lastError[:400]}")
+            parts.append(f"Last execution error:\n{n.lastError[:1500]}")
         elif n.lastOutput:
-            parts.append(f"Last output: {n.lastOutput[:300]}")
+            parts.append(f"Last output: {n.lastOutput[:500]}")
 
     if ctx.lesson:
         l = ctx.lesson
