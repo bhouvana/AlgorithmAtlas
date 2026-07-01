@@ -356,12 +356,21 @@ export function ComparisonPage() {
   const [algorithms, setAlgorithms] = useState<AlgorithmSummary[]>([]);
   const [locked, setLocked] = useState(false);
 
-  const slugA = searchParams.get('a') ?? DEFAULT_A;
-  const slugB = searchParams.get('b') ?? DEFAULT_B;
+  const slugA    = searchParams.get('a') ?? DEFAULT_A;
+  const slugB    = searchParams.get('b') ?? DEFAULT_B;
+  const autoplay = searchParams.get('autoplay') === '1';
+
+  // Prevent double-fire if both sims briefly hit 'paused' again after a reset
+  const hasAutoPlayedRef = useRef(false);
 
   useEffect(() => {
     api.algorithms.list().then(setAlgorithms).catch(console.error);
   }, []);
+
+  // Reset autoplay gate whenever the slug pair changes (user picked new algorithms)
+  useEffect(() => {
+    hasAutoPlayedRef.current = false;
+  }, [slugA, slugB]);
 
   function setSlug(side: 'a' | 'b', slug: string) {
     const next = new URLSearchParams(searchParams);
@@ -375,6 +384,29 @@ export function ComparisonPage() {
   // Lift both sims to page level so lock mode can drive them together
   const simA = useLocalSimulation(slugA, {}, 42);
   const simB = useLocalSimulation(slugB, {}, 42);
+
+  // Atlas AI autoplay: when Atlas navigates here with &autoplay=1, start both
+  // simulations as soon as they finish connecting (both reach 'paused' state).
+  useEffect(() => {
+    if (!autoplay || hasAutoPlayedRef.current) return;
+    if (
+      simA.status === 'paused' && simA.controller &&
+      simB.status === 'paused' && simB.controller
+    ) {
+      hasAutoPlayedRef.current = true;
+      simA.controller.play(1);
+      simA.setStatus('running');
+      simB.controller.play(1);
+      simB.setStatus('running');
+      // Remove the autoplay flag from the URL so refreshing doesn't re-trigger
+      setSearchParams((p) => {
+        const n = new URLSearchParams(p);
+        n.delete('autoplay');
+        return n;
+      }, { replace: true });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [simA.status, simB.status, autoplay]);
 
   return (
     <div className="min-h-screen">

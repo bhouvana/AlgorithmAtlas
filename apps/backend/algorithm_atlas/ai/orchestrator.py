@@ -80,6 +80,8 @@ _NAVIGATE = _patterns(
     r"\bswitch to\s+(the\s+)?(notebook|catalog|algorithms?|learning|experiments|compare)\b",
     r"\bshow me\s+.+\s+page\b",
     r"\btake me\s+.+\s+page\b",
+    # Compare two specific algorithms (e.g. "compare quicksort and mergesort")
+    r"\bcompare\b.{2,60}\b(and|vs\.?|versus)\b",
 )
 
 

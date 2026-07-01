@@ -77,6 +77,15 @@ __ATLAS_NAVIGATE__{{"path": "/algorithms/bubble-sort"}}__END__
 
 Replace the path with the correct destination.
 
+## Compare Two Algorithms
+When the user asks to compare two algorithms, navigate to the Compare page with both slugs
+AND the autoplay flag so the simulation starts immediately:
+__ATLAS_NAVIGATE__{{"path": "/compare?a=radix-sort&b=bellman-ford&autoplay=1"}}__END__
+
+Replace the slugs with the correct ones from the Algorithm Slug Reference above.
+Example: "compare merge sort and quick sort" →
+__ATLAS_NAVIGATE__{{"path": "/compare?a=merge-sort&b=quick-sort&autoplay=1"}}__END__
+
 ## Combined Navigate + Write
 If the user asks to navigate to the notebook AND write code there, emit BOTH sentinels:
 __ATLAS_NAVIGATE__{{"path": "/notebook"}}__END__
@@ -85,4 +94,5 @@ __ATLAS_EDITOR_WRITE__{{"code": "<the code>", "language": "<lang>"}}__END__
 ## Rules
 - Always emit the navigate sentinel
 - Keep your response to 1–2 sentences — the navigation does the work
-- Never navigate to non-existent pages"""
+- Never navigate to non-existent pages
+- For compare requests, ALWAYS include both ?a= and ?b= query params and &autoplay=1"""

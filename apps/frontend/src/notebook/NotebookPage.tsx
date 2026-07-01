@@ -501,7 +501,8 @@ export function NotebookPage() {
   const completionEnabledRef = useRef(false);
   const atlasContextRef = useRef<ReturnType<typeof useAtlasContext> | null>(null);
   const monacoRef       = useRef<typeof import('monaco-editor') | null>(null);
-  const deferredWriteRef = useRef<{ code: string; language: string } | null>(null);
+  const deferredWriteRef  = useRef<{ code: string; language: string } | null>(null);
+  const typingVersionRef  = useRef(0);
 
   // Read the current atlas context (kept in a ref so the completion provider can access it)
   const atlasContext = useAtlasContext();
@@ -514,20 +515,73 @@ export function NotebookPage() {
   };
 
   const applyAtlasWrite = (w: { code: string; language: string }) => {
+    const editor = editorRef.current;
+    const monaco = monacoRef.current;
+
     const matchedLang = LANGS.find(
       (l) => l.id === w.language || l.monacoId === w.language || l.label.toLowerCase() === w.language.toLowerCase()
     ) ?? LANGS[0];
+
+    // Switch language
     setLang(matchedLang);
-    setCode(w.code);
-    if (editorRef.current) {
-      if (monacoRef.current) {
-        const model = editorRef.current.getModel();
-        if (model) monacoRef.current.editor.setModelLanguage(model, matchedLang.monacoId);
-      }
-      editorRef.current.setValue(w.code);
-      editorRef.current.focus();
-      flash(`Atlas wrote ${matchedLang.label} code to the editor`);
+    if (monaco && editor) {
+      const model = editor.getModel();
+      if (model) monaco.editor.setModelLanguage(model, matchedLang.monacoId);
     }
+
+    if (!editor) {
+      // Monaco not ready — fall back to instant write
+      setCode(w.code);
+      return;
+    }
+
+    // Cancel any previous typewriter session
+    const myVersion = ++typingVersionRef.current;
+
+    // Clear editor immediately (sync) + sync React state (async) so Monaco's
+    // controlled-value effect sees '' and doesn't interfere during typing.
+    editor.setValue('');
+    setCode('');
+    editor.focus();
+    flash(`Atlas is writing ${matchedLang.label} code…`);
+
+    const targetCode = w.code;
+    // Adaptive typing speed: faster for longer code so it never feels tedious
+    const charDelay = targetCode.length > 800 ? 4
+                    : targetCode.length > 300 ? 9
+                    : 16;
+    let pos = 0;
+
+    const typeNext = () => {
+      if (typingVersionRef.current !== myVersion) return; // superseded
+      if (pos >= targetCode.length) {
+        // Sync React state at completion; Monaco's useEffect([value]) will see
+        // getValue() === targetCode and skip setValue — no cursor jump.
+        setCode(targetCode);
+        flash(`Atlas wrote ${matchedLang.label} code ✓`);
+        return;
+      }
+
+      const char = targetCode[pos];
+      const model = editor.getModel();
+      if (model) {
+        const line = model.getLineCount();
+        const col  = model.getLineMaxColumn(line);
+        editor.executeEdits('atlas-typewriter', [{
+          range: { startLineNumber: line, startColumn: col, endLineNumber: line, endColumn: col },
+          text: char,
+        }]);
+        // Scroll every newline or every 25 chars so the cursor stays visible
+        if (char === '\n' || pos % 25 === 0) {
+          editor.revealLine(model.getLineCount(), 1 /* Immediate */);
+        }
+      }
+      pos++;
+      setTimeout(typeNext, char === '\n' ? 35 : charDelay);
+    };
+
+    // Brief delay to let Monaco's controlled-value effect settle after setValue('')
+    setTimeout(typeNext, 80);
   };
 
   // Auto-scroll output on new run
