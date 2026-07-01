@@ -158,7 +158,13 @@ async def _event_stream(
     history: list[ChatMessage],
     memories: dict[str, str],
 ) -> AsyncIterator[str]:
-    provider = get_provider()
+    try:
+        provider = get_provider()
+    except Exception as exc:
+        yield f"data: {json.dumps({'type': 'error', 'message': str(exc)})}\n\n"
+        yield f"data: {json.dumps({'type': 'done'})}\n\n"
+        return
+
     agent = route(message, context)
 
     # Inject catalog for SearchAgent and NavigationAgent

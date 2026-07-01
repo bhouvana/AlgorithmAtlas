@@ -123,6 +123,9 @@ RUN python3.11 -m pip install --no-cache-dir \
     "aiosqlite>=0.20.0" \
     "alembic>=1.13.0"
 
+# Atlas AI dependency — separate layer so it doesn't invalidate the heavy install above
+RUN python3.11 -m pip install --no-cache-dir "groq>=0.9.0"
+
 # PYTHONPATH exposes algorithm_atlas (source) and algorithm_atlas_sdk (sdk source)
 # without requiring pip to successfully install the local packages.
 ENV PYTHONPATH=/app:/sdk \
