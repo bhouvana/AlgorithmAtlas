@@ -667,18 +667,6 @@ export function NotebookPage() {
     return () => { completionDisposable.current?.dispose(); };
   }, []);
 
-  // Sync notebook state into Zustand so AtlasAI (outside this tree) always has fresh context
-  const setNotebookBridge = useAtlasStore((s) => s.setNotebookBridge);
-  useEffect(() => {
-    setNotebookBridge({
-      language: lang.id,
-      source: code,
-      lastOutput: lastRun?.output ?? '',
-      lastError: lastRun?.error ?? '',
-    });
-  }, [lang.id, code, lastRun, setNotebookBridge]);
-  useEffect(() => () => { setNotebookBridge(null); }, [setNotebookBridge]);
-
   // Apply Atlas AI editor writes (from chat "write to editor" commands)
   useEffect(() => {
     // Check immediately — handles the navigate→mount race where pendingEditorWrite
@@ -769,6 +757,18 @@ export function NotebookPage() {
 
   const filename = `main.${lang.ext}`;
   const lastRun = runs[runs.length - 1];
+
+  // Sync notebook state into Zustand so AtlasAI (outside this tree) always has fresh context
+  const setNotebookBridge = useAtlasStore((s) => s.setNotebookBridge);
+  useEffect(() => {
+    setNotebookBridge({
+      language: lang.id,
+      source: code,
+      lastOutput: lastRun?.output ?? '',
+      lastError: lastRun?.error ?? '',
+    });
+  }, [lang.id, code, lastRun, setNotebookBridge]);
+  useEffect(() => () => { setNotebookBridge(null); }, [setNotebookBridge]);
 
   return (
     <>
