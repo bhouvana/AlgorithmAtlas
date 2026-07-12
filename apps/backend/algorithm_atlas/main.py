@@ -19,7 +19,7 @@ from loguru import logger
 
 from .api.v1.router import api_router
 from .config import get_settings
-from .database import AsyncSessionLocal, init_db
+from .database import AsyncSessionLocal, engine, init_db
 from .models import atlas_memory as _   # noqa: F401 — ensure table is registered
 from .models import atlas_code as _ac  # noqa: F401 — register AtlasCode tables
 from .models.atlas_code import Problem
@@ -44,6 +44,39 @@ def _configure_logging(level: str) -> None:
         ),
         colorize=True,
     )
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# AtlasCode ledger snapshot
+# ──────────────────────────────────────────────────────────────────────────────
+# atlas.db (and its atlascode_matrix_ledger table) is gitignored and never
+# travels with the repo, so a fresh database has ZERO verified-language
+# history even when the real local ledger already has thousands of verified
+# (problem_id, language, mode) cells across all 16 non-Python target
+# languages. ledger_snapshot.json (apps/backend/algorithm_atlas/atlascode/,
+# refreshed via `python scripts/export_ledger_snapshot.py`) is a small,
+# committable export of exactly that data. Loading it here means a fresh
+# boot reflects the SAME verified-language state as local development —
+# not just Python — instead of starting from nothing. Idempotent
+# (INSERT OR IGNORE) and fast (a few thousand rows), so it runs on every
+# boot, not gated behind the "problems table empty" check below: if the
+# ledger is ever partially reset, this self-heals it back to at least the
+# snapshot's state.
+async def _load_ledger_snapshot() -> None:
+    from .atlascode.ledger_snapshot import load_ledger_snapshot
+
+    try:
+        async with engine.begin() as conn:
+            inserted = await load_ledger_snapshot(conn)
+        if inserted:
+            logger.info(f"Ledger snapshot loaded — {inserted} verified language/mode cell(s) restored")
+        else:
+            logger.info("Ledger snapshot: nothing new to load (already up to date or snapshot missing)")
+    except Exception:
+        logger.exception(
+            "Ledger snapshot load failed — the app will still start, but "
+            "language-coverage badges may under-report until this is fixed."
+        )
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -115,6 +148,10 @@ async def lifespan(app: FastAPI):
 
     await init_db()
     logger.info("Database schema initialised")
+
+    # Fast (a few thousand INSERT OR IGNORE rows) -- safe to await directly,
+    # unlike the AtlasCode problem/test-case seed below.
+    await _load_ledger_snapshot()
 
     registry = get_registry()
     loader = PluginLoader(registry)
