@@ -1,6 +1,8 @@
 {
-  "slug": "chord-dht",
+  "schema_version": "1.0",
+  "id": "chord-dht",
   "name": "Chord DHT",
+  "version": "1.0.0",
   "category": "distributed-systems",
   "visualization_type": "NETWORK_TOPOLOGY",
   "description": "Chord distributed hash table: nodes arranged in a ring, lookups follow finger table pointers in O(log n) hops.",
@@ -10,7 +12,13 @@
     "time_worst": "O(log n)",
     "space": "O(log n)"
   },
-  "tags": ["distributed", "dht", "chord", "peer-to-peer", "consistent-hashing"],
+  "tags": [
+    "distributed",
+    "dht",
+    "chord",
+    "peer-to-peer",
+    "consistent-hashing"
+  ],
   "execution_target": "server",
   "entry_point": "algorithm.py",
   "class_name": "ChordDHT"

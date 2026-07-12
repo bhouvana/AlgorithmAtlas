@@ -1,0 +1,1550 @@
+{
+  "activity-selection": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "best-time-to-buy-sell-stock": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "best-time-to-buy-sell-stock-ii": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "binary-search": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "binary-tree-max-path-sum": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "binary-tree-zigzag-level-order": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "bitonic-peak-index": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "bitonic-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "boolean-parenthesization": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "bubble-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "bucket-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "burst-balloons": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "catalan-number": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "closest-pair": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "cocktail-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "coin-change": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "coin-change-ways": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "collatz": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "comb-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "combination-sum-count": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "combination-sum-iv-count": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "construct-tree-preorder-inorder": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "container-with-most-water": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "contains-duplicate-within-k": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "count-occurrences-sorted": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "count-tree-nodes": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "counting-bits": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "counting-inversions": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "counting-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "course-schedule-feasible": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "cycle-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "daily-temperatures": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "decode-ways": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "delete-and-earn": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "diameter-of-binary-tree": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "dijkstra-shortest-path": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "distinct-subsequences": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "distinct-subsets-count": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "edit-distance": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "egg-drop": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "euler-phi-sieve": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "euler-totient": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "evaluate-reverse-polish-notation": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "exponential-search": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "fast-power": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "fibonacci-dp": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "fibonacci-search": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "find-all-anagrams-in-string": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "find-duplicate-number": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "find-minimum-rotated-sorted-array": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "first-occurrence": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "first-unique-character-index": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "flood-fill": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "fractional-knapsack": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "gas-station": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "gcd-euclidean": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "gnome-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "graph-bfs": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "group-anagrams-count": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "hamming-distance": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "heap-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "house-robber": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "house-robber-circular": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "huffman-coding": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "insert-interval": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "insertion-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "integer-square-root": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "interleaving-strings": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "interpolation-search": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "intersection-of-two-arrays": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "invert-tree-preorder": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "is-balanced-binary-tree": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "is-bipartite": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "is-symmetric-tree": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "is-valid-bst": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "job-scheduling": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "jump-game": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "jump-game-ii-min-jumps": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "jump-search": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "karatsuba": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "kmp-string-matching": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "knapsack-01": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "koko-eating-bananas": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "kth-largest-element": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "kth-smallest-in-bst": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "largest-rectangle-in-histogram": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "last-occurrence": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "level-order-traversal": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "linear-search": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "linked-list-cycle-detect": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "longest-bitonic-subsequence": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "longest-common-subsequence": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "longest-common-substring": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "longest-consecutive-sequence": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "longest-increasing-subsequence": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "longest-palindromic-substring": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "longest-repeating-char-replacement": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "longest-substring-at-most-k-distinct": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "longest-substring-without-repeating": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "longest-valid-parentheses": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "lowest-common-ancestor-binary-tree": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "lowest-common-ancestor-bst": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "lucas-theorem": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "majority-element": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "majority-element-ii": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "manacher": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "matrix-chain-multiplication": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "matrix-exponentiation": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "max-consecutive-ones-with-k-flips": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "max-depth-binary-tree": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "max-distance-to-zero": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "max-sum-subarray-fixed-k": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "maximal-rectangle": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "maximum-product-subarray": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "maximum-subarray": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "maximum-subarray-circular": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "maximum-xor-of-two-numbers": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "median-of-medians": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "median-of-two-sorted-arrays": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "meeting-rooms": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "merge-k-sorted-lists": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "merge-overlapping-intervals": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "merge-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "merge-sorted-arrays-inplace": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "merge-two-sorted-lists": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "middle-of-linked-list": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "miller-rabin": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "min-stack-simulation": {
+    "status": "inferred",
+    "confidence": 1.0,
+    "cases_migrated": 40,
+    "cases_total": 40,
+    "contract": {
+      "function_name": "min_stack_simulate",
+      "parameters": [
+        {
+          "name": "ops",
+          "type": {
+            "kind": "array",
+            "items": {
+              "kind": "tuple",
+              "elements": [
+                {
+                  "kind": "string"
+                },
+                {
+                  "kind": "optional",
+                  "items": {
+                    "kind": "integer"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "return_type": {
+        "kind": "array",
+        "items": {
+          "kind": "integer"
+        }
+      }
+    },
+    "oracle_cross_validation": "40/40",
+    "evidence": [
+      "starter_code stub AST",
+      "exec-captured arguments",
+      "expected_output shape classification"
+    ]
+  },
+  "min-subarray-len-target-sum": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "minimum-knight-moves": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "minimum-path-sum": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "minimum-window-substring-length": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "missing-number": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "modular-exponentiation": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "move-zeroes": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "n-queens": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "next-greater-element": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "number-of-1-bits": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "number-of-divisors": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "number-of-islands": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "odd-even-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "palindrome-linked-list": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "palindrome-partition": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "palindrome-partitioning": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "palindrome-subsequence": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "pancake-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "partition-equal-subset-sum": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "path-sum-exists": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "patience-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "perfect-squares-min-count": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "polynomial-multiplication": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "power-of-two": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "prime-factorization": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "product-of-array-except-self": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "quick-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "radix-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "regular-expression-matching": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "remove-k-digits": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "remove-nth-from-end": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "restore-ip-addresses-count": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "reverse-bits": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "reverse-linked-list": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "right-side-view": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "rod-cutting": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "rotate-image-90": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "rotated-binary-search": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "rotten-oranges-minutes": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "run-length-encoding": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "same-tree": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "search-2d-matrix": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "search-insert-position": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "selection-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "set-matrix-zeroes": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "shell-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "ship-packages-within-days": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "shortest-path-binary-matrix": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "sieve-of-eratosthenes": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "single-number": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "single-number-ii": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "sliding-window-maximum": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "spiral-matrix-traversal": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "stable-matching": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "staircase": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "stooge-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "strand-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "strassen": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "string-hashing": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "subarray-product-less-than-k": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "subarray-sum-equals-k": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "subarray-sums-divisible-by-k": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "subset-sum": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "suffix-array": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "sum-root-to-leaf-numbers": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "target-sum-ways": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "task-scheduler": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "ternary-search": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "three-sum-count-triplets": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "tim-sort": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "top-k-frequent-elements": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "trapping-rain-water": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "triangle-minimum-path-sum": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "two-sum": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "two-sum-count-pairs": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "unbounded-knapsack": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "unique-paths": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "unique-permutations-count": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "valid-anagram": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "valid-palindrome-string": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "valid-parentheses": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "wildcard-matching": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "word-break": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "word-break-count-ways": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "word-ladder-length": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "word-search-grid": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "word-wrap": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  },
+  "z-algorithm": {
+    "status": "already_verified",
+    "confidence": 1.0,
+    "evidence": [
+      "pre-existing verified contract"
+    ]
+  }
+}

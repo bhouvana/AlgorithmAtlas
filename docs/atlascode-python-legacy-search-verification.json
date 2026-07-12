@@ -1,0 +1,140 @@
+[
+  {
+    "pid": "binary-search",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 11785.200500002247
+  },
+  {
+    "pid": "linear-search",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 11046.052000005147
+  },
+  {
+    "pid": "fibonacci-dp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 9507.08979999763
+  },
+  {
+    "pid": "gcd-euclidean",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 9639.838400005829
+  },
+  {
+    "pid": "two-sum",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 12679.557700001169
+  },
+  {
+    "pid": "maximum-subarray",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 12437.787400005618
+  },
+  {
+    "pid": "coin-change",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 9923.042999987956
+  },
+  {
+    "pid": "longest-common-subsequence",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 11005.298199990648
+  },
+  {
+    "pid": "house-robber",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 9784.441199997673
+  },
+  {
+    "pid": "longest-increasing-subsequence",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 10233.314999990398
+  },
+  {
+    "pid": "graph-bfs",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 9676.634299990837
+  },
+  {
+    "pid": "word-break",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 9459.667699993588
+  },
+  {
+    "pid": "edit-distance",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 10587.050300004194
+  },
+  {
+    "pid": "unique-paths",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 9264.44949999859
+  },
+  {
+    "pid": "n-queens",
+    "outcome": "verified",
+    "detail": "12/12 correct, wrong rejected on 12/12",
+    "duration_ms": 5924.116299996967
+  },
+  {
+    "pid": "dijkstra-shortest-path",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 10233.617999998387
+  },
+  {
+    "pid": "kmp-string-matching",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 30/40",
+    "duration_ms": 10321.290299994871
+  },
+  {
+    "pid": "minimum-path-sum",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 10824.233100007405
+  },
+  {
+    "pid": "exponential-search",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 23608.024399989517
+  },
+  {
+    "pid": "fibonacci-search",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 23044.31779999868
+  },
+  {
+    "pid": "interpolation-search",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 23911.081800004467
+  },
+  {
+    "pid": "jump-search",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 23632.51229999878
+  },
+  {
+    "pid": "ternary-search",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 23367.107300000498
+  }
+]

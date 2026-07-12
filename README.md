@@ -56,6 +56,21 @@ A full Programiz-style split-pane IDE with Monaco Editor on the left and output 
 
 Each language runs in an isolated subprocess with a 10-second timeout. Compiled languages (C++, Java, Rust, Kotlin) go through a compile → run pipeline. TypeScript runs via `npx tsx` with zero-install.
 
+### AtlasCode — Practice by Building
+A LeetCode-style judge workspace: a resizable problem statement pane, a Monaco editor, and a bottom console with **Testcase**, **Test Result**, and **Console** tabs. All 216 problems are complete and solvable today — each ships a canonical implementation, a working judge, and at least one verified reference solution. Language support is tracked as a separate, ongoing metric (currently 48.81% of the 17-language × 2-mode matrix; see `docs/atlascode-complete-matrix.md`) rather than a completion gate — a problem is never "incomplete" just because a given language isn't verified for it yet. The **Problem Catalog** surfaces both metrics per row: a completion dot (Complete / In Progress) plus **LeetCode X/17** and **Codeforces X/17** language-coverage pills, so you can see at a glance which languages are verified for a given problem without it ever reading as unfinished.
+
+Every problem supports two ways of solving it, named after the platforms they resemble:
+- **LeetCode Mode** — write only the requested function; AtlasCode generates the driver, invokes it with typed arguments, and compares the typed return value.
+- **Codeforces Mode** — write a complete program that reads from stdin and writes to stdout, exactly like a competitive-programming judge.
+
+(Internally these are still the `function`/`program` execution modes in the API and database — the LeetCode/Codeforces names are a display-only convention introduced to make the distinction legible to newcomers.)
+
+**Run** executes the problem's visible test cases (or a selected subset, or your own custom scratch cases) against the real judge and shows per-case results immediately — pass/fail, actual vs. expected output, runtime, and measured peak memory. It never persists anything.
+
+The judge itself supports a full authoritative **Submit** path — all hidden test cases, persisted submission history, hidden-test redaction, and a runtime/memory quality analysis (`/api/v1/submissions`, see API Reference) — but it isn't wired into this workspace's UI yet, since a submission history has no real audience without a broader multi-user base. It's a backend-complete, frontend-deferred feature.
+
+Atlas AI is available in this workspace too (see below) and defaults to hints and pointers rather than full solutions unless you explicitly ask for one.
+
 ### Structured Learning Paths (New)
 73 guided lessons across 12 tracks — Foundations, Sorting, Searching, Trees, Graphs, Dynamic Programming, Greedy, Backtracking, Advanced Topics, Algorithms in the Wild, Algorithmic Thinking, and Practical Patterns. Every lesson follows a consistent 5-tab layout:
 
@@ -72,7 +87,7 @@ Progress is tracked locally with XP, level-ups, bookmarks, and per-lesson comple
 Three new tracks connect algorithms to daily life: **Algorithms in the Wild** (how Google, GPS, Netflix, ZIP, passwords, and autocomplete work), **Algorithmic Thinking** (recursion, divide & conquer, two pointers, sliding window, greedy, prefix sums), and **Practical Patterns** (bit manipulation, monotonic stack, intervals, amortized analysis, cache locality).
 
 ### Atlas AI — Your Algorithmic Co-pilot
-A full conversational AI assistant powered by **Groq + LLaMA 3.3 70B** that lives inside the workspace. Atlas understands your current context (which algorithm page you're on, what code is in the notebook, your learning progress) and acts on it:
+A full conversational AI assistant that lives inside the workspace, backed by a rotating pool of LLM providers (**Groq · Llama 3.3 70B**, plus **Ollama Cloud · gpt-oss:120b** across two keys) — requests round-robin across whichever keys are configured and fall forward to the next one on a rate limit or outage, instead of hard-failing on a single key. Atlas understands your current context (which page you're on, the code in the notebook or AtlasCode editor, your learning progress) and acts on it:
 
 | Capability | Example |
 |------------|---------|
@@ -83,6 +98,7 @@ A full conversational AI assistant powered by **Groq + LLaMA 3.3 70B** that live
 | **Teach** | "Walk me through this algorithm like I'm new to graphs" |
 | **Interview** | "Give me a mock FAANG interview problem on trees" |
 | **Search** | "What sorting algorithm is best for nearly-sorted data?" |
+| **Coach (AtlasCode)** | "Why is my code failing this case?" → defaults to a hint or a pointer at the bug; gives the full solution only if you explicitly ask for it |
 
 Atlas streams responses token by token (SSE) and embeds structured action events in the stream — navigation, editor writes, terminal commands — executed silently on the client without breaking the conversation flow.
 
@@ -202,6 +218,18 @@ WebSocket messages: `play`, `pause`, `step_forward`, `step_backward`, `seek`, `r
 | `POST` | `/notebook/run` | Execute code snippet (17 languages) |
 | `POST` | `/notebook/run-cell/{exp_id}/{cell_id}` | Execute saved cell |
 
+### AtlasCode
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/problems` | List problems (filter: category, difficulty, search; paginated — total count in `X-Total-Count` header). Each item includes `is_complete` plus `leetcode_languages`/`codeforces_languages` (verified-language arrays), computed live from the `atlascode_matrix_ledger` table — see `docs/atlascode-complete-matrix.md` |
+| `GET` | `/problems/{slug}` | Problem detail + visible test cases + the same completion/coverage fields as above |
+| `GET` | `/problems/{slug}/hints` | Progressive hints (`?max_level=`) |
+| `POST` | `/problems/{slug}/run` | Fast iteration — visible/selected/custom cases only, never persisted, never touches hidden tests. `execution_mode: "function" \| "program"` selects LeetCode Mode / Codeforces Mode (see AtlasCode feature section above) |
+| `POST` | `/submissions` | Authoritative judge run against all persisted test cases (visible + hidden), redacts hidden case content, updates progress. Backend-complete; not called by the current workspace UI (see AtlasCode feature section above) |
+| `GET` | `/submissions/{id}` | Fetch a persisted submission (full per-case results) |
+| `GET` | `/submissions/{id}/quality` | Real correctness/runtime/memory stats; runtime percentile only when ≥5 comparable accepted submissions exist |
+| `GET` | `/progress/{user_id}` | Solved/attempted problems, XP, streak |
+
 ### Atlas AI
 | Method | Path | Description |
 |--------|------|-------------|
@@ -305,8 +333,14 @@ docker compose up --build
 | `PORT` | `8000` | Server port |
 | `LOG_LEVEL` | `DEBUG` | Logging level |
 | `CORS_ORIGINS` | `http://localhost:5173` | Allowed frontend origins |
-| `GROQ_API_KEY` | *(required)* | Groq API key for Atlas AI — get one free at [console.groq.com](https://console.groq.com) |
+| `GROQ_API_KEY` | *(optional\*)* | Groq API key for Atlas AI — get one free at [console.groq.com](https://console.groq.com) |
 | `GROQ_MODEL` | `llama-3.3-70b-versatile` | Groq model ID used by Atlas AI |
+| `OLLAMA_API_KEY_1` | *(optional\*)* | Ollama Cloud API key — get one at [ollama.com/settings/keys](https://ollama.com/settings/keys) |
+| `OLLAMA_API_KEY_2` | *(optional\*)* | A second Ollama Cloud key, rotated alongside the first to spread load across keys |
+| `OLLAMA_MODEL` | `gpt-oss:120b` | Ollama Cloud model ID used by Atlas AI |
+| `OLLAMA_BASE_URL` | `https://ollama.com/v1` | Ollama Cloud's OpenAI-compatible endpoint |
+
+\* Atlas AI needs at least one of `GROQ_API_KEY` / `OLLAMA_API_KEY_1` / `OLLAMA_API_KEY_2` set. Configuring more than one lets Atlas AI round-robin across providers/keys and fall forward on a rate limit instead of failing outright.
 
 ### Frontend
 | Variable | Default | Description |

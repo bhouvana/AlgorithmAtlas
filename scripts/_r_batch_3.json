@@ -1,0 +1,954 @@
+{
+ "best-time-to-buy-sell-stock-ii": {
+  "id": "best-time-to-buy-sell-stock-ii",
+  "contract": {
+   "function_name": "max_profit",
+   "parameters": [
+    {
+     "name": "prices",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_array_cluster3.py",
+   "code": "function max_profit(prices) {\n    let total = 0;\n    for (let i=1;i<prices.length;i++) { if (prices[i] > prices[i-1]) total += prices[i]-prices[i-1]; }\n    return total;\n}\n"
+  }
+ },
+ "coin-change-ways": {
+  "id": "coin-change-ways",
+  "contract": {
+   "function_name": "change",
+   "parameters": [
+    {
+     "name": "coins",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "amount",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster1.py",
+   "code": "function change(coins, amount) {\n    const dp = new Array(amount+1).fill(0); dp[0]=1;\n    for (const c of coins) for (let i=c;i<=amount;i++) dp[i]+=dp[i-c];\n    return dp[amount];\n}\n"
+  }
+ },
+ "counting-inversions": {
+  "id": "counting-inversions",
+  "contract": {
+   "function_name": "count_inversions",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_greedy_math_cluster.py",
+   "code": "function count_inversions(nums) {\n    let count = 0;\n    for (let i=0;i<nums.length;i++) for (let j=i+1;j<nums.length;j++) if (nums[i] > nums[j]) count++;\n    return count;\n}\n"
+  }
+ },
+ "euler-totient": {
+  "id": "euler-totient",
+  "contract": {
+   "function_name": "euler_totient",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_greedy_math_cluster.py",
+   "code": "function euler_totient(n) {\n    let result = n; let x = n; let p = 2;\n    while (p*p <= x) {\n        if (x % p === 0) { while (x % p === 0) x = Math.floor(x/p); result -= Math.floor(result/p); }\n        p++;\n    }\n    if (x > 1) result -= Math.floor(result/x);\n    return result;\n}\n"
+  }
+ },
+ "gas-station": {
+  "id": "gas-station",
+  "contract": {
+   "function_name": "can_complete_circuit",
+   "parameters": [
+    {
+     "name": "gas",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "cost",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_greedy_math_cluster.py",
+   "code": "function can_complete_circuit(gas, cost) {\n    let total = 0, tank = 0, start = 0;\n    for (let i=0;i<gas.length;i++) {\n        const diff = gas[i]-cost[i]; total += diff; tank += diff;\n        if (tank < 0) { start = i+1; tank = 0; }\n    }\n    return (total >= 0 ? start : -1);\n}\n"
+  }
+ },
+ "integer-square-root": {
+  "id": "integer-square-root",
+  "contract": {
+   "function_name": "my_sqrt",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster1.py",
+   "code": "function my_sqrt(n) {\n    let lo=0, hi=46341;\n    while (lo<hi) { const mid=(lo+hi+1)>>1; if (mid*mid<=n) lo=mid; else hi=mid-1; }\n    return lo;\n}\n"
+  }
+ },
+ "kth-largest-element": {
+  "id": "kth-largest-element",
+  "contract": {
+   "function_name": "kth_largest",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster2.py",
+   "code": "function kth_largest(nums, k) {\n    const sorted = nums.slice().sort((a,b)=>b-a);\n    return sorted[k-1];\n}\n"
+  }
+ },
+ "longest-consecutive-sequence": {
+  "id": "longest-consecutive-sequence",
+  "contract": {
+   "function_name": "longest_consecutive",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_array_cluster3.py",
+   "code": "function longest_consecutive(nums) {\n    const s = new Set(nums); let best = 0;\n    for (const x of s) {\n        if (!s.has(x-1)) { let len=1; let cur=x; while (s.has(cur+1)) { cur++; len++; } best = Math.max(best, len); }\n    }\n    return best;\n}\n"
+  }
+ },
+ "lucas-theorem": {
+  "id": "lucas-theorem",
+  "contract": {
+   "function_name": "lucas_theorem",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "p",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster4.py",
+   "code": "function lucas_theorem(n, k, p) {\n    function smallComb(nn, kk) {\n        if (kk>nn || kk<0) return 0;\n        let num=1, den=1;\n        for (let i=0;i<kk;i++) { num=(num*((nn-i)%p))%p; den=(den*(i+1))%p; }\n        let denInv=1, base=den%p, e=p-2;\n        while (e>0) { if (e&1) denInv=(denInv*base)%p; base=(base*base)%p; e>>=1; }\n        return (num*denInv)%p;\n    }\n    let result=1, nn=n, kk=k;\n    while (nn>0 || kk>0) {\n        const ni=nn%p, ki=kk%p;\n        if (ki>ni) return 0;\n        result=(result*smallComb(ni,ki))%p;\n        nn=Math.floor(nn/p); kk=Math.floor(kk/p);\n    }\n    return result;\n}\n"
+  }
+ },
+ "max-sum-subarray-fixed-k": {
+  "id": "max-sum-subarray-fixed-k",
+  "contract": {
+   "function_name": "max_sum_fixed_k",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster2.py",
+   "code": "function max_sum_fixed_k(nums, k) {\n    let sum=0; for (let i=0;i<k;i++) sum+=nums[i];\n    let best=sum;\n    for (let i=k;i<nums.length;i++) { sum += nums[i]-nums[i-k]; best=Math.max(best,sum); }\n    return best;\n}\n"
+  }
+ },
+ "middle-of-linked-list": {
+  "id": "middle-of-linked-list",
+  "contract": {
+   "function_name": "middle_node",
+   "parameters": [
+    {
+     "name": "values",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function middle_node(values) {\n    return values[Math.floor(values.length/2)];\n}\n"
+  }
+ },
+ "modular-exponentiation": {
+  "id": "modular-exponentiation",
+  "contract": {
+   "function_name": "modular_exponentiation",
+   "parameters": [
+    {
+     "name": "base",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "exp",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "mod",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster5.py",
+   "code": "function modular_exponentiation(base, exp, mod) {\n    if (mod===1) return 0;\n    let m=BigInt(mod); let result=1n; let b=((BigInt(base)%m)+m)%m; let e=BigInt(exp);\n    while (e>0n) { if (e&1n) result=(result*b)%m; b=(b*b)%m; e>>=1n; }\n    return Number(result);\n}\n"
+  }
+ },
+ "palindrome-linked-list": {
+  "id": "palindrome-linked-list",
+  "contract": {
+   "function_name": "is_palindrome",
+   "parameters": [
+    {
+     "name": "values",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function is_palindrome(values) {\n    let lo=0, hi=values.length-1;\n    while (lo<hi) { if (values[lo]!==values[hi]) return false; lo++; hi--; }\n    return true;\n}\n"
+  }
+ },
+ "power-of-two": {
+  "id": "power-of-two",
+  "contract": {
+   "function_name": "is_power_of_two",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_bit_misc_cluster.py",
+   "code": "function is_power_of_two(n) { return n > 0 && (n & (n - 1)) === 0; }\n"
+  }
+ },
+ "rotated-binary-search": {
+  "id": "rotated-binary-search",
+  "contract": {
+   "function_name": "search",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "target",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function search(nums, target) {\n    let lo=0, hi=nums.length-1;\n    while (lo<=hi) {\n        const mid=(lo+hi)>>1;\n        if (nums[mid]===target) return mid;\n        if (nums[lo]<=nums[mid]) { if (nums[lo]<=target && target<nums[mid]) hi=mid-1; else lo=mid+1; }\n        else { if (nums[mid]<target && target<=nums[hi]) lo=mid+1; else hi=mid-1; }\n    }\n    return -1;\n}\n"
+  }
+ },
+ "subarray-product-less-than-k": {
+  "id": "subarray-product-less-than-k",
+  "contract": {
+   "function_name": "num_subarrays_product_less_than_k",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function num_subarrays_product_less_than_k(nums, k) {\n    if (k<=1) return 0;\n    let prod=1, left=0, count=0;\n    for (let right=0;right<nums.length;right++) {\n        prod*=nums[right];\n        while (prod>=k) { prod/=nums[left]; left++; }\n        count += right-left+1;\n    }\n    return count;\n}\n"
+  }
+ },
+ "three-sum-count-triplets": {
+  "id": "three-sum-count-triplets",
+  "contract": {
+   "function_name": "three_sum_count",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_hashmap_grid_cluster.py",
+   "code": "function three_sum_count(nums) {\n    const arr = nums.slice().sort((a,b)=>a-b); const n = arr.length;\n    let count = 0;\n    for (let i=0;i<n-2;i++) {\n        if (i>0 && arr[i]===arr[i-1]) continue;\n        let lo=i+1, hi=n-1;\n        while (lo<hi) {\n            const sum = arr[i]+arr[lo]+arr[hi];\n            if (sum===0) { count++; const lv=arr[lo]; while(lo<hi&&arr[lo]===lv) lo++; const hv=arr[hi]; while(lo<hi&&arr[hi]===hv) hi--; }\n            else if (sum<0) lo++; else hi--;\n        }\n    }\n    return count;\n}\n"
+  }
+ },
+ "unique-permutations-count": {
+  "id": "unique-permutations-count",
+  "contract": {
+   "function_name": "count_unique_permutations",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster6.py",
+   "code": "function count_unique_permutations(nums) {\n    function fact(n) { let r=1; for (let i=2;i<=n;i++) r*=i; return r; }\n    const freq={};\n    for (const x of nums) freq[x]=(freq[x]||0)+1;\n    let denom=1; for (const k in freq) denom*=fact(freq[k]);\n    return Math.round(fact(nums.length)/denom);\n}\n"
+  }
+ },
+ "bitonic-sort": {
+  "id": "bitonic-sort",
+  "contract": {
+   "function_name": "bitonic_sort",
+   "parameters": [
+    {
+     "name": "arr",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   },
+   "mutates_argument": "arr"
+  },
+  "problem": {
+   "statement": "Given an array of integers, sort it in **ascending order** using **Bitonic Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+  }
+ },
+ "count-tree-nodes": {
+  "id": "count-tree-nodes",
+  "contract": {
+   "function_name": "count_nodes",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a binary tree, print the **total number of nodes**.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 number of nodes \\u2264 10^4\"]"
+  }
+ },
+ "distinct-subsequences": {
+  "id": "distinct-subsequences",
+  "contract": {
+   "function_name": "num_distinct",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "t",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given strings `s` and `t`, print the number of **distinct subsequences** of `s` that equal `t`.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 s.length, t.length \\u2264 1000\"]"
+  }
+ },
+ "fractional-knapsack": {
+  "id": "fractional-knapsack",
+  "contract": {
+   "function_name": "fractional_knapsack",
+   "parameters": [
+    {
+     "name": "weights",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "values",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "capacity",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "float"
+   }
+  },
+  "problem": {
+   "statement": "Given `n` items with `weights` and `values`, and a knapsack `capacity`, print the **maximum total value** achievable, where fractional amounts of an item may be taken. Print the answer rounded to **2 decimal places**.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 n \\u2264 1000\", \"1 \\u2264 weights[i] \\u2264 1000\", \"0 \\u2264 values[i] \\u2264 1000\", \"0 \\u2264 capacity \\u2264 10^5\"]"
+  }
+ },
+ "invert-tree-preorder": {
+  "id": "invert-tree-preorder",
+  "contract": {
+   "function_name": "invert_preorder",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given a binary tree, invert it (swap every left/right child) and print the **preorder traversal** of the result, space-separated.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 number of nodes \\u2264 100\"]"
+  }
+ },
+ "knapsack-01": {
+  "id": "knapsack-01",
+  "contract": {
+   "function_name": "knapsack",
+   "parameters": [
+    {
+     "name": "weights",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "values",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "capacity",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given `n` items with `weights` and `values`, and a knapsack `capacity`, print the **maximum total value** achievable picking each item at most once.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 n \\u2264 100\", \"0 \\u2264 weights[i], values[i] \\u2264 1000\", \"0 \\u2264 capacity \\u2264 1000\"]"
+  }
+ },
+ "matrix-exponentiation": {
+  "id": "matrix-exponentiation",
+  "contract": {
+   "function_name": "matrix_power",
+   "parameters": [
+    {
+     "name": "matrix",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "mod",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given an `n x n` matrix, an exponent `k`, and a `mod`, print `matrix^k mod mod` (each row on its own line, space-separated), computed via fast matrix exponentiation by squaring in O(n^3 log k).",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 n \\u2264 20\", \"0 \\u2264 k \\u2264 10^9\", \"1 \\u2264 mod \\u2264 10^9\"]"
+  }
+ },
+ "merge-k-sorted-lists": {
+  "id": "merge-k-sorted-lists",
+  "contract": {
+   "function_name": "merge_k_lists",
+   "parameters": [
+    {
+     "name": "lists",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given `k` sorted singly-linked lists (each represented as its length followed by its values, space-separated, one list per line), print the **single fully merged sorted list**, space-separated. Use a min-heap based k-way merge for O(N log k) time, where N is the total number of nodes.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 k \\u2264 10^4\", \"0 \\u2264 total nodes \\u2264 5\\u00d710^4\", \"-10^4 \\u2264 node value \\u2264 10^4\"]"
+  }
+ },
+ "polynomial-multiplication": {
+  "id": "polynomial-multiplication",
+  "contract": {
+   "function_name": "multiply_polynomials",
+   "parameters": [
+    {
+     "name": "a",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "b",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given two polynomials as integer coefficient lists `a` and `b` (`a[i]` = coefficient of x^i), print the coefficient list of their **product**, space-separated, computed via divide-and-conquer (Karatsuba-style) polynomial multiplication.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 a.length, b.length \\u2264 1000\", \"-1000 \\u2264 coefficients \\u2264 1000\"]"
+  }
+ },
+ "right-side-view": {
+  "id": "right-side-view",
+  "contract": {
+   "function_name": "right_side_view",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given a binary tree, print the value of the **rightmost node** visible at each depth level, from top to bottom, space-separated.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 number of nodes \\u2264 100\"]"
+  }
+ },
+ "selection-sort": {
+  "id": "selection-sort",
+  "contract": {
+   "function_name": "selection_sort",
+   "parameters": [
+    {
+     "name": "arr",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   },
+   "mutates_argument": "arr"
+  },
+  "problem": {
+   "statement": "Given an array of integers, sort it in **ascending order** using **Selection Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+  }
+ },
+ "spiral-matrix-traversal": {
+  "id": "spiral-matrix-traversal",
+  "contract": {
+   "function_name": "spiral_order",
+   "parameters": [
+    {
+     "name": "matrix",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given an `R x C` matrix, print all its elements in **clockwise spiral order** (outermost ring first, spiraling inward), space-separated.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 R, C \\u2264 200\", \"-10^9 \\u2264 matrix[i][j] \\u2264 10^9\"]"
+  }
+ },
+ "suffix-array": {
+  "id": "suffix-array",
+  "contract": {
+   "function_name": "build_suffix_array",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given a string `s`, print its **suffix array**: the starting indices of all suffixes of `s`, sorted lexicographically by suffix, space-separated.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 s.length \\u2264 1000\"]"
+  }
+ },
+ "word-ladder-length": {
+  "id": "word-ladder-length",
+  "contract": {
+   "function_name": "ladder_length",
+   "parameters": [
+    {
+     "name": "begin_word",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "end_word",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "word_list",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "string"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given `beginWord`, `endWord`, and a `wordList` (one-line, space separated), print the **number of words** in the shortest transformation sequence from `beginWord` to `endWord` (inclusive of both), changing exactly one letter per step, each intermediate word must be in `wordList`. Print **0** if no such sequence exists.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 word length \\u2264 10\", \"all words the same length, lowercase\"]"
+  }
+ }
+}

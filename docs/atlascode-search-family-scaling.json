@@ -1,0 +1,394 @@
+[
+  {
+    "pid": "binary-search",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 5304.951199999778
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 5136.800799999037
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 5176.5486000076635
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 5168.137800006662
+  },
+  {
+    "pid": "jump-search",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 5223.196699997061
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 5180.799500012654
+  },
+  {
+    "pid": "linear-search",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 5208.531600001152
+  },
+  {
+    "pid": "binary-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 43777.71599999687
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 43171.45039999741
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 42713.99180000299
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 43022.51520000573
+  },
+  {
+    "pid": "jump-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 42741.008500001044
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 43064.19430000824
+  },
+  {
+    "pid": "linear-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 42938.79419998848
+  },
+  {
+    "pid": "binary-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 10309.344900000724
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 9657.664600003045
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 9599.988700007088
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 9580.001299997093
+  },
+  {
+    "pid": "jump-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 9896.348800000851
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 9891.092300007585
+  },
+  {
+    "pid": "linear-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 10310.186200003955
+  },
+  {
+    "pid": "binary-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 7044.7301999956835
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 3832.972600008361
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 3815.161699996679
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 3773.3258999942336
+  },
+  {
+    "pid": "jump-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 3805.6446999980835
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 3810.783299995819
+  },
+  {
+    "pid": "linear-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 4016.75019999675
+  },
+  {
+    "pid": "binary-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 15298.278400005074
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 11482.050999999046
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 11450.621700001648
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 11027.010399993742
+  },
+  {
+    "pid": "jump-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 11450.237600001856
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 12483.391000001575
+  },
+  {
+    "pid": "linear-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 11719.927100013592
+  },
+  {
+    "pid": "binary-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 7978.783799990197
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 6087.548800001969
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 5946.615799999563
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 5993.906799994875
+  },
+  {
+    "pid": "jump-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 6202.734100006637
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 5914.913000000524
+  },
+  {
+    "pid": "linear-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 7591.310199990403
+  },
+  {
+    "pid": "binary-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 1638.6575999931665
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 1423.0718000035267
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 1446.8286000046646
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 1456.8880000006175
+  },
+  {
+    "pid": "jump-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 1507.924199991976
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 1451.5920999983791
+  },
+  {
+    "pid": "linear-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 1586.3205999921774
+  },
+  {
+    "pid": "binary-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 5038.908000002266
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 3221.2134000001242
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 3316.3790999969933
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 3213.5618000029353
+  },
+  {
+    "pid": "jump-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 3132.45150000148
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 3073.6433999991277
+  },
+  {
+    "pid": "linear-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 3073.963500006357
+  }
+]

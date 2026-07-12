@@ -1,0 +1,890 @@
+{
+ "activity-selection": {
+  "id": "activity-selection",
+  "contract": {
+   "function_name": "max_activities",
+   "parameters": [
+    {
+     "name": "starts",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "ends",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_greedy_math_cluster.py",
+   "code": "function max_activities(starts, ends) {\n    const n = starts.length;\n    const idx = Array.from({length:n}, (_,i)=>i).sort((a,b)=>ends[a]-ends[b]);\n    let count = 0, lastEnd = -Infinity;\n    for (const i of idx) { if (starts[i] >= lastEnd) { count++; lastEnd = ends[i]; } }\n    return count;\n}\n"
+  }
+ },
+ "closest-pair": {
+  "id": "closest-pair",
+  "contract": {
+   "function_name": "closest_pair_sq_dist",
+   "parameters": [
+    {
+     "name": "points",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_greedy_math_cluster.py",
+   "code": "function closest_pair_sq_dist(points) {\n    let best = Infinity;\n    for (let i=0;i<points.length;i++) for (let j=i+1;j<points.length;j++) {\n        const dx = points[i][0]-points[j][0], dy = points[i][1]-points[j][1];\n        const d = dx*dx+dy*dy;\n        if (d < best) best = d;\n    }\n    return best;\n}\n"
+  }
+ },
+ "count-occurrences-sorted": {
+  "id": "count-occurrences-sorted",
+  "contract": {
+   "function_name": "count_occurrences",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "target",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster1.py",
+   "code": "function count_occurrences(nums, target) {\n    function lb(t) { let lo=0,hi=nums.length; while(lo<hi){const mid=(lo+hi)>>1; if(nums[mid]<t)lo=mid+1;else hi=mid;} return lo; }\n    const first=lb(target), last=lb(target+1);\n    return (last-first);\n}\n"
+  }
+ },
+ "egg-drop": {
+  "id": "egg-drop",
+  "contract": {
+   "function_name": "egg_drop",
+   "parameters": [
+    {
+     "name": "eggs",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "floors",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_greedy_math_cluster.py",
+   "code": "function egg_drop(eggs, floors) {\n    if (floors === 0) return 0;\n    const dp = new Array(eggs+1).fill(0);\n    let moves = 0;\n    while (dp[eggs] < floors) {\n        moves++;\n        for (let k=eggs;k>=1;k--) dp[k] = dp[k] + dp[k-1] + 1;\n    }\n    return moves;\n}\n"
+  }
+ },
+ "first-unique-character-index": {
+  "id": "first-unique-character-index",
+  "contract": {
+   "function_name": "first_uniq_char",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster4.py",
+   "code": "function first_uniq_char(s) {\n    const freq={};\n    for (const ch of s) freq[ch]=(freq[ch]||0)+1;\n    for (let i=0;i<s.length;i++) if (freq[s[i]]===1) return i;\n    return -1;\n}\n"
+  }
+ },
+ "house-robber-circular": {
+  "id": "house-robber-circular",
+  "contract": {
+   "function_name": "rob_circular",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_greedy_math_cluster.py",
+   "code": "function rob_line(nums) {\n    let prev = 0, cur = 0;\n    for (const x of nums) { const t = Math.max(cur, prev+x); prev = cur; cur = t; }\n    return cur;\n}\nfunction rob_circular(nums) {\n    const n = nums.length;\n    if (n === 1) return nums[0];\n    const a1 = rob_line(nums.slice(0, n-1));\n    const a2 = rob_line(nums.slice(1));\n    return Math.max(a1, a2);\n}\n"
+  }
+ },
+ "jump-game-ii-min-jumps": {
+  "id": "jump-game-ii-min-jumps",
+  "contract": {
+   "function_name": "jump",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster2.py",
+   "code": "function jump(nums) {\n    let jumps=0, curEnd=0, farthest=0;\n    for (let i=0;i<nums.length-1;i++) {\n        farthest = Math.max(farthest, i+nums[i]);\n        if (i===curEnd) { jumps++; curEnd=farthest; }\n    }\n    return jumps;\n}\n"
+  }
+ },
+ "longest-bitonic-subsequence": {
+  "id": "longest-bitonic-subsequence",
+  "contract": {
+   "function_name": "lbs",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster2.py",
+   "code": "function lbs(nums) {\n    const n=nums.length; const inc=new Array(n).fill(1), dec=new Array(n).fill(1);\n    for (let i=0;i<n;i++) for (let j=0;j<i;j++) if (nums[j]<nums[i]) inc[i]=Math.max(inc[i], inc[j]+1);\n    for (let i=n-1;i>=0;i--) for (let j=n-1;j>i;j--) if (nums[j]<nums[i]) dec[i]=Math.max(dec[i], dec[j]+1);\n    let best=0; for (let i=0;i<n;i++) best=Math.max(best, inc[i]+dec[i]-1);\n    return best;\n}\n"
+  }
+ },
+ "longest-substring-without-repeating": {
+  "id": "longest-substring-without-repeating",
+  "contract": {
+   "function_name": "length_of_longest_substring",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_hashmap_grid_cluster.py",
+   "code": "function length_of_longest_substring(s) {\n    const last = {}; let best = 0, start = 0;\n    for (let i=0;i<s.length;i++) {\n        const ch = s[i];\n        if (last[ch] !== undefined && last[ch] >= start) start = last[ch] + 1;\n        last[ch] = i;\n        best = Math.max(best, i - start + 1);\n    }\n    return best;\n}\n"
+  }
+ },
+ "matrix-chain-multiplication": {
+  "id": "matrix-chain-multiplication",
+  "contract": {
+   "function_name": "matrix_chain_order",
+   "parameters": [
+    {
+     "name": "dims",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster5.py",
+   "code": "function matrix_chain_order(dims) {\n    const n = dims.length-1;\n    const dp = Array.from({length:n+1}, () => new Array(n+1).fill(0));\n    for (let len=2;len<=n;len++) {\n        for (let i=1;i+len-1<=n;i++) {\n            const j=i+len-1; dp[i][j]=Infinity;\n            for (let k=i;k<j;k++) {\n                const cost=dp[i][k]+dp[k+1][j]+dims[i-1]*dims[k]*dims[j];\n                if (cost<dp[i][j]) dp[i][j]=cost;\n            }\n        }\n    }\n    return dp[1][n];\n}\n"
+  }
+ },
+ "merge-sorted-arrays-inplace": {
+  "id": "merge-sorted-arrays-inplace",
+  "contract": {
+   "function_name": "merge_sorted",
+   "parameters": [
+    {
+     "name": "a",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "b",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function merge_sorted(a, b) {\n    const out=[]; let i=0,j=0;\n    while (i<a.length && j<b.length) { if (a[i]<=b[j]) out.push(a[i++]); else out.push(b[j++]); }\n    while (i<a.length) out.push(a[i++]);\n    while (j<b.length) out.push(b[j++]);\n    return out;\n}\n"
+  }
+ },
+ "minimum-window-substring-length": {
+  "id": "minimum-window-substring-length",
+  "contract": {
+   "function_name": "min_window_length",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "t",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster5.py",
+   "code": "function min_window_length(s, t) {\n    if (t.length===0 || s.length<t.length) return 0;\n    const need={}; for (const ch of t) need[ch]=(need[ch]||0)+1;\n    let required=Object.keys(need).length, formed=0;\n    const window={};\n    let left=0, best=Infinity;\n    for (let right=0;right<s.length;right++) {\n        const ch=s[right]; window[ch]=(window[ch]||0)+1;\n        if (need[ch]!==undefined && window[ch]===need[ch]) formed++;\n        while (formed===required) {\n            best=Math.min(best, right-left+1);\n            const lc=s[left]; window[lc]--;\n            if (need[lc]!==undefined && window[lc]<need[lc]) formed--;\n            left++;\n        }\n    }\n    const r = best===Infinity?0:best;\n    return r===0?r:r;\n}\n"
+  }
+ },
+ "number-of-divisors": {
+  "id": "number-of-divisors",
+  "contract": {
+   "function_name": "number_of_divisors",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function number_of_divisors(n) {\n    let count=0;\n    for (let i=1;i*i<=n;i++) { if (n%i===0) { count+=2; if (i*i===n) count--; } }\n    return count;\n}\n"
+  }
+ },
+ "partition-equal-subset-sum": {
+  "id": "partition-equal-subset-sum",
+  "contract": {
+   "function_name": "can_partition",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster5.py",
+   "code": "function can_partition(nums) {\n    const total = nums.reduce((a,b)=>a+b,0);\n    if (total%2!==0) return false;\n    const target = total/2;\n    const dp=new Array(target+1).fill(false); dp[0]=true;\n    for (const x of nums) for (let i=target;i>=x;i--) if (dp[i-x]) dp[i]=true;\n    return dp[target]?true:false;\n}\n"
+  }
+ },
+ "reverse-linked-list": {
+  "id": "reverse-linked-list",
+  "contract": {
+   "function_name": "reverse_list",
+   "parameters": [
+    {
+     "name": "values",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function reverse_list(values) {\n    return values.slice().reverse();\n}\n"
+  }
+ },
+ "single-number-ii": {
+  "id": "single-number-ii",
+  "contract": {
+   "function_name": "single_number",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster6.py",
+   "code": "function single_number(nums) {\n    let ones=0, twos=0;\n    for (const x of nums) { ones=(ones^x)&~twos; twos=(twos^x)&~ones; }\n    return ones;\n}\n"
+  }
+ },
+ "target-sum-ways": {
+  "id": "target-sum-ways",
+  "contract": {
+   "function_name": "find_target_sum_ways",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "target",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster6.py",
+   "code": "function find_target_sum_ways(nums, target) {\n    const total = nums.reduce((a,b)=>a+b,0);\n    if (Math.abs(target)>total) return 0;\n    const offset=total; const size=2*total+1;\n    let dp=new Array(size).fill(0); dp[offset]=1;\n    for (const x of nums) {\n        const ndp=new Array(size).fill(0);\n        for (let s=0;s<size;s++) {\n            if (dp[s]===0) continue;\n            if (s+x<size) ndp[s+x]+=dp[s];\n            if (s-x>=0) ndp[s-x]+=dp[s];\n        }\n        dp=ndp;\n    }\n    const idx=target+offset;\n    return (idx>=0 && idx<size ? dp[idx] : 0);\n}\n"
+  }
+ },
+ "two-sum-count-pairs": {
+  "id": "two-sum-count-pairs",
+  "contract": {
+   "function_name": "count_pairs",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "target",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster6.py",
+   "code": "function count_pairs(nums, target) {\n    const freq={}; let count=0;\n    for (const x of nums) {\n        const need=target-x;\n        if (freq[need]) count+=freq[need];\n        freq[x]=(freq[x]||0)+1;\n    }\n    return count;\n}\n"
+  }
+ },
+ "word-wrap": {
+  "id": "word-wrap",
+  "contract": {
+   "function_name": "word_wrap",
+   "parameters": [
+    {
+     "name": "lengths",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "width",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster6.py",
+   "code": "function word_wrap(lengths, width) {\n    const n=lengths.length; const INF=1e15;\n    const dp=new Array(n+1).fill(INF); dp[n]=0;\n    for (let i=n-1;i>=0;i--) {\n        let lineLen=-1;\n        for (let j=i;j<n;j++) {\n            lineLen += lengths[j]+1;\n            if (lineLen>width) break;\n            const cost = (j===n-1) ? 0 : (width-lineLen)*(width-lineLen)*(width-lineLen);\n            if (dp[j+1]+cost<dp[i]) dp[i]=dp[j+1]+cost;\n        }\n    }\n    return dp[0];\n}\n"
+  }
+ },
+ "binary-tree-max-path-sum": {
+  "id": "binary-tree-max-path-sum",
+  "contract": {
+   "function_name": "max_path_sum",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a binary tree with possibly negative values, print the **maximum path sum** of any non-empty path (a path may start and end at any node, need not pass through the root).",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 number of nodes \\u2264 3\\u00d710^4\", \"-1000 \\u2264 node value \\u2264 1000\"]"
+  }
+ },
+ "comb-sort": {
+  "id": "comb-sort",
+  "contract": {
+   "function_name": "comb_sort",
+   "parameters": [
+    {
+     "name": "arr",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   },
+   "mutates_argument": "arr"
+  },
+  "problem": {
+   "statement": "Given an array of integers, sort it in **ascending order** using **Comb Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+  }
+ },
+ "insertion-sort": {
+  "id": "insertion-sort",
+  "contract": {
+   "function_name": "insertion_sort",
+   "parameters": [
+    {
+     "name": "arr",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   },
+   "mutates_argument": "arr"
+  },
+  "problem": {
+   "statement": "Given an array of integers, sort it in **ascending order** using **Insertion Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+  }
+ },
+ "is-valid-bst": {
+  "id": "is-valid-bst",
+  "contract": {
+   "function_name": "is_valid_bst",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "problem": {
+   "statement": "Given a binary tree, print `true` if it satisfies the **binary search tree** property, else `false`.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 number of nodes \\u2264 10^4\"]"
+  }
+ },
+ "lowest-common-ancestor-binary-tree": {
+  "id": "lowest-common-ancestor-binary-tree",
+  "contract": {
+   "function_name": "lowest_common_ancestor",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "p",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "q",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a **general binary tree** (no ordering property assumed) and two distinct values `p` and `q` guaranteed to exist in it, print the value of their **lowest common ancestor** \u2014 the deepest node that has both `p` and `q` as descendants (a node is considered a descendant of itself).",
+   "examples": "[]",
+   "constraints": "[\"2 \\u2264 number of nodes \\u2264 10^4\", \"all values distinct\", \"p != q\"]"
+  }
+ },
+ "median-of-medians": {
+  "id": "median-of-medians",
+  "contract": {
+   "function_name": "kth_smallest",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given an array `nums` and an integer `k`, print the **k-th smallest** element (1-indexed), computed via the median-of-medians selection algorithm in guaranteed O(n) worst-case time.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 k \\u2264 nums.length \\u2264 10^5\"]"
+  }
+ },
+ "path-sum-exists": {
+  "id": "path-sum-exists",
+  "contract": {
+   "function_name": "has_path_sum",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "target",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "problem": {
+   "statement": "Given a binary tree and an integer `target`, print `true` if some **root-to-leaf path** sums exactly to `target`, else `false`.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 number of nodes \\u2264 5000\"]"
+  }
+ },
+ "remove-k-digits": {
+  "id": "remove-k-digits",
+  "contract": {
+   "function_name": "remove_k_digits",
+   "parameters": [
+    {
+     "name": "num",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "string"
+   }
+  },
+  "problem": {
+   "statement": "Given a non-negative integer `num` as a string and an integer `k`, print the **smallest possible number** (no leading zeros, as a string) after removing exactly `k` digits.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 num.length \\u2264 10^5\", \"0 \\u2264 k \\u2264 num.length\"]"
+  }
+ },
+ "same-tree": {
+  "id": "same-tree",
+  "contract": {
+   "function_name": "is_same_tree",
+   "parameters": [
+    {
+     "name": "p",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "q",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "problem": {
+   "statement": "Given two binary trees, print `true` if they are **structurally identical** with the same node values, else `false`.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 number of nodes \\u2264 100 (each tree)\"]"
+  }
+ },
+ "sieve-of-eratosthenes": {
+  "id": "sieve-of-eratosthenes",
+  "contract": {
+   "function_name": "sieve_of_eratosthenes",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "string"
+   }
+  },
+  "problem": {
+   "statement": "Given `n`, print **all prime numbers \u2264 n**, space-separated in ascending order, using the Sieve of Eratosthenes. Print an empty line if there are none.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 n \\u2264 10^5\"]"
+  }
+ },
+ "strassen": {
+  "id": "strassen",
+  "contract": {
+   "function_name": "matrix_multiply",
+   "parameters": [
+    {
+     "name": "A",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    },
+    {
+     "name": "B",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given matrix `A` (`n x m`) and matrix `B` (`m x p`), print their product `A x B` (each row on its own line, space-separated), computed via Strassen's divide-and-conquer algorithm.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 n, m, p \\u2264 64\", \"-100 \\u2264 entries \\u2264 100\"]"
+  }
+ },
+ "wildcard-matching": {
+  "id": "wildcard-matching",
+  "contract": {
+   "function_name": "is_match",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "p",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "problem": {
+   "statement": "Given a string `s` and a wildcard pattern `p` (`'?'` matches any single character, `'*'` matches any sequence of characters, including the empty sequence), print `true` if `p` matches the **entire** `s`, else `false`.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 s.length \\u2264 2000\", \"0 \\u2264 p.length \\u2264 2000\"]"
+  }
+ }
+}

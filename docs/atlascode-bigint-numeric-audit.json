@@ -1,0 +1,47 @@
+{
+  "generated_from": "live scan of every test_cases.function_args/function_expected value across the full corpus, cross-checked against contracts.py TypeSpec kind == \"integer\" mappings per language (compiled_adapters.py _c_type/_rust_type/_java_type/_csharp_type/_cpp_type), and the real ledger (2026-07-07)",
+  "finding": "10 problems have real 40-case corpus values exceeding int64 range (up to 1023 decimal digits), but their function_contract declares return/parameter type kind=\"integer\" with no arbitrary-precision distinction in the TypeSpec schema.",
+  "affected_problems": {
+    "fibonacci-dp": "fibonacci-dp(4892) = a 1023-digit integer (stress case alongside small n=0..40 cases)",
+    "karatsuba": "large-integer multiplication -- inherently produces huge products by design",
+    "catalan-number": "catalan(n) for large n grows super-exponentially",
+    "fast-power": "base^exp for large exp",
+    "decode-ways": "count of decodings can grow combinatorially for long digit strings",
+    "unique-paths": "large grid dimensions -- binomial coefficient growth",
+    "combination-sum-iv-count": "combinatorial count, can exceed int64 for large targets",
+    "evaluate-reverse-polish-notation": "unbounded intermediate products in the expression",
+    "maximum-product-subarray": "product of many large elements",
+    "sum-root-to-leaf-numbers": "deep trees produce large concatenated-digit sums"
+  },
+  "why_this_matters": "Python's `int` is natively arbitrary-precision, so all 10 problems are already genuinely Level-6 verified for Python (see docs/atlascode-function-mode-python-runtime-verification.json / the legacy-oracle closure) using the exact real 1023-digit test case, not a truncated one. But the SAME 40-case corpus is meant to be reused verbatim across every language (mission's own no-duplicate-corpus rule) -- so any future correct reference solution for these 10 problems in C, C++, Rust, Java, C#, Go, Kotlin, Scala, Swift, PHP, Perl, R, Ruby will FAIL the large-value cases unless it uses that language's real arbitrary-precision facility (Java/C# BigInteger, PHP GMP/bcmath, Perl Math::BigInt, Ruby's native bignum promotion, Python-like), NOT the fixed-width native int the current contract-to-language type mapping emits.",
+  "current_type_mapping_is_fixed_width": {
+    "c": "_c_type(\"integer\") == \"int\" (32-bit, max ~2.1e9) -- cannot represent a 1023-digit value at all; C has no standard-library bigint",
+    "rust": "_rust_type(\"integer\") == \"i32\" -- same problem; would need num-bigint crate or a hand-rolled bignum",
+    "cpp/java/csharp/go/kotlin/scala/swift": "similarly fixed-width (int/long/int64) per their respective _*_type functions -- not yet audited value-by-value in this pass, but the same TypeSpec kind=\"integer\" is used uniformly, so the same gap applies wherever the language's native int/long is emitted"
+  },
+  "current_ledger_state": {
+    "fibonacci-dp": ["python"], "karatsuba": ["python"], "catalan-number": ["python"],
+    "fast-power": ["python"], "decode-ways": ["python"], "unique-paths": ["python"],
+    "combination-sum-iv-count": ["python"], "evaluate-reverse-polish-notation": ["python"],
+    "maximum-product-subarray": ["python"], "sum-root-to-leaf-numbers": ["python"]
+  },
+  "additional_problems_found_same_gap_class": {
+    "trapping-rain-water": {
+      "evidence": "real corpus stress case expects 24932455072 (~2.49e10), confirmed by a genuine reference-solution failure in java/cpp/csharp/c/rust (all correctly computed -837348704, the exact int32-overflow wraparound of the true value) during this session's array-cluster batch -- not a bug in the reference algorithm, a real fixed-width-return-type ceiling.",
+      "current_ledger_state": ["python", "javascript", "typescript", "perl"],
+      "why_js_ts_perl_work": "JS/TS numbers are float64 (exact integers up to 2^53); Perl scalars auto-promote to double/bignum on overflow -- neither is fixed-width 32-bit the way C/C++/C#/Java/Rust's `int`/`i32` return type is.",
+      "excluded_this_session_from": "javascript/typescript/java/cpp/csharp/perl/c/rust array-cluster batch (java/cpp/csharp/c/rust deliberately left unattempted for this one problem after the real failure was confirmed, not silently skipped)"
+    },
+    "reverse-bits": {
+      "evidence": "corpus includes reverse_bits(1) = 2147483648 (2^31), one more than INT32_MAX (2147483647) -- cannot be represented in a signed 32-bit return type at all, found by inspection before attempting (not run against other languages yet, deliberately deferred from the bit-misc batch this session)",
+      "current_ledger_state": ["python"]
+    },
+    "combination-sum-count": {
+      "evidence": "real corpus stress case (30 candidates, target=490) expects 398814034740 (~4e11), confirmed by a genuine reference-solution failure in java/cpp/csharp/c/rust (all silently wrapped/truncated) during the mega-cluster-4 batch -- javascript/typescript (float64) and perl (auto-promoting scalars) passed correctly.",
+      "current_ledger_state": ["python", "javascript", "typescript", "perl"],
+      "excluded_this_session_from": "java/cpp/csharp/c/rust mega-cluster-4 batch -- deliberately left unattempted for this one problem after the real failure was confirmed, not silently skipped"
+    }
+  },
+  "recommendation": "Do NOT silently weaken these 10 problems' test corpora to remove the large-value stress cases just to make other languages pass (would violate the no-duplicate/no-weakened-corpus rule and hide a real precision bug). Do NOT attempt naive fixed-width-int reference solutions for these 10 in other languages -- they will genuinely and correctly fail on the large cases, which is CORRECT judge behavior, not a bug to route around. The real fix is future, separate work: either (a) add a genuine arbitrary-precision TypeSpec kind with real per-language bigint support, or (b) mark these 10 problems ARCHITECTURAL_LIMITATION for non-Python languages until that work lands. Excluded from the current sort-family and any other broad-scaling batch in this session for exactly this reason.",
+  "status": "documented, not fixed -- flagged as a real blocker for full non-Python Function Mode coverage of these 10 problems specifically, not the other 206"
+}

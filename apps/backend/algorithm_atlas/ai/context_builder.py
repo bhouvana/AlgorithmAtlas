@@ -66,10 +66,45 @@ class ComparisonContext(BaseModel):
     algorithmB: Optional[str] = None
 
 
+class FailingCase(BaseModel):
+    label: str
+    input: str
+    expected: Optional[str] = None
+    actual: str = ""
+
+
+class RunSummary(BaseModel):
+    passed: int
+    failed: int
+    total: int
+
+
+class ProblemContext(BaseModel):
+    """AtlasCode problem-workspace bridge. Populated exclusively from Run
+    (visible/selected/custom cases) -- this workspace has no Submit/hidden-test
+    path, so there is structurally no hidden test data this can ever carry.
+
+    executionMode/functionSignature were already being sent by the frontend
+    (apps/frontend/src/atlas-code/problem/ProblemPage.tsx) but this model had
+    no field for them -- Pydantic silently drops unknown keys, so Atlas AI has
+    been blind to LeetCode Mode vs Codeforces Mode despite the frontend doing
+    its part correctly. Fixed 2026-07-12 (see context_to_text() below)."""
+    slug: str
+    title: str
+    difficulty: str = ""
+    language: str = "python"
+    executionMode: str = "program"  # 'function' (LeetCode Mode) | 'program' (Codeforces Mode)
+    functionSignature: Optional[str] = None  # set only when executionMode == 'function'
+    source: str = ""
+    lastRunSummary: Optional[RunSummary] = None
+    lastRunVerdict: Optional[str] = None
+    firstFailingCase: Optional[FailingCase] = None
+
+
 # ── Root context model ────────────────────────────────────────────────────────
 
 class AtlasContext(BaseModel):
-    page: str = "landing"   # landing | catalog | algorithm | compare | notebook | experiments | learning | lesson
+    page: str = "landing"   # landing | catalog | algorithm | compare | notebook | experiments | learning | lesson | atlascode
     userId: str = "anonymous"
 
     algorithm: Optional[AlgorithmContext] = None
@@ -78,6 +113,7 @@ class AtlasContext(BaseModel):
     lesson: Optional[LessonContext] = None
     learningProgress: Optional[LearningProgressContext] = None
     comparison: Optional[ComparisonContext] = None
+    problem: Optional[ProblemContext] = None
 
 
 # ── Serialiser ────────────────────────────────────────────────────────────────
@@ -91,6 +127,8 @@ _PAGE_LABELS: dict[str, str] = {
     "experiments": "the saved experiments browser",
     "learning":    "the learning path overview (12 curriculum tracks)",
     "lesson":      "an individual lesson",
+    "atlascode":   "the AtlasCode judge workspace (Monaco IDE + Run)",
+    "atlascode-catalog": "the AtlasCode problem catalog",
 }
 
 
@@ -158,6 +196,33 @@ def context_to_text(ctx: AtlasContext) -> str:
         if c.algorithmA or c.algorithmB:
             parts.append(
                 f"Comparing: {c.algorithmA or '(none)'} vs {c.algorithmB or '(none)'}."
+            )
+
+    if ctx.problem:
+        p = ctx.problem
+        if p.executionMode == "function":
+            mode_label = "LeetCode Mode (writes only the requested function; the judge drives it)"
+            sig_note = f" Function signature: {p.functionSignature}." if p.functionSignature else ""
+        else:
+            mode_label = "Codeforces Mode (writes a full stdin/stdout program)"
+            sig_note = ""
+        parts.append(
+            f"Problem: '{p.title}' (difficulty: {p.difficulty}), language: {p.language}, "
+            f"mode: {mode_label}.{sig_note}"
+        )
+        if p.source:
+            parts.append(f"Current code:\n```{p.language}\n{p.source[:3000]}\n```")
+        if p.lastRunVerdict == "Compilation Error":
+            parts.append("Last Run: Compilation Error.")
+        elif p.lastRunSummary:
+            s = p.lastRunSummary
+            parts.append(f"Last Run: {s.passed}/{s.total} visible cases passed ({s.failed} failed).")
+        if p.firstFailingCase:
+            f = p.firstFailingCase
+            label = "Arguments/Expected Return/Actual Return" if p.executionMode == "function" else "input/expected/actual"
+            parts.append(
+                f"First failing case ('{f.label}', {label}): input={f.input!r}, "
+                f"expected={f.expected!r}, actual={f.actual!r}."
             )
 
     return " ".join(parts)

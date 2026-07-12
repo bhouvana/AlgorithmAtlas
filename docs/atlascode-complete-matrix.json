@@ -1,0 +1,208 @@
+{
+  "generated_from": "live queries against atlas.db (problems, test_cases, atlascode_matrix_ledger) + docs/atlascode-ledger-staleness.json -- no hardcoded per-language values",
+  "completion_model": {
+    "philosophy": "Completion is measured at the PROBLEM level. A problem is COMPLETE once its algorithm is implemented, the judge can execute it, and at least one production-quality language implementation is verified (Level 6) -- additional languages are an ongoing enhancement (Language Coverage below), never a completion blocker.",
+    "problems_total": 216,
+    "problems_complete": 216,
+    "problems_in_progress": 0,
+    "problems_in_progress_ids": [],
+    "problem_completion_pct": 1.0
+  },
+  "problems_total": 216,
+  "contracts_total": 216,
+  "exact_40_total": 215,
+  "known_corpus_exceptions": {
+    "n-queens": "domain-capped at 12/40 -- documented, not a defect"
+  },
+  "languages_total": 17,
+  "modes": [
+    "function",
+    "program"
+  ],
+  "theoretical_cells": 7344,
+  "architectural_exclusions": 216,
+  "architectural_exclusion_detail": "shell x function-mode x 216 problems (registry.py SHELL_FUNCTION_MODE_POLICY, permanent by design)",
+  "eligible_cells": 7128,
+  "level6_verified_cells_total": 3479,
+  "level6_verified_function": 1853,
+  "level6_verified_program": 1626,
+  "stale_cells_total": 234,
+  "current_reproducible_cells": 3245,
+  "language_coverage_raw_theoretical": 0.4737,
+  "language_coverage_eligible": 0.4881,
+  "coverage_raw_theoretical": 0.4737,
+  "coverage_eligible": 0.4881,
+  "languages": {
+    "python": {
+      "function": {
+        "verified": 216,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 0,
+        "eligible": 216
+      }
+    },
+    "javascript": {
+      "function": {
+        "verified": 163,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 149,
+        "eligible": 216
+      }
+    },
+    "typescript": {
+      "function": {
+        "verified": 163,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 146,
+        "eligible": 216
+      }
+    },
+    "java": {
+      "function": {
+        "verified": 161,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 145,
+        "eligible": 216
+      }
+    },
+    "cpp": {
+      "function": {
+        "verified": 161,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 147,
+        "eligible": 216
+      }
+    },
+    "c": {
+      "function": {
+        "verified": 160,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 145,
+        "eligible": 216
+      }
+    },
+    "go": {
+      "function": {
+        "verified": 112,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 62,
+        "eligible": 216
+      }
+    },
+    "rust": {
+      "function": {
+        "verified": 161,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 145,
+        "eligible": 216
+      }
+    },
+    "shell": {
+      "function": {
+        "status": "ARCHITECTURAL_EXCLUSION",
+        "verified": 0,
+        "eligible": 0
+      },
+      "program": {
+        "verified": 0,
+        "eligible": 216
+      }
+    },
+    "ruby": {
+      "function": {
+        "verified": 44,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 72,
+        "eligible": 216
+      }
+    },
+    "kotlin": {
+      "function": {
+        "verified": 43,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 62,
+        "eligible": 216
+      }
+    },
+    "swift": {
+      "function": {
+        "verified": 8,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 48,
+        "eligible": 216
+      }
+    },
+    "r": {
+      "function": {
+        "verified": 24,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 64,
+        "eligible": 216
+      }
+    },
+    "csharp": {
+      "function": {
+        "verified": 161,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 143,
+        "eligible": 216
+      }
+    },
+    "php": {
+      "function": {
+        "verified": 44,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 91,
+        "eligible": 216
+      }
+    },
+    "scala": {
+      "function": {
+        "verified": 69,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 60,
+        "eligible": 216
+      }
+    },
+    "perl": {
+      "function": {
+        "verified": 163,
+        "eligible": 216
+      },
+      "program": {
+        "verified": 147,
+        "eligible": 216
+      }
+    }
+  }
+}

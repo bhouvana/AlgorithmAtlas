@@ -1,0 +1,53 @@
+{
+  "generated_from": "manual code audit (compiled_adapters.py / adapters.py `kind == \"tuple\"` branches) cross-checked against real ledger evidence for min-stack-simulation (the only tuple-typed problem in the corpus), not inferred from naming or prose claims",
+  "evidence_problem": "min-stack-simulation",
+  "note": "A crude text-search for the word 'tuple' in each adapter class is UNRELIABLE (false positives from comments/raised-error messages that mention 'tuple' while explicitly NOT supporting it) -- this matrix is grounded in (a) the real atlascode_matrix_ledger row for min-stack-simulation per language, and (b) direct confirmation in source of *why* for the 3 unsupported languages.",
+  "supported": {
+    "python": "native tuple -> JSON array, no special-case needed",
+    "javascript": "native tuple -> JSON array, no special-case needed",
+    "typescript": "reuses JS's dynamic/untyped driver convention -- a tuple is just an array, works for free, no dedicated tuple branch in the adapter",
+    "java": "boxed Object[] stream decode -- no native Java tuple, represented as heterogeneous Object[]",
+    "cpp": "native std::tuple<...> -- direct fit",
+    "csharp": "native ValueTuple -- direct fit, real JSON parser (System.Text.Json)",
+    "perl": "array-of-mixed-scalars via arrayref -- works naturally, no dedicated struct needed",
+    "ruby": "JSON array is just a Ruby Array -- works for free, no dedicated tuple branch",
+    "php": "array-of-mixed-scalars, PHP arrays are naturally heterogeneous",
+    "r": "list()-based, no dedicated tuple branch needed",
+    "rust": "generated per-contract struct/tuple type -- direct fit",
+    "kotlin": {
+      "support": "PARTIAL -- 2-element only, via native Pair",
+      "limit_reason": "\"Kotlin Function Mode only supports 2-element tuples (via Pair) -- corpus audit found no wider tuple shape\" (compiled_adapters.py:2664) -- a real, current-corpus-driven limit, not a gap to necessarily fix until a 3+-element tuple problem exists"
+    },
+    "scala": {
+      "support": "PARTIAL -- 2-element only, via native (A, B) tuple",
+      "limit_reason": "\"Scala Function Mode only supports 2-element tuples -- corpus audit found no wider tuple shape\" (compiled_adapters.py:3003), same reasoning as Kotlin"
+    }
+  },
+  "unsupported": {
+    "c": {
+      "reason": "No generics, no native product type -- representing array<tuple<string, optional<integer>>> would need a new hand-rolled helper per tuple shape",
+      "code_reference": "compiled_adapters.py:1506 -- raises ValueError(\"C Function Mode does not support tuple-typed contracts yet\")"
+    },
+    "go": {
+      "reason": "No native tuple type, same generics-free limitation as C",
+      "code_reference": "compiled_adapters.py:2430 -- raises ValueError(\"Go Function Mode does not support tuple-typed contracts yet\")"
+    },
+    "swift": {
+      "reason": "Swift tuples aren't Equatable/Codable/storable in a way the JSON encode/decode and comparison pipeline can use generically",
+      "code_reference": "compiled_adapters.py:3351 -- raises ValueError(\"Swift Function Mode does not support tuple-typed contracts yet\")"
+    }
+  },
+  "not_applicable": {
+    "shell": "Function Mode is an architectural exclusion entirely (see registry.py SHELL_FUNCTION_MODE_POLICY) -- tuple support is moot"
+  },
+  "ledger_verified_min_stack_languages": [
+    "cpp", "csharp", "java", "javascript", "kotlin", "perl", "php",
+    "python", "r", "ruby", "rust", "scala", "typescript"
+  ],
+  "summary": {
+    "full_or_partial_support": 13,
+    "unsupported_honest_gap": 3,
+    "architectural_exclusion": 1,
+    "total": 17
+  }
+}

@@ -7,6 +7,7 @@
  *   - useSimulationStore()   → visualization state + current frame
  *   - useProgressStore()     → XP, level, completedLessons
  *   - useAtlasStore          → notebook bridge (language, source, lastOutput, lastError)
+ *                              + AtlasCode problem bridge (Run-only; no hidden test data)
  *   - getOrCreateUserId()    → anonymous persistent user ID
  */
 import { useLocation, useParams } from 'react-router-dom';
@@ -19,6 +20,8 @@ import type { AtlasContext } from './types';
 
 function derivePage(pathname: string): string {
   if (pathname === '/') return 'landing';
+  if (pathname.startsWith('/atlas-code/problem/')) return 'atlascode';
+  if (pathname.startsWith('/atlas-code')) return 'atlascode-catalog';
   if (pathname.startsWith('/algorithms/')) return 'algorithm';
   if (pathname.startsWith('/algorithms')) return 'catalog';
   if (pathname.startsWith('/compare')) return 'compare';
@@ -36,6 +39,7 @@ export function useAtlasContext(): AtlasContext {
   const sim = useSimulationStore();
   const progress = useProgressStore();
   const notebookBridge = useAtlasStore((s) => s.notebookBridge);
+  const problemBridge = useAtlasStore((s) => s.problemBridge);
 
   const page = derivePage(pathname);
   const userId = getOrCreateUserId();
@@ -102,6 +106,7 @@ export function useAtlasContext(): AtlasContext {
   if (simulationCtx) ctx.simulation = simulationCtx;
   if (notebookCtx && page === 'notebook') ctx.notebook = notebookCtx;
   if (comparisonCtx) ctx.comparison = comparisonCtx;
+  if (problemBridge && page === 'atlascode') ctx.problem = problemBridge;
 
   return ctx;
 }

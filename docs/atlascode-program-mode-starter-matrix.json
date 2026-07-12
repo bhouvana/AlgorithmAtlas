@@ -1,0 +1,29 @@
+{
+  "generated_from": "live query of problems.starter_code JSON across all 216 problems (2026-07-07)",
+  "total_problems": 216,
+  "starter_code_coverage": {
+    "python": 216,
+    "javascript": 1,
+    "typescript": 0,
+    "java": 0,
+    "cpp": 0,
+    "c": 0,
+    "go": 0,
+    "rust": 0,
+    "shell": 0,
+    "ruby": 0,
+    "kotlin": 0,
+    "swift": 0,
+    "r": 0,
+    "csharp": 0,
+    "php": 0,
+    "scala": 0,
+    "perl": 0
+  },
+  "notes": [
+    "Program Mode (stdin/stdout) starter code is functionally unstarted for 16/17 languages -- this is a completely separate gap from Function Mode adapter coverage. Every language's Program Mode RUNNER (execution primitive) exists in notebook.py's RUNNERS dict and works today (confirmed via direct read: all 17 keys present); what's missing is the per-problem PER-LANGUAGE boilerplate (imports, stdin parsing scaffold, TODO body) a real user would see in the editor.",
+    "The single javascript row is very likely a leftover from an early Function-Mode-era backfill script targeting one specific problem, not the start of a systematic Program Mode effort -- needs confirmation before building on top of it.",
+    "Building this out requires a deterministic per-language generator driven by each problem's I/O shape (mission Phase 22-24), not 216 x 16 hand-written files.",
+    "This is entirely separate from and does not block Function Mode scaling work."
+  ]
+}

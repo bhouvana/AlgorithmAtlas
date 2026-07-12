@@ -1,6 +1,8 @@
 {
-  "slug": "two-phase-commit",
+  "schema_version": "1.0",
+  "id": "two-phase-commit",
   "name": "Two-Phase Commit",
+  "version": "1.0.0",
   "category": "distributed-systems",
   "visualization_type": "TIMELINE",
   "description": "2PC atomic commit protocol: coordinator sends Prepare to all participants; if all vote Yes, sends Commit; otherwise Abort.",
@@ -10,7 +12,12 @@
     "time_worst": "O(n)",
     "space": "O(n)"
   },
-  "tags": ["distributed", "consensus", "atomic-commit", "2pc"],
+  "tags": [
+    "distributed",
+    "consensus",
+    "atomic-commit",
+    "2pc"
+  ],
   "execution_target": "server",
   "entry_point": "algorithm.py",
   "class_name": "TwoPhaseCommit"

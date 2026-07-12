@@ -1,0 +1,547 @@
+{
+ "activity-selection": {
+  "lang": "javascript",
+  "file": "scale_greedy_math_cluster.py",
+  "code": "function max_activities(starts, ends) {\n    const n = starts.length;\n    const idx = Array.from({length:n}, (_,i)=>i).sort((a,b)=>ends[a]-ends[b]);\n    let count = 0, lastEnd = -Infinity;\n    for (const i of idx) { if (starts[i] >= lastEnd) { count++; lastEnd = ends[i]; } }\n    return count;\n}\n"
+ },
+ "best-time-to-buy-sell-stock": {
+  "lang": "javascript",
+  "file": "scale_array_cluster3.py",
+  "code": "function max_profit(prices) {\n    let minP = prices[0], best = 0;\n    for (let i=1;i<prices.length;i++) { best = Math.max(best, prices[i]-minP); minP = Math.min(minP, prices[i]); }\n    return best;\n}\n"
+ },
+ "best-time-to-buy-sell-stock-ii": {
+  "lang": "javascript",
+  "file": "scale_array_cluster3.py",
+  "code": "function max_profit(prices) {\n    let total = 0;\n    for (let i=1;i<prices.length;i++) { if (prices[i] > prices[i-1]) total += prices[i]-prices[i-1]; }\n    return total;\n}\n"
+ },
+ "bitonic-peak-index": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster1.py",
+  "code": "function peak_index(nums) {\n    let lo=0, hi=nums.length-1;\n    while (lo<hi) { const mid=(lo+hi)>>1; if (nums[mid]<nums[mid+1]) lo=mid+1; else hi=mid; }\n    return lo;\n}\n"
+ },
+ "boolean-parenthesization": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function count_ways(symbols, ops) {\n    const n = symbols.length;\n    const T = Array.from({length:n}, () => new Array(n).fill(0));\n    const F = Array.from({length:n}, () => new Array(n).fill(0));\n    for (let i=0;i<n;i++) { if (symbols[i]==='T') T[i][i]=1; else F[i][i]=1; }\n    for (let len=2;len<=n;len++) {\n        for (let i=0;i+len-1<n;i++) {\n            const j=i+len-1;\n            for (let k=i;k<j;k++) {\n                const op=ops[k];\n                const lt=T[i][k], lf=F[i][k], rt=T[k+1][j], rf=F[k+1][j];\n                const total=(lt+lf)*(rt+rf);\n                let trueWays;\n                if (op==='&') trueWays = lt*rt;\n                else if (op==='|') trueWays = total - lf*rf;\n                else trueWays = lt*rf + lf*rt;\n                T[i][j]+=trueWays; F[i][j]+=(total-trueWays);\n            }\n        }\n    }\n    return T[0][n-1];\n}\n"
+ },
+ "burst-balloons": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function max_coins(balloons) {\n    const n = balloons.length;\n    const nums = [1, ...balloons, 1];\n    const dp = Array.from({length:n+2}, () => new Array(n+2).fill(0));\n    for (let len=1;len<=n;len++) {\n        for (let left=1;left+len-1<=n;left++) {\n            const right=left+len-1;\n            for (let k=left;k<=right;k++) {\n                const coins = nums[left-1]*nums[k]*nums[right+1] + dp[left][k-1] + dp[k+1][right];\n                if (coins>dp[left][right]) dp[left][right]=coins;\n            }\n        }\n    }\n    return dp[1][n];\n}\n"
+ },
+ "closest-pair": {
+  "lang": "javascript",
+  "file": "scale_greedy_math_cluster.py",
+  "code": "function closest_pair_sq_dist(points) {\n    let best = Infinity;\n    for (let i=0;i<points.length;i++) for (let j=i+1;j<points.length;j++) {\n        const dx = points[i][0]-points[j][0], dy = points[i][1]-points[j][1];\n        const d = dx*dx+dy*dy;\n        if (d < best) best = d;\n    }\n    return best;\n}\n"
+ },
+ "coin-change": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster1.py",
+  "code": "function coin_change(coins, amount) {\n    const INF = Infinity; const dp = new Array(amount+1).fill(INF); dp[0]=0;\n    for (let i=1;i<=amount;i++) for (const c of coins) if (c<=i && dp[i-c]+1<dp[i]) dp[i]=dp[i-c]+1;\n    const r = dp[amount]===INF ? -1 : dp[amount];\n    return r===-1?r:r;\n}\n"
+ },
+ "coin-change-ways": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster1.py",
+  "code": "function change(coins, amount) {\n    const dp = new Array(amount+1).fill(0); dp[0]=1;\n    for (const c of coins) for (let i=c;i<=amount;i++) dp[i]+=dp[i-c];\n    return dp[amount];\n}\n"
+ },
+ "collatz": {
+  "lang": "javascript",
+  "file": "scale_greedy_math_cluster.py",
+  "code": "function collatz(n) {\n    let steps = 0; let x = n;\n    while (x !== 1) { if (x % 2 === 0) x = x/2; else x = 3*x+1; steps++; }\n    return steps;\n}\n"
+ },
+ "combination-sum-count": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function combination_sum_count(candidates, target) {\n    const dp = new Array(target+1).fill(0); dp[0]=1;\n    for (const c of candidates) for (let i=c;i<=target;i++) dp[i]+=dp[i-c];\n    return dp[target];\n}\n"
+ },
+ "container-with-most-water": {
+  "lang": "javascript",
+  "file": "scale_array_cluster3.py",
+  "code": "function max_area(heights) {\n    let lo=0, hi=heights.length-1, best=0;\n    while (lo<hi) {\n        const area = Math.min(heights[lo],heights[hi]) * (hi-lo);\n        if (area > best) best = area;\n        if (heights[lo] < heights[hi]) lo++; else hi--;\n    }\n    return best;\n}\n"
+ },
+ "count-occurrences-sorted": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster1.py",
+  "code": "function count_occurrences(nums, target) {\n    function lb(t) { let lo=0,hi=nums.length; while(lo<hi){const mid=(lo+hi)>>1; if(nums[mid]<t)lo=mid+1;else hi=mid;} return lo; }\n    const first=lb(target), last=lb(target+1);\n    return (last-first);\n}\n"
+ },
+ "counting-bits": {
+  "lang": "javascript",
+  "file": "scale_array_cluster3.py",
+  "code": "function count_bits(n) {\n    const out = new Array(n+1).fill(0);\n    for (let i=1;i<=n;i++) out[i] = out[i >> 1] + (i & 1);\n    return out;\n}\n"
+ },
+ "counting-inversions": {
+  "lang": "javascript",
+  "file": "scale_greedy_math_cluster.py",
+  "code": "function count_inversions(nums) {\n    let count = 0;\n    for (let i=0;i<nums.length;i++) for (let j=i+1;j<nums.length;j++) if (nums[i] > nums[j]) count++;\n    return count;\n}\n"
+ },
+ "daily-temperatures": {
+  "lang": "javascript",
+  "file": "scale_hashmap_grid_cluster.py",
+  "code": "function daily_temperatures(temps) {\n    const n = temps.length; const out = new Array(n).fill(0); const stack = [];\n    for (let i=0;i<n;i++) {\n        while (stack.length && temps[stack[stack.length-1]] < temps[i]) { const j = stack.pop(); out[j] = i-j; }\n        stack.push(i);\n    }\n    return out;\n}\n"
+ },
+ "delete-and-earn": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster1.py",
+  "code": "function delete_and_earn(nums) {\n    if (nums.length===0) return 0;\n    const maxV = Math.max(...nums); const bucket = new Array(maxV+1).fill(0);\n    for (const x of nums) bucket[x]+=x;\n    let prev=0, cur=0;\n    for (let v=0;v<=maxV;v++) { const t=Math.max(cur, prev+bucket[v]); prev=cur; cur=t; }\n    return cur;\n}\n"
+ },
+ "dijkstra-shortest-path": {
+  "lang": "javascript",
+  "file": "scale_graph_grid_cluster.py",
+  "code": "function dijkstra(adj, n) {\n    const INF = Infinity;\n    const dist = new Array(n).fill(INF); dist[0] = 0;\n    const visited = new Array(n).fill(false);\n    for (let iter=0;iter<n;iter++) {\n        let u = -1, best = INF;\n        for (let i=0;i<n;i++) if (!visited[i] && dist[i] < best) { best = dist[i]; u = i; }\n        if (u === -1) break;\n        visited[u] = true;\n        for (const [v, w] of adj[u]) { if (dist[u] + w < dist[v]) dist[v] = dist[u] + w; }\n    }\n    const out = dist.map(d => d === INF ? -1 : d);\n    return out;\n}\n"
+ },
+ "egg-drop": {
+  "lang": "javascript",
+  "file": "scale_greedy_math_cluster.py",
+  "code": "function egg_drop(eggs, floors) {\n    if (floors === 0) return 0;\n    const dp = new Array(eggs+1).fill(0);\n    let moves = 0;\n    while (dp[eggs] < floors) {\n        moves++;\n        for (let k=eggs;k>=1;k--) dp[k] = dp[k] + dp[k-1] + 1;\n    }\n    return moves;\n}\n"
+ },
+ "euler-phi-sieve": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster1.py",
+  "code": "function euler_phi_sieve(n) {\n    let result=n, x=n, p=2;\n    while (p*p<=x) { if (x%p===0) { while (x%p===0) x=Math.floor(x/p); result-=Math.floor(result/p); } p++; }\n    if (x>1) result-=Math.floor(result/x);\n    return result;\n}\n"
+ },
+ "euler-totient": {
+  "lang": "javascript",
+  "file": "scale_greedy_math_cluster.py",
+  "code": "function euler_totient(n) {\n    let result = n; let x = n; let p = 2;\n    while (p*p <= x) {\n        if (x % p === 0) { while (x % p === 0) x = Math.floor(x/p); result -= Math.floor(result/p); }\n        p++;\n    }\n    if (x > 1) result -= Math.floor(result/x);\n    return result;\n}\n"
+ },
+ "find-duplicate-number": {
+  "lang": "javascript",
+  "file": "scale_array_cluster3.py",
+  "code": "function find_duplicate(nums) {\n    const seen = new Set();\n    for (const x of nums) { if (seen.has(x)) return x; seen.add(x); }\n    return -1;\n}\n"
+ },
+ "find-minimum-rotated-sorted-array": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster1.py",
+  "code": "function find_min(nums) {\n    let lo=0, hi=nums.length-1;\n    while (lo<hi) { const mid=(lo+hi)>>1; if (nums[mid]>nums[hi]) lo=mid+1; else hi=mid; }\n    return nums[lo];\n}\n"
+ },
+ "first-occurrence": {
+  "lang": "javascript",
+  "file": "scale_greedy_math_cluster.py",
+  "code": "function first_occurrence(nums, target) {\n    let lo = 0, hi = nums.length-1, ans = -1;\n    while (lo <= hi) {\n        const mid = (lo+hi) >> 1;\n        if (nums[mid] === target) { ans = mid; hi = mid-1; }\n        else if (nums[mid] < target) lo = mid+1; else hi = mid-1;\n    }\n    return ans;\n}\n"
+ },
+ "first-unique-character-index": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function first_uniq_char(s) {\n    const freq={};\n    for (const ch of s) freq[ch]=(freq[ch]||0)+1;\n    for (let i=0;i<s.length;i++) if (freq[s[i]]===1) return i;\n    return -1;\n}\n"
+ },
+ "flood-fill": {
+  "lang": "javascript",
+  "file": "scale_hashmap_grid_cluster.py",
+  "code": "function flood_fill(grid, sr, sc, new_color) {\n    const m = grid.length, n = grid[0].length;\n    const out = grid.map(r => r.slice());\n    const old = out[sr][sc];\n    if (old === new_color) return out;\n    const stack = [[sr,sc]];\n    out[sr][sc] = new_color;\n    while (stack.length) {\n        const [r,c] = stack.pop();\n        for (const [dr,dc] of [[1,0],[-1,0],[0,1],[0,-1]]) {\n            const nr=r+dr, nc=c+dc;\n            if (nr>=0&&nr<m&&nc>=0&&nc<n&&out[nr][nc]===old) { out[nr][nc]=new_color; stack.push([nr,nc]); }\n        }\n    }\n    return out;\n}\n"
+ },
+ "gas-station": {
+  "lang": "javascript",
+  "file": "scale_greedy_math_cluster.py",
+  "code": "function can_complete_circuit(gas, cost) {\n    let total = 0, tank = 0, start = 0;\n    for (let i=0;i<gas.length;i++) {\n        const diff = gas[i]-cost[i]; total += diff; tank += diff;\n        if (tank < 0) { start = i+1; tank = 0; }\n    }\n    return (total >= 0 ? start : -1);\n}\n"
+ },
+ "graph-bfs": {
+  "lang": "javascript",
+  "file": "scale_graph_grid_cluster.py",
+  "code": "function bfs(adj, src, n) {\n    const dist = new Array(n).fill(-1); dist[src] = 0;\n    const q = [src]; let qi = 0;\n    while (qi < q.length) {\n        const u = q[qi]; qi++;\n        for (const v of adj[u]) { if (dist[v] === -1) { dist[v] = dist[u] + 1; q.push(v); } }\n    }\n    return dist;\n}\n"
+ },
+ "group-anagrams-count": {
+  "lang": "javascript",
+  "file": "scale_hashmap_grid_cluster.py",
+  "code": "function group_anagrams_count(strs) {\n    const seen = new Set();\n    for (const s of strs) { const key = s.split('').sort().join(''); seen.add(key); }\n    return seen.size;\n}\n"
+ },
+ "hamming-distance": {
+  "lang": "javascript",
+  "file": "scale_bit_misc_cluster.py",
+  "code": "function hamming_distance(x, y) {\n    let v = (x ^ y) >>> 0; let count = 0;\n    while (v !== 0) { count += v & 1; v = v >>> 1; }\n    return count;\n}\n"
+ },
+ "house-robber-circular": {
+  "lang": "javascript",
+  "file": "scale_greedy_math_cluster.py",
+  "code": "function rob_line(nums) {\n    let prev = 0, cur = 0;\n    for (const x of nums) { const t = Math.max(cur, prev+x); prev = cur; cur = t; }\n    return cur;\n}\nfunction rob_circular(nums) {\n    const n = nums.length;\n    if (n === 1) return nums[0];\n    const a1 = rob_line(nums.slice(0, n-1));\n    const a2 = rob_line(nums.slice(1));\n    return Math.max(a1, a2);\n}\n"
+ },
+ "insert-interval": {
+  "lang": "javascript",
+  "file": "scale_greedy_math_cluster.py",
+  "code": "function insert_interval(intervals, new_s, new_e) {\n    const out = []; let i = 0; const n = intervals.length;\n    while (i < n && intervals[i][1] < new_s) { out.push(intervals[i]); i++; }\n    let s = new_s, e = new_e;\n    while (i < n && intervals[i][0] <= e) { s = Math.min(s, intervals[i][0]); e = Math.max(e, intervals[i][1]); i++; }\n    out.push([s,e]);\n    while (i < n) { out.push(intervals[i]); i++; }\n    return out;\n}\n"
+ },
+ "integer-square-root": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster1.py",
+  "code": "function my_sqrt(n) {\n    let lo=0, hi=46341;\n    while (lo<hi) { const mid=(lo+hi+1)>>1; if (mid*mid<=n) lo=mid; else hi=mid-1; }\n    return lo;\n}\n"
+ },
+ "intersection-of-two-arrays": {
+  "lang": "javascript",
+  "file": "scale_array_cluster3.py",
+  "code": "function intersection(nums1, nums2) {\n    const s1 = new Set(nums1), s2 = new Set(nums2);\n    const out = [...s1].filter(x => s2.has(x)).sort((a,b)=>a-b);\n    return out;\n}\n"
+ },
+ "job-scheduling": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster2.py",
+  "code": "function job_scheduling(deadlines, profits) {\n    const n = deadlines.length;\n    const idx = Array.from({length:n}, (_,i)=>i).sort((a,b)=>profits[b]-profits[a]);\n    const maxD = Math.max(...deadlines);\n    const slot = new Array(maxD+1).fill(false);\n    let total = 0;\n    for (const i of idx) {\n        for (let d=Math.min(deadlines[i], maxD); d>=1; d--) {\n            if (!slot[d]) { slot[d]=true; total+=profits[i]; break; }\n        }\n    }\n    return total;\n}\n"
+ },
+ "jump-game": {
+  "lang": "javascript",
+  "file": "scale_array_cluster3.py",
+  "code": "function can_jump(nums) {\n    let reach = 0;\n    for (let i=0;i<nums.length;i++) { if (i > reach) break; reach = Math.max(reach, i + nums[i]); }\n    return reach >= nums.length - 1;\n}\n"
+ },
+ "jump-game-ii-min-jumps": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster2.py",
+  "code": "function jump(nums) {\n    let jumps=0, curEnd=0, farthest=0;\n    for (let i=0;i<nums.length-1;i++) {\n        farthest = Math.max(farthest, i+nums[i]);\n        if (i===curEnd) { jumps++; curEnd=farthest; }\n    }\n    return jumps;\n}\n"
+ },
+ "koko-eating-bananas": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster2.py",
+  "code": "function min_eating_speed(piles, h) {\n    function hoursNeeded(speed) { let hrs=0; for (const p of piles) hrs+=Math.ceil(p/speed); return hrs; }\n    let lo=1, hi=Math.max(...piles);\n    while (lo<hi) { const mid=(lo+hi)>>1; if (hoursNeeded(mid)<=h) hi=mid; else lo=mid+1; }\n    return lo;\n}\n"
+ },
+ "kth-largest-element": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster2.py",
+  "code": "function kth_largest(nums, k) {\n    const sorted = nums.slice().sort((a,b)=>b-a);\n    return sorted[k-1];\n}\n"
+ },
+ "largest-rectangle-in-histogram": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster2.py",
+  "code": "function largest_rectangle_area(heights) {\n    const stack=[]; let best=0; const n=heights.length;\n    for (let i=0;i<=n;i++) {\n        const h = i===n ? 0 : heights[i];\n        while (stack.length && heights[stack[stack.length-1]]>=h) {\n            const top=stack.pop();\n            const width = stack.length===0 ? i : i-stack[stack.length-1]-1;\n            best = Math.max(best, heights[top]*width);\n        }\n        stack.push(i);\n    }\n    return best;\n}\n"
+ },
+ "last-occurrence": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster2.py",
+  "code": "function last_occurrence(nums, target) {\n    let lo=0, hi=nums.length-1, ans=-1;\n    while (lo<=hi) {\n        const mid=(lo+hi)>>1;\n        if (nums[mid]===target) { ans=mid; lo=mid+1; }\n        else if (nums[mid]<target) lo=mid+1; else hi=mid-1;\n    }\n    return ans;\n}\n"
+ },
+ "linked-list-cycle-detect": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function has_cycle(values, pos) {\n    if (pos<0 || values.length===0) return false;\n    const n=values.length;\n    let slow=0, fast=0;\n    function nxt(i) { return i+1<n ? i+1 : pos; }\n    do {\n        slow=nxt(slow); fast=nxt(nxt(fast));\n    } while (slow!==fast);\n    return true;\n}\n"
+ },
+ "longest-bitonic-subsequence": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster2.py",
+  "code": "function lbs(nums) {\n    const n=nums.length; const inc=new Array(n).fill(1), dec=new Array(n).fill(1);\n    for (let i=0;i<n;i++) for (let j=0;j<i;j++) if (nums[j]<nums[i]) inc[i]=Math.max(inc[i], inc[j]+1);\n    for (let i=n-1;i>=0;i--) for (let j=n-1;j>i;j--) if (nums[j]<nums[i]) dec[i]=Math.max(dec[i], dec[j]+1);\n    let best=0; for (let i=0;i<n;i++) best=Math.max(best, inc[i]+dec[i]-1);\n    return best;\n}\n"
+ },
+ "longest-common-substring": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function longest_common_substring(s1, s2) {\n    const n=s1.length, m=s2.length;\n    const dp=Array.from({length:n+1}, () => new Array(m+1).fill(0));\n    let best=0;\n    for (let i=1;i<=n;i++) for (let j=1;j<=m;j++) {\n        if (s1[i-1]===s2[j-1]) { dp[i][j]=dp[i-1][j-1]+1; if (dp[i][j]>best) best=dp[i][j]; }\n    }\n    return best;\n}\n"
+ },
+ "longest-consecutive-sequence": {
+  "lang": "javascript",
+  "file": "scale_array_cluster3.py",
+  "code": "function longest_consecutive(nums) {\n    const s = new Set(nums); let best = 0;\n    for (const x of s) {\n        if (!s.has(x-1)) { let len=1; let cur=x; while (s.has(cur+1)) { cur++; len++; } best = Math.max(best, len); }\n    }\n    return best;\n}\n"
+ },
+ "longest-palindromic-substring": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function longest_palindrome(s) {\n    if (s.length===0) return 0;\n    let best=1;\n    function expand(l,r) { while (l>=0 && r<s.length && s[l]===s[r]) { l--; r++; } return r-l-1; }\n    for (let i=0;i<s.length;i++) {\n        best=Math.max(best, expand(i,i));\n        best=Math.max(best, expand(i,i+1));\n    }\n    return best;\n}\n"
+ },
+ "longest-repeating-char-replacement": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function character_replacement(s, k) {\n    const freq={}; let left=0, maxCount=0, best=0;\n    for (let right=0;right<s.length;right++) {\n        const ch=s[right]; freq[ch]=(freq[ch]||0)+1;\n        maxCount=Math.max(maxCount, freq[ch]);\n        while (right-left+1-maxCount>k) { freq[s[left]]--; left++; }\n        best=Math.max(best, right-left+1);\n    }\n    return best;\n}\n"
+ },
+ "longest-substring-at-most-k-distinct": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function longest_k_distinct(s, k) {\n    if (k===0) return 0;\n    const freq={}; let left=0, best=0, distinct=0;\n    for (let right=0;right<s.length;right++) {\n        const ch=s[right]; if (!freq[ch]) { freq[ch]=0; }\n        if (freq[ch]===0) distinct++;\n        freq[ch]++;\n        while (distinct>k) { const lc=s[left]; freq[lc]--; if (freq[lc]===0) distinct--; left++; }\n        best=Math.max(best, right-left+1);\n    }\n    return best;\n}\n"
+ },
+ "longest-substring-without-repeating": {
+  "lang": "javascript",
+  "file": "scale_hashmap_grid_cluster.py",
+  "code": "function length_of_longest_substring(s) {\n    const last = {}; let best = 0, start = 0;\n    for (let i=0;i<s.length;i++) {\n        const ch = s[i];\n        if (last[ch] !== undefined && last[ch] >= start) start = last[ch] + 1;\n        last[ch] = i;\n        best = Math.max(best, i - start + 1);\n    }\n    return best;\n}\n"
+ },
+ "longest-valid-parentheses": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function longest_valid_parentheses(s) {\n    const stack=[-1]; let best=0;\n    for (let i=0;i<s.length;i++) {\n        if (s[i]==='(') stack.push(i);\n        else {\n            stack.pop();\n            if (stack.length===0) stack.push(i);\n            else best=Math.max(best, i-stack[stack.length-1]);\n        }\n    }\n    return best;\n}\n"
+ },
+ "lucas-theorem": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster4.py",
+  "code": "function lucas_theorem(n, k, p) {\n    function smallComb(nn, kk) {\n        if (kk>nn || kk<0) return 0;\n        let num=1, den=1;\n        for (let i=0;i<kk;i++) { num=(num*((nn-i)%p))%p; den=(den*(i+1))%p; }\n        let denInv=1, base=den%p, e=p-2;\n        while (e>0) { if (e&1) denInv=(denInv*base)%p; base=(base*base)%p; e>>=1; }\n        return (num*denInv)%p;\n    }\n    let result=1, nn=n, kk=k;\n    while (nn>0 || kk>0) {\n        const ni=nn%p, ki=kk%p;\n        if (ki>ni) return 0;\n        result=(result*smallComb(ni,ki))%p;\n        nn=Math.floor(nn/p); kk=Math.floor(kk/p);\n    }\n    return result;\n}\n"
+ },
+ "majority-element": {
+  "lang": "javascript",
+  "file": "scale_bit_misc_cluster.py",
+  "code": "function majority_element(nums) {\n    let count = 0, candidate = 0;\n    for (const x of nums) { if (count === 0) candidate = x; count += (x === candidate) ? 1 : -1; }\n    return candidate;\n}\n"
+ },
+ "majority-element-ii": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function majority_element_ii(nums) {\n    let c1=null, c2=null, cnt1=0, cnt2=0;\n    for (const x of nums) {\n        if (c1===x) cnt1++;\n        else if (c2===x) cnt2++;\n        else if (cnt1===0) { c1=x; cnt1=1; }\n        else if (cnt2===0) { c2=x; cnt2=1; }\n        else { cnt1--; cnt2--; }\n    }\n    cnt1=0; cnt2=0;\n    for (const x of nums) { if (x===c1) cnt1++; else if (x===c2) cnt2++; }\n    const out=[];\n    if (cnt1>Math.floor(nums.length/3)) out.push(c1);\n    if (cnt2>Math.floor(nums.length/3)) out.push(c2);\n    out.sort((a,b)=>a-b);\n    return out;\n}\n"
+ },
+ "manacher": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function count_palindromic_substrings(s) {\n    let count=0;\n    function expand(l,r) { let c=0; while (l>=0 && r<s.length && s[l]===s[r]) { c++; l--; r++; } return c; }\n    for (let i=0;i<s.length;i++) { count+=expand(i,i); count+=expand(i,i+1); }\n    return count;\n}\n"
+ },
+ "matrix-chain-multiplication": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function matrix_chain_order(dims) {\n    const n = dims.length-1;\n    const dp = Array.from({length:n+1}, () => new Array(n+1).fill(0));\n    for (let len=2;len<=n;len++) {\n        for (let i=1;i+len-1<=n;i++) {\n            const j=i+len-1; dp[i][j]=Infinity;\n            for (let k=i;k<j;k++) {\n                const cost=dp[i][k]+dp[k+1][j]+dims[i-1]*dims[k]*dims[j];\n                if (cost<dp[i][j]) dp[i][j]=cost;\n            }\n        }\n    }\n    return dp[1][n];\n}\n"
+ },
+ "max-consecutive-ones-with-k-flips": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster2.py",
+  "code": "function longest_ones(nums, k) {\n    let left=0, zeros=0, best=0;\n    for (let right=0;right<nums.length;right++) {\n        if (nums[right]===0) zeros++;\n        while (zeros>k) { if (nums[left]===0) zeros--; left++; }\n        best = Math.max(best, right-left+1);\n    }\n    return best;\n}\n"
+ },
+ "max-sum-subarray-fixed-k": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster2.py",
+  "code": "function max_sum_fixed_k(nums, k) {\n    let sum=0; for (let i=0;i<k;i++) sum+=nums[i];\n    let best=sum;\n    for (let i=k;i<nums.length;i++) { sum += nums[i]-nums[i-k]; best=Math.max(best,sum); }\n    return best;\n}\n"
+ },
+ "maximum-subarray-circular": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function max_subarray_sum_circular(nums) {\n    let total=0, curMax=0, best=-Infinity, curMin=0, worst=Infinity;\n    for (const x of nums) {\n        total+=x;\n        curMax=Math.max(curMax+x,x); best=Math.max(best,curMax);\n        curMin=Math.min(curMin+x,x); worst=Math.min(worst,curMin);\n    }\n    if (best<0) return best;\n    return Math.max(best, total-worst);\n}\n"
+ },
+ "maximum-xor-of-two-numbers": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function find_max_xor(nums) {\n    let best=0;\n    for (let i=0;i<nums.length;i++) for (let j=i+1;j<nums.length;j++) {\n        const x=nums[i]^nums[j]; if (x>best) best=x;\n    }\n    return best;\n}\n"
+ },
+ "meeting-rooms": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function min_meeting_rooms(starts, ends) {\n    const s=starts.slice().sort((a,b)=>a-b), e=ends.slice().sort((a,b)=>a-b);\n    let rooms=0, best=0, si=0, ei=0;\n    while (si<s.length) {\n        if (s[si]<e[ei]) { rooms++; si++; best=Math.max(best,rooms); }\n        else { rooms--; ei++; }\n    }\n    return best;\n}\n"
+ },
+ "merge-sorted-arrays-inplace": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function merge_sorted(a, b) {\n    const out=[]; let i=0,j=0;\n    while (i<a.length && j<b.length) { if (a[i]<=b[j]) out.push(a[i++]); else out.push(b[j++]); }\n    while (i<a.length) out.push(a[i++]);\n    while (j<b.length) out.push(b[j++]);\n    return out;\n}\n"
+ },
+ "merge-two-sorted-lists": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function merge_two_lists(a, b) {\n    const out=[]; let i=0,j=0;\n    while (i<a.length && j<b.length) { if (a[i]<=b[j]) out.push(a[i++]); else out.push(b[j++]); }\n    while (i<a.length) out.push(a[i++]);\n    while (j<b.length) out.push(b[j++]);\n    return out;\n}\n"
+ },
+ "middle-of-linked-list": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function middle_node(values) {\n    return values[Math.floor(values.length/2)];\n}\n"
+ },
+ "miller-rabin": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function miller_rabin(n) {\n    if (n<2) return false;\n    if (n<4) return true;\n    if (n%2===0) return false;\n    for (let i=3;i*i<=n;i+=2) if (n%i===0) return false;\n    return true;\n}\n"
+ },
+ "min-subarray-len-target-sum": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function min_subarray_len(nums, target) {\n    let left=0, sum=0, best=Infinity;\n    for (let right=0;right<nums.length;right++) {\n        sum+=nums[right];\n        while (sum>=target) { best=Math.min(best, right-left+1); sum-=nums[left]; left++; }\n    }\n    const r = best===Infinity?0:best;\n    return r===0?r:r;\n}\n"
+ },
+ "minimum-knight-moves": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function min_knight_moves(x, y) {\n    x=Math.abs(x); y=Math.abs(y);\n    const moves=[[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]];\n    const visited=new Set(['0,0']); let q=[[0,0,0]]; let qi=0;\n    while (qi<q.length) {\n        const [cx,cy,d]=q[qi]; qi++;\n        if (cx===x && cy===y) return d;\n        for (const [dx,dy] of moves) {\n            const nx=cx+dx, ny=cy+dy;\n            if (nx>=-2 && ny>=-2 && nx<=x+2 && ny<=y+2) {\n                const key=nx+','+ny;\n                if (!visited.has(key)) { visited.add(key); q.push([nx,ny,d+1]); }\n            }\n        }\n    }\n    return -1;\n}\n"
+ },
+ "minimum-window-substring-length": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function min_window_length(s, t) {\n    if (t.length===0 || s.length<t.length) return 0;\n    const need={}; for (const ch of t) need[ch]=(need[ch]||0)+1;\n    let required=Object.keys(need).length, formed=0;\n    const window={};\n    let left=0, best=Infinity;\n    for (let right=0;right<s.length;right++) {\n        const ch=s[right]; window[ch]=(window[ch]||0)+1;\n        if (need[ch]!==undefined && window[ch]===need[ch]) formed++;\n        while (formed===required) {\n            best=Math.min(best, right-left+1);\n            const lc=s[left]; window[lc]--;\n            if (need[lc]!==undefined && window[lc]<need[lc]) formed--;\n            left++;\n        }\n    }\n    const r = best===Infinity?0:best;\n    return r===0?r:r;\n}\n"
+ },
+ "missing-number": {
+  "lang": "javascript",
+  "file": "scale_bit_misc_cluster.py",
+  "code": "function missing_number(nums) {\n    const n = nums.length; let expected = n*(n+1)/2; let actual = 0;\n    for (const x of nums) actual += x;\n    return (expected - actual);\n}\n"
+ },
+ "modular-exponentiation": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function modular_exponentiation(base, exp, mod) {\n    if (mod===1) return 0;\n    let m=BigInt(mod); let result=1n; let b=((BigInt(base)%m)+m)%m; let e=BigInt(exp);\n    while (e>0n) { if (e&1n) result=(result*b)%m; b=(b*b)%m; e>>=1n; }\n    return Number(result);\n}\n"
+ },
+ "move-zeroes": {
+  "lang": "javascript",
+  "file": "scale_bit_misc_cluster.py",
+  "code": "function move_zeroes(nums) {\n    let j = 0;\n    for (let i=0;i<nums.length;i++) { if (nums[i] !== 0) { const t=nums[j]; nums[j]=nums[i]; nums[i]=t; j++; } }\n    return nums;\n}\n"
+ },
+ "next-greater-element": {
+  "lang": "javascript",
+  "file": "scale_hashmap_grid_cluster.py",
+  "code": "function next_greater_element(nums) {\n    const n = nums.length; const out = new Array(n).fill(-1); const stack = [];\n    for (let i=0;i<n;i++) {\n        while (stack.length && nums[stack[stack.length-1]] < nums[i]) { out[stack.pop()] = nums[i]; }\n        stack.push(i);\n    }\n    return out;\n}\n"
+ },
+ "number-of-1-bits": {
+  "lang": "javascript",
+  "file": "scale_bit_misc_cluster.py",
+  "code": "function hamming_weight(n) {\n    let count = 0; let x = n >>> 0;\n    while (x !== 0) { count += x & 1; x = x >>> 1; }\n    return count;\n}\n"
+ },
+ "number-of-divisors": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function number_of_divisors(n) {\n    let count=0;\n    for (let i=1;i*i<=n;i++) { if (n%i===0) { count+=2; if (i*i===n) count--; } }\n    return count;\n}\n"
+ },
+ "number-of-islands": {
+  "lang": "javascript",
+  "file": "scale_hashmap_grid_cluster.py",
+  "code": "function num_islands(grid) {\n    const m = grid.length, n = grid[0].length;\n    const visited = Array.from({length:m}, () => new Array(n).fill(false));\n    let count = 0;\n    function bfs(sr, sc) {\n        const q = [[sr,sc]]; visited[sr][sc] = true; let qi = 0;\n        while (qi < q.length) {\n            const [r,c] = q[qi]; qi++;\n            for (const [dr,dc] of [[1,0],[-1,0],[0,1],[0,-1]]) {\n                const nr=r+dr, nc=c+dc;\n                if (nr>=0&&nr<m&&nc>=0&&nc<n&&!visited[nr][nc]&&grid[nr][nc]===1) { visited[nr][nc]=true; q.push([nr,nc]); }\n            }\n        }\n    }\n    for (let i=0;i<m;i++) for (let j=0;j<n;j++) { if (grid[i][j]===1 && !visited[i][j]) { count++; bfs(i,j); } }\n    return count;\n}\n"
+ },
+ "palindrome-linked-list": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function is_palindrome(values) {\n    let lo=0, hi=values.length-1;\n    while (lo<hi) { if (values[lo]!==values[hi]) return false; lo++; hi--; }\n    return true;\n}\n"
+ },
+ "palindrome-partition": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function min_cut(s) {\n    const n=s.length;\n    const isPal = Array.from({length:n}, () => new Array(n).fill(false));\n    for (let i=0;i<n;i++) isPal[i][i]=true;\n    for (let len=2;len<=n;len++) {\n        for (let i=0;i+len-1<n;i++) {\n            const j=i+len-1;\n            if (s[i]===s[j] && (len===2 || isPal[i+1][j-1])) isPal[i][j]=true;\n        }\n    }\n    const dp=new Array(n).fill(0);\n    for (let i=0;i<n;i++) {\n        if (isPal[0][i]) { dp[i]=0; continue; }\n        dp[i]=i;\n        for (let j=1;j<=i;j++) if (isPal[j][i] && dp[j-1]+1<dp[i]) dp[i]=dp[j-1]+1;\n    }\n    return dp[n-1];\n}\n"
+ },
+ "palindrome-partitioning": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function count_partitions(s) {\n    const n=s.length;\n    const isPal = Array.from({length:n}, () => new Array(n).fill(false));\n    for (let i=0;i<n;i++) isPal[i][i]=true;\n    for (let len=2;len<=n;len++) {\n        for (let i=0;i+len-1<n;i++) {\n            const j=i+len-1;\n            if (s[i]===s[j] && (len===2 || isPal[i+1][j-1])) isPal[i][j]=true;\n        }\n    }\n    const dp=new Array(n+1).fill(0); dp[0]=1;\n    for (let i=1;i<=n;i++) {\n        for (let j=0;j<i;j++) { if (isPal[j][i-1]) dp[i]+=dp[j]; }\n    }\n    return dp[n];\n}\n"
+ },
+ "palindrome-subsequence": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function lps(s) {\n    const n=s.length;\n    const dp = Array.from({length:n}, () => new Array(n).fill(0));\n    for (let i=n-1;i>=0;i--) {\n        dp[i][i]=1;\n        for (let j=i+1;j<n;j++) {\n            if (s[i]===s[j]) dp[i][j]=dp[i+1][j-1]+2;\n            else dp[i][j]=Math.max(dp[i+1][j], dp[i][j-1]);\n        }\n    }\n    return (n===0?0:dp[0][n-1]);\n}\n"
+ },
+ "partition-equal-subset-sum": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster5.py",
+  "code": "function can_partition(nums) {\n    const total = nums.reduce((a,b)=>a+b,0);\n    if (total%2!==0) return false;\n    const target = total/2;\n    const dp=new Array(target+1).fill(false); dp[0]=true;\n    for (const x of nums) for (let i=target;i>=x;i--) if (dp[i-x]) dp[i]=true;\n    return dp[target]?true:false;\n}\n"
+ },
+ "perfect-squares-min-count": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function num_squares(n) {\n    const dp=new Array(n+1).fill(Infinity); dp[0]=0;\n    for (let i=1;i<=n;i++) for (let j=1;j*j<=i;j++) dp[i]=Math.min(dp[i], dp[i-j*j]+1);\n    return dp[n];\n}\n"
+ },
+ "power-of-two": {
+  "lang": "javascript",
+  "file": "scale_bit_misc_cluster.py",
+  "code": "function is_power_of_two(n) { return n > 0 && (n & (n - 1)) === 0; }\n"
+ },
+ "product-of-array-except-self": {
+  "lang": "javascript",
+  "file": "scale_array_cluster3.py",
+  "code": "function product_except_self(nums) {\n    const n = nums.length; const out = new Array(n).fill(1);\n    let prefix = 1;\n    for (let i=0;i<n;i++) { out[i] = prefix; prefix *= nums[i]; }\n    let suffix = 1;\n    for (let i=n-1;i>=0;i--) { out[i] *= suffix; suffix *= nums[i]; }\n    return out;\n}\n"
+ },
+ "remove-nth-from-end": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function remove_nth_from_end(values, k) {\n    const n=values.length; const idx=n-k;\n    const out=[...values.slice(0,idx), ...values.slice(idx+1)];\n    return out;\n}\n"
+ },
+ "restore-ip-addresses-count": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function restore_ip_count(s) {\n    const n=s.length; let count=0;\n    function valid(seg) {\n        if (seg.length===0 || seg.length>3) return false;\n        if (seg.length>1 && seg[0]==='0') return false;\n        return parseInt(seg,10)<=255;\n    }\n    for (let i=1;i<=3 && i<n;i++) {\n        for (let j=i+1;j<=i+3 && j<n;j++) {\n            for (let k=j+1;k<=j+3 && k<n;k++) {\n                const p1=s.slice(0,i), p2=s.slice(i,j), p3=s.slice(j,k), p4=s.slice(k);\n                if (valid(p1) && valid(p2) && valid(p3) && valid(p4)) count++;\n            }\n        }\n    }\n    return count;\n}\n"
+ },
+ "reverse-linked-list": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function reverse_list(values) {\n    return values.slice().reverse();\n}\n"
+ },
+ "rod-cutting": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function rod_cutting(prices, n) {\n    const dp = new Array(n+1).fill(0);\n    for (let i=1;i<=n;i++) for (let len=1;len<=Math.min(i,prices.length);len++) dp[i]=Math.max(dp[i], dp[i-len]+prices[len-1]);\n    return dp[n];\n}\n"
+ },
+ "rotated-binary-search": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function search(nums, target) {\n    let lo=0, hi=nums.length-1;\n    while (lo<=hi) {\n        const mid=(lo+hi)>>1;\n        if (nums[mid]===target) return mid;\n        if (nums[lo]<=nums[mid]) { if (nums[lo]<=target && target<nums[mid]) hi=mid-1; else lo=mid+1; }\n        else { if (nums[mid]<target && target<=nums[hi]) lo=mid+1; else hi=mid-1; }\n    }\n    return -1;\n}\n"
+ },
+ "search-insert-position": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function search_insert(nums, target) {\n    let lo=0, hi=nums.length;\n    while (lo<hi) { const mid=(lo+hi)>>1; if (nums[mid]<target) lo=mid+1; else hi=mid; }\n    return lo;\n}\n"
+ },
+ "ship-packages-within-days": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function ship_within_days(weights, days) {\n    function daysNeeded(cap) {\n        let d=1, cur=0;\n        for (const w of weights) { if (cur+w>cap) { d++; cur=w; } else cur+=w; }\n        return d;\n    }\n    let lo=Math.max(...weights), hi=weights.reduce((a,b)=>a+b,0);\n    while (lo<hi) { const mid=Math.floor((lo+hi)/2); if (daysNeeded(mid)<=days) hi=mid; else lo=mid+1; }\n    return lo;\n}\n"
+ },
+ "single-number": {
+  "lang": "javascript",
+  "file": "scale_bit_misc_cluster.py",
+  "code": "function single_number(nums) { let r=0; for (const x of nums) r ^= x; return r; }\n"
+ },
+ "single-number-ii": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function single_number(nums) {\n    let ones=0, twos=0;\n    for (const x of nums) { ones=(ones^x)&~twos; twos=(twos^x)&~ones; }\n    return ones;\n}\n"
+ },
+ "staircase": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function climb_stairs(n) {\n    if (n===0) return 1;\n    if (n<=2) return n;\n    let a1=1, b=2;\n    for (let i=3;i<=n;i++) { const t=a1+b; a1=b; b=t; }\n    return b;\n}\n"
+ },
+ "subarray-product-less-than-k": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function num_subarrays_product_less_than_k(nums, k) {\n    if (k<=1) return 0;\n    let prod=1, left=0, count=0;\n    for (let right=0;right<nums.length;right++) {\n        prod*=nums[right];\n        while (prod>=k) { prod/=nums[left]; left++; }\n        count += right-left+1;\n    }\n    return count;\n}\n"
+ },
+ "subarray-sum-equals-k": {
+  "lang": "javascript",
+  "file": "scale_hashmap_grid_cluster.py",
+  "code": "function subarray_sum(nums, k) {\n    const seen = {0: 1}; let sum = 0, count = 0;\n    for (const x of nums) { sum += x; count += seen[sum-k] || 0; seen[sum] = (seen[sum]||0) + 1; }\n    return count;\n}\n"
+ },
+ "subarray-sums-divisible-by-k": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function subarrays_div_by_k(nums, k) {\n    const seen = new Array(k).fill(0); seen[0]=1;\n    let sum=0, count=0;\n    for (const x of nums) { sum += x; let mod=((sum%k)+k)%k; count += seen[mod]; seen[mod]++; }\n    return count;\n}\n"
+ },
+ "subset-sum": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster3.py",
+  "code": "function subset_sum(nums, target) {\n    const dp = new Array(target+1).fill(false); dp[0]=true;\n    for (const x of nums) for (let i=target;i>=x;i--) if (dp[i-x]) dp[i]=true;\n    return dp[target]?true:false;\n}\n"
+ },
+ "target-sum-ways": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function find_target_sum_ways(nums, target) {\n    const total = nums.reduce((a,b)=>a+b,0);\n    if (Math.abs(target)>total) return 0;\n    const offset=total; const size=2*total+1;\n    let dp=new Array(size).fill(0); dp[offset]=1;\n    for (const x of nums) {\n        const ndp=new Array(size).fill(0);\n        for (let s=0;s<size;s++) {\n            if (dp[s]===0) continue;\n            if (s+x<size) ndp[s+x]+=dp[s];\n            if (s-x>=0) ndp[s-x]+=dp[s];\n        }\n        dp=ndp;\n    }\n    const idx=target+offset;\n    return (idx>=0 && idx<size ? dp[idx] : 0);\n}\n"
+ },
+ "task-scheduler": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function least_interval(counts, cooldown) {\n    const maxCount = Math.max(...counts);\n    const maxCountFreq = counts.filter(c=>c===maxCount).length;\n    const total = counts.reduce((a,b)=>a+b,0);\n    const formula = (maxCount-1)*(cooldown+1)+maxCountFreq;\n    return Math.max(total, formula);\n}\n"
+ },
+ "three-sum-count-triplets": {
+  "lang": "javascript",
+  "file": "scale_hashmap_grid_cluster.py",
+  "code": "function three_sum_count(nums) {\n    const arr = nums.slice().sort((a,b)=>a-b); const n = arr.length;\n    let count = 0;\n    for (let i=0;i<n-2;i++) {\n        if (i>0 && arr[i]===arr[i-1]) continue;\n        let lo=i+1, hi=n-1;\n        while (lo<hi) {\n            const sum = arr[i]+arr[lo]+arr[hi];\n            if (sum===0) { count++; const lv=arr[lo]; while(lo<hi&&arr[lo]===lv) lo++; const hv=arr[hi]; while(lo<hi&&arr[hi]===hv) hi--; }\n            else if (sum<0) lo++; else hi--;\n        }\n    }\n    return count;\n}\n"
+ },
+ "top-k-frequent-elements": {
+  "lang": "javascript",
+  "file": "scale_hashmap_grid_cluster.py",
+  "code": "function top_k_frequent(nums, k) {\n    const freq = {};\n    for (const x of nums) freq[x] = (freq[x]||0) + 1;\n    const keys = Object.keys(freq).map(Number);\n    keys.sort((a,b) => freq[b]-freq[a] || a-b);\n    return keys.slice(0,k);\n}\n"
+ },
+ "trapping-rain-water": {
+  "lang": "javascript",
+  "file": "scale_array_cluster3.py",
+  "code": "function trap(heights) {\n    let lo=0, hi=heights.length-1, leftMax=0, rightMax=0, total=0;\n    while (lo<hi) {\n        if (heights[lo] < heights[hi]) {\n            leftMax = Math.max(leftMax, heights[lo]); total += leftMax - heights[lo]; lo++;\n        } else { rightMax = Math.max(rightMax, heights[hi]); total += rightMax - heights[hi]; hi--; }\n    }\n    return total;\n}\n"
+ },
+ "triangle-minimum-path-sum": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function minimum_total(triangle) {\n    const n=triangle.length;\n    const dp=triangle[n-1].slice();\n    for (let i=n-2;i>=0;i--) {\n        for (let j=0;j<=i;j++) dp[j]=triangle[i][j]+Math.min(dp[j],dp[j+1]);\n    }\n    return dp[0];\n}\n"
+ },
+ "two-sum-count-pairs": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function count_pairs(nums, target) {\n    const freq={}; let count=0;\n    for (const x of nums) {\n        const need=target-x;\n        if (freq[need]) count+=freq[need];\n        freq[x]=(freq[x]||0)+1;\n    }\n    return count;\n}\n"
+ },
+ "unbounded-knapsack": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function unbounded_knapsack(weights, values, capacity) {\n    const dp=new Array(capacity+1).fill(0);\n    for (let c=1;c<=capacity;c++) {\n        for (let i=0;i<weights.length;i++) {\n            if (weights[i]<=c) dp[c]=Math.max(dp[c], dp[c-weights[i]]+values[i]);\n        }\n    }\n    return dp[capacity];\n}\n"
+ },
+ "unique-permutations-count": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function count_unique_permutations(nums) {\n    function fact(n) { let r=1; for (let i=2;i<=n;i++) r*=i; return r; }\n    const freq={};\n    for (const x of nums) freq[x]=(freq[x]||0)+1;\n    let denom=1; for (const k in freq) denom*=fact(freq[k]);\n    return Math.round(fact(nums.length)/denom);\n}\n"
+ },
+ "valid-anagram": {
+  "lang": "javascript",
+  "file": "scale_bit_misc_cluster.py",
+  "code": "function is_anagram(s, t) {\n    if (s.length !== t.length) return false;\n    const count = {};\n    for (const ch of s) count[ch] = (count[ch]||0) + 1;\n    for (const ch of t) { count[ch] = (count[ch]||0) - 1; if (count[ch] < 0) return false; }\n    return Object.values(count).every(v => v === 0);\n}\n"
+ },
+ "valid-palindrome-string": {
+  "lang": "javascript",
+  "file": "scale_hashmap_grid_cluster.py",
+  "code": "function is_valid_palindrome(s) {\n    const clean = s.toLowerCase().replace(/[^a-z0-9]/g, '');\n    let lo = 0, hi = clean.length - 1;\n    while (lo < hi) { if (clean[lo] !== clean[hi]) return false; lo++; hi--; }\n    return true;\n}\n"
+ },
+ "valid-parentheses": {
+  "lang": "javascript",
+  "file": "scale_bit_misc_cluster.py",
+  "code": "function is_valid(s) {\n    const stack = []; const pairs = {')':'(', ']':'[', '}':'{'};\n    for (const ch of s) {\n        if (ch==='('||ch==='['||ch==='{') stack.push(ch);\n        else { if (stack.length===0 || stack.pop() !== pairs[ch]) return false; }\n    }\n    return stack.length === 0;\n}\n"
+ },
+ "word-wrap": {
+  "lang": "javascript",
+  "file": "scale_mega_cluster6.py",
+  "code": "function word_wrap(lengths, width) {\n    const n=lengths.length; const INF=1e15;\n    const dp=new Array(n+1).fill(INF); dp[n]=0;\n    for (let i=n-1;i>=0;i--) {\n        let lineLen=-1;\n        for (let j=i;j<n;j++) {\n            lineLen += lengths[j]+1;\n            if (lineLen>width) break;\n            const cost = (j===n-1) ? 0 : (width-lineLen)*(width-lineLen)*(width-lineLen);\n            if (dp[j+1]+cost<dp[i]) dp[i]=dp[j+1]+cost;\n        }\n    }\n    return dp[0];\n}\n"
+ }
+}

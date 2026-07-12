@@ -1,0 +1,146 @@
+{
+  "generated_from": "manual read of apps/backend/algorithm_atlas/api/v1/notebook.py RUNNERS dict, one entry per real registered language, no invented entries",
+  "audit_date": "2026-07-06",
+  "invariant": "No language runner may embed arbitrarily large generated source directly into a process command-line argument. Source must reach the compiler/interpreter via a temp file path.",
+  "summary": {
+    "total_runners": 17,
+    "audited": 17,
+    "unsafe_found": 2,
+    "unsafe_fixed": 2
+  },
+  "runners": {
+    "python": {
+      "transport": "temp_file",
+      "previous_transport": "inline_-c",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true,
+      "notes": "Fixed prior session via _run_via_tempfile(sys.executable, '.py', ...)."
+    },
+    "javascript": {
+      "transport": "temp_file",
+      "previous_transport": "inline_-e",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true,
+      "notes": "Fixed prior session via _run_via_tempfile(node, '.js', ...)."
+    },
+    "typescript": {
+      "transport": "temp_file",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true,
+      "notes": "Already wrote to a NamedTemporaryFile(.ts) and invoked tsx/npx with the path; never used argv source."
+    },
+    "cpp": {
+      "transport": "temp_file",
+      "compile_stage": "g++ -std=c++17 -O2 (source-as-file)",
+      "runtime_stage": "compiled binary execution",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    },
+    "c": {
+      "transport": "temp_file",
+      "compile_stage": "gcc -std=c17 -O2 (source-as-file)",
+      "runtime_stage": "compiled binary execution",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    },
+    "java": {
+      "transport": "temp_file",
+      "compile_stage": "javac Main.java (source-as-file)",
+      "runtime_stage": "java -cp <tmpdir> Main",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    },
+    "go": {
+      "transport": "temp_file",
+      "runtime_stage": "go run main.go (source-as-file)",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    },
+    "rust": {
+      "transport": "temp_file",
+      "compile_stage": "rustc main.rs -o main (source-as-file)",
+      "runtime_stage": "compiled binary execution",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    },
+    "shell": {
+      "transport": "temp_file",
+      "previous_transport": "inline_argv (cmd /c <source> on Windows, sh -c <source> on POSIX)",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true,
+      "notes": "UNSAFE before this session's fix: source string was passed directly as a command argument (cmd /c SOURCE / sh -c SOURCE), identical vulnerability class to the pre-fix python/javascript bug. Fixed by writing source to a temp .bat (Windows) or .sh (POSIX) file and invoking the interpreter with the file path."
+    },
+    "ruby": {
+      "transport": "temp_file",
+      "previous_transport": "inline_-e",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true,
+      "notes": "UNSAFE before this session's fix: `ruby -e <source>` embeds source directly in argv, same vulnerability class as the pre-fix python/javascript bug. Fixed via _run_via_tempfile(ruby, '.rb', ...)."
+    },
+    "kotlin": {
+      "transport": "temp_file",
+      "compile_stage": "kotlinc main.kt -include-runtime -d main.jar (source-as-file)",
+      "runtime_stage": "java -jar main.jar",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    },
+    "swift": {
+      "transport": "temp_file",
+      "runtime_stage": "swift main.swift (source-as-file)",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    },
+    "r": {
+      "transport": "temp_file",
+      "runtime_stage": "Rscript main.r (source-as-file)",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    },
+    "csharp": {
+      "transport": "temp_file",
+      "compile_stage": "mcs main.cs -out:main.exe (source-as-file) OR dotnet run --project <tmpdir> (Program.cs written to disk)",
+      "runtime_stage": "mono main.exe, or dotnet run",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true,
+      "notes": "Two code paths (mcs+mono primary, dotnet fallback); both write source to a file, never argv."
+    },
+    "php": {
+      "transport": "temp_file",
+      "runtime_stage": "php main.php (source-as-file)",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    },
+    "scala": {
+      "transport": "temp_file",
+      "runtime_stage": "scala-cli/scala main.scala (source-as-file)",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    },
+    "perl": {
+      "transport": "temp_file",
+      "runtime_stage": "perl main.pl (source-as-file)",
+      "large_source_safe": true,
+      "shell_interpolation": false,
+      "verified": true
+    }
+  },
+  "unsafe_runners_found": ["shell", "ruby"],
+  "unsafe_runners_fixed": ["shell", "ruby"],
+  "conclusion": "17/17 runners now use temp-file source transport. Compiled languages (cpp, c, java, rust, kotlin, csharp-mcs) additionally compile once to a temp artifact before execution, matching the invariant's compiled-language pattern exactly. No runner remains that depends on embedding arbitrary-length source into a process command line."
+}

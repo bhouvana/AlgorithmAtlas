@@ -32,6 +32,28 @@ export interface NotebookContext {
   lastError: string;
 }
 
+export interface ProblemContext {
+  slug: string;
+  title: string;
+  difficulty: string;
+  language: string;
+  // Which Run contract is active -- Atlas AI must not give Program Mode
+  // advice ("read input using sys.stdin") while the user is in Function
+  // Mode, or vice versa (Phase 21).
+  executionMode: 'function' | 'program';
+  // Only populated in Function Mode -- e.g. "top_k_frequent(nums, k)".
+  functionSignature: string | null;
+  source: string;
+  // Only ever derived from Run (visible/selected/custom cases) -- this
+  // workspace has no Submit/hidden-test path, so there is no hidden data to
+  // ever accidentally include here.
+  lastRunSummary: { passed: number; failed: number; total: number } | null;
+  lastRunVerdict: string | null;
+  firstFailingCase: {
+    label: string; input: string; expected: string | null; actual: string;
+  } | null;
+}
+
 export interface LessonContext {
   id: string;
   title: string;
@@ -61,6 +83,7 @@ export interface AtlasContext {
   lesson?: LessonContext;
   learningProgress?: LearningProgressContext;
   comparison?: ComparisonContext;
+  problem?: ProblemContext;
 }
 
 // ── Conversation ──────────────────────────────────────────────────────────────

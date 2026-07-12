@@ -1,0 +1,2184 @@
+{
+  "summary": {
+    "total_level6_checked": 3468,
+    "current": 3234,
+    "stale": 234,
+    "stale_by_reason": {
+      "TOOLCHAIN_UNAVAILABLE_NOW": 234
+    },
+    "per_language": {
+      "python": {
+        "current": 216,
+        "stale": 0
+      },
+      "javascript": {
+        "current": 312,
+        "stale": 0
+      },
+      "typescript": {
+        "current": 309,
+        "stale": 0
+      },
+      "java": {
+        "current": 306,
+        "stale": 0
+      },
+      "cpp": {
+        "current": 308,
+        "stale": 0
+      },
+      "rust": {
+        "current": 305,
+        "stale": 0
+      },
+      "c": {
+        "current": 305,
+        "stale": 0
+      },
+      "csharp": {
+        "current": 304,
+        "stale": 0
+      },
+      "perl": {
+        "current": 310,
+        "stale": 0
+      },
+      "go": {
+        "current": 174,
+        "stale": 0
+      },
+      "ruby": {
+        "current": 114,
+        "stale": 0
+      },
+      "php": {
+        "current": 131,
+        "stale": 0
+      },
+      "r": {
+        "current": 88,
+        "stale": 0
+      },
+      "kotlin": {
+        "current": 0,
+        "stale": 105
+      },
+      "scala": {
+        "current": 0,
+        "stale": 129
+      },
+      "swift": {
+        "current": 52,
+        "stale": 0
+      }
+    }
+  },
+  "stale_rows": [
+    {
+      "id": 622,
+      "problem_id": "two-sum",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 623,
+      "problem_id": "min-stack-simulation",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 624,
+      "problem_id": "max-depth-binary-tree",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 625,
+      "problem_id": "construct-tree-preorder-inorder",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 626,
+      "problem_id": "bubble-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 627,
+      "problem_id": "maximum-subarray",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 628,
+      "problem_id": "contains-duplicate-within-k",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 629,
+      "problem_id": "merge-overlapping-intervals",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 630,
+      "problem_id": "prime-factorization",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 715,
+      "problem_id": "two-sum",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 716,
+      "problem_id": "min-stack-simulation",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 717,
+      "problem_id": "max-depth-binary-tree",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 718,
+      "problem_id": "construct-tree-preorder-inorder",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 719,
+      "problem_id": "bubble-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 720,
+      "problem_id": "maximum-subarray",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 721,
+      "problem_id": "contains-duplicate-within-k",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 722,
+      "problem_id": "merge-overlapping-intervals",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 723,
+      "problem_id": "prime-factorization",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2536,
+      "problem_id": "bitonic-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2578,
+      "problem_id": "bucket-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2619,
+      "problem_id": "cocktail-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2629,
+      "problem_id": "binary-search",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2665,
+      "problem_id": "comb-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2674,
+      "problem_id": "exponential-search",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2675,
+      "problem_id": "gcd-euclidean",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2711,
+      "problem_id": "counting-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2714,
+      "problem_id": "house-robber",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2715,
+      "problem_id": "fibonacci-search",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2727,
+      "problem_id": "cycle-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2731,
+      "problem_id": "interpolation-search",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2733,
+      "problem_id": "word-break",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2735,
+      "problem_id": "gnome-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2741,
+      "problem_id": "jump-search",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2742,
+      "problem_id": "longest-increasing-subsequence",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2750,
+      "problem_id": "gnome-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2753,
+      "problem_id": "jump-search",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2755,
+      "problem_id": "heap-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2756,
+      "problem_id": "ternary-search",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2762,
+      "problem_id": "longest-common-subsequence",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2766,
+      "problem_id": "heap-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2767,
+      "problem_id": "ternary-search",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2769,
+      "problem_id": "insertion-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2773,
+      "problem_id": "longest-common-subsequence",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2775,
+      "problem_id": "edit-distance",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2777,
+      "problem_id": "insertion-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2780,
+      "problem_id": "merge-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2784,
+      "problem_id": "edit-distance",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2786,
+      "problem_id": "minimum-path-sum",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2787,
+      "problem_id": "merge-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2791,
+      "problem_id": "odd-even-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2795,
+      "problem_id": "minimum-path-sum",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2797,
+      "problem_id": "n-queens",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2800,
+      "problem_id": "odd-even-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2803,
+      "problem_id": "n-queens",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2804,
+      "problem_id": "pancake-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2807,
+      "problem_id": "pancake-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2810,
+      "problem_id": "patience-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2811,
+      "problem_id": "kmp-string-matching",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2817,
+      "problem_id": "patience-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2819,
+      "problem_id": "kmp-string-matching",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2820,
+      "problem_id": "quick-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2823,
+      "problem_id": "quick-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2825,
+      "problem_id": "radix-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2828,
+      "problem_id": "radix-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2830,
+      "problem_id": "selection-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2833,
+      "problem_id": "selection-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2835,
+      "problem_id": "shell-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2838,
+      "problem_id": "shell-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2840,
+      "problem_id": "stooge-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2843,
+      "problem_id": "stooge-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2845,
+      "problem_id": "strand-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2848,
+      "problem_id": "strand-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2850,
+      "problem_id": "tim-sort",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2853,
+      "problem_id": "tim-sort",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2882,
+      "problem_id": "binary-search",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2887,
+      "problem_id": "linear-search",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2894,
+      "problem_id": "exponential-search",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2896,
+      "problem_id": "linear-search",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2900,
+      "problem_id": "fibonacci-search",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2904,
+      "problem_id": "first-occurrence",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2907,
+      "problem_id": "interpolation-search",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2913,
+      "problem_id": "first-occurrence",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2915,
+      "problem_id": "last-occurrence",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2919,
+      "problem_id": "last-occurrence",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2923,
+      "problem_id": "count-occurrences-sorted",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2926,
+      "problem_id": "count-occurrences-sorted",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2933,
+      "problem_id": "rotated-binary-search",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2935,
+      "problem_id": "search-insert-position",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2940,
+      "problem_id": "find-minimum-rotated-sorted-array",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2945,
+      "problem_id": "rotated-binary-search",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2948,
+      "problem_id": "search-insert-position",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2954,
+      "problem_id": "search-2d-matrix",
+      "language": "kotlin",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2955,
+      "problem_id": "find-minimum-rotated-sorted-array",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2962,
+      "problem_id": "bitonic-peak-index",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2963,
+      "problem_id": "missing-number",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2964,
+      "problem_id": "single-number",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2965,
+      "problem_id": "single-number-ii",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2966,
+      "problem_id": "hamming-distance",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2967,
+      "problem_id": "number-of-1-bits",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2968,
+      "problem_id": "power-of-two",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2969,
+      "problem_id": "collatz",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2970,
+      "problem_id": "staircase",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2971,
+      "problem_id": "integer-square-root",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2972,
+      "problem_id": "move-zeroes",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2973,
+      "problem_id": "modular-exponentiation",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2974,
+      "problem_id": "lucas-theorem",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2975,
+      "problem_id": "miller-rabin",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2976,
+      "problem_id": "euler-totient",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2977,
+      "problem_id": "euler-phi-sieve",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2978,
+      "problem_id": "number-of-divisors",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2979,
+      "problem_id": "sieve-of-eratosthenes",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 2980,
+      "problem_id": "polynomial-multiplication",
+      "language": "scala",
+      "mode": "function",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3541,
+      "problem_id": "bitonic-peak-index",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3543,
+      "problem_id": "bitonic-peak-index",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3545,
+      "problem_id": "find-minimum-rotated-sorted-array",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3547,
+      "problem_id": "find-minimum-rotated-sorted-array",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3549,
+      "problem_id": "count-occurrences-sorted",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3551,
+      "problem_id": "count-occurrences-sorted",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3553,
+      "problem_id": "last-occurrence",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3555,
+      "problem_id": "last-occurrence",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3557,
+      "problem_id": "koko-eating-bananas",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3559,
+      "problem_id": "koko-eating-bananas",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3560,
+      "problem_id": "kth-largest-element",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3562,
+      "problem_id": "kth-largest-element",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3564,
+      "problem_id": "largest-rectangle-in-histogram",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3566,
+      "problem_id": "largest-rectangle-in-histogram",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3567,
+      "problem_id": "longest-bitonic-subsequence",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3569,
+      "problem_id": "longest-bitonic-subsequence",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3571,
+      "problem_id": "max-consecutive-ones-with-k-flips",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3573,
+      "problem_id": "max-consecutive-ones-with-k-flips",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3575,
+      "problem_id": "max-sum-subarray-fixed-k",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3577,
+      "problem_id": "max-sum-subarray-fixed-k",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3579,
+      "problem_id": "maximum-subarray-circular",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3581,
+      "problem_id": "maximum-subarray-circular",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3583,
+      "problem_id": "maximum-xor-of-two-numbers",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3585,
+      "problem_id": "maximum-xor-of-two-numbers",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3587,
+      "problem_id": "middle-of-linked-list",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3589,
+      "problem_id": "middle-of-linked-list",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3591,
+      "problem_id": "min-subarray-len-target-sum",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3593,
+      "problem_id": "min-subarray-len-target-sum",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3595,
+      "problem_id": "partition-equal-subset-sum",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3597,
+      "problem_id": "partition-equal-subset-sum",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3599,
+      "problem_id": "perfect-squares-min-count",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3601,
+      "problem_id": "perfect-squares-min-count",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3603,
+      "problem_id": "rod-cutting",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3605,
+      "problem_id": "rod-cutting",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3607,
+      "problem_id": "single-number-ii",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3609,
+      "problem_id": "single-number-ii",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3611,
+      "problem_id": "subset-sum",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3613,
+      "problem_id": "subset-sum",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3615,
+      "problem_id": "target-sum-ways",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3617,
+      "problem_id": "target-sum-ways",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3619,
+      "problem_id": "two-sum-count-pairs",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3621,
+      "problem_id": "two-sum-count-pairs",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3623,
+      "problem_id": "unique-permutations-count",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3625,
+      "problem_id": "unique-permutations-count",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3627,
+      "problem_id": "ship-packages-within-days",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3629,
+      "problem_id": "ship-packages-within-days",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3631,
+      "problem_id": "subarray-product-less-than-k",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3633,
+      "problem_id": "subarray-product-less-than-k",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3635,
+      "problem_id": "subarray-sums-divisible-by-k",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3637,
+      "problem_id": "subarray-sums-divisible-by-k",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3639,
+      "problem_id": "euler-phi-sieve",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3641,
+      "problem_id": "euler-phi-sieve",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3643,
+      "problem_id": "integer-square-root",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3645,
+      "problem_id": "integer-square-root",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3647,
+      "problem_id": "miller-rabin",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3649,
+      "problem_id": "miller-rabin",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3651,
+      "problem_id": "number-of-divisors",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3653,
+      "problem_id": "number-of-divisors",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3655,
+      "problem_id": "palindrome-linked-list",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3657,
+      "problem_id": "palindrome-linked-list",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3659,
+      "problem_id": "delete-and-earn",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3661,
+      "problem_id": "delete-and-earn",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3663,
+      "problem_id": "jump-game-ii-min-jumps",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3665,
+      "problem_id": "jump-game-ii-min-jumps",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3667,
+      "problem_id": "linked-list-cycle-detect",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3669,
+      "problem_id": "linked-list-cycle-detect",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3671,
+      "problem_id": "lucas-theorem",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3673,
+      "problem_id": "lucas-theorem",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3675,
+      "problem_id": "modular-exponentiation",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3677,
+      "problem_id": "modular-exponentiation",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3679,
+      "problem_id": "minimum-knight-moves",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3681,
+      "problem_id": "minimum-knight-moves",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3687,
+      "problem_id": "first-unique-character-index",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3689,
+      "problem_id": "first-unique-character-index",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3693,
+      "problem_id": "longest-palindromic-substring",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3695,
+      "problem_id": "longest-palindromic-substring",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3699,
+      "problem_id": "longest-valid-parentheses",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3701,
+      "problem_id": "longest-valid-parentheses",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3705,
+      "problem_id": "manacher",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3707,
+      "problem_id": "manacher",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3783,
+      "problem_id": "binary-search",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3786,
+      "problem_id": "binary-search",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3789,
+      "problem_id": "linear-search",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3793,
+      "problem_id": "linear-search",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3795,
+      "problem_id": "jump-search",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3799,
+      "problem_id": "jump-search",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3802,
+      "problem_id": "exponential-search",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3806,
+      "problem_id": "exponential-search",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3809,
+      "problem_id": "interpolation-search",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3813,
+      "problem_id": "interpolation-search",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3816,
+      "problem_id": "fibonacci-search",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3821,
+      "problem_id": "fibonacci-search",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3824,
+      "problem_id": "ternary-search",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3828,
+      "problem_id": "ternary-search",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3831,
+      "problem_id": "rotated-binary-search",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3835,
+      "problem_id": "rotated-binary-search",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3838,
+      "problem_id": "first-occurrence",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3843,
+      "problem_id": "single-number",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3845,
+      "problem_id": "first-occurrence",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3849,
+      "problem_id": "search-insert-position",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3852,
+      "problem_id": "single-number",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3856,
+      "problem_id": "majority-element",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3858,
+      "problem_id": "search-insert-position",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3862,
+      "problem_id": "subarray-sum-equals-k",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3866,
+      "problem_id": "majority-element",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3870,
+      "problem_id": "missing-number",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3872,
+      "problem_id": "subarray-sum-equals-k",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3876,
+      "problem_id": "missing-number",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3879,
+      "problem_id": "maximum-subarray",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3883,
+      "problem_id": "maximum-subarray",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3886,
+      "problem_id": "house-robber",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3890,
+      "problem_id": "house-robber",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3894,
+      "problem_id": "jump-game",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3901,
+      "problem_id": "jump-game",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3905,
+      "problem_id": "counting-inversions",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3913,
+      "problem_id": "counting-inversions",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3919,
+      "problem_id": "longest-consecutive-sequence",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3926,
+      "problem_id": "gcd-euclidean",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3932,
+      "problem_id": "longest-consecutive-sequence",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3939,
+      "problem_id": "gcd-euclidean",
+      "language": "scala",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3940,
+      "problem_id": "find-duplicate-number",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    },
+    {
+      "id": 3946,
+      "problem_id": "hamming-distance",
+      "language": "kotlin",
+      "mode": "program",
+      "reasons": [
+        "TOOLCHAIN_UNAVAILABLE_NOW"
+      ]
+    }
+  ]
+}

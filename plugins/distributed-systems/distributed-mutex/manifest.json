@@ -1,6 +1,8 @@
 {
-  "slug": "distributed-mutex",
+  "schema_version": "1.0",
+  "id": "distributed-mutex",
   "name": "Distributed Mutex (Ricart-Agrawala)",
+  "version": "1.0.0",
   "category": "distributed-systems",
   "visualization_type": "TIMELINE",
   "description": "Ricart-Agrawala algorithm: process wanting CS broadcasts Request with timestamp; others reply OK or defer; after n-1 OKs enter CS.",
@@ -10,7 +12,12 @@
     "time_worst": "O(n)",
     "space": "O(n)"
   },
-  "tags": ["distributed", "mutual-exclusion", "critical-section", "ricart-agrawala"],
+  "tags": [
+    "distributed",
+    "mutual-exclusion",
+    "critical-section",
+    "ricart-agrawala"
+  ],
   "execution_target": "server",
   "entry_point": "algorithm.py",
   "class_name": "DistributedMutex"

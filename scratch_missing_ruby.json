@@ -1,0 +1,1564 @@
+{
+ "missing": [
+  "activity-selection",
+  "best-time-to-buy-sell-stock",
+  "best-time-to-buy-sell-stock-ii",
+  "binary-tree-max-path-sum",
+  "binary-tree-zigzag-level-order",
+  "bitonic-peak-index",
+  "boolean-parenthesization",
+  "burst-balloons",
+  "catalan-number",
+  "closest-pair",
+  "coin-change",
+  "coin-change-ways",
+  "collatz",
+  "combination-sum-count",
+  "combination-sum-iv-count",
+  "container-with-most-water",
+  "count-occurrences-sorted",
+  "count-tree-nodes",
+  "counting-bits",
+  "counting-inversions",
+  "course-schedule-feasible",
+  "daily-temperatures",
+  "decode-ways",
+  "delete-and-earn",
+  "diameter-of-binary-tree",
+  "dijkstra-shortest-path",
+  "distinct-subsequences",
+  "distinct-subsets-count",
+  "egg-drop",
+  "euler-phi-sieve",
+  "euler-totient",
+  "evaluate-reverse-polish-notation",
+  "fast-power",
+  "fibonacci-dp",
+  "find-all-anagrams-in-string",
+  "find-duplicate-number",
+  "find-minimum-rotated-sorted-array",
+  "first-occurrence",
+  "first-unique-character-index",
+  "flood-fill",
+  "fractional-knapsack",
+  "gas-station",
+  "graph-bfs",
+  "group-anagrams-count",
+  "hamming-distance",
+  "house-robber-circular",
+  "huffman-coding",
+  "insert-interval",
+  "integer-square-root",
+  "interleaving-strings",
+  "intersection-of-two-arrays",
+  "invert-tree-preorder",
+  "is-balanced-binary-tree",
+  "is-bipartite",
+  "is-symmetric-tree",
+  "is-valid-bst",
+  "job-scheduling",
+  "jump-game",
+  "jump-game-ii-min-jumps",
+  "karatsuba",
+  "knapsack-01",
+  "koko-eating-bananas",
+  "kth-largest-element",
+  "kth-smallest-in-bst",
+  "largest-rectangle-in-histogram",
+  "last-occurrence",
+  "level-order-traversal",
+  "linear-search",
+  "linked-list-cycle-detect",
+  "longest-bitonic-subsequence",
+  "longest-common-substring",
+  "longest-consecutive-sequence",
+  "longest-palindromic-substring",
+  "longest-repeating-char-replacement",
+  "longest-substring-at-most-k-distinct",
+  "longest-substring-without-repeating",
+  "longest-valid-parentheses",
+  "lowest-common-ancestor-binary-tree",
+  "lowest-common-ancestor-bst",
+  "lucas-theorem",
+  "majority-element",
+  "majority-element-ii",
+  "manacher",
+  "matrix-chain-multiplication",
+  "matrix-exponentiation",
+  "max-consecutive-ones-with-k-flips",
+  "max-distance-to-zero",
+  "max-sum-subarray-fixed-k",
+  "maximal-rectangle",
+  "maximum-product-subarray",
+  "maximum-subarray-circular",
+  "maximum-xor-of-two-numbers",
+  "median-of-medians",
+  "median-of-two-sorted-arrays",
+  "meeting-rooms",
+  "merge-k-sorted-lists",
+  "merge-sorted-arrays-inplace",
+  "merge-two-sorted-lists",
+  "middle-of-linked-list",
+  "miller-rabin",
+  "min-subarray-len-target-sum",
+  "minimum-knight-moves",
+  "minimum-window-substring-length",
+  "missing-number",
+  "modular-exponentiation",
+  "move-zeroes",
+  "next-greater-element",
+  "number-of-1-bits",
+  "number-of-divisors",
+  "number-of-islands",
+  "palindrome-linked-list",
+  "palindrome-partition",
+  "palindrome-partitioning",
+  "palindrome-subsequence",
+  "partition-equal-subset-sum",
+  "path-sum-exists",
+  "perfect-squares-min-count",
+  "polynomial-multiplication",
+  "power-of-two",
+  "product-of-array-except-self",
+  "regular-expression-matching",
+  "remove-k-digits",
+  "remove-nth-from-end",
+  "restore-ip-addresses-count",
+  "reverse-bits",
+  "reverse-linked-list",
+  "right-side-view",
+  "rod-cutting",
+  "rotate-image-90",
+  "rotated-binary-search",
+  "rotten-oranges-minutes",
+  "run-length-encoding",
+  "same-tree",
+  "search-2d-matrix",
+  "search-insert-position",
+  "set-matrix-zeroes",
+  "ship-packages-within-days",
+  "shortest-path-binary-matrix",
+  "sieve-of-eratosthenes",
+  "single-number",
+  "single-number-ii",
+  "sliding-window-maximum",
+  "spiral-matrix-traversal",
+  "stable-matching",
+  "staircase",
+  "strassen",
+  "string-hashing",
+  "subarray-product-less-than-k",
+  "subarray-sum-equals-k",
+  "subarray-sums-divisible-by-k",
+  "subset-sum",
+  "suffix-array",
+  "sum-root-to-leaf-numbers",
+  "target-sum-ways",
+  "task-scheduler",
+  "three-sum-count-triplets",
+  "top-k-frequent-elements",
+  "trapping-rain-water",
+  "triangle-minimum-path-sum",
+  "two-sum-count-pairs",
+  "unbounded-knapsack",
+  "unique-paths",
+  "unique-permutations-count",
+  "valid-anagram",
+  "valid-palindrome-string",
+  "valid-parentheses",
+  "wildcard-matching",
+  "word-break-count-ways",
+  "word-ladder-length",
+  "word-search-grid",
+  "word-wrap",
+  "z-algorithm"
+ ],
+ "coverage": {
+  "activity-selection": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "best-time-to-buy-sell-stock": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "best-time-to-buy-sell-stock-ii": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "binary-tree-max-path-sum": [
+   "python"
+  ],
+  "binary-tree-zigzag-level-order": [
+   "python"
+  ],
+  "bitonic-peak-index": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "boolean-parenthesization": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "burst-balloons": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "catalan-number": [
+   "python"
+  ],
+  "closest-pair": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "coin-change": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "coin-change-ways": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "collatz": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "combination-sum-count": [
+   "javascript",
+   "perl",
+   "python",
+   "typescript"
+  ],
+  "combination-sum-iv-count": [
+   "python"
+  ],
+  "container-with-most-water": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "count-occurrences-sorted": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "count-tree-nodes": [
+   "python"
+  ],
+  "counting-bits": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "counting-inversions": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "course-schedule-feasible": [
+   "python"
+  ],
+  "daily-temperatures": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "decode-ways": [
+   "python"
+  ],
+  "delete-and-earn": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "diameter-of-binary-tree": [
+   "python"
+  ],
+  "dijkstra-shortest-path": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "distinct-subsequences": [
+   "python"
+  ],
+  "distinct-subsets-count": [
+   "python"
+  ],
+  "egg-drop": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "euler-phi-sieve": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "euler-totient": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "evaluate-reverse-polish-notation": [
+   "python"
+  ],
+  "fast-power": [
+   "python"
+  ],
+  "fibonacci-dp": [
+   "python"
+  ],
+  "find-all-anagrams-in-string": [
+   "python"
+  ],
+  "find-duplicate-number": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "find-minimum-rotated-sorted-array": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "first-occurrence": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "first-unique-character-index": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "flood-fill": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "fractional-knapsack": [
+   "python"
+  ],
+  "gas-station": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "graph-bfs": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "group-anagrams-count": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "hamming-distance": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "house-robber-circular": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "huffman-coding": [
+   "python"
+  ],
+  "insert-interval": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "integer-square-root": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "interleaving-strings": [
+   "python"
+  ],
+  "intersection-of-two-arrays": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "invert-tree-preorder": [
+   "python"
+  ],
+  "is-balanced-binary-tree": [
+   "python"
+  ],
+  "is-bipartite": [
+   "python"
+  ],
+  "is-symmetric-tree": [
+   "python"
+  ],
+  "is-valid-bst": [
+   "python"
+  ],
+  "job-scheduling": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "jump-game": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "jump-game-ii-min-jumps": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "karatsuba": [
+   "python"
+  ],
+  "knapsack-01": [
+   "python"
+  ],
+  "koko-eating-bananas": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "kth-largest-element": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "kth-smallest-in-bst": [
+   "python"
+  ],
+  "largest-rectangle-in-histogram": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "last-occurrence": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "level-order-traversal": [
+   "python"
+  ],
+  "linear-search": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "linked-list-cycle-detect": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "longest-bitonic-subsequence": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "longest-common-substring": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "longest-consecutive-sequence": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "longest-palindromic-substring": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "longest-repeating-char-replacement": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "longest-substring-at-most-k-distinct": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "longest-substring-without-repeating": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "longest-valid-parentheses": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "lowest-common-ancestor-binary-tree": [
+   "python"
+  ],
+  "lowest-common-ancestor-bst": [
+   "python"
+  ],
+  "lucas-theorem": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "majority-element": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "majority-element-ii": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "manacher": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "matrix-chain-multiplication": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "matrix-exponentiation": [
+   "python"
+  ],
+  "max-consecutive-ones-with-k-flips": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "max-distance-to-zero": [
+   "python"
+  ],
+  "max-sum-subarray-fixed-k": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "maximal-rectangle": [
+   "python"
+  ],
+  "maximum-product-subarray": [
+   "python"
+  ],
+  "maximum-subarray-circular": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "maximum-xor-of-two-numbers": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "median-of-medians": [
+   "python"
+  ],
+  "median-of-two-sorted-arrays": [
+   "python"
+  ],
+  "meeting-rooms": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "merge-k-sorted-lists": [
+   "python"
+  ],
+  "merge-sorted-arrays-inplace": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "merge-two-sorted-lists": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "middle-of-linked-list": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "miller-rabin": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "min-subarray-len-target-sum": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "minimum-knight-moves": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "minimum-window-substring-length": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "missing-number": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "modular-exponentiation": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "move-zeroes": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "next-greater-element": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "number-of-1-bits": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "number-of-divisors": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "number-of-islands": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "palindrome-linked-list": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "palindrome-partition": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "palindrome-partitioning": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "palindrome-subsequence": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "partition-equal-subset-sum": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "path-sum-exists": [
+   "python"
+  ],
+  "perfect-squares-min-count": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "polynomial-multiplication": [
+   "python"
+  ],
+  "power-of-two": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "product-of-array-except-self": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "regular-expression-matching": [
+   "python"
+  ],
+  "remove-k-digits": [
+   "python"
+  ],
+  "remove-nth-from-end": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "restore-ip-addresses-count": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "reverse-bits": [
+   "python"
+  ],
+  "reverse-linked-list": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "right-side-view": [
+   "python"
+  ],
+  "rod-cutting": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "rotate-image-90": [
+   "python"
+  ],
+  "rotated-binary-search": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "rotten-oranges-minutes": [
+   "python"
+  ],
+  "run-length-encoding": [
+   "python"
+  ],
+  "same-tree": [
+   "python"
+  ],
+  "search-2d-matrix": [
+   "python"
+  ],
+  "search-insert-position": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "set-matrix-zeroes": [
+   "python"
+  ],
+  "ship-packages-within-days": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "shortest-path-binary-matrix": [
+   "python"
+  ],
+  "sieve-of-eratosthenes": [
+   "python"
+  ],
+  "single-number": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "single-number-ii": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "sliding-window-maximum": [
+   "python"
+  ],
+  "spiral-matrix-traversal": [
+   "python"
+  ],
+  "stable-matching": [
+   "python"
+  ],
+  "staircase": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "strassen": [
+   "python"
+  ],
+  "string-hashing": [
+   "python"
+  ],
+  "subarray-product-less-than-k": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "subarray-sum-equals-k": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "subarray-sums-divisible-by-k": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "subset-sum": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "suffix-array": [
+   "python"
+  ],
+  "sum-root-to-leaf-numbers": [
+   "python"
+  ],
+  "target-sum-ways": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "task-scheduler": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "three-sum-count-triplets": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "top-k-frequent-elements": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "trapping-rain-water": [
+   "javascript",
+   "perl",
+   "python",
+   "typescript"
+  ],
+  "triangle-minimum-path-sum": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "two-sum-count-pairs": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "unbounded-knapsack": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "unique-paths": [
+   "python"
+  ],
+  "unique-permutations-count": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "valid-anagram": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "valid-palindrome-string": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "valid-parentheses": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "wildcard-matching": [
+   "python"
+  ],
+  "word-break-count-ways": [
+   "python"
+  ],
+  "word-ladder-length": [
+   "python"
+  ],
+  "word-search-grid": [
+   "python"
+  ],
+  "word-wrap": [
+   "c",
+   "cpp",
+   "csharp",
+   "java",
+   "javascript",
+   "perl",
+   "python",
+   "rust",
+   "typescript"
+  ],
+  "z-algorithm": [
+   "python"
+  ]
+ }
+}

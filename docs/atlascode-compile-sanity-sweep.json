@@ -1,0 +1,1296 @@
+{
+  "cpp": {
+    "binary-search": {
+      "status": "compile_ok"
+    },
+    "best-time-to-buy-sell-stock": {
+      "status": "compile_ok"
+    },
+    "binary-tree-zigzag-level-order": {
+      "status": "compile_ok"
+    },
+    "best-time-to-buy-sell-stock-ii": {
+      "status": "compile_ok"
+    },
+    "activity-selection": {
+      "status": "compile_ok"
+    },
+    "binary-tree-max-path-sum": {
+      "status": "compile_ok"
+    },
+    "bitonic-peak-index": {
+      "status": "compile_ok"
+    },
+    "bitonic-sort": {
+      "status": "compile_ok"
+    },
+    "boolean-parenthesization": {
+      "status": "compile_ok"
+    },
+    "bubble-sort": {
+      "status": "compile_ok"
+    },
+    "bucket-sort": {
+      "status": "compile_ok"
+    },
+    "burst-balloons": {
+      "status": "compile_ok"
+    },
+    "catalan-number": {
+      "status": "compile_ok"
+    },
+    "closest-pair": {
+      "status": "compile_ok"
+    },
+    "cocktail-sort": {
+      "status": "compile_ok"
+    },
+    "collatz": {
+      "status": "compile_ok"
+    },
+    "coin-change": {
+      "status": "compile_ok"
+    },
+    "coin-change-ways": {
+      "status": "compile_ok"
+    },
+    "combination-sum-count": {
+      "status": "compile_ok"
+    },
+    "comb-sort": {
+      "status": "compile_ok"
+    },
+    "combination-sum-iv-count": {
+      "status": "compile_ok"
+    },
+    "container-with-most-water": {
+      "status": "compile_ok"
+    },
+    "contains-duplicate-within-k": {
+      "status": "compile_ok"
+    },
+    "construct-tree-preorder-inorder": {
+      "status": "compile_ok"
+    },
+    "count-occurrences-sorted": {
+      "status": "compile_ok"
+    },
+    "count-tree-nodes": {
+      "status": "compile_ok"
+    },
+    "counting-bits": {
+      "status": "compile_ok"
+    },
+    "counting-sort": {
+      "status": "compile_ok"
+    },
+    "counting-inversions": {
+      "status": "compile_ok"
+    },
+    "course-schedule-feasible": {
+      "status": "compile_ok"
+    },
+    "cycle-sort": {
+      "status": "compile_ok"
+    },
+    "daily-temperatures": {
+      "status": "compile_ok"
+    },
+    "decode-ways": {
+      "status": "compile_ok"
+    },
+    "delete-and-earn": {
+      "status": "compile_ok"
+    },
+    "diameter-of-binary-tree": {
+      "status": "compile_ok"
+    },
+    "dijkstra-shortest-path": {
+      "status": "compile_ok"
+    },
+    "distinct-subsequences": {
+      "status": "compile_ok"
+    },
+    "distinct-subsets-count": {
+      "status": "compile_ok"
+    },
+    "edit-distance": {
+      "status": "compile_ok"
+    },
+    "egg-drop": {
+      "status": "compile_ok"
+    },
+    "euler-phi-sieve": {
+      "status": "compile_ok"
+    },
+    "euler-totient": {
+      "status": "compile_ok"
+    },
+    "evaluate-reverse-polish-notation": {
+      "status": "compile_ok"
+    },
+    "fast-power": {
+      "status": "compile_ok"
+    },
+    "exponential-search": {
+      "status": "compile_ok"
+    },
+    "fibonacci-dp": {
+      "status": "compile_ok"
+    },
+    "fibonacci-search": {
+      "status": "compile_ok"
+    },
+    "find-duplicate-number": {
+      "status": "compile_ok"
+    },
+    "find-all-anagrams-in-string": {
+      "status": "compile_ok"
+    },
+    "find-minimum-rotated-sorted-array": {
+      "status": "compile_ok"
+    },
+    "first-occurrence": {
+      "status": "compile_ok"
+    },
+    "first-unique-character-index": {
+      "status": "compile_ok"
+    },
+    "flood-fill": {
+      "status": "compile_ok"
+    },
+    "fractional-knapsack": {
+      "status": "compile_ok"
+    },
+    "gas-station": {
+      "status": "compile_ok"
+    },
+    "gcd-euclidean": {
+      "status": "compile_ok"
+    },
+    "gnome-sort": {
+      "status": "compile_ok"
+    },
+    "graph-bfs": {
+      "status": "compile_ok"
+    },
+    "group-anagrams-count": {
+      "status": "compile_ok"
+    },
+    "heap-sort": {
+      "status": "compile_ok"
+    },
+    "hamming-distance": {
+      "status": "compile_ok"
+    },
+    "house-robber": {
+      "status": "compile_ok"
+    },
+    "house-robber-circular": {
+      "status": "compile_ok"
+    },
+    "huffman-coding": {
+      "status": "compile_ok"
+    },
+    "insertion-sort": {
+      "status": "compile_ok"
+    },
+    "insert-interval": {
+      "status": "compile_ok"
+    },
+    "integer-square-root": {
+      "status": "compile_ok"
+    },
+    "interleaving-strings": {
+      "status": "compile_ok"
+    },
+    "interpolation-search": {
+      "status": "compile_ok"
+    },
+    "invert-tree-preorder": {
+      "status": "compile_ok"
+    },
+    "intersection-of-two-arrays": {
+      "status": "compile_ok"
+    },
+    "is-bipartite": {
+      "status": "compile_ok"
+    },
+    "is-balanced-binary-tree": {
+      "status": "compile_ok"
+    },
+    "is-symmetric-tree": {
+      "status": "compile_ok"
+    },
+    "is-valid-bst": {
+      "status": "compile_ok"
+    },
+    "jump-game": {
+      "status": "compile_ok"
+    },
+    "job-scheduling": {
+      "status": "compile_ok"
+    },
+    "jump-search": {
+      "status": "compile_ok"
+    },
+    "jump-game-ii-min-jumps": {
+      "status": "compile_ok"
+    },
+    "karatsuba": {
+      "status": "compile_ok"
+    },
+    "kmp-string-matching": {
+      "status": "compile_ok"
+    },
+    "koko-eating-bananas": {
+      "status": "compile_ok"
+    },
+    "knapsack-01": {
+      "status": "compile_ok"
+    },
+    "kth-largest-element": {
+      "status": "compile_ok"
+    },
+    "largest-rectangle-in-histogram": {
+      "status": "compile_ok"
+    },
+    "kth-smallest-in-bst": {
+      "status": "compile_ok"
+    },
+    "last-occurrence": {
+      "status": "compile_ok"
+    },
+    "linear-search": {
+      "status": "compile_ok"
+    },
+    "level-order-traversal": {
+      "status": "compile_ok"
+    },
+    "linked-list-cycle-detect": {
+      "status": "compile_ok"
+    },
+    "longest-bitonic-subsequence": {
+      "status": "compile_ok"
+    },
+    "longest-common-subsequence": {
+      "status": "compile_ok"
+    },
+    "longest-common-substring": {
+      "status": "compile_ok"
+    },
+    "longest-consecutive-sequence": {
+      "status": "compile_ok"
+    },
+    "longest-increasing-subsequence": {
+      "status": "compile_ok"
+    },
+    "longest-repeating-char-replacement": {
+      "status": "compile_ok"
+    },
+    "longest-palindromic-substring": {
+      "status": "compile_ok"
+    },
+    "longest-substring-at-most-k-distinct": {
+      "status": "compile_ok"
+    },
+    "longest-substring-without-repeating": {
+      "status": "compile_ok"
+    },
+    "longest-valid-parentheses": {
+      "status": "compile_ok"
+    },
+    "lowest-common-ancestor-binary-tree": {
+      "status": "compile_ok"
+    },
+    "lowest-common-ancestor-bst": {
+      "status": "compile_ok"
+    },
+    "lucas-theorem": {
+      "status": "compile_ok"
+    },
+    "majority-element": {
+      "status": "compile_ok"
+    },
+    "majority-element-ii": {
+      "status": "compile_ok"
+    },
+    "manacher": {
+      "status": "compile_ok"
+    },
+    "matrix-chain-multiplication": {
+      "status": "compile_ok"
+    },
+    "max-consecutive-ones-with-k-flips": {
+      "status": "compile_ok"
+    },
+    "matrix-exponentiation": {
+      "status": "compile_ok"
+    },
+    "max-depth-binary-tree": {
+      "status": "compile_ok"
+    },
+    "max-distance-to-zero": {
+      "status": "compile_ok"
+    },
+    "max-sum-subarray-fixed-k": {
+      "status": "compile_ok"
+    },
+    "maximal-rectangle": {
+      "status": "compile_ok"
+    },
+    "maximum-product-subarray": {
+      "status": "compile_ok"
+    },
+    "maximum-subarray": {
+      "status": "compile_ok"
+    },
+    "maximum-subarray-circular": {
+      "status": "compile_ok"
+    },
+    "maximum-xor-of-two-numbers": {
+      "status": "compile_ok"
+    },
+    "median-of-medians": {
+      "status": "compile_ok"
+    },
+    "median-of-two-sorted-arrays": {
+      "status": "compile_ok"
+    },
+    "meeting-rooms": {
+      "status": "compile_ok"
+    },
+    "merge-k-sorted-lists": {
+      "status": "compile_ok"
+    },
+    "merge-overlapping-intervals": {
+      "status": "compile_ok"
+    },
+    "merge-sort": {
+      "status": "compile_ok"
+    },
+    "merge-sorted-arrays-inplace": {
+      "status": "compile_ok"
+    },
+    "miller-rabin": {
+      "status": "compile_ok"
+    },
+    "middle-of-linked-list": {
+      "status": "compile_ok"
+    },
+    "merge-two-sorted-lists": {
+      "status": "compile_ok"
+    },
+    "min-subarray-len-target-sum": {
+      "status": "compile_ok"
+    },
+    "minimum-knight-moves": {
+      "status": "compile_ok"
+    },
+    "minimum-path-sum": {
+      "status": "compile_ok"
+    },
+    "missing-number": {
+      "status": "compile_ok"
+    },
+    "minimum-window-substring-length": {
+      "status": "compile_ok"
+    },
+    "modular-exponentiation": {
+      "status": "compile_ok"
+    },
+    "move-zeroes": {
+      "status": "compile_ok"
+    },
+    "n-queens": {
+      "status": "compile_ok"
+    },
+    "next-greater-element": {
+      "status": "compile_ok"
+    },
+    "number-of-1-bits": {
+      "status": "compile_ok"
+    },
+    "number-of-divisors": {
+      "status": "compile_ok"
+    },
+    "number-of-islands": {
+      "status": "compile_ok"
+    },
+    "odd-even-sort": {
+      "status": "compile_ok"
+    },
+    "palindrome-linked-list": {
+      "status": "compile_ok"
+    },
+    "palindrome-partition": {
+      "status": "compile_ok"
+    },
+    "palindrome-partitioning": {
+      "status": "compile_ok"
+    },
+    "palindrome-subsequence": {
+      "status": "compile_ok"
+    },
+    "pancake-sort": {
+      "status": "compile_ok"
+    },
+    "partition-equal-subset-sum": {
+      "status": "compile_ok"
+    },
+    "path-sum-exists": {
+      "status": "compile_ok"
+    },
+    "patience-sort": {
+      "status": "compile_ok"
+    },
+    "perfect-squares-min-count": {
+      "status": "compile_ok"
+    },
+    "polynomial-multiplication": {
+      "status": "compile_ok"
+    },
+    "power-of-two": {
+      "status": "compile_ok"
+    },
+    "prime-factorization": {
+      "status": "compile_ok"
+    },
+    "product-of-array-except-self": {
+      "status": "compile_ok"
+    },
+    "quick-sort": {
+      "status": "compile_ok"
+    },
+    "radix-sort": {
+      "status": "compile_ok"
+    },
+    "regular-expression-matching": {
+      "status": "compile_ok"
+    },
+    "remove-k-digits": {
+      "status": "compile_ok"
+    },
+    "remove-nth-from-end": {
+      "status": "compile_ok"
+    },
+    "restore-ip-addresses-count": {
+      "status": "compile_ok"
+    },
+    "reverse-bits": {
+      "status": "compile_ok"
+    },
+    "right-side-view": {
+      "status": "compile_ok"
+    },
+    "reverse-linked-list": {
+      "status": "compile_ok"
+    },
+    "rod-cutting": {
+      "status": "compile_ok"
+    },
+    "rotate-image-90": {
+      "status": "compile_ok"
+    },
+    "rotated-binary-search": {
+      "status": "compile_ok"
+    },
+    "run-length-encoding": {
+      "status": "compile_ok"
+    },
+    "rotten-oranges-minutes": {
+      "status": "compile_ok"
+    },
+    "same-tree": {
+      "status": "compile_ok"
+    },
+    "search-2d-matrix": {
+      "status": "compile_ok"
+    },
+    "search-insert-position": {
+      "status": "compile_ok"
+    },
+    "selection-sort": {
+      "status": "compile_ok"
+    },
+    "set-matrix-zeroes": {
+      "status": "compile_ok"
+    },
+    "ship-packages-within-days": {
+      "status": "compile_ok"
+    },
+    "shell-sort": {
+      "status": "compile_ok"
+    },
+    "shortest-path-binary-matrix": {
+      "status": "compile_ok"
+    },
+    "sieve-of-eratosthenes": {
+      "status": "compile_ok"
+    },
+    "single-number": {
+      "status": "compile_ok"
+    },
+    "single-number-ii": {
+      "status": "compile_ok"
+    },
+    "sliding-window-maximum": {
+      "status": "compile_ok"
+    },
+    "spiral-matrix-traversal": {
+      "status": "compile_ok"
+    },
+    "staircase": {
+      "status": "compile_ok"
+    },
+    "stable-matching": {
+      "status": "compile_ok"
+    },
+    "stooge-sort": {
+      "status": "compile_ok"
+    },
+    "strand-sort": {
+      "status": "compile_ok"
+    },
+    "string-hashing": {
+      "status": "compile_ok"
+    },
+    "strassen": {
+      "status": "compile_ok"
+    },
+    "subarray-product-less-than-k": {
+      "status": "compile_ok"
+    },
+    "subarray-sums-divisible-by-k": {
+      "status": "compile_ok"
+    },
+    "subarray-sum-equals-k": {
+      "status": "compile_ok"
+    },
+    "subset-sum": {
+      "status": "compile_ok"
+    },
+    "suffix-array": {
+      "status": "compile_ok"
+    },
+    "sum-root-to-leaf-numbers": {
+      "status": "compile_ok"
+    },
+    "target-sum-ways": {
+      "status": "compile_ok"
+    },
+    "ternary-search": {
+      "status": "compile_ok"
+    },
+    "task-scheduler": {
+      "status": "compile_ok"
+    },
+    "three-sum-count-triplets": {
+      "status": "compile_ok"
+    },
+    "tim-sort": {
+      "status": "compile_ok"
+    },
+    "top-k-frequent-elements": {
+      "status": "compile_ok"
+    },
+    "trapping-rain-water": {
+      "status": "compile_ok"
+    },
+    "triangle-minimum-path-sum": {
+      "status": "compile_ok"
+    },
+    "two-sum": {
+      "status": "compile_ok"
+    },
+    "unique-paths": {
+      "status": "compile_ok"
+    },
+    "two-sum-count-pairs": {
+      "status": "compile_ok"
+    },
+    "unbounded-knapsack": {
+      "status": "compile_ok"
+    },
+    "unique-permutations-count": {
+      "status": "compile_ok"
+    },
+    "valid-anagram": {
+      "status": "compile_ok"
+    },
+    "valid-palindrome-string": {
+      "status": "compile_ok"
+    },
+    "valid-parentheses": {
+      "status": "compile_ok"
+    },
+    "wildcard-matching": {
+      "status": "compile_ok"
+    },
+    "word-break": {
+      "status": "compile_ok"
+    },
+    "word-ladder-length": {
+      "status": "compile_ok"
+    },
+    "word-break-count-ways": {
+      "status": "compile_ok"
+    },
+    "word-search-grid": {
+      "status": "compile_ok"
+    },
+    "word-wrap": {
+      "status": "compile_ok"
+    },
+    "z-algorithm": {
+      "status": "compile_ok"
+    }
+  },
+  "java": {
+    "binary-search": {
+      "status": "compile_ok"
+    },
+    "binary-tree-zigzag-level-order": {
+      "status": "compile_ok"
+    },
+    "binary-tree-max-path-sum": {
+      "status": "compile_ok"
+    },
+    "best-time-to-buy-sell-stock": {
+      "status": "compile_ok"
+    },
+    "activity-selection": {
+      "status": "compile_ok"
+    },
+    "best-time-to-buy-sell-stock-ii": {
+      "status": "compile_ok"
+    },
+    "bitonic-peak-index": {
+      "status": "compile_ok"
+    },
+    "bubble-sort": {
+      "status": "compile_ok"
+    },
+    "boolean-parenthesization": {
+      "status": "compile_ok"
+    },
+    "bucket-sort": {
+      "status": "compile_ok"
+    },
+    "bitonic-sort": {
+      "status": "compile_ok"
+    },
+    "burst-balloons": {
+      "status": "compile_ok"
+    },
+    "catalan-number": {
+      "status": "compile_ok"
+    },
+    "cocktail-sort": {
+      "status": "compile_ok"
+    },
+    "collatz": {
+      "status": "compile_ok"
+    },
+    "closest-pair": {
+      "status": "compile_ok"
+    },
+    "coin-change": {
+      "status": "compile_ok"
+    },
+    "coin-change-ways": {
+      "status": "compile_ok"
+    },
+    "combination-sum-iv-count": {
+      "status": "compile_ok"
+    },
+    "construct-tree-preorder-inorder": {
+      "status": "compile_ok"
+    },
+    "comb-sort": {
+      "status": "compile_ok"
+    },
+    "combination-sum-count": {
+      "status": "compile_ok"
+    },
+    "contains-duplicate-within-k": {
+      "status": "compile_ok"
+    },
+    "counting-inversions": {
+      "status": "compile_ok"
+    },
+    "count-occurrences-sorted": {
+      "status": "compile_ok"
+    },
+    "counting-bits": {
+      "status": "compile_ok"
+    },
+    "container-with-most-water": {
+      "status": "compile_ok"
+    },
+    "count-tree-nodes": {
+      "status": "compile_ok"
+    },
+    "counting-sort": {
+      "status": "compile_ok"
+    },
+    "course-schedule-feasible": {
+      "status": "compile_ok"
+    },
+    "cycle-sort": {
+      "status": "compile_ok"
+    },
+    "decode-ways": {
+      "status": "compile_ok"
+    },
+    "daily-temperatures": {
+      "status": "compile_ok"
+    },
+    "dijkstra-shortest-path": {
+      "status": "compile_ok"
+    },
+    "delete-and-earn": {
+      "status": "compile_ok"
+    },
+    "diameter-of-binary-tree": {
+      "status": "compile_ok"
+    },
+    "distinct-subsets-count": {
+      "status": "compile_ok"
+    },
+    "distinct-subsequences": {
+      "status": "compile_ok"
+    },
+    "edit-distance": {
+      "status": "compile_ok"
+    },
+    "egg-drop": {
+      "status": "compile_ok"
+    },
+    "euler-phi-sieve": {
+      "status": "compile_ok"
+    },
+    "euler-totient": {
+      "status": "compile_ok"
+    },
+    "evaluate-reverse-polish-notation": {
+      "status": "compile_ok"
+    },
+    "exponential-search": {
+      "status": "compile_ok"
+    },
+    "fast-power": {
+      "status": "compile_ok"
+    },
+    "fibonacci-dp": {
+      "status": "compile_ok"
+    },
+    "find-duplicate-number": {
+      "status": "compile_ok"
+    },
+    "find-all-anagrams-in-string": {
+      "status": "compile_ok"
+    },
+    "fibonacci-search": {
+      "status": "compile_ok"
+    },
+    "find-minimum-rotated-sorted-array": {
+      "status": "compile_ok"
+    },
+    "first-occurrence": {
+      "status": "compile_ok"
+    },
+    "fractional-knapsack": {
+      "status": "compile_ok"
+    },
+    "first-unique-character-index": {
+      "status": "compile_ok"
+    },
+    "flood-fill": {
+      "status": "compile_ok"
+    },
+    "gas-station": {
+      "status": "compile_ok"
+    },
+    "gcd-euclidean": {
+      "status": "compile_ok"
+    },
+    "hamming-distance": {
+      "status": "compile_ok"
+    },
+    "gnome-sort": {
+      "status": "compile_ok"
+    },
+    "group-anagrams-count": {
+      "status": "compile_ok"
+    },
+    "graph-bfs": {
+      "status": "compile_ok"
+    },
+    "house-robber": {
+      "status": "compile_ok"
+    },
+    "heap-sort": {
+      "status": "compile_ok"
+    },
+    "insertion-sort": {
+      "status": "compile_ok"
+    },
+    "huffman-coding": {
+      "status": "compile_ok"
+    },
+    "insert-interval": {
+      "status": "compile_ok"
+    },
+    "house-robber-circular": {
+      "status": "compile_ok"
+    },
+    "integer-square-root": {
+      "status": "compile_ok"
+    },
+    "interleaving-strings": {
+      "status": "compile_ok"
+    },
+    "intersection-of-two-arrays": {
+      "status": "compile_ok"
+    },
+    "interpolation-search": {
+      "status": "compile_ok"
+    },
+    "invert-tree-preorder": {
+      "status": "compile_ok"
+    },
+    "is-bipartite": {
+      "status": "compile_ok"
+    },
+    "is-balanced-binary-tree": {
+      "status": "compile_ok"
+    },
+    "is-symmetric-tree": {
+      "status": "compile_ok"
+    },
+    "jump-game": {
+      "status": "compile_ok"
+    },
+    "job-scheduling": {
+      "status": "compile_ok"
+    },
+    "is-valid-bst": {
+      "status": "compile_ok"
+    },
+    "jump-game-ii-min-jumps": {
+      "status": "compile_ok"
+    },
+    "jump-search": {
+      "status": "compile_ok"
+    },
+    "kmp-string-matching": {
+      "status": "compile_ok"
+    },
+    "karatsuba": {
+      "status": "compile_ok"
+    },
+    "knapsack-01": {
+      "status": "compile_ok"
+    },
+    "koko-eating-bananas": {
+      "status": "compile_ok"
+    },
+    "largest-rectangle-in-histogram": {
+      "status": "compile_ok"
+    },
+    "kth-smallest-in-bst": {
+      "status": "compile_ok"
+    },
+    "linear-search": {
+      "status": "compile_ok"
+    },
+    "level-order-traversal": {
+      "status": "compile_ok"
+    },
+    "last-occurrence": {
+      "status": "compile_ok"
+    },
+    "kth-largest-element": {
+      "status": "compile_ok"
+    },
+    "linked-list-cycle-detect": {
+      "status": "compile_ok"
+    },
+    "longest-bitonic-subsequence": {
+      "status": "compile_ok"
+    },
+    "longest-common-subsequence": {
+      "status": "compile_ok"
+    },
+    "longest-consecutive-sequence": {
+      "status": "compile_ok"
+    },
+    "longest-common-substring": {
+      "status": "compile_ok"
+    },
+    "longest-repeating-char-replacement": {
+      "status": "compile_ok"
+    },
+    "longest-increasing-subsequence": {
+      "status": "compile_ok"
+    },
+    "longest-palindromic-substring": {
+      "status": "compile_ok"
+    },
+    "longest-substring-at-most-k-distinct": {
+      "status": "compile_ok"
+    },
+    "longest-substring-without-repeating": {
+      "status": "compile_ok"
+    },
+    "longest-valid-parentheses": {
+      "status": "compile_ok"
+    },
+    "lowest-common-ancestor-bst": {
+      "status": "compile_ok"
+    },
+    "lowest-common-ancestor-binary-tree": {
+      "status": "compile_ok"
+    },
+    "majority-element": {
+      "status": "compile_ok"
+    },
+    "lucas-theorem": {
+      "status": "compile_ok"
+    },
+    "majority-element-ii": {
+      "status": "compile_ok"
+    },
+    "manacher": {
+      "status": "compile_ok"
+    },
+    "max-consecutive-ones-with-k-flips": {
+      "status": "compile_ok"
+    },
+    "matrix-chain-multiplication": {
+      "status": "compile_ok"
+    },
+    "matrix-exponentiation": {
+      "status": "compile_ok"
+    },
+    "max-depth-binary-tree": {
+      "status": "compile_ok"
+    },
+    "max-distance-to-zero": {
+      "status": "compile_ok"
+    },
+    "maximum-subarray-circular": {
+      "status": "compile_ok"
+    },
+    "maximum-product-subarray": {
+      "status": "compile_ok"
+    },
+    "maximum-subarray": {
+      "status": "compile_ok"
+    },
+    "max-sum-subarray-fixed-k": {
+      "status": "compile_ok"
+    },
+    "maximal-rectangle": {
+      "status": "compile_ok"
+    },
+    "maximum-xor-of-two-numbers": {
+      "status": "compile_ok"
+    },
+    "median-of-two-sorted-arrays": {
+      "status": "compile_ok"
+    },
+    "median-of-medians": {
+      "status": "compile_ok"
+    },
+    "merge-k-sorted-lists": {
+      "status": "compile_ok"
+    },
+    "merge-sort": {
+      "status": "compile_ok"
+    },
+    "meeting-rooms": {
+      "status": "compile_ok"
+    },
+    "merge-overlapping-intervals": {
+      "status": "compile_ok"
+    },
+    "merge-two-sorted-lists": {
+      "status": "compile_ok"
+    },
+    "middle-of-linked-list": {
+      "status": "compile_ok"
+    },
+    "merge-sorted-arrays-inplace": {
+      "status": "compile_ok"
+    },
+    "min-subarray-len-target-sum": {
+      "status": "compile_ok"
+    },
+    "miller-rabin": {
+      "status": "compile_ok"
+    },
+    "minimum-knight-moves": {
+      "status": "compile_ok"
+    },
+    "minimum-path-sum": {
+      "status": "compile_ok"
+    },
+    "minimum-window-substring-length": {
+      "status": "compile_ok"
+    },
+    "missing-number": {
+      "status": "compile_ok"
+    },
+    "modular-exponentiation": {
+      "status": "compile_ok"
+    },
+    "move-zeroes": {
+      "status": "compile_ok"
+    },
+    "n-queens": {
+      "status": "compile_ok"
+    },
+    "next-greater-element": {
+      "status": "compile_ok"
+    },
+    "number-of-1-bits": {
+      "status": "compile_ok"
+    },
+    "number-of-islands": {
+      "status": "compile_ok"
+    },
+    "number-of-divisors": {
+      "status": "compile_ok"
+    },
+    "odd-even-sort": {
+      "status": "compile_ok"
+    },
+    "palindrome-partition": {
+      "status": "compile_ok"
+    },
+    "palindrome-linked-list": {
+      "status": "compile_ok"
+    },
+    "palindrome-subsequence": {
+      "status": "compile_ok"
+    },
+    "palindrome-partitioning": {
+      "status": "compile_ok"
+    },
+    "pancake-sort": {
+      "status": "compile_ok"
+    },
+    "partition-equal-subset-sum": {
+      "status": "compile_ok"
+    },
+    "patience-sort": {
+      "status": "compile_ok"
+    },
+    "polynomial-multiplication": {
+      "status": "compile_ok"
+    },
+    "path-sum-exists": {
+      "status": "compile_ok"
+    },
+    "perfect-squares-min-count": {
+      "status": "compile_ok"
+    },
+    "power-of-two": {
+      "status": "compile_ok"
+    },
+    "product-of-array-except-self": {
+      "status": "compile_ok"
+    },
+    "quick-sort": {
+      "status": "compile_ok"
+    },
+    "prime-factorization": {
+      "status": "compile_ok"
+    },
+    "radix-sort": {
+      "status": "compile_ok"
+    },
+    "regular-expression-matching": {
+      "status": "compile_ok"
+    },
+    "remove-k-digits": {
+      "status": "compile_ok"
+    },
+    "remove-nth-from-end": {
+      "status": "compile_ok"
+    },
+    "restore-ip-addresses-count": {
+      "status": "compile_ok"
+    },
+    "reverse-bits": {
+      "status": "compile_ok"
+    },
+    "reverse-linked-list": {
+      "status": "compile_ok"
+    },
+    "rod-cutting": {
+      "status": "compile_ok"
+    },
+    "right-side-view": {
+      "status": "compile_ok"
+    },
+    "rotate-image-90": {
+      "status": "compile_ok"
+    },
+    "rotated-binary-search": {
+      "status": "compile_ok"
+    },
+    "search-2d-matrix": {
+      "status": "compile_ok"
+    },
+    "run-length-encoding": {
+      "status": "compile_ok"
+    },
+    "rotten-oranges-minutes": {
+      "status": "compile_ok"
+    },
+    "same-tree": {
+      "status": "compile_ok"
+    },
+    "search-insert-position": {
+      "status": "compile_ok"
+    },
+    "selection-sort": {
+      "status": "compile_ok"
+    },
+    "ship-packages-within-days": {
+      "status": "compile_ok"
+    },
+    "set-matrix-zeroes": {
+      "status": "compile_ok"
+    },
+    "shell-sort": {
+      "status": "compile_ok"
+    },
+    "shortest-path-binary-matrix": {
+      "status": "compile_ok"
+    },
+    "single-number": {
+      "status": "compile_ok"
+    },
+    "sieve-of-eratosthenes": {
+      "status": "compile_ok"
+    },
+    "sliding-window-maximum": {
+      "status": "compile_ok"
+    },
+    "stable-matching": {
+      "status": "compile_ok"
+    },
+    "staircase": {
+      "status": "compile_ok"
+    },
+    "stooge-sort": {
+      "status": "compile_ok"
+    },
+    "strand-sort": {
+      "status": "compile_ok"
+    },
+    "single-number-ii": {
+      "status": "compile_ok"
+    },
+    "spiral-matrix-traversal": {
+      "status": "compile_ok"
+    },
+    "subarray-product-less-than-k": {
+      "status": "compile_ok"
+    },
+    "strassen": {
+      "status": "compile_ok"
+    },
+    "string-hashing": {
+      "status": "compile_ok"
+    },
+    "subarray-sum-equals-k": {
+      "status": "compile_ok"
+    },
+    "subset-sum": {
+      "status": "compile_ok"
+    },
+    "suffix-array": {
+      "status": "compile_ok"
+    },
+    "subarray-sums-divisible-by-k": {
+      "status": "compile_ok"
+    },
+    "sum-root-to-leaf-numbers": {
+      "status": "compile_ok"
+    },
+    "target-sum-ways": {
+      "status": "compile_ok"
+    },
+    "task-scheduler": {
+      "status": "compile_ok"
+    },
+    "ternary-search": {
+      "status": "compile_ok"
+    },
+    "three-sum-count-triplets": {
+      "status": "compile_ok"
+    },
+    "tim-sort": {
+      "status": "compile_ok"
+    },
+    "top-k-frequent-elements": {
+      "status": "compile_ok"
+    },
+    "trapping-rain-water": {
+      "status": "compile_ok"
+    },
+    "triangle-minimum-path-sum": {
+      "status": "compile_ok"
+    },
+    "two-sum": {
+      "status": "compile_ok"
+    },
+    "unbounded-knapsack": {
+      "status": "compile_ok"
+    },
+    "two-sum-count-pairs": {
+      "status": "compile_ok"
+    },
+    "valid-anagram": {
+      "status": "compile_ok"
+    },
+    "unique-paths": {
+      "status": "compile_ok"
+    },
+    "unique-permutations-count": {
+      "status": "compile_ok"
+    },
+    "valid-palindrome-string": {
+      "status": "compile_ok"
+    },
+    "valid-parentheses": {
+      "status": "compile_ok"
+    },
+    "wildcard-matching": {
+      "status": "compile_ok"
+    },
+    "word-break": {
+      "status": "compile_ok"
+    },
+    "word-search-grid": {
+      "status": "compile_ok"
+    },
+    "word-wrap": {
+      "status": "compile_ok"
+    },
+    "z-algorithm": {
+      "status": "compile_ok"
+    },
+    "word-break-count-ways": {
+      "status": "compile_ok"
+    },
+    "word-ladder-length": {
+      "status": "compile_ok"
+    }
+  }
+}

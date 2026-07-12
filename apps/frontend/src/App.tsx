@@ -12,6 +12,10 @@ import { LearningPage } from './learning/LearningPage';
 import { LessonPage } from './learning/LessonPage';
 import { AtlasAI } from './ai/AtlasAI';
 import { AtlasPage } from './ai/page/AtlasPage';
+import { AtlasCodePage } from './atlas-code/AtlasCodePage';
+import { ProblemCatalogPage } from './atlas-code/catalog/ProblemCatalogPage';
+import { ProblemPage } from './atlas-code/problem/ProblemPage';
+import { ProblemErrorBoundary } from './atlas-code/problem/ProblemErrorBoundary';
 
 function AppLayout() {
   return (
@@ -30,6 +34,12 @@ function AppLayout() {
           <Route path="/learning" element={<div className="pt-20"><LearningPage /></div>} />
           <Route path="/learning/:id" element={<div className="pt-20"><LessonPage /></div>} />
           <Route path="/atlas" element={<AtlasPage />} />
+          <Route path="/atlas-code" element={<div className="pt-0"><AtlasCodePage /></div>} />
+          <Route path="/atlas-code/catalog" element={<div className="pt-0"><ProblemCatalogPage /></div>} />
+          <Route
+            path="/atlas-code/problem/:slug"
+            element={<ProblemErrorBoundary><ProblemPage /></ProblemErrorBoundary>}
+          />
         </Routes>
       </main>
       {/* Atlas AI — mounted once, floats above all pages */}

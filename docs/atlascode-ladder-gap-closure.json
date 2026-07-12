@@ -1,0 +1,198 @@
+[
+  {
+    "pid": "two-sum",
+    "lang": "javascript",
+    "outcome": "reference_failed",
+    "detail": "39/40 verdict=Wrong Answer compile= stderr= actual=[2, 3] expected=[1, 3]",
+    "duration_ms": 2621.169700010796
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 5203.1552999978885
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 5276.270300004398
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 5322.405600003549
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 5291.7351000069175
+  },
+  {
+    "pid": "max-depth-binary-tree",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 39/40",
+    "duration_ms": 5498.263000001316
+  },
+  {
+    "pid": "construct-tree-preorder-inorder",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 37/40",
+    "duration_ms": 5898.423899998306
+  },
+  {
+    "pid": "two-sum",
+    "lang": "typescript",
+    "outcome": "reference_failed",
+    "detail": "39/40 verdict=Wrong Answer compile= stderr= actual=[2, 3] expected=[1, 3]",
+    "duration_ms": 23142.232199999853
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 47900.87680000579
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 44633.9561999921
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 44096.39109999989
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 45390.88289999927
+  },
+  {
+    "pid": "max-depth-binary-tree",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 39/40",
+    "duration_ms": 44638.07749999978
+  },
+  {
+    "pid": "construct-tree-preorder-inorder",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 37/40",
+    "duration_ms": 44460.1096999977
+  },
+  {
+    "pid": "two-sum",
+    "lang": "java",
+    "outcome": "reference_failed",
+    "detail": "39/40 verdict=Wrong Answer compile= stderr= actual=[2, 3] expected=[1, 3]",
+    "duration_ms": 5058.423000009498
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 10126.612200008822
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 9521.62290000706
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 9872.009500002605
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 10217.801899998449
+  },
+  {
+    "pid": "max-depth-binary-tree",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 39/40",
+    "duration_ms": 10028.86469999794
+  },
+  {
+    "pid": "construct-tree-preorder-inorder",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 37/40",
+    "duration_ms": 10564.234599994961
+  },
+  {
+    "pid": "two-sum",
+    "lang": "cpp",
+    "outcome": "reference_failed",
+    "detail": "39/40 verdict=Wrong Answer compile= stderr= actual=[2, 3] expected=[1, 3]",
+    "duration_ms": 2057.939800011809
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 3798.607599994284
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 3807.0573000004515
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 4073.2851999928243
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 4394.541799993021
+  },
+  {
+    "pid": "max-depth-binary-tree",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 39/40",
+    "duration_ms": 3858.7808000011137
+  },
+  {
+    "pid": "construct-tree-preorder-inorder",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 37/40",
+    "duration_ms": 4217.459699997562
+  }
+]

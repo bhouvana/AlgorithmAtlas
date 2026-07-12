@@ -1,0 +1,208 @@
+activity-selection|max_activities(starts:[integer], ends:[integer])->integer
+best-time-to-buy-sell-stock|max_profit(prices:[integer])->integer
+best-time-to-buy-sell-stock-ii|max_profit(prices:[integer])->integer
+binary-search|binary_search(nums:[integer], target:integer)->integer
+binary-tree-max-path-sum|max_path_sum(root:tree)->integer
+binary-tree-zigzag-level-order|zigzag_level_order(root:tree)->[[integer]]
+bitonic-peak-index|peak_index(nums:[integer])->integer
+bitonic-sort|bitonic_sort(arr:[integer])->[integer] MUT=arr
+boolean-parenthesization|count_ways(symbols:string, ops:string)->integer
+bucket-sort|bucket_sort(arr:[integer])->[integer] MUT=arr
+burst-balloons|max_coins(balloons:[integer])->integer
+catalan-number|catalan_number(n:integer)->integer
+closest-pair|closest_pair_sq_dist(points:[[integer]])->integer
+cocktail-sort|cocktail_sort(arr:[integer])->[integer] MUT=arr
+coin-change|coin_change(coins:[integer], amount:integer)->integer
+coin-change-ways|change(coins:[integer], amount:integer)->integer
+collatz|collatz(n:integer)->integer
+comb-sort|comb_sort(arr:[integer])->[integer] MUT=arr
+combination-sum-count|combination_sum_count(candidates:[integer], target:integer)->integer
+combination-sum-iv-count|combination_sum4(nums:[integer], target:integer)->integer
+container-with-most-water|max_area(heights:[integer])->integer
+count-occurrences-sorted|count_occurrences(nums:[integer], target:integer)->integer
+count-tree-nodes|count_nodes(root:tree)->integer
+counting-bits|count_bits(n:integer)->[integer]
+counting-inversions|count_inversions(nums:[integer])->integer
+counting-sort|counting_sort(arr:[integer])->[integer] MUT=arr
+course-schedule-feasible|can_finish(n:integer, prereqs:[[integer]])->boolean
+cycle-sort|cycle_sort(arr:[integer])->[integer] MUT=arr
+daily-temperatures|daily_temperatures(temps:[integer])->[integer]
+decode-ways|num_decodings(s:string)->integer
+delete-and-earn|delete_and_earn(nums:[integer])->integer
+diameter-of-binary-tree|diameter(root:tree)->integer
+dijkstra-shortest-path|dijkstra(adj:[[[integer]]], n:integer)->[integer]
+distinct-subsequences|num_distinct(s:string, t:string)->integer
+distinct-subsets-count|count_distinct_subsets(nums:[integer])->integer
+edit-distance|edit_distance(w1:string, w2:string)->integer
+egg-drop|egg_drop(eggs:integer, floors:integer)->integer
+euler-phi-sieve|euler_phi_sieve(n:integer)->integer
+euler-totient|euler_totient(n:integer)->integer
+evaluate-reverse-polish-notation|eval_rpn(tokens:[string])->integer
+exponential-search|exponential_search(nums:[integer], target:integer)->integer
+fast-power|fast_power(base:integer, exp:integer)->integer
+fibonacci-dp|fib(n:integer)->integer
+fibonacci-search|fibonacci_search(nums:[integer], target:integer)->integer
+find-all-anagrams-in-string|find_anagrams(s:string, p:string)->[integer]
+find-duplicate-number|find_duplicate(nums:[integer])->integer
+find-minimum-rotated-sorted-array|find_min(nums:[integer])->integer
+first-occurrence|first_occurrence(nums:[integer], target:integer)->integer
+first-unique-character-index|first_uniq_char(s:string)->integer
+flood-fill|flood_fill(grid:[[integer]], sr:integer, sc:integer, new_color:integer)->[[integer]]
+fractional-knapsack|fractional_knapsack(weights:[integer], values:[integer], capacity:integer)->float
+gas-station|can_complete_circuit(gas:[integer], cost:[integer])->integer
+gcd-euclidean|gcd(a:integer, b:integer)->integer
+gnome-sort|gnome_sort(arr:[integer])->[integer] MUT=arr
+graph-bfs|bfs(adj:[[integer]], src:integer, n:integer)->[integer]
+group-anagrams-count|group_anagrams_count(strs:[string])->integer
+hamming-distance|hamming_distance(x:integer, y:integer)->integer
+heap-sort|heap_sort(arr:[integer])->[integer] MUT=arr
+house-robber|rob(nums:[integer])->integer
+house-robber-circular|rob_circular(nums:[integer])->integer
+huffman-coding|huffman_total_length(freqs:[integer])->integer
+insert-interval|insert_interval(intervals:[[integer]], new_s:integer, new_e:integer)->[[integer]]
+insertion-sort|insertion_sort(arr:[integer])->[integer] MUT=arr
+integer-square-root|my_sqrt(n:integer)->integer
+interleaving-strings|is_interleave(s1:string, s2:string, s3:string)->boolean
+interpolation-search|interpolation_search(nums:[integer], target:integer)->integer
+intersection-of-two-arrays|intersection(nums1:[integer], nums2:[integer])->[integer]
+invert-tree-preorder|invert_preorder(root:tree)->[integer]
+is-balanced-binary-tree|is_balanced(root:tree)->boolean
+is-bipartite|is_bipartite(n:integer, edges:[[integer]])->boolean
+is-symmetric-tree|is_symmetric(root:tree)->boolean
+is-valid-bst|is_valid_bst(root:tree)->boolean
+job-scheduling|job_scheduling(deadlines:[integer], profits:[integer])->integer
+jump-game|can_jump(nums:[integer])->boolean
+jump-game-ii-min-jumps|jump(nums:[integer])->integer
+jump-search|jump_search(nums:[integer], target:integer)->integer
+karatsuba|karatsuba(a:integer, b:integer)->integer
+kmp-string-matching|kmp_search(T:string, P:string)->[integer]
+knapsack-01|knapsack(weights:[integer], values:[integer], capacity:integer)->integer
+koko-eating-bananas|min_eating_speed(piles:[integer], h:integer)->integer
+kth-largest-element|kth_largest(nums:[integer], k:integer)->integer
+kth-smallest-in-bst|kth_smallest(root:tree, k:integer)->integer
+largest-rectangle-in-histogram|largest_rectangle_area(heights:[integer])->integer
+last-occurrence|last_occurrence(nums:[integer], target:integer)->integer
+level-order-traversal|level_order(root:tree)->[[integer]]
+linear-search|linear_search(nums:[integer], target:integer)->integer
+linked-list-cycle-detect|has_cycle(values:[integer], pos:integer)->boolean
+longest-bitonic-subsequence|lbs(nums:[integer])->integer
+longest-common-subsequence|lcs(s1:string, s2:string)->integer
+longest-common-substring|longest_common_substring(s1:string, s2:string)->integer
+longest-consecutive-sequence|longest_consecutive(nums:[integer])->integer
+longest-increasing-subsequence|lis(nums:[integer])->integer
+longest-palindromic-substring|longest_palindrome(s:string)->integer
+longest-repeating-char-replacement|character_replacement(s:string, k:integer)->integer
+longest-substring-at-most-k-distinct|longest_k_distinct(s:string, k:integer)->integer
+longest-substring-without-repeating|length_of_longest_substring(s:string)->integer
+longest-valid-parentheses|longest_valid_parentheses(s:string)->integer
+lowest-common-ancestor-binary-tree|lowest_common_ancestor(root:tree, p:integer, q:integer)->integer
+lowest-common-ancestor-bst|lowest_common_ancestor(root:tree, p:integer, q:integer)->integer
+lucas-theorem|lucas_theorem(n:integer, k:integer, p:integer)->integer
+majority-element|majority_element(nums:[integer])->integer
+majority-element-ii|majority_element_ii(nums:[integer])->[integer]
+manacher|count_palindromic_substrings(s:string)->integer
+matrix-chain-multiplication|matrix_chain_order(dims:[integer])->integer
+matrix-exponentiation|matrix_power(matrix:[[integer]], k:integer, mod:integer)->[[integer]]
+max-consecutive-ones-with-k-flips|longest_ones(nums:[integer], k:integer)->integer
+max-distance-to-zero|max_dist_to_zero(grid:[[integer]])->integer
+max-sum-subarray-fixed-k|max_sum_fixed_k(nums:[integer], k:integer)->integer
+maximal-rectangle|maximal_rectangle(grid:[[integer]])->integer
+maximum-product-subarray|max_product(nums:[integer])->integer
+maximum-subarray-circular|max_subarray_sum_circular(nums:[integer])->integer
+maximum-xor-of-two-numbers|find_max_xor(nums:[integer])->integer
+median-of-medians|kth_smallest(nums:[integer], k:integer)->integer
+median-of-two-sorted-arrays|find_median(nums1:[integer], nums2:[integer])->float
+meeting-rooms|min_meeting_rooms(starts:[integer], ends:[integer])->integer
+merge-k-sorted-lists|merge_k_lists(lists:[[integer]])->[integer]
+merge-sort|merge_sort(arr:[integer])->[integer] MUT=arr
+merge-sorted-arrays-inplace|merge_sorted(a:[integer], b:[integer])->[integer]
+merge-two-sorted-lists|merge_two_lists(a:[integer], b:[integer])->[integer]
+middle-of-linked-list|middle_node(values:[integer])->integer
+miller-rabin|miller_rabin(n:integer)->boolean
+min-stack-simulation|min_stack_simulate(ops:[tuple(string,integer?)])->[integer]
+min-subarray-len-target-sum|min_subarray_len(nums:[integer], target:integer)->integer
+minimum-knight-moves|min_knight_moves(x:integer, y:integer)->integer
+minimum-path-sum|min_path_sum(grid:[[integer]])->integer
+minimum-window-substring-length|min_window_length(s:string, t:string)->integer
+missing-number|missing_number(nums:[integer])->integer
+modular-exponentiation|modular_exponentiation(base:integer, exp:integer, mod:integer)->integer
+move-zeroes|move_zeroes(nums:[integer])->[integer]
+n-queens|solve_n_queens(n:integer)->integer
+next-greater-element|next_greater_element(nums:[integer])->[integer]
+number-of-1-bits|hamming_weight(n:integer)->integer
+number-of-divisors|number_of_divisors(n:integer)->integer
+number-of-islands|num_islands(grid:[[integer]])->integer
+odd-even-sort|odd_even_sort(arr:[integer])->[integer] MUT=arr
+palindrome-linked-list|is_palindrome(values:[integer])->boolean
+palindrome-partition|min_cut(s:string)->integer
+palindrome-partitioning|count_partitions(s:string)->integer
+palindrome-subsequence|lps(s:string)->integer
+pancake-sort|pancake_sort(arr:[integer])->[integer] MUT=arr
+partition-equal-subset-sum|can_partition(nums:[integer])->boolean
+path-sum-exists|has_path_sum(root:tree, target:integer)->boolean
+patience-sort|patience_sort(arr:[integer])->[integer] MUT=arr
+perfect-squares-min-count|num_squares(n:integer)->integer
+polynomial-multiplication|multiply_polynomials(a:[integer], b:[integer])->[integer]
+power-of-two|is_power_of_two(n:integer)->boolean
+product-of-array-except-self|product_except_self(nums:[integer])->[integer]
+quick-sort|quick_sort(arr:[integer])->[integer] MUT=arr
+radix-sort|radix_sort(arr:[integer])->[integer] MUT=arr
+regular-expression-matching|is_match(s:string, p:string)->boolean
+remove-k-digits|remove_k_digits(num:string, k:integer)->string
+remove-nth-from-end|remove_nth_from_end(values:[integer], k:integer)->[integer]
+restore-ip-addresses-count|restore_ip_count(s:string)->integer
+reverse-bits|reverse_bits(n:integer)->integer
+reverse-linked-list|reverse_list(values:[integer])->[integer]
+right-side-view|right_side_view(root:tree)->[integer]
+rod-cutting|rod_cutting(prices:[integer], n:integer)->integer
+rotate-image-90|rotate(matrix:[[integer]])->[[integer]]
+rotated-binary-search|search(nums:[integer], target:integer)->integer
+rotten-oranges-minutes|oranges_rotting(grid:[[integer]])->integer
+run-length-encoding|rle_encode(s:string)->string
+same-tree|is_same_tree(p:tree, q:tree)->boolean
+search-2d-matrix|search_matrix(matrix:[[integer]], target:integer)->boolean
+search-insert-position|search_insert(nums:[integer], target:integer)->integer
+selection-sort|selection_sort(arr:[integer])->[integer] MUT=arr
+set-matrix-zeroes|set_zeroes(matrix:[[integer]])->[[integer]]
+shell-sort|shell_sort(arr:[integer])->[integer] MUT=arr
+ship-packages-within-days|ship_within_days(weights:[integer], days:integer)->integer
+shortest-path-binary-matrix|shortest_path(grid:[[integer]])->integer
+sieve-of-eratosthenes|sieve_of_eratosthenes(n:integer)->string
+single-number|single_number(nums:[integer])->integer
+single-number-ii|single_number(nums:[integer])->integer
+sliding-window-maximum|max_sliding_window(nums:[integer], k:integer)->[integer]
+spiral-matrix-traversal|spiral_order(matrix:[[integer]])->[integer]
+stable-matching|stable_matching(men_prefs:[[integer]], women_prefs:[[integer]])->[integer]
+staircase|climb_stairs(n:integer)->integer
+stooge-sort|stooge_sort(arr:[integer])->[integer] MUT=arr
+strand-sort|strand_sort(arr:[integer])->[integer] MUT=arr
+strassen|matrix_multiply(A:[[integer]], B:[[integer]])->[[integer]]
+string-hashing|count_distinct_substrings(s:string, k:integer)->integer
+subarray-product-less-than-k|num_subarrays_product_less_than_k(nums:[integer], k:integer)->integer
+subarray-sum-equals-k|subarray_sum(nums:[integer], k:integer)->integer
+subarray-sums-divisible-by-k|subarrays_div_by_k(nums:[integer], k:integer)->integer
+subset-sum|subset_sum(nums:[integer], target:integer)->boolean
+suffix-array|build_suffix_array(s:string)->[integer]
+sum-root-to-leaf-numbers|sum_numbers(root:tree)->integer
+target-sum-ways|find_target_sum_ways(nums:[integer], target:integer)->integer
+task-scheduler|least_interval(counts:[integer], cooldown:integer)->integer
+ternary-search|ternary_search(nums:[integer], target:integer)->integer
+three-sum-count-triplets|three_sum_count(nums:[integer])->integer
+tim-sort|tim_sort(arr:[integer])->[integer] MUT=arr
+top-k-frequent-elements|top_k_frequent(nums:[integer], k:integer)->[integer]
+trapping-rain-water|trap(heights:[integer])->integer
+triangle-minimum-path-sum|minimum_total(triangle:[[integer]])->integer
+two-sum-count-pairs|count_pairs(nums:[integer], target:integer)->integer
+unbounded-knapsack|unbounded_knapsack(weights:[integer], values:[integer], capacity:integer)->integer
+unique-paths|unique_paths(m:integer, n:integer)->integer
+unique-permutations-count|count_unique_permutations(nums:[integer])->integer
+valid-anagram|is_anagram(s:string, t:string)->boolean
+valid-palindrome-string|is_valid_palindrome(s:string)->boolean
+valid-parentheses|is_valid(s:string)->boolean
+wildcard-matching|is_match(s:string, p:string)->boolean
+word-break|word_break(s:string, word_dict:[string])->boolean
+word-break-count-ways|word_break_count(s:string, word_dict:[string])->integer
+word-ladder-length|ladder_length(begin_word:string, end_word:string, word_list:[string])->integer
+word-search-grid|exist(grid:[[string]], word:string)->boolean
+word-wrap|word_wrap(lengths:[integer], width:integer)->integer
+z-algorithm|z_function(s:string)->[integer]

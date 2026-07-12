@@ -1,6 +1,8 @@
 {
-  "slug": "vector-clocks",
+  "schema_version": "1.0",
+  "id": "vector-clocks",
   "name": "Vector Clocks",
+  "version": "1.0.0",
   "category": "distributed-systems",
   "visualization_type": "TIMELINE",
   "description": "Lamport vector clocks: each process maintains a vector of counters; on send increment own component, on receive take element-wise max then increment.",
@@ -10,7 +12,12 @@
     "time_worst": "O(n)",
     "space": "O(n^2)"
   },
-  "tags": ["distributed", "vector-clocks", "causality", "ordering"],
+  "tags": [
+    "distributed",
+    "vector-clocks",
+    "causality",
+    "ordering"
+  ],
   "execution_target": "server",
   "entry_point": "algorithm.py",
   "class_name": "VectorClocks"

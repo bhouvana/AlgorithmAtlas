@@ -1,0 +1,3583 @@
+{
+ "activity-selection": {
+  "function_name": "max_activities",
+  "parameters": [
+   {
+    "name": "starts",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "ends",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "best-time-to-buy-sell-stock": {
+  "function_name": "max_profit",
+  "parameters": [
+   {
+    "name": "prices",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "best-time-to-buy-sell-stock-ii": {
+  "function_name": "max_profit",
+  "parameters": [
+   {
+    "name": "prices",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "binary-tree-max-path-sum": {
+  "function_name": "max_path_sum",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "binary-tree-zigzag-level-order": {
+  "function_name": "zigzag_level_order",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  }
+ },
+ "bitonic-peak-index": {
+  "function_name": "peak_index",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "boolean-parenthesization": {
+  "function_name": "count_ways",
+  "parameters": [
+   {
+    "name": "symbols",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "ops",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "burst-balloons": {
+  "function_name": "max_coins",
+  "parameters": [
+   {
+    "name": "balloons",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "catalan-number": {
+  "function_name": "catalan_number",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "closest-pair": {
+  "function_name": "closest_pair_sq_dist",
+  "parameters": [
+   {
+    "name": "points",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "coin-change": {
+  "function_name": "coin_change",
+  "parameters": [
+   {
+    "name": "coins",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "amount",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "coin-change-ways": {
+  "function_name": "change",
+  "parameters": [
+   {
+    "name": "coins",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "amount",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "collatz": {
+  "function_name": "collatz",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "combination-sum-count": {
+  "function_name": "combination_sum_count",
+  "parameters": [
+   {
+    "name": "candidates",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "combination-sum-iv-count": {
+  "function_name": "combination_sum4",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "container-with-most-water": {
+  "function_name": "max_area",
+  "parameters": [
+   {
+    "name": "heights",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "count-occurrences-sorted": {
+  "function_name": "count_occurrences",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "count-tree-nodes": {
+  "function_name": "count_nodes",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "counting-bits": {
+  "function_name": "count_bits",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "counting-inversions": {
+  "function_name": "count_inversions",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "course-schedule-feasible": {
+  "function_name": "can_finish",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "prereqs",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "daily-temperatures": {
+  "function_name": "daily_temperatures",
+  "parameters": [
+   {
+    "name": "temps",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "decode-ways": {
+  "function_name": "num_decodings",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "delete-and-earn": {
+  "function_name": "delete_and_earn",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "diameter-of-binary-tree": {
+  "function_name": "diameter",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "dijkstra-shortest-path": {
+  "function_name": "dijkstra",
+  "parameters": [
+   {
+    "name": "adj",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    }
+   },
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "distinct-subsequences": {
+  "function_name": "num_distinct",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "t",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "distinct-subsets-count": {
+  "function_name": "count_distinct_subsets",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "egg-drop": {
+  "function_name": "egg_drop",
+  "parameters": [
+   {
+    "name": "eggs",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "floors",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "euler-phi-sieve": {
+  "function_name": "euler_phi_sieve",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "euler-totient": {
+  "function_name": "euler_totient",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "evaluate-reverse-polish-notation": {
+  "function_name": "eval_rpn",
+  "parameters": [
+   {
+    "name": "tokens",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "string"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "fast-power": {
+  "function_name": "fast_power",
+  "parameters": [
+   {
+    "name": "base",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "exp",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "fibonacci-dp": {
+  "function_name": "fib",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "find-all-anagrams-in-string": {
+  "function_name": "find_anagrams",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "p",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "find-duplicate-number": {
+  "function_name": "find_duplicate",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "find-minimum-rotated-sorted-array": {
+  "function_name": "find_min",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "first-occurrence": {
+  "function_name": "first_occurrence",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "first-unique-character-index": {
+  "function_name": "first_uniq_char",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "flood-fill": {
+  "function_name": "flood_fill",
+  "parameters": [
+   {
+    "name": "grid",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   },
+   {
+    "name": "sr",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "sc",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "new_color",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  }
+ },
+ "fractional-knapsack": {
+  "function_name": "fractional_knapsack",
+  "parameters": [
+   {
+    "name": "weights",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "values",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "capacity",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "float"
+  }
+ },
+ "gas-station": {
+  "function_name": "can_complete_circuit",
+  "parameters": [
+   {
+    "name": "gas",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "cost",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "graph-bfs": {
+  "function_name": "bfs",
+  "parameters": [
+   {
+    "name": "adj",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   },
+   {
+    "name": "src",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "group-anagrams-count": {
+  "function_name": "group_anagrams_count",
+  "parameters": [
+   {
+    "name": "strs",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "string"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "hamming-distance": {
+  "function_name": "hamming_distance",
+  "parameters": [
+   {
+    "name": "x",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "y",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "house-robber-circular": {
+  "function_name": "rob_circular",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "huffman-coding": {
+  "function_name": "huffman_total_length",
+  "parameters": [
+   {
+    "name": "freqs",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "insert-interval": {
+  "function_name": "insert_interval",
+  "parameters": [
+   {
+    "name": "intervals",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   },
+   {
+    "name": "new_s",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "new_e",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  }
+ },
+ "integer-square-root": {
+  "function_name": "my_sqrt",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "interleaving-strings": {
+  "function_name": "is_interleave",
+  "parameters": [
+   {
+    "name": "s1",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "s2",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "s3",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "intersection-of-two-arrays": {
+  "function_name": "intersection",
+  "parameters": [
+   {
+    "name": "nums1",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "nums2",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "invert-tree-preorder": {
+  "function_name": "invert_preorder",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "is-balanced-binary-tree": {
+  "function_name": "is_balanced",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "is-bipartite": {
+  "function_name": "is_bipartite",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "edges",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "is-symmetric-tree": {
+  "function_name": "is_symmetric",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "is-valid-bst": {
+  "function_name": "is_valid_bst",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "job-scheduling": {
+  "function_name": "job_scheduling",
+  "parameters": [
+   {
+    "name": "deadlines",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "profits",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "jump-game": {
+  "function_name": "can_jump",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "jump-game-ii-min-jumps": {
+  "function_name": "jump",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "karatsuba": {
+  "function_name": "karatsuba",
+  "parameters": [
+   {
+    "name": "a",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "b",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "knapsack-01": {
+  "function_name": "knapsack",
+  "parameters": [
+   {
+    "name": "weights",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "values",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "capacity",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "koko-eating-bananas": {
+  "function_name": "min_eating_speed",
+  "parameters": [
+   {
+    "name": "piles",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "h",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "kth-largest-element": {
+  "function_name": "kth_largest",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "kth-smallest-in-bst": {
+  "function_name": "kth_smallest",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "largest-rectangle-in-histogram": {
+  "function_name": "largest_rectangle_area",
+  "parameters": [
+   {
+    "name": "heights",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "last-occurrence": {
+  "function_name": "last_occurrence",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "level-order-traversal": {
+  "function_name": "level_order",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  }
+ },
+ "linear-search": {
+  "function_name": "linear_search",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "linked-list-cycle-detect": {
+  "function_name": "has_cycle",
+  "parameters": [
+   {
+    "name": "values",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "pos",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "longest-bitonic-subsequence": {
+  "function_name": "lbs",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "longest-common-substring": {
+  "function_name": "longest_common_substring",
+  "parameters": [
+   {
+    "name": "s1",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "s2",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "longest-consecutive-sequence": {
+  "function_name": "longest_consecutive",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "longest-palindromic-substring": {
+  "function_name": "longest_palindrome",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "longest-repeating-char-replacement": {
+  "function_name": "character_replacement",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "longest-substring-at-most-k-distinct": {
+  "function_name": "longest_k_distinct",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "longest-substring-without-repeating": {
+  "function_name": "length_of_longest_substring",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "longest-valid-parentheses": {
+  "function_name": "longest_valid_parentheses",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "lowest-common-ancestor-binary-tree": {
+  "function_name": "lowest_common_ancestor",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "p",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "q",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "lowest-common-ancestor-bst": {
+  "function_name": "lowest_common_ancestor",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "p",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "q",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "lucas-theorem": {
+  "function_name": "lucas_theorem",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "p",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "majority-element": {
+  "function_name": "majority_element",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "majority-element-ii": {
+  "function_name": "majority_element_ii",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "manacher": {
+  "function_name": "count_palindromic_substrings",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "matrix-chain-multiplication": {
+  "function_name": "matrix_chain_order",
+  "parameters": [
+   {
+    "name": "dims",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "matrix-exponentiation": {
+  "function_name": "matrix_power",
+  "parameters": [
+   {
+    "name": "matrix",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "mod",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  }
+ },
+ "max-consecutive-ones-with-k-flips": {
+  "function_name": "longest_ones",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "max-distance-to-zero": {
+  "function_name": "max_dist_to_zero",
+  "parameters": [
+   {
+    "name": "grid",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "max-sum-subarray-fixed-k": {
+  "function_name": "max_sum_fixed_k",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "maximal-rectangle": {
+  "function_name": "maximal_rectangle",
+  "parameters": [
+   {
+    "name": "grid",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "maximum-product-subarray": {
+  "function_name": "max_product",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "maximum-subarray-circular": {
+  "function_name": "max_subarray_sum_circular",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "maximum-xor-of-two-numbers": {
+  "function_name": "find_max_xor",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "median-of-medians": {
+  "function_name": "kth_smallest",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "median-of-two-sorted-arrays": {
+  "function_name": "find_median",
+  "parameters": [
+   {
+    "name": "nums1",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "nums2",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "float"
+  }
+ },
+ "meeting-rooms": {
+  "function_name": "min_meeting_rooms",
+  "parameters": [
+   {
+    "name": "starts",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "ends",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "merge-k-sorted-lists": {
+  "function_name": "merge_k_lists",
+  "parameters": [
+   {
+    "name": "lists",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "merge-sorted-arrays-inplace": {
+  "function_name": "merge_sorted",
+  "parameters": [
+   {
+    "name": "a",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "b",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "merge-two-sorted-lists": {
+  "function_name": "merge_two_lists",
+  "parameters": [
+   {
+    "name": "a",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "b",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "middle-of-linked-list": {
+  "function_name": "middle_node",
+  "parameters": [
+   {
+    "name": "values",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "miller-rabin": {
+  "function_name": "miller_rabin",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "min-subarray-len-target-sum": {
+  "function_name": "min_subarray_len",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "minimum-knight-moves": {
+  "function_name": "min_knight_moves",
+  "parameters": [
+   {
+    "name": "x",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "y",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "minimum-window-substring-length": {
+  "function_name": "min_window_length",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "t",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "missing-number": {
+  "function_name": "missing_number",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "modular-exponentiation": {
+  "function_name": "modular_exponentiation",
+  "parameters": [
+   {
+    "name": "base",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "exp",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "mod",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "move-zeroes": {
+  "function_name": "move_zeroes",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "next-greater-element": {
+  "function_name": "next_greater_element",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "number-of-1-bits": {
+  "function_name": "hamming_weight",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "number-of-divisors": {
+  "function_name": "number_of_divisors",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "number-of-islands": {
+  "function_name": "num_islands",
+  "parameters": [
+   {
+    "name": "grid",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "palindrome-linked-list": {
+  "function_name": "is_palindrome",
+  "parameters": [
+   {
+    "name": "values",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "palindrome-partition": {
+  "function_name": "min_cut",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "palindrome-partitioning": {
+  "function_name": "count_partitions",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "palindrome-subsequence": {
+  "function_name": "lps",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "partition-equal-subset-sum": {
+  "function_name": "can_partition",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "path-sum-exists": {
+  "function_name": "has_path_sum",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "perfect-squares-min-count": {
+  "function_name": "num_squares",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "polynomial-multiplication": {
+  "function_name": "multiply_polynomials",
+  "parameters": [
+   {
+    "name": "a",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "b",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "power-of-two": {
+  "function_name": "is_power_of_two",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "product-of-array-except-self": {
+  "function_name": "product_except_self",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "regular-expression-matching": {
+  "function_name": "is_match",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "p",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "remove-k-digits": {
+  "function_name": "remove_k_digits",
+  "parameters": [
+   {
+    "name": "num",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "string"
+  }
+ },
+ "remove-nth-from-end": {
+  "function_name": "remove_nth_from_end",
+  "parameters": [
+   {
+    "name": "values",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "restore-ip-addresses-count": {
+  "function_name": "restore_ip_count",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "reverse-bits": {
+  "function_name": "reverse_bits",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "reverse-linked-list": {
+  "function_name": "reverse_list",
+  "parameters": [
+   {
+    "name": "values",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "right-side-view": {
+  "function_name": "right_side_view",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "rod-cutting": {
+  "function_name": "rod_cutting",
+  "parameters": [
+   {
+    "name": "prices",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "rotate-image-90": {
+  "function_name": "rotate",
+  "parameters": [
+   {
+    "name": "matrix",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  }
+ },
+ "rotated-binary-search": {
+  "function_name": "search",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "rotten-oranges-minutes": {
+  "function_name": "oranges_rotting",
+  "parameters": [
+   {
+    "name": "grid",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "run-length-encoding": {
+  "function_name": "rle_encode",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "string"
+  }
+ },
+ "same-tree": {
+  "function_name": "is_same_tree",
+  "parameters": [
+   {
+    "name": "p",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "q",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "search-2d-matrix": {
+  "function_name": "search_matrix",
+  "parameters": [
+   {
+    "name": "matrix",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "search-insert-position": {
+  "function_name": "search_insert",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "set-matrix-zeroes": {
+  "function_name": "set_zeroes",
+  "parameters": [
+   {
+    "name": "matrix",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  }
+ },
+ "ship-packages-within-days": {
+  "function_name": "ship_within_days",
+  "parameters": [
+   {
+    "name": "weights",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "days",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "shortest-path-binary-matrix": {
+  "function_name": "shortest_path",
+  "parameters": [
+   {
+    "name": "grid",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "sieve-of-eratosthenes": {
+  "function_name": "sieve_of_eratosthenes",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "string"
+  }
+ },
+ "single-number": {
+  "function_name": "single_number",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "single-number-ii": {
+  "function_name": "single_number",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "sliding-window-maximum": {
+  "function_name": "max_sliding_window",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "spiral-matrix-traversal": {
+  "function_name": "spiral_order",
+  "parameters": [
+   {
+    "name": "matrix",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "stable-matching": {
+  "function_name": "stable_matching",
+  "parameters": [
+   {
+    "name": "men_prefs",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   },
+   {
+    "name": "women_prefs",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "staircase": {
+  "function_name": "climb_stairs",
+  "parameters": [
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "strassen": {
+  "function_name": "matrix_multiply",
+  "parameters": [
+   {
+    "name": "A",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   },
+   {
+    "name": "B",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  }
+ },
+ "string-hashing": {
+  "function_name": "count_distinct_substrings",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "subarray-product-less-than-k": {
+  "function_name": "num_subarrays_product_less_than_k",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "subarray-sum-equals-k": {
+  "function_name": "subarray_sum",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "subarray-sums-divisible-by-k": {
+  "function_name": "subarrays_div_by_k",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "subset-sum": {
+  "function_name": "subset_sum",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "suffix-array": {
+  "function_name": "build_suffix_array",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "sum-root-to-leaf-numbers": {
+  "function_name": "sum_numbers",
+  "parameters": [
+   {
+    "name": "root",
+    "type": {
+     "kind": "tree",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "target-sum-ways": {
+  "function_name": "find_target_sum_ways",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "task-scheduler": {
+  "function_name": "least_interval",
+  "parameters": [
+   {
+    "name": "counts",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "cooldown",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "three-sum-count-triplets": {
+  "function_name": "three_sum_count",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "top-k-frequent-elements": {
+  "function_name": "top_k_frequent",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "k",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ },
+ "trapping-rain-water": {
+  "function_name": "trap",
+  "parameters": [
+   {
+    "name": "heights",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "triangle-minimum-path-sum": {
+  "function_name": "minimum_total",
+  "parameters": [
+   {
+    "name": "triangle",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "two-sum-count-pairs": {
+  "function_name": "count_pairs",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "target",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "unbounded-knapsack": {
+  "function_name": "unbounded_knapsack",
+  "parameters": [
+   {
+    "name": "weights",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "values",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "capacity",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "unique-paths": {
+  "function_name": "unique_paths",
+  "parameters": [
+   {
+    "name": "m",
+    "type": {
+     "kind": "integer"
+    }
+   },
+   {
+    "name": "n",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "unique-permutations-count": {
+  "function_name": "count_unique_permutations",
+  "parameters": [
+   {
+    "name": "nums",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "valid-anagram": {
+  "function_name": "is_anagram",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "t",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "valid-palindrome-string": {
+  "function_name": "is_valid_palindrome",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "valid-parentheses": {
+  "function_name": "is_valid",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "wildcard-matching": {
+  "function_name": "is_match",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "p",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "word-break-count-ways": {
+  "function_name": "word_break_count",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "word_dict",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "string"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "word-ladder-length": {
+  "function_name": "ladder_length",
+  "parameters": [
+   {
+    "name": "begin_word",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "end_word",
+    "type": {
+     "kind": "string"
+    }
+   },
+   {
+    "name": "word_list",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "string"
+     }
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "word-search-grid": {
+  "function_name": "exist",
+  "parameters": [
+   {
+    "name": "grid",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "array",
+      "items": {
+       "kind": "string"
+      }
+     }
+    }
+   },
+   {
+    "name": "word",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "boolean"
+  }
+ },
+ "word-wrap": {
+  "function_name": "word_wrap",
+  "parameters": [
+   {
+    "name": "lengths",
+    "type": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   },
+   {
+    "name": "width",
+    "type": {
+     "kind": "integer"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "integer"
+  }
+ },
+ "z-algorithm": {
+  "function_name": "z_function",
+  "parameters": [
+   {
+    "name": "s",
+    "type": {
+     "kind": "string"
+    }
+   }
+  ],
+  "return_type": {
+   "kind": "array",
+   "items": {
+    "kind": "integer"
+   }
+  }
+ }
+}

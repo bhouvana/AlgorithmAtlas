@@ -1,0 +1,1 @@
+export PATH="$PATH:/c/Users/poorn/go-sdk/bin:/c/Users/poorn/kotlin-sdk/bin:/c/Users/poorn/ruby-sdk/bin:/c/Users/poorn/php-sdk:/c/Users/poorn/r-sdk/bin:/c/Users/poorn/scala-cli-sdk:/c/Users/poorn/AppData/Local/Programs/Swift/Toolchains/6.3.3+Asserts/usr/bin:/c/Users/poorn/AppData/Local/Programs/Swift/Runtimes/6.3.3/usr/bin"

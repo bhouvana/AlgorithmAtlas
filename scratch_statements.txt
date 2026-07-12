@@ -1,0 +1,66 @@
+===== dijkstra-shortest-path =====
+Given a directed weighted graph, find the shortest path distances from source node 0 to all other nodes.
+
+Input:
+- Line 1: `n m` (nodes, edges)
+- Next `m` lines: `u v w` (directed edge u→v with weight w)
+
+Output: n space-separated distances (0-indexed). Print -1 for unreachable nodes.
+
+===== is-bipartite =====
+Given an undirected graph with `n` nodes (0-indexed) and `m` edges (possibly disconnected), print `true` if the graph is **bipartite** (2-colorable so no edge connects two same-colored nodes), else `false`.
+
+===== course-schedule-feasible =====
+There are `n` courses labeled `0..n-1`. You are given `m` prerequisite pairs `(a, b)` meaning course `b` must be completed before course `a`. Print `true` if it is possible to finish **all** courses, or `false` if the prerequisites form a cycle that makes this impossible.
+
+===== word-ladder-length =====
+Given `beginWord`, `endWord`, and a `wordList` (one-line, space separated), print the **number of words** in the shortest transformation sequence from `beginWord` to `endWord` (inclusive of both), changing exactly one letter per step, each intermediate word must be in `wordList`. Print **0** if no such sequence exists.
+
+===== minimum-knight-moves =====
+On an infinite chessboard, a knight starts at `(0, 0)`. Given a target `(x, y)`, print the **minimum number of knight moves** needed to reach it.
+
+===== closest-pair =====
+Given `n` 2D points, print the **minimum squared Euclidean distance** between any two distinct points (squared to keep the answer an exact integer).
+
+===== matrix-exponentiation =====
+Given an `n x n` matrix, an exponent `k`, and a `mod`, print `matrix^k mod mod` (each row on its own line, space-separated), computed via fast matrix exponentiation by squaring in O(n^3 log k).
+
+===== strassen =====
+Given matrix `A` (`n x m`) and matrix `B` (`m x p`), print their product `A x B` (each row on its own line, space-separated), computed via Strassen's divide-and-conquer algorithm.
+
+===== boolean-parenthesization =====
+Given a boolean expression as a string of symbols `T`/`F` and a string of operators `&` (AND), `|` (OR), `^` (XOR) between them, print the number of ways to **parenthesize** the expression so that it evaluates to `True`.
+
+===== fractional-knapsack =====
+Given `n` items with `weights` and `values`, and a knapsack `capacity`, print the **maximum total value** achievable, where fractional amounts of an item may be taken. Print the answer rounded to **2 decimal places**.
+
+===== job-scheduling =====
+Given `n` jobs, each taking one unit of time with a `deadline` (job must finish by this time slot, 1-indexed) and a `profit`, print the **maximum total profit** achievable scheduling a subset of jobs (only one job runs per time slot).
+
+===== activity-selection =====
+Given `n` activities with `start[i]` and `end[i]` times, print the **maximum number of non-overlapping activities** a single person can attend (an activity ending at t and another starting at t do not overlap).
+
+===== egg-drop =====
+Given `eggs` identical eggs and a building with `floors` floors, print the **minimum number of trials** needed in the worst case to find the critical floor (the highest floor an egg survives a drop from).
+
+===== n-queens =====
+Place `n` non-attacking queens on an `n × n` chessboard. Return the **number of distinct solutions**.
+
+===== burst-balloons =====
+You are given `n` balloons in a row, each with an integer value `balloons[i]`. Bursting balloon `i` earns `left * balloons[i] * right` coins, where `left`/`right` are the values of `i`'s CURRENT neighbors at the moment it is burst (treat both ends of the row as having an invisible balloon of value 1). Print the **maximum total coins** obtainable by bursting every balloon in some order.
+
+===== distinct-subsets-count =====
+Given a multiset of `n` integers (it may contain duplicates), print the number of **distinct subsets** of it, counting the empty subset. Two subsets are the same if they contain the same multiset of values regardless of which original duplicate index they came from.
+
+===== max-distance-to-zero =====
+Given a grid of 0s and 1s (at least one 0), print the **maximum, over all cells**, of the 4-directional distance from that cell to the nearest 0 cell.
+
+===== maximum-xor-of-two-numbers =====
+Given an array `nums`, print the **maximum XOR** of any two elements. Solve in O(n) using a bitwise trie.
+
+===== set-matrix-zeroes =====
+Given an `R x C` matrix, if any cell equals `0`, set its entire row and entire column to `0`. Print the resulting matrix, one row per line, space-separated values.
+
+===== word-search-grid =====
+Given an `rows x cols` grid of lowercase letters and a target `word`, print `true` if `word` can be built by moving between **orthogonally adjacent** cells (up, down, left, right) without reusing the same cell twice, else `false`.
+

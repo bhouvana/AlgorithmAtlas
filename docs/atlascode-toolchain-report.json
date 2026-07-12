@@ -1,0 +1,462 @@
+{
+  "python": {
+    "language": "python",
+    "requirement_sets_tried": [
+      [
+        "python"
+      ]
+    ],
+    "binaries_probed": {
+      "python": {
+        "binary": "python",
+        "resolved_path": "C:\\Users\\poorn\\AppData\\Local\\Programs\\Python\\Python313\\python.EXE",
+        "available": true,
+        "version": "Python 3.13.2",
+        "cold_start_ms": 15.9
+      }
+    },
+    "available": true,
+    "satisfied_requirement_set": [
+      "python"
+    ],
+    "cold_start_ms": 15.9,
+    "fallback_risk": null
+  },
+  "javascript": {
+    "language": "javascript",
+    "requirement_sets_tried": [
+      [
+        "node"
+      ]
+    ],
+    "binaries_probed": {
+      "node": {
+        "binary": "node",
+        "resolved_path": "C:\\Program Files\\nodejs\\node.EXE",
+        "available": true,
+        "version": "v20.9.0",
+        "cold_start_ms": 35.8
+      }
+    },
+    "available": true,
+    "satisfied_requirement_set": [
+      "node"
+    ],
+    "cold_start_ms": 35.8,
+    "fallback_risk": null
+  },
+  "typescript": {
+    "language": "typescript",
+    "requirement_sets_tried": [
+      [
+        "tsx"
+      ],
+      [
+        "npx",
+        "node"
+      ]
+    ],
+    "binaries_probed": {
+      "tsx": {
+        "binary": "tsx",
+        "resolved_path": "C:\\Users\\poorn\\AppData\\Roaming\\npm\\tsx.CMD",
+        "available": true,
+        "version": "tsx v4.23.0",
+        "cold_start_ms": 227.2
+      },
+      "npx": {
+        "binary": "npx",
+        "resolved_path": "C:\\Program Files\\nodejs\\npx.CMD",
+        "available": true,
+        "version": "10.1.0",
+        "cold_start_ms": 1434.9
+      },
+      "node": {
+        "binary": "node",
+        "resolved_path": "C:\\Program Files\\nodejs\\node.EXE",
+        "available": true,
+        "version": "v20.9.0",
+        "cold_start_ms": 35.8
+      }
+    },
+    "available": true,
+    "satisfied_requirement_set": [
+      "tsx"
+    ],
+    "cold_start_ms": 227.2,
+    "fallback_risk": null
+  },
+  "cpp": {
+    "language": "cpp",
+    "requirement_sets_tried": [
+      [
+        "g++"
+      ],
+      [
+        "c++"
+      ]
+    ],
+    "binaries_probed": {
+      "g++": {
+        "binary": "g++",
+        "resolved_path": "C:\\Users\\poorn\\mingw64\\mingw64\\bin\\g++.EXE",
+        "available": true,
+        "version": "g++.EXE (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0",
+        "cold_start_ms": 10.5
+      },
+      "c++": {
+        "binary": "c++",
+        "resolved_path": "C:\\Users\\poorn\\mingw64\\mingw64\\bin\\c++.EXE",
+        "available": true,
+        "version": "c++.EXE (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0",
+        "cold_start_ms": 10.7
+      }
+    },
+    "available": true,
+    "satisfied_requirement_set": [
+      "g++"
+    ],
+    "cold_start_ms": 10.5,
+    "fallback_risk": null
+  },
+  "c": {
+    "language": "c",
+    "requirement_sets_tried": [
+      [
+        "gcc"
+      ]
+    ],
+    "binaries_probed": {
+      "gcc": {
+        "binary": "gcc",
+        "resolved_path": "C:\\Users\\poorn\\mingw64\\mingw64\\bin\\gcc.EXE",
+        "available": true,
+        "version": "gcc.EXE (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0",
+        "cold_start_ms": 9.9
+      }
+    },
+    "available": true,
+    "satisfied_requirement_set": [
+      "gcc"
+    ],
+    "cold_start_ms": 9.9,
+    "fallback_risk": null
+  },
+  "java": {
+    "language": "java",
+    "requirement_sets_tried": [
+      [
+        "javac",
+        "java"
+      ]
+    ],
+    "binaries_probed": {
+      "javac": {
+        "binary": "javac",
+        "resolved_path": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.8.9-hotspot\\bin\\javac.EXE",
+        "available": true,
+        "version": "javac 21.0.8",
+        "cold_start_ms": 226.2
+      },
+      "java": {
+        "binary": "java",
+        "resolved_path": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.8.9-hotspot\\bin\\java.EXE",
+        "available": true,
+        "version": "openjdk 21.0.8 2025-07-15 LTS",
+        "cold_start_ms": 95.5
+      }
+    },
+    "available": true,
+    "satisfied_requirement_set": [
+      "javac",
+      "java"
+    ],
+    "cold_start_ms": 226.2,
+    "fallback_risk": null
+  },
+  "go": {
+    "language": "go",
+    "requirement_sets_tried": [
+      [
+        "go"
+      ]
+    ],
+    "binaries_probed": {
+      "go": {
+        "binary": "go",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      }
+    },
+    "available": false,
+    "satisfied_requirement_set": null,
+    "cold_start_ms": null,
+    "fallback_risk": null
+  },
+  "rust": {
+    "language": "rust",
+    "requirement_sets_tried": [
+      [
+        "rustc"
+      ]
+    ],
+    "binaries_probed": {
+      "rustc": {
+        "binary": "rustc",
+        "resolved_path": "C:\\Users\\poorn\\.cargo\\bin\\rustc.EXE",
+        "available": true,
+        "version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+        "cold_start_ms": 66.3
+      }
+    },
+    "available": true,
+    "satisfied_requirement_set": [
+      "rustc"
+    ],
+    "cold_start_ms": 66.3,
+    "fallback_risk": null
+  },
+  "shell": {
+    "language": "shell",
+    "requirement_sets_tried": [
+      [
+        "cmd"
+      ]
+    ],
+    "binaries_probed": {
+      "cmd": {
+        "binary": "cmd",
+        "resolved_path": "C:\\WINDOWS\\system32\\cmd.EXE",
+        "available": true,
+        "version": "Microsoft Windows [Version 10.0.26200.8737]",
+        "cold_start_ms": 19.3
+      }
+    },
+    "available": true,
+    "satisfied_requirement_set": [
+      "cmd"
+    ],
+    "cold_start_ms": 19.3,
+    "fallback_risk": null
+  },
+  "ruby": {
+    "language": "ruby",
+    "requirement_sets_tried": [
+      [
+        "ruby"
+      ]
+    ],
+    "binaries_probed": {
+      "ruby": {
+        "binary": "ruby",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      }
+    },
+    "available": false,
+    "satisfied_requirement_set": null,
+    "cold_start_ms": null,
+    "fallback_risk": null
+  },
+  "kotlin": {
+    "language": "kotlin",
+    "requirement_sets_tried": [
+      [
+        "kotlinc",
+        "java"
+      ]
+    ],
+    "binaries_probed": {
+      "kotlinc": {
+        "binary": "kotlinc",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      },
+      "java": {
+        "binary": "java",
+        "resolved_path": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.8.9-hotspot\\bin\\java.EXE",
+        "available": true,
+        "version": "openjdk 21.0.8 2025-07-15 LTS",
+        "cold_start_ms": 95.5
+      }
+    },
+    "available": false,
+    "satisfied_requirement_set": null,
+    "cold_start_ms": null,
+    "fallback_risk": null
+  },
+  "swift": {
+    "language": "swift",
+    "requirement_sets_tried": [
+      [
+        "swift"
+      ]
+    ],
+    "binaries_probed": {
+      "swift": {
+        "binary": "swift",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      }
+    },
+    "available": false,
+    "satisfied_requirement_set": null,
+    "cold_start_ms": null,
+    "fallback_risk": null
+  },
+  "r": {
+    "language": "r",
+    "requirement_sets_tried": [
+      [
+        "Rscript"
+      ],
+      [
+        "rscript"
+      ]
+    ],
+    "binaries_probed": {
+      "Rscript": {
+        "binary": "Rscript",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      },
+      "rscript": {
+        "binary": "rscript",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      }
+    },
+    "available": false,
+    "satisfied_requirement_set": null,
+    "cold_start_ms": null,
+    "fallback_risk": null
+  },
+  "csharp": {
+    "language": "csharp",
+    "requirement_sets_tried": [
+      [
+        "mcs",
+        "mono"
+      ],
+      [
+        "dotnet"
+      ]
+    ],
+    "binaries_probed": {
+      "mcs": {
+        "binary": "mcs",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      },
+      "mono": {
+        "binary": "mono",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      },
+      "dotnet": {
+        "binary": "dotnet",
+        "resolved_path": "C:\\Program Files\\dotnet\\dotnet.EXE",
+        "available": true,
+        "version": "9.0.200",
+        "cold_start_ms": 192.6
+      }
+    },
+    "available": true,
+    "satisfied_requirement_set": [
+      "dotnet"
+    ],
+    "cold_start_ms": 192.6,
+    "fallback_risk": null
+  },
+  "php": {
+    "language": "php",
+    "requirement_sets_tried": [
+      [
+        "php"
+      ]
+    ],
+    "binaries_probed": {
+      "php": {
+        "binary": "php",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      }
+    },
+    "available": false,
+    "satisfied_requirement_set": null,
+    "cold_start_ms": null,
+    "fallback_risk": null
+  },
+  "scala": {
+    "language": "scala",
+    "requirement_sets_tried": [
+      [
+        "scala-cli"
+      ],
+      [
+        "scala"
+      ]
+    ],
+    "binaries_probed": {
+      "scala-cli": {
+        "binary": "scala-cli",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      },
+      "scala": {
+        "binary": "scala",
+        "resolved_path": null,
+        "available": false,
+        "version": null,
+        "cold_start_ms": null
+      }
+    },
+    "available": false,
+    "satisfied_requirement_set": null,
+    "cold_start_ms": null,
+    "fallback_risk": null
+  },
+  "perl": {
+    "language": "perl",
+    "requirement_sets_tried": [
+      [
+        "perl"
+      ]
+    ],
+    "binaries_probed": {
+      "perl": {
+        "binary": "perl",
+        "resolved_path": "D:\\Git\\usr\\bin\\perl.EXE",
+        "available": true,
+        "version": "This is perl 5, version 36, subversion 1 (v5.36.1) built for x86_64-msys-thread-multi",
+        "cold_start_ms": 19.4
+      }
+    },
+    "available": true,
+    "satisfied_requirement_set": [
+      "perl"
+    ],
+    "cold_start_ms": 19.4,
+    "fallback_risk": null
+  }
+}

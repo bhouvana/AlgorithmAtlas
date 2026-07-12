@@ -1,0 +1,417 @@
+{
+ "binary-tree-max-path-sum": {
+  "statement": "Given a binary tree with possibly negative values, print the **maximum path sum** of any non-empty path (a path may start and end at any node, need not pass through the root).",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 number of nodes \\u2264 3\\u00d710^4\", \"-1000 \\u2264 node value \\u2264 1000\"]"
+ },
+ "binary-tree-zigzag-level-order": {
+  "statement": "Given a binary tree, print its **zigzag level-order traversal**: one line per depth level, values space-separated; level 0 reads left-to-right, level 1 right-to-left, level 2 left-to-right, and so on, alternating every level.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 number of nodes \\u2264 2000\"]"
+ },
+ "bitonic-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Bitonic Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "bucket-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Bucket Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "catalan-number": {
+  "statement": "Given `n`, print the **n-th Catalan number** C(n).",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 n \\u2264 15\"]"
+ },
+ "cocktail-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Cocktail Shaker Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "comb-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Comb Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "combination-sum-iv-count": {
+  "statement": "Given a set of distinct positive integers `nums` and a `target`, print the number of **ordered sequences** (elements may repeat, order matters) drawn from `nums` that sum to `target`.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 200\", \"1 \\u2264 target \\u2264 1000\"]"
+ },
+ "count-tree-nodes": {
+  "statement": "Given a binary tree, print the **total number of nodes**.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 number of nodes \\u2264 10^4\"]"
+ },
+ "counting-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Counting Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "course-schedule-feasible": {
+  "statement": "There are `n` courses labeled `0..n-1`. You are given `m` prerequisite pairs `(a, b)` meaning course `b` must be completed before course `a`. Print `true` if it is possible to finish **all** courses, or `false` if the prerequisites form a cycle that makes this impossible.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 n \\u2264 10^4\", \"0 \\u2264 m \\u2264 5\\u00d710^4\"]"
+ },
+ "cycle-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Cycle Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "decode-ways": {
+  "statement": "A digit string can be decoded into letters via `'1'->'A', ..., '26'->'Z'`. Given a digit string `s`, print the **number of ways** to decode it (0 if none \u2014 e.g. a stray leading zero in a group).",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 s.length \\u2264 100\", \"s consists of digits '0'-'9'\"]"
+ },
+ "diameter-of-binary-tree": {
+  "statement": "Given a binary tree, print the **diameter** \u2014 the length (in edges) of the longest path between any two nodes.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 number of nodes \\u2264 10^4\"]"
+ },
+ "distinct-subsequences": {
+  "statement": "Given strings `s` and `t`, print the number of **distinct subsequences** of `s` that equal `t`.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 s.length, t.length \\u2264 1000\"]"
+ },
+ "distinct-subsets-count": {
+  "statement": "Given a multiset of `n` integers (it may contain duplicates), print the number of **distinct subsets** of it, counting the empty subset. Two subsets are the same if they contain the same multiset of values regardless of which original duplicate index they came from.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 n \\u2264 20\", \"-10 \\u2264 nums[i] \\u2264 10\"]"
+ },
+ "evaluate-reverse-polish-notation": {
+  "statement": "Given a Reverse Polish Notation expression as `n` space-separated tokens, print its integer result. Division truncates toward zero.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 n \\u2264 10^4\"]"
+ },
+ "fast-power": {
+  "statement": "Given `base` and a non-negative integer `exp`, print `base^exp` **exactly** (arbitrary precision), computed via fast exponentiation by squaring in O(log exp) multiplications.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 base \\u2264 20\", \"0 \\u2264 exp \\u2264 300\"]"
+ },
+ "fibonacci-dp": {
+  "statement": "Given `n`, return the n-th Fibonacci number where F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2).\n\nSolve it in **O(n)** time and **O(1)** space.",
+  "examples": "[{\"input\": \"n = 0\", \"output\": \"0\"}, {\"input\": \"n = 5\", \"output\": \"5\"}, {\"input\": \"n = 10\", \"output\": \"55\"}]",
+  "constraints": "[\"0 \\u2264 n \\u2264 30\"]"
+ },
+ "find-all-anagrams-in-string": {
+  "statement": "Given strings `s` and `p`, print all **starting indices** (ascending, space-separated) in `s` where a permutation (anagram) of `p` occurs. Print an empty line if there are none.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 s.length, p.length \\u2264 3\\u00d710^4\"]"
+ },
+ "fractional-knapsack": {
+  "statement": "Given `n` items with `weights` and `values`, and a knapsack `capacity`, print the **maximum total value** achievable, where fractional amounts of an item may be taken. Print the answer rounded to **2 decimal places**.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 n \\u2264 1000\", \"1 \\u2264 weights[i] \\u2264 1000\", \"0 \\u2264 values[i] \\u2264 1000\", \"0 \\u2264 capacity \\u2264 10^5\"]"
+ },
+ "gnome-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Gnome Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "heap-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Heap Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "huffman-coding": {
+  "statement": "Given the frequencies of `n` symbols, print the **total weighted path length** (sum of frequency \u00d7 code length) of an optimal Huffman encoding \u2014 the total number of bits used to encode the whole message.",
+  "examples": "[]",
+  "constraints": "[\"2 \\u2264 n \\u2264 1000\", \"1 \\u2264 freq[i] \\u2264 10^6\"]"
+ },
+ "insertion-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Insertion Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "interleaving-strings": {
+  "statement": "Given strings `s1`, `s2`, `s3`, print `true` if `s3` is formed by an **interleaving** of `s1` and `s2` (preserving each string's relative character order), else `false`.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 s1.length, s2.length \\u2264 100\"]"
+ },
+ "invert-tree-preorder": {
+  "statement": "Given a binary tree, invert it (swap every left/right child) and print the **preorder traversal** of the result, space-separated.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 number of nodes \\u2264 100\"]"
+ },
+ "is-balanced-binary-tree": {
+  "statement": "Given a binary tree, print `true` if it is **height-balanced** (every node's two subtree heights differ by at most 1), else `false`.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 number of nodes \\u2264 5000\"]"
+ },
+ "is-bipartite": {
+  "statement": "Given an undirected graph with `n` nodes (0-indexed) and `m` edges (possibly disconnected), print `true` if the graph is **bipartite** (2-colorable so no edge connects two same-colored nodes), else `false`.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 n \\u2264 10^4\", \"0 \\u2264 m \\u2264 2\\u00d710^4\"]"
+ },
+ "is-symmetric-tree": {
+  "statement": "Given a binary tree, print `true` if it is a **mirror image** of itself around its center, else `false`.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 number of nodes \\u2264 1000\"]"
+ },
+ "is-valid-bst": {
+  "statement": "Given a binary tree, print `true` if it satisfies the **binary search tree** property, else `false`.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 number of nodes \\u2264 10^4\"]"
+ },
+ "karatsuba": {
+  "statement": "Given two non-negative integers `a` and `b`, print their **exact product**, computed via Karatsuba's divide-and-conquer multiplication.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 a, b \\u2264 10^18\"]"
+ },
+ "knapsack-01": {
+  "statement": "Given `n` items with `weights` and `values`, and a knapsack `capacity`, print the **maximum total value** achievable picking each item at most once.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 n \\u2264 100\", \"0 \\u2264 weights[i], values[i] \\u2264 1000\", \"0 \\u2264 capacity \\u2264 1000\"]"
+ },
+ "kth-smallest-in-bst": {
+  "statement": "Given a **binary search tree** and an integer `k`, print the `k`-th smallest value in it (1-indexed).",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 k \\u2264 number of nodes \\u2264 10^4\"]"
+ },
+ "level-order-traversal": {
+  "statement": "Given a binary tree, print its **level-order traversal**: one line per depth level, values space-separated top to bottom.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 number of nodes \\u2264 2000\"]"
+ },
+ "linear-search": {
+  "statement": "Given an array `nums` and a target, return the **index** of the first occurrence of `target`, or **-1** if not found.\n\nNo sorting is guaranteed.",
+  "examples": "[{\"input\": \"nums = [4, 2, 7, 1, 9], target = 7\", \"output\": \"2\"}, {\"input\": \"nums = [1, 2, 3], target = 5\", \"output\": \"-1\"}]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 10^5\", \"-10^9 \\u2264 nums[i], target \\u2264 10^9\"]"
+ },
+ "lowest-common-ancestor-binary-tree": {
+  "statement": "Given a **general binary tree** (no ordering property assumed) and two distinct values `p` and `q` guaranteed to exist in it, print the value of their **lowest common ancestor** \u2014 the deepest node that has both `p` and `q` as descendants (a node is considered a descendant of itself).",
+  "examples": "[]",
+  "constraints": "[\"2 \\u2264 number of nodes \\u2264 10^4\", \"all values distinct\", \"p != q\"]"
+ },
+ "lowest-common-ancestor-bst": {
+  "statement": "Given a **binary search tree** and two values `p`, `q` known to exist in it, print the value of their **lowest common ancestor**.",
+  "examples": "[]",
+  "constraints": "[\"2 \\u2264 number of nodes \\u2264 10^4\", \"all values distinct\"]"
+ },
+ "matrix-exponentiation": {
+  "statement": "Given an `n x n` matrix, an exponent `k`, and a `mod`, print `matrix^k mod mod` (each row on its own line, space-separated), computed via fast matrix exponentiation by squaring in O(n^3 log k).",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 n \\u2264 20\", \"0 \\u2264 k \\u2264 10^9\", \"1 \\u2264 mod \\u2264 10^9\"]"
+ },
+ "max-distance-to-zero": {
+  "statement": "Given a grid of 0s and 1s (at least one 0), print the **maximum, over all cells**, of the 4-directional distance from that cell to the nearest 0 cell.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 rows, cols \\u2264 20\", \"at least one cell is 0\"]"
+ },
+ "maximal-rectangle": {
+  "statement": "Given a `rows x cols` binary matrix (only `0`/`1` entries), print the **area of the largest rectangle** that contains only `1`s. Solve by treating each row as the base of a histogram (accumulating consecutive 1-heights column-by-column from the row above) and applying the largest-rectangle-in-histogram technique to each row's histogram.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 rows, cols \\u2264 200\", \"grid[i][j] \\u2208 {0, 1}\"]"
+ },
+ "maximum-product-subarray": {
+  "statement": "Given an integer array `nums`, print the **largest product** of a contiguous, non-empty subarray.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 2\\u00d710^4\", \"-10 \\u2264 nums[i] \\u2264 10\"]"
+ },
+ "median-of-medians": {
+  "statement": "Given an array `nums` and an integer `k`, print the **k-th smallest** element (1-indexed), computed via the median-of-medians selection algorithm in guaranteed O(n) worst-case time.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 k \\u2264 nums.length \\u2264 10^5\"]"
+ },
+ "median-of-two-sorted-arrays": {
+  "statement": "Given two sorted integer arrays `nums1` (length `m`) and `nums2` (length `n`), print the **median** of the combined sorted array without fully materializing and sorting the merge (aim for O(log(min(m, n))) time). Print the median as a plain integer if `m + n` is odd, otherwise print it with **exactly one decimal place** (e.g. `3.0`, `2.5`).",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 m, n \\u2264 10^5\", \"1 \\u2264 m + n \\u2264 2\\u00d710^5\", \"-10^6 \\u2264 nums1[i], nums2[i] \\u2264 10^6\"]"
+ },
+ "merge-k-sorted-lists": {
+  "statement": "Given `k` sorted singly-linked lists (each represented as its length followed by its values, space-separated, one list per line), print the **single fully merged sorted list**, space-separated. Use a min-heap based k-way merge for O(N log k) time, where N is the total number of nodes.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 k \\u2264 10^4\", \"0 \\u2264 total nodes \\u2264 5\\u00d710^4\", \"-10^4 \\u2264 node value \\u2264 10^4\"]"
+ },
+ "merge-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Merge Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "odd-even-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Odd-Even Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "pancake-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Pancake Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "path-sum-exists": {
+  "statement": "Given a binary tree and an integer `target`, print `true` if some **root-to-leaf path** sums exactly to `target`, else `false`.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 number of nodes \\u2264 5000\"]"
+ },
+ "patience-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Patience Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "polynomial-multiplication": {
+  "statement": "Given two polynomials as integer coefficient lists `a` and `b` (`a[i]` = coefficient of x^i), print the coefficient list of their **product**, space-separated, computed via divide-and-conquer (Karatsuba-style) polynomial multiplication.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 a.length, b.length \\u2264 1000\", \"-1000 \\u2264 coefficients \\u2264 1000\"]"
+ },
+ "quick-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Quick Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "radix-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Radix Sort (LSD)** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "regular-expression-matching": {
+  "statement": "Given a string `s` of lowercase letters and a pattern `p` of lowercase letters, `.`, and `*`, print `true` if `p` matches the **entire** `s`, else `false`. Matching rules: `.` matches any single character; `*` matches **zero or more occurrences of the element immediately preceding it** (a letter or `.`) \u2014 this is regex-style repetition, not shell-glob wildcard matching.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 s.length \\u2264 20\", \"0 \\u2264 p.length \\u2264 30\", \"p contains only a-z, '.', '*'\"]"
+ },
+ "remove-k-digits": {
+  "statement": "Given a non-negative integer `num` as a string and an integer `k`, print the **smallest possible number** (no leading zeros, as a string) after removing exactly `k` digits.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 num.length \\u2264 10^5\", \"0 \\u2264 k \\u2264 num.length\"]"
+ },
+ "reverse-bits": {
+  "statement": "Given a 32-bit unsigned integer `n`, print the integer obtained by **reversing its bits**.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 n < 2^32\"]"
+ },
+ "right-side-view": {
+  "statement": "Given a binary tree, print the value of the **rightmost node** visible at each depth level, from top to bottom, space-separated.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 number of nodes \\u2264 100\"]"
+ },
+ "rotate-image-90": {
+  "statement": "Given an `N x N` matrix, print the matrix **rotated 90 degrees clockwise**, one row per line, space-separated values.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 N \\u2264 200\", \"-10^9 \\u2264 matrix[i][j] \\u2264 10^9\"]"
+ },
+ "rotten-oranges-minutes": {
+  "statement": "A grid has cells: `0` empty, `1` fresh orange, `2` rotten orange. Every minute, a rotten orange rots each 4-directionally adjacent fresh orange. Print the **number of minutes** until no fresh orange remains, or **-1** if some fresh orange can never rot.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 rows, cols \\u2264 10\"]"
+ },
+ "run-length-encoding": {
+  "statement": "Given a string `s`, print its **run-length encoding**: each maximal run of a repeated character becomes `<count><char>` (e.g. `aaabbc` \u2192 `3a2b1c`). Print an empty line for an empty string.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 s.length \\u2264 10^5\"]"
+ },
+ "same-tree": {
+  "statement": "Given two binary trees, print `true` if they are **structurally identical** with the same node values, else `false`.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 number of nodes \\u2264 100 (each tree)\"]"
+ },
+ "search-2d-matrix": {
+  "statement": "Given an `m x n` matrix where each row is sorted ascending and each row's first integer is greater than the previous row's last integer, print `true` if `target` exists in the matrix, else `false`. Solve in **O(log(m*n))** time by treating the matrix as one flattened sorted array.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 m, n \\u2264 100\"]"
+ },
+ "selection-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Selection Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "set-matrix-zeroes": {
+  "statement": "Given an `R x C` matrix, if any cell equals `0`, set its entire row and entire column to `0`. Print the resulting matrix, one row per line, space-separated values.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 R, C \\u2264 200\", \"-10^9 \\u2264 matrix[i][j] \\u2264 10^9\"]"
+ },
+ "shell-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Shell Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "shortest-path-binary-matrix": {
+  "statement": "Given an `n x n` grid of 0 (open) and 1 (blocked) cells, print the length (in number of cells) of the shortest **8-directional** path from the top-left to the bottom-right cell, or **-1** if none exists.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 n \\u2264 100\"]"
+ },
+ "sieve-of-eratosthenes": {
+  "statement": "Given `n`, print **all prime numbers \u2264 n**, space-separated in ascending order, using the Sieve of Eratosthenes. Print an empty line if there are none.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 n \\u2264 10^5\"]"
+ },
+ "sliding-window-maximum": {
+  "statement": "Given an integer array `nums` and window size `k`, print the **maximum value** of every contiguous window of size `k` as it slides from left to right, space-separated in order.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 k \\u2264 nums.length \\u2264 10^5\", \"-10^9 \\u2264 nums[i] \\u2264 10^9\"]"
+ },
+ "spiral-matrix-traversal": {
+  "statement": "Given an `R x C` matrix, print all its elements in **clockwise spiral order** (outermost ring first, spiraling inward), space-separated.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 R, C \\u2264 200\", \"-10^9 \\u2264 matrix[i][j] \\u2264 10^9\"]"
+ },
+ "stable-matching": {
+  "statement": "Given `n` men and `n` women, each with a fully-ranked preference list over the other side (`men_prefs[i]`/`women_prefs[i]`, most preferred first), print the **man-optimal stable matching** produced by the Gale-Shapley algorithm (men propose): for each man `0..n-1`, print his assigned woman's index, space-separated.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 n \\u2264 100\"]"
+ },
+ "stooge-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Stooge Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "strand-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Strand Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "strassen": {
+  "statement": "Given matrix `A` (`n x m`) and matrix `B` (`m x p`), print their product `A x B` (each row on its own line, space-separated), computed via Strassen's divide-and-conquer algorithm.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 n, m, p \\u2264 64\", \"-100 \\u2264 entries \\u2264 100\"]"
+ },
+ "string-hashing": {
+  "statement": "Given a string `s` and an integer `k`, print the number of **distinct substrings of length exactly `k`**. Solve using a rolling hash to compare substrings in O(1) after O(n) preprocessing.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 k \\u2264 s.length \\u2264 10^5\"]"
+ },
+ "suffix-array": {
+  "statement": "Given a string `s`, print its **suffix array**: the starting indices of all suffixes of `s`, sorted lexicographically by suffix, space-separated.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 s.length \\u2264 1000\"]"
+ },
+ "sum-root-to-leaf-numbers": {
+  "statement": "Given a binary tree with single-digit node values, treat each root-to-leaf path as a decimal number; print the **sum over all such numbers**.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 number of nodes \\u2264 1000\", \"0 \\u2264 node value \\u2264 9\"]"
+ },
+ "tim-sort": {
+  "statement": "Given an array of integers, sort it in **ascending order** using **Tim Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+ },
+ "unique-paths": {
+  "statement": "A robot starts at the top-left of an `m \u00d7 n` grid and wants to reach the bottom-right corner. It can only move right or down. Return the number of unique paths.",
+  "examples": "[{\"input\": \"m = 3, n = 7\", \"output\": \"28\"}, {\"input\": \"m = 3, n = 2\", \"output\": \"3\"}]",
+  "constraints": "[\"1 \\u2264 m, n \\u2264 100\"]"
+ },
+ "wildcard-matching": {
+  "statement": "Given a string `s` and a wildcard pattern `p` (`'?'` matches any single character, `'*'` matches any sequence of characters, including the empty sequence), print `true` if `p` matches the **entire** `s`, else `false`.",
+  "examples": "[]",
+  "constraints": "[\"0 \\u2264 s.length \\u2264 2000\", \"0 \\u2264 p.length \\u2264 2000\"]"
+ },
+ "word-break-count-ways": {
+  "statement": "Given a string `s` and a dictionary of words `wordDict` (one line, space separated), print the number of **distinct ways** to segment `s` into a space-separated sequence of dictionary words.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 s.length \\u2264 20\"]"
+ },
+ "word-ladder-length": {
+  "statement": "Given `beginWord`, `endWord`, and a `wordList` (one-line, space separated), print the **number of words** in the shortest transformation sequence from `beginWord` to `endWord` (inclusive of both), changing exactly one letter per step, each intermediate word must be in `wordList`. Print **0** if no such sequence exists.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 word length \\u2264 10\", \"all words the same length, lowercase\"]"
+ },
+ "word-search-grid": {
+  "statement": "Given an `rows x cols` grid of lowercase letters and a target `word`, print `true` if `word` can be built by moving between **orthogonally adjacent** cells (up, down, left, right) without reusing the same cell twice, else `false`.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 rows, cols \\u2264 12\", \"1 \\u2264 word.length \\u2264 15\"]"
+ },
+ "z-algorithm": {
+  "statement": "Given a string `s`, print its **Z-array**: `Z[i]` is the length of the longest substring starting at `i` that is also a prefix of `s` (by convention `Z[0] = 0`), space-separated.",
+  "examples": "[]",
+  "constraints": "[\"1 \\u2264 s.length \\u2264 10^5\"]"
+ }
+}

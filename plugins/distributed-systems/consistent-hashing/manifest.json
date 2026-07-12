@@ -1,6 +1,8 @@
 {
-  "slug": "consistent-hashing",
+  "schema_version": "1.0",
+  "id": "consistent-hashing",
   "name": "Consistent Hashing",
+  "version": "1.0.0",
   "category": "distributed-systems",
   "visualization_type": "NETWORK_TOPOLOGY",
   "description": "Consistent hashing ring: keys are assigned to the next clockwise server. Adding/removing a server only remaps 1/n keys.",
@@ -10,7 +12,12 @@
     "time_worst": "O(log n)",
     "space": "O(n + k)"
   },
-  "tags": ["distributed", "hashing", "load-balancing", "scalability"],
+  "tags": [
+    "distributed",
+    "hashing",
+    "load-balancing",
+    "scalability"
+  ],
   "execution_target": "server",
   "entry_point": "algorithm.py",
   "class_name": "ConsistentHashing"

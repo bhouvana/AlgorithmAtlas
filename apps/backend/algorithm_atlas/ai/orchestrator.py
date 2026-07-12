@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import re
 
+from .agents.atlascode import AtlasCodeAgent
 from .agents.base import BaseAgent
 from .agents.challenge import ChallengeAgent
 from .agents.general import GeneralAgent
@@ -39,6 +40,15 @@ _NOTEBOOK = _patterns(
     r"\berror\b", r"\bexception\b", r"\brefactor\b", r"\btest case\b",
     r"\bdocument\b", r"\badd comments\b", r"\brewrite\b", r"\bsyntax\b",
     r"\bcompile\b", r"\brun\b", r"\bexecute\b",
+)
+
+_ATLASCODE = _patterns(
+    r"\bhint\b", r"\bwrong answer\b", r"\bfailing\b", r"\bfailed\b", r"\btest case\b",
+    r"\bwhy (is|did|does|isn't|doesn't)\b", r"\bverdict\b", r"\baccepted\b",
+    r"\bcompile error\b", r"\bruntime error\b", r"\btime limit\b",
+    r"\bwrite\b", r"\bgenerate\b", r"\bdebug\b", r"\bfix\b", r"\boptimize\b",
+    r"\bcode\b", r"\bimplement\b", r"\berror\b", r"\bexception\b",
+    r"\brefactor\b", r"\bsolve\b", r"\bapproach\b", r"\bsolution\b", r"\brun\b",
 )
 
 _VISUALIZATION = _patterns(
@@ -100,6 +110,8 @@ def route(message: str, context: AtlasContext) -> BaseAgent:
     # Hard overrides by page context
     if context.page == "notebook" and _score(m, _NOTEBOOK) > 0:
         return NotebookAgent()
+    if context.page == "atlascode" and _score(m, _ATLASCODE) > 0:
+        return AtlasCodeAgent()
 
     if context.simulation and context.simulation.status in ("paused", "running", "created"):
         if _score(m, _VISUALIZATION) >= 1:
@@ -108,6 +120,7 @@ def route(message: str, context: AtlasContext) -> BaseAgent:
     scores = {
         "teaching":      _score(m, _TEACHING),
         "notebook":      _score(m, _NOTEBOOK),
+        "atlascode":     _score(m, _ATLASCODE),
         "visualization": _score(m, _VISUALIZATION),
         "challenge":     _score(m, _CHALLENGE),
         "whiteboard":    _score(m, _WHITEBOARD),
@@ -123,13 +136,16 @@ def route(message: str, context: AtlasContext) -> BaseAgent:
             return TeachingAgent()
         if context.page == "notebook":
             return NotebookAgent()
-        if context.page in ("catalog", "learning"):
+        if context.page == "atlascode":
+            return AtlasCodeAgent()
+        if context.page in ("catalog", "atlascode-catalog", "learning"):
             return SearchAgent()
         return GeneralAgent()
 
     return {
         "teaching":      TeachingAgent,
         "notebook":      NotebookAgent,
+        "atlascode":     AtlasCodeAgent,
         "visualization": VisualizationAgent,
         "challenge":     ChallengeAgent,
         "whiteboard":    WhiteboardAgent,

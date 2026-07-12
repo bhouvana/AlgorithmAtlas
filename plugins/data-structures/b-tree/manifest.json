@@ -1,6 +1,8 @@
 {
-  "slug": "b-tree",
+  "schema_version": "1.0",
+  "id": "b-tree",
   "name": "B-Tree (Order 3)",
+  "version": "1.0.0",
   "category": "data-structures",
   "visualization_type": "TREE",
   "description": "B-Tree with minimum degree t=2 (max 3 keys/node). Nodes split when full. Used in databases and file systems. All operations O(log n) with low disk I/O.",
@@ -10,7 +12,12 @@
     "time_worst": "O(log n)",
     "space": "O(n)"
   },
-  "tags": ["data-structures", "b-tree", "balanced-tree", "database"],
+  "tags": [
+    "data-structures",
+    "b-tree",
+    "balanced-tree",
+    "database"
+  ],
   "execution_target": "server",
   "entry_point": "algorithm.py",
   "class_name": "BTree"

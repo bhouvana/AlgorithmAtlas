@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type {
   AtlasMode, ChatMessage, Conversation, EditorWrite,
-  InterviewProblem, InterviewState, SimulationCommand,
+  InterviewProblem, InterviewState, SimulationCommand, ProblemContext,
 } from './types';
 
 // ── helpers ───────────────────────────────────────────────────────────────────
@@ -52,6 +52,7 @@ interface AtlasState {
   interview: InterviewState;
 
   notebookBridge: { language: string; source: string; lastOutput: string; lastError: string } | null;
+  problemBridge: ProblemContext | null;
 
   // ── actions ──
   open: (mode?: AtlasMode) => void;
@@ -83,6 +84,7 @@ interface AtlasState {
   setHasNewSuggestion: (v: boolean) => void;
 
   setNotebookBridge: (bridge: { language: string; source: string; lastOutput: string; lastError: string } | null) => void;
+  setProblemBridge: (bridge: ProblemContext | null) => void;
 
   startInterview: (problem: InterviewProblem) => void;
   revealNextHint: () => void;
@@ -126,6 +128,7 @@ export const useAtlasStore = create<AtlasState>()(
         hasNewSuggestion: false,
         interview: { active: false, problem: null, startedAt: null, hintsRevealed: 0 },
         notebookBridge: null,
+        problemBridge: null,
 
         open: (mode) =>
           set((s) => ({
@@ -210,6 +213,7 @@ export const useAtlasStore = create<AtlasState>()(
         setProactiveHint:    (hint) => set({ proactiveHint: hint }),
         setHasNewSuggestion: (v)    => set({ hasNewSuggestion: v }),
         setNotebookBridge:   (bridge) => set({ notebookBridge: bridge }),
+        setProblemBridge:    (bridge) => set({ problemBridge: bridge }),
 
         startInterview: (problem) =>
           set({ interview: { active: true, problem, startedAt: Date.now(), hintsRevealed: 0 } }),
@@ -244,6 +248,7 @@ export const useAtlasStore = create<AtlasState>()(
         state.pendingEditorWrite = null;
         state.pendingNavigation = null;
         state.notebookBridge = null;
+        state.problemBridge = null;
         state.conversations = state.conversations.map((c) => ({
           ...c,
           messages: c.messages.map((m) =>

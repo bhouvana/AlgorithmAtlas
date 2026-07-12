@@ -13,6 +13,7 @@ import { cn } from '../../lib/utils';
 
 const NAV_LINKS = [
   { to: '/learning', label: 'Learning' },
+  { to: '/atlas-code', label: 'AtlasCode' },
   { to: '/algorithms', label: 'Catalog' },
   { to: '/compare', label: 'Compare' },
   { to: '/notebook', label: 'Notebook' },

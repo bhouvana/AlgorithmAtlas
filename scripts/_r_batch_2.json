@@ -1,0 +1,921 @@
+{
+ "best-time-to-buy-sell-stock": {
+  "id": "best-time-to-buy-sell-stock",
+  "contract": {
+   "function_name": "max_profit",
+   "parameters": [
+    {
+     "name": "prices",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_array_cluster3.py",
+   "code": "function max_profit(prices) {\n    let minP = prices[0], best = 0;\n    for (let i=1;i<prices.length;i++) { best = Math.max(best, prices[i]-minP); minP = Math.min(minP, prices[i]); }\n    return best;\n}\n"
+  }
+ },
+ "coin-change": {
+  "id": "coin-change",
+  "contract": {
+   "function_name": "coin_change",
+   "parameters": [
+    {
+     "name": "coins",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "amount",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster1.py",
+   "code": "function coin_change(coins, amount) {\n    const INF = Infinity; const dp = new Array(amount+1).fill(INF); dp[0]=0;\n    for (let i=1;i<=amount;i++) for (const c of coins) if (c<=i && dp[i-c]+1<dp[i]) dp[i]=dp[i-c]+1;\n    const r = dp[amount]===INF ? -1 : dp[amount];\n    return r===-1?r:r;\n}\n"
+  }
+ },
+ "counting-bits": {
+  "id": "counting-bits",
+  "contract": {
+   "function_name": "count_bits",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_array_cluster3.py",
+   "code": "function count_bits(n) {\n    const out = new Array(n+1).fill(0);\n    for (let i=1;i<=n;i++) out[i] = out[i >> 1] + (i & 1);\n    return out;\n}\n"
+  }
+ },
+ "euler-phi-sieve": {
+  "id": "euler-phi-sieve",
+  "contract": {
+   "function_name": "euler_phi_sieve",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster1.py",
+   "code": "function euler_phi_sieve(n) {\n    let result=n, x=n, p=2;\n    while (p*p<=x) { if (x%p===0) { while (x%p===0) x=Math.floor(x/p); result-=Math.floor(result/p); } p++; }\n    if (x>1) result-=Math.floor(result/x);\n    return result;\n}\n"
+  }
+ },
+ "flood-fill": {
+  "id": "flood-fill",
+  "contract": {
+   "function_name": "flood_fill",
+   "parameters": [
+    {
+     "name": "grid",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    },
+    {
+     "name": "sr",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "sc",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "new_color",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_hashmap_grid_cluster.py",
+   "code": "function flood_fill(grid, sr, sc, new_color) {\n    const m = grid.length, n = grid[0].length;\n    const out = grid.map(r => r.slice());\n    const old = out[sr][sc];\n    if (old === new_color) return out;\n    const stack = [[sr,sc]];\n    out[sr][sc] = new_color;\n    while (stack.length) {\n        const [r,c] = stack.pop();\n        for (const [dr,dc] of [[1,0],[-1,0],[0,1],[0,-1]]) {\n            const nr=r+dr, nc=c+dc;\n            if (nr>=0&&nr<m&&nc>=0&&nc<n&&out[nr][nc]===old) { out[nr][nc]=new_color; stack.push([nr,nc]); }\n        }\n    }\n    return out;\n}\n"
+  }
+ },
+ "insert-interval": {
+  "id": "insert-interval",
+  "contract": {
+   "function_name": "insert_interval",
+   "parameters": [
+    {
+     "name": "intervals",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    },
+    {
+     "name": "new_s",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "new_e",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_greedy_math_cluster.py",
+   "code": "function insert_interval(intervals, new_s, new_e) {\n    const out = []; let i = 0; const n = intervals.length;\n    while (i < n && intervals[i][1] < new_s) { out.push(intervals[i]); i++; }\n    let s = new_s, e = new_e;\n    while (i < n && intervals[i][0] <= e) { s = Math.min(s, intervals[i][0]); e = Math.max(e, intervals[i][1]); i++; }\n    out.push([s,e]);\n    while (i < n) { out.push(intervals[i]); i++; }\n    return out;\n}\n"
+  }
+ },
+ "koko-eating-bananas": {
+  "id": "koko-eating-bananas",
+  "contract": {
+   "function_name": "min_eating_speed",
+   "parameters": [
+    {
+     "name": "piles",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "h",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster2.py",
+   "code": "function min_eating_speed(piles, h) {\n    function hoursNeeded(speed) { let hrs=0; for (const p of piles) hrs+=Math.ceil(p/speed); return hrs; }\n    let lo=1, hi=Math.max(...piles);\n    while (lo<hi) { const mid=(lo+hi)>>1; if (hoursNeeded(mid)<=h) hi=mid; else lo=mid+1; }\n    return lo;\n}\n"
+  }
+ },
+ "longest-common-substring": {
+  "id": "longest-common-substring",
+  "contract": {
+   "function_name": "longest_common_substring",
+   "parameters": [
+    {
+     "name": "s1",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "s2",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster4.py",
+   "code": "function longest_common_substring(s1, s2) {\n    const n=s1.length, m=s2.length;\n    const dp=Array.from({length:n+1}, () => new Array(m+1).fill(0));\n    let best=0;\n    for (let i=1;i<=n;i++) for (let j=1;j<=m;j++) {\n        if (s1[i-1]===s2[j-1]) { dp[i][j]=dp[i-1][j-1]+1; if (dp[i][j]>best) best=dp[i][j]; }\n    }\n    return best;\n}\n"
+  }
+ },
+ "longest-valid-parentheses": {
+  "id": "longest-valid-parentheses",
+  "contract": {
+   "function_name": "longest_valid_parentheses",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster4.py",
+   "code": "function longest_valid_parentheses(s) {\n    const stack=[-1]; let best=0;\n    for (let i=0;i<s.length;i++) {\n        if (s[i]==='(') stack.push(i);\n        else {\n            stack.pop();\n            if (stack.length===0) stack.push(i);\n            else best=Math.max(best, i-stack[stack.length-1]);\n        }\n    }\n    return best;\n}\n"
+  }
+ },
+ "max-consecutive-ones-with-k-flips": {
+  "id": "max-consecutive-ones-with-k-flips",
+  "contract": {
+   "function_name": "longest_ones",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster2.py",
+   "code": "function longest_ones(nums, k) {\n    let left=0, zeros=0, best=0;\n    for (let right=0;right<nums.length;right++) {\n        if (nums[right]===0) zeros++;\n        while (zeros>k) { if (nums[left]===0) zeros--; left++; }\n        best = Math.max(best, right-left+1);\n    }\n    return best;\n}\n"
+  }
+ },
+ "merge-two-sorted-lists": {
+  "id": "merge-two-sorted-lists",
+  "contract": {
+   "function_name": "merge_two_lists",
+   "parameters": [
+    {
+     "name": "a",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "b",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function merge_two_lists(a, b) {\n    const out=[]; let i=0,j=0;\n    while (i<a.length && j<b.length) { if (a[i]<=b[j]) out.push(a[i++]); else out.push(b[j++]); }\n    while (i<a.length) out.push(a[i++]);\n    while (j<b.length) out.push(b[j++]);\n    return out;\n}\n"
+  }
+ },
+ "missing-number": {
+  "id": "missing-number",
+  "contract": {
+   "function_name": "missing_number",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_bit_misc_cluster.py",
+   "code": "function missing_number(nums) {\n    const n = nums.length; let expected = n*(n+1)/2; let actual = 0;\n    for (const x of nums) actual += x;\n    return (expected - actual);\n}\n"
+  }
+ },
+ "number-of-islands": {
+  "id": "number-of-islands",
+  "contract": {
+   "function_name": "num_islands",
+   "parameters": [
+    {
+     "name": "grid",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_hashmap_grid_cluster.py",
+   "code": "function num_islands(grid) {\n    const m = grid.length, n = grid[0].length;\n    const visited = Array.from({length:m}, () => new Array(n).fill(false));\n    let count = 0;\n    function bfs(sr, sc) {\n        const q = [[sr,sc]]; visited[sr][sc] = true; let qi = 0;\n        while (qi < q.length) {\n            const [r,c] = q[qi]; qi++;\n            for (const [dr,dc] of [[1,0],[-1,0],[0,1],[0,-1]]) {\n                const nr=r+dr, nc=c+dc;\n                if (nr>=0&&nr<m&&nc>=0&&nc<n&&!visited[nr][nc]&&grid[nr][nc]===1) { visited[nr][nc]=true; q.push([nr,nc]); }\n            }\n        }\n    }\n    for (let i=0;i<m;i++) for (let j=0;j<n;j++) { if (grid[i][j]===1 && !visited[i][j]) { count++; bfs(i,j); } }\n    return count;\n}\n"
+  }
+ },
+ "perfect-squares-min-count": {
+  "id": "perfect-squares-min-count",
+  "contract": {
+   "function_name": "num_squares",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function num_squares(n) {\n    const dp=new Array(n+1).fill(Infinity); dp[0]=0;\n    for (let i=1;i<=n;i++) for (let j=1;j*j<=i;j++) dp[i]=Math.min(dp[i], dp[i-j*j]+1);\n    return dp[n];\n}\n"
+  }
+ },
+ "rod-cutting": {
+  "id": "rod-cutting",
+  "contract": {
+   "function_name": "rod_cutting",
+   "parameters": [
+    {
+     "name": "prices",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function rod_cutting(prices, n) {\n    const dp = new Array(n+1).fill(0);\n    for (let i=1;i<=n;i++) for (let len=1;len<=Math.min(i,prices.length);len++) dp[i]=Math.max(dp[i], dp[i-len]+prices[len-1]);\n    return dp[n];\n}\n"
+  }
+ },
+ "staircase": {
+  "id": "staircase",
+  "contract": {
+   "function_name": "climb_stairs",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function climb_stairs(n) {\n    if (n===0) return 1;\n    if (n<=2) return n;\n    let a1=1, b=2;\n    for (let i=3;i<=n;i++) { const t=a1+b; a1=b; b=t; }\n    return b;\n}\n"
+  }
+ },
+ "task-scheduler": {
+  "id": "task-scheduler",
+  "contract": {
+   "function_name": "least_interval",
+   "parameters": [
+    {
+     "name": "counts",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "cooldown",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster6.py",
+   "code": "function least_interval(counts, cooldown) {\n    const maxCount = Math.max(...counts);\n    const maxCountFreq = counts.filter(c=>c===maxCount).length;\n    const total = counts.reduce((a,b)=>a+b,0);\n    const formula = (maxCount-1)*(cooldown+1)+maxCountFreq;\n    return Math.max(total, formula);\n}\n"
+  }
+ },
+ "unbounded-knapsack": {
+  "id": "unbounded-knapsack",
+  "contract": {
+   "function_name": "unbounded_knapsack",
+   "parameters": [
+    {
+     "name": "weights",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "values",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "capacity",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster6.py",
+   "code": "function unbounded_knapsack(weights, values, capacity) {\n    const dp=new Array(capacity+1).fill(0);\n    for (let c=1;c<=capacity;c++) {\n        for (let i=0;i<weights.length;i++) {\n            if (weights[i]<=c) dp[c]=Math.max(dp[c], dp[c-weights[i]]+values[i]);\n        }\n    }\n    return dp[capacity];\n}\n"
+  }
+ },
+ "binary-tree-zigzag-level-order": {
+  "id": "binary-tree-zigzag-level-order",
+  "contract": {
+   "function_name": "zigzag_level_order",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given a binary tree, print its **zigzag level-order traversal**: one line per depth level, values space-separated; level 0 reads left-to-right, level 1 right-to-left, level 2 left-to-right, and so on, alternating every level.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 number of nodes \\u2264 2000\"]"
+  }
+ },
+ "diameter-of-binary-tree": {
+  "id": "diameter-of-binary-tree",
+  "contract": {
+   "function_name": "diameter",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a binary tree, print the **diameter** \u2014 the length (in edges) of the longest path between any two nodes.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 number of nodes \\u2264 10^4\"]"
+  }
+ },
+ "find-all-anagrams-in-string": {
+  "id": "find-all-anagrams-in-string",
+  "contract": {
+   "function_name": "find_anagrams",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "p",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given strings `s` and `p`, print all **starting indices** (ascending, space-separated) in `s` where a permutation (anagram) of `p` occurs. Print an empty line if there are none.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 s.length, p.length \\u2264 3\\u00d710^4\"]"
+  }
+ },
+ "interleaving-strings": {
+  "id": "interleaving-strings",
+  "contract": {
+   "function_name": "is_interleave",
+   "parameters": [
+    {
+     "name": "s1",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "s2",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "s3",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "problem": {
+   "statement": "Given strings `s1`, `s2`, `s3`, print `true` if `s3` is formed by an **interleaving** of `s1` and `s2` (preserving each string's relative character order), else `false`.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 s1.length, s2.length \\u2264 100\"]"
+  }
+ },
+ "lowest-common-ancestor-bst": {
+  "id": "lowest-common-ancestor-bst",
+  "contract": {
+   "function_name": "lowest_common_ancestor",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "p",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "q",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a **binary search tree** and two values `p`, `q` known to exist in it, print the value of their **lowest common ancestor**.",
+   "examples": "[]",
+   "constraints": "[\"2 \\u2264 number of nodes \\u2264 10^4\", \"all values distinct\"]"
+  }
+ },
+ "median-of-two-sorted-arrays": {
+  "id": "median-of-two-sorted-arrays",
+  "contract": {
+   "function_name": "find_median",
+   "parameters": [
+    {
+     "name": "nums1",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "nums2",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "float"
+   }
+  },
+  "problem": {
+   "statement": "Given two sorted integer arrays `nums1` (length `m`) and `nums2` (length `n`), print the **median** of the combined sorted array without fully materializing and sorting the merge (aim for O(log(min(m, n))) time). Print the median as a plain integer if `m + n` is odd, otherwise print it with **exactly one decimal place** (e.g. `3.0`, `2.5`).",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 m, n \\u2264 10^5\", \"1 \\u2264 m + n \\u2264 2\\u00d710^5\", \"-10^6 \\u2264 nums1[i], nums2[i] \\u2264 10^6\"]"
+  }
+ },
+ "patience-sort": {
+  "id": "patience-sort",
+  "contract": {
+   "function_name": "patience_sort",
+   "parameters": [
+    {
+     "name": "arr",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   },
+   "mutates_argument": "arr"
+  },
+  "problem": {
+   "statement": "Given an array of integers, sort it in **ascending order** using **Patience Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+  }
+ },
+ "reverse-bits": {
+  "id": "reverse-bits",
+  "contract": {
+   "function_name": "reverse_bits",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a 32-bit unsigned integer `n`, print the integer obtained by **reversing its bits**.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 n < 2^32\"]"
+  }
+ },
+ "search-2d-matrix": {
+  "id": "search-2d-matrix",
+  "contract": {
+   "function_name": "search_matrix",
+   "parameters": [
+    {
+     "name": "matrix",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    },
+    {
+     "name": "target",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "problem": {
+   "statement": "Given an `m x n` matrix where each row is sorted ascending and each row's first integer is greater than the previous row's last integer, print `true` if `target` exists in the matrix, else `false`. Solve in **O(log(m*n))** time by treating the matrix as one flattened sorted array.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 m, n \\u2264 100\"]"
+  }
+ },
+ "sliding-window-maximum": {
+  "id": "sliding-window-maximum",
+  "contract": {
+   "function_name": "max_sliding_window",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given an integer array `nums` and window size `k`, print the **maximum value** of every contiguous window of size `k` as it slides from left to right, space-separated in order.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 k \\u2264 nums.length \\u2264 10^5\", \"-10^9 \\u2264 nums[i] \\u2264 10^9\"]"
+  }
+ },
+ "string-hashing": {
+  "id": "string-hashing",
+  "contract": {
+   "function_name": "count_distinct_substrings",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a string `s` and an integer `k`, print the number of **distinct substrings of length exactly `k`**. Solve using a rolling hash to compare substrings in O(1) after O(n) preprocessing.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 k \\u2264 s.length \\u2264 10^5\"]"
+  }
+ },
+ "word-break-count-ways": {
+  "id": "word-break-count-ways",
+  "contract": {
+   "function_name": "word_break_count",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "word_dict",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "string"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a string `s` and a dictionary of words `wordDict` (one line, space separated), print the number of **distinct ways** to segment `s` into a space-separated sequence of dictionary words.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 s.length \\u2264 20\"]"
+  }
+ }
+}

@@ -1,6 +1,8 @@
 {
-  "slug": "rope",
+  "schema_version": "1.0",
+  "id": "rope",
   "name": "Rope",
+  "version": "1.0.0",
   "category": "data-structures",
   "visualization_type": "TREE",
   "description": "Rope: binary tree for efficient string operations. Leaves store string segments; internal nodes store left-subtree length. Concat O(1), Index O(log n), Split O(log n).",
@@ -10,7 +12,12 @@
     "time_worst": "O(log n)",
     "space": "O(n)"
   },
-  "tags": ["data-structures", "rope", "string", "binary-tree"],
+  "tags": [
+    "data-structures",
+    "rope",
+    "string",
+    "binary-tree"
+  ],
   "execution_target": "server",
   "entry_point": "algorithm.py",
   "class_name": "Rope"

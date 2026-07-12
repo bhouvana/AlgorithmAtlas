@@ -20,6 +20,19 @@ services:
         sync: false
       - key: GROQ_MODEL
         value: llama-3.3-70b-versatile
+      # Atlas AI provider pool round-robins across Groq + both Ollama Cloud
+      # keys (see apps/backend/algorithm_atlas/ai/provider.py) and falls
+      # forward on rate limit/outage -- without these two, Groq alone is a
+      # single point of failure in production. Set the actual key values in
+      # the Render dashboard (sync: false means "secret, not stored in git").
+      - key: OLLAMA_API_KEY_1
+        sync: false
+      - key: OLLAMA_API_KEY_2
+        sync: false
+      - key: OLLAMA_MODEL
+        value: gpt-oss:120b
+      - key: OLLAMA_BASE_URL
+        value: https://ollama.com/v1
 
   # ── Frontend — React / Vite static site ──────────────────────────────────────
   - type: web

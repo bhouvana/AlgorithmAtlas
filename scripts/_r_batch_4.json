@@ -1,0 +1,902 @@
+{
+ "bitonic-peak-index": {
+  "id": "bitonic-peak-index",
+  "contract": {
+   "function_name": "peak_index",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster1.py",
+   "code": "function peak_index(nums) {\n    let lo=0, hi=nums.length-1;\n    while (lo<hi) { const mid=(lo+hi)>>1; if (nums[mid]<nums[mid+1]) lo=mid+1; else hi=mid; }\n    return lo;\n}\n"
+  }
+ },
+ "collatz": {
+  "id": "collatz",
+  "contract": {
+   "function_name": "collatz",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_greedy_math_cluster.py",
+   "code": "function collatz(n) {\n    let steps = 0; let x = n;\n    while (x !== 1) { if (x % 2 === 0) x = x/2; else x = 3*x+1; steps++; }\n    return steps;\n}\n"
+  }
+ },
+ "daily-temperatures": {
+  "id": "daily-temperatures",
+  "contract": {
+   "function_name": "daily_temperatures",
+   "parameters": [
+    {
+     "name": "temps",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_hashmap_grid_cluster.py",
+   "code": "function daily_temperatures(temps) {\n    const n = temps.length; const out = new Array(n).fill(0); const stack = [];\n    for (let i=0;i<n;i++) {\n        while (stack.length && temps[stack[stack.length-1]] < temps[i]) { const j = stack.pop(); out[j] = i-j; }\n        stack.push(i);\n    }\n    return out;\n}\n"
+  }
+ },
+ "find-duplicate-number": {
+  "id": "find-duplicate-number",
+  "contract": {
+   "function_name": "find_duplicate",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_array_cluster3.py",
+   "code": "function find_duplicate(nums) {\n    const seen = new Set();\n    for (const x of nums) { if (seen.has(x)) return x; seen.add(x); }\n    return -1;\n}\n"
+  }
+ },
+ "graph-bfs": {
+  "id": "graph-bfs",
+  "contract": {
+   "function_name": "bfs",
+   "parameters": [
+    {
+     "name": "adj",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    },
+    {
+     "name": "src",
+     "type": {
+      "kind": "integer"
+     }
+    },
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_graph_grid_cluster.py",
+   "code": "function bfs(adj, src, n) {\n    const dist = new Array(n).fill(-1); dist[src] = 0;\n    const q = [src]; let qi = 0;\n    while (qi < q.length) {\n        const u = q[qi]; qi++;\n        for (const v of adj[u]) { if (dist[v] === -1) { dist[v] = dist[u] + 1; q.push(v); } }\n    }\n    return dist;\n}\n"
+  }
+ },
+ "intersection-of-two-arrays": {
+  "id": "intersection-of-two-arrays",
+  "contract": {
+   "function_name": "intersection",
+   "parameters": [
+    {
+     "name": "nums1",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "nums2",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_array_cluster3.py",
+   "code": "function intersection(nums1, nums2) {\n    const s1 = new Set(nums1), s2 = new Set(nums2);\n    const out = [...s1].filter(x => s2.has(x)).sort((a,b)=>a-b);\n    return out;\n}\n"
+  }
+ },
+ "largest-rectangle-in-histogram": {
+  "id": "largest-rectangle-in-histogram",
+  "contract": {
+   "function_name": "largest_rectangle_area",
+   "parameters": [
+    {
+     "name": "heights",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster2.py",
+   "code": "function largest_rectangle_area(heights) {\n    const stack=[]; let best=0; const n=heights.length;\n    for (let i=0;i<=n;i++) {\n        const h = i===n ? 0 : heights[i];\n        while (stack.length && heights[stack[stack.length-1]]>=h) {\n            const top=stack.pop();\n            const width = stack.length===0 ? i : i-stack[stack.length-1]-1;\n            best = Math.max(best, heights[top]*width);\n        }\n        stack.push(i);\n    }\n    return best;\n}\n"
+  }
+ },
+ "longest-palindromic-substring": {
+  "id": "longest-palindromic-substring",
+  "contract": {
+   "function_name": "longest_palindrome",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster4.py",
+   "code": "function longest_palindrome(s) {\n    if (s.length===0) return 0;\n    let best=1;\n    function expand(l,r) { while (l>=0 && r<s.length && s[l]===s[r]) { l--; r++; } return r-l-1; }\n    for (let i=0;i<s.length;i++) {\n        best=Math.max(best, expand(i,i));\n        best=Math.max(best, expand(i,i+1));\n    }\n    return best;\n}\n"
+  }
+ },
+ "majority-element": {
+  "id": "majority-element",
+  "contract": {
+   "function_name": "majority_element",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_bit_misc_cluster.py",
+   "code": "function majority_element(nums) {\n    let count = 0, candidate = 0;\n    for (const x of nums) { if (count === 0) candidate = x; count += (x === candidate) ? 1 : -1; }\n    return candidate;\n}\n"
+  }
+ },
+ "maximum-subarray-circular": {
+  "id": "maximum-subarray-circular",
+  "contract": {
+   "function_name": "max_subarray_sum_circular",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function max_subarray_sum_circular(nums) {\n    let total=0, curMax=0, best=-Infinity, curMin=0, worst=Infinity;\n    for (const x of nums) {\n        total+=x;\n        curMax=Math.max(curMax+x,x); best=Math.max(best,curMax);\n        curMin=Math.min(curMin+x,x); worst=Math.min(worst,curMin);\n    }\n    if (best<0) return best;\n    return Math.max(best, total-worst);\n}\n"
+  }
+ },
+ "miller-rabin": {
+  "id": "miller-rabin",
+  "contract": {
+   "function_name": "miller_rabin",
+   "parameters": [
+    {
+     "name": "n",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster5.py",
+   "code": "function miller_rabin(n) {\n    if (n<2) return false;\n    if (n<4) return true;\n    if (n%2===0) return false;\n    for (let i=3;i*i<=n;i+=2) if (n%i===0) return false;\n    return true;\n}\n"
+  }
+ },
+ "move-zeroes": {
+  "id": "move-zeroes",
+  "contract": {
+   "function_name": "move_zeroes",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_bit_misc_cluster.py",
+   "code": "function move_zeroes(nums) {\n    let j = 0;\n    for (let i=0;i<nums.length;i++) { if (nums[i] !== 0) { const t=nums[j]; nums[j]=nums[i]; nums[i]=t; j++; } }\n    return nums;\n}\n"
+  }
+ },
+ "palindrome-partition": {
+  "id": "palindrome-partition",
+  "contract": {
+   "function_name": "min_cut",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster5.py",
+   "code": "function min_cut(s) {\n    const n=s.length;\n    const isPal = Array.from({length:n}, () => new Array(n).fill(false));\n    for (let i=0;i<n;i++) isPal[i][i]=true;\n    for (let len=2;len<=n;len++) {\n        for (let i=0;i+len-1<n;i++) {\n            const j=i+len-1;\n            if (s[i]===s[j] && (len===2 || isPal[i+1][j-1])) isPal[i][j]=true;\n        }\n    }\n    const dp=new Array(n).fill(0);\n    for (let i=0;i<n;i++) {\n        if (isPal[0][i]) { dp[i]=0; continue; }\n        dp[i]=i;\n        for (let j=1;j<=i;j++) if (isPal[j][i] && dp[j-1]+1<dp[i]) dp[i]=dp[j-1]+1;\n    }\n    return dp[n-1];\n}\n"
+  }
+ },
+ "product-of-array-except-self": {
+  "id": "product-of-array-except-self",
+  "contract": {
+   "function_name": "product_except_self",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_array_cluster3.py",
+   "code": "function product_except_self(nums) {\n    const n = nums.length; const out = new Array(n).fill(1);\n    let prefix = 1;\n    for (let i=0;i<n;i++) { out[i] = prefix; prefix *= nums[i]; }\n    let suffix = 1;\n    for (let i=n-1;i>=0;i--) { out[i] *= suffix; suffix *= nums[i]; }\n    return out;\n}\n"
+  }
+ },
+ "search-insert-position": {
+  "id": "search-insert-position",
+  "contract": {
+   "function_name": "search_insert",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "target",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_mega_cluster3.py",
+   "code": "function search_insert(nums, target) {\n    let lo=0, hi=nums.length;\n    while (lo<hi) { const mid=(lo+hi)>>1; if (nums[mid]<target) lo=mid+1; else hi=mid; }\n    return lo;\n}\n"
+  }
+ },
+ "subarray-sum-equals-k": {
+  "id": "subarray-sum-equals-k",
+  "contract": {
+   "function_name": "subarray_sum",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_hashmap_grid_cluster.py",
+   "code": "function subarray_sum(nums, k) {\n    const seen = {0: 1}; let sum = 0, count = 0;\n    for (const x of nums) { sum += x; count += seen[sum-k] || 0; seen[sum] = (seen[sum]||0) + 1; }\n    return count;\n}\n"
+  }
+ },
+ "top-k-frequent-elements": {
+  "id": "top-k-frequent-elements",
+  "contract": {
+   "function_name": "top_k_frequent",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_hashmap_grid_cluster.py",
+   "code": "function top_k_frequent(nums, k) {\n    const freq = {};\n    for (const x of nums) freq[x] = (freq[x]||0) + 1;\n    const keys = Object.keys(freq).map(Number);\n    keys.sort((a,b) => freq[b]-freq[a] || a-b);\n    return keys.slice(0,k);\n}\n"
+  }
+ },
+ "valid-anagram": {
+  "id": "valid-anagram",
+  "contract": {
+   "function_name": "is_anagram",
+   "parameters": [
+    {
+     "name": "s",
+     "type": {
+      "kind": "string"
+     }
+    },
+    {
+     "name": "t",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "reference": {
+   "lang": "javascript",
+   "file": "scale_bit_misc_cluster.py",
+   "code": "function is_anagram(s, t) {\n    if (s.length !== t.length) return false;\n    const count = {};\n    for (const ch of s) count[ch] = (count[ch]||0) + 1;\n    for (const ch of t) { count[ch] = (count[ch]||0) - 1; if (count[ch] < 0) return false; }\n    return Object.values(count).every(v => v === 0);\n}\n"
+  }
+ },
+ "bucket-sort": {
+  "id": "bucket-sort",
+  "contract": {
+   "function_name": "bucket_sort",
+   "parameters": [
+    {
+     "name": "arr",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   },
+   "mutates_argument": "arr"
+  },
+  "problem": {
+   "statement": "Given an array of integers, sort it in **ascending order** using **Bucket Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+  }
+ },
+ "counting-sort": {
+  "id": "counting-sort",
+  "contract": {
+   "function_name": "counting_sort",
+   "parameters": [
+    {
+     "name": "arr",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   },
+   "mutates_argument": "arr"
+  },
+  "problem": {
+   "statement": "Given an array of integers, sort it in **ascending order** using **Counting Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+  }
+ },
+ "distinct-subsets-count": {
+  "id": "distinct-subsets-count",
+  "contract": {
+   "function_name": "count_distinct_subsets",
+   "parameters": [
+    {
+     "name": "nums",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a multiset of `n` integers (it may contain duplicates), print the number of **distinct subsets** of it, counting the empty subset. Two subsets are the same if they contain the same multiset of values regardless of which original duplicate index they came from.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 n \\u2264 20\", \"-10 \\u2264 nums[i] \\u2264 10\"]"
+  }
+ },
+ "gnome-sort": {
+  "id": "gnome-sort",
+  "contract": {
+   "function_name": "gnome_sort",
+   "parameters": [
+    {
+     "name": "arr",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   },
+   "mutates_argument": "arr"
+  },
+  "problem": {
+   "statement": "Given an array of integers, sort it in **ascending order** using **Gnome Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+  }
+ },
+ "is-balanced-binary-tree": {
+  "id": "is-balanced-binary-tree",
+  "contract": {
+   "function_name": "is_balanced",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "problem": {
+   "statement": "Given a binary tree, print `true` if it is **height-balanced** (every node's two subtree heights differ by at most 1), else `false`.",
+   "examples": "[]",
+   "constraints": "[\"0 \\u2264 number of nodes \\u2264 5000\"]"
+  }
+ },
+ "kth-smallest-in-bst": {
+  "id": "kth-smallest-in-bst",
+  "contract": {
+   "function_name": "kth_smallest",
+   "parameters": [
+    {
+     "name": "root",
+     "type": {
+      "kind": "tree",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    },
+    {
+     "name": "k",
+     "type": {
+      "kind": "integer"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a **binary search tree** and an integer `k`, print the `k`-th smallest value in it (1-indexed).",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 k \\u2264 number of nodes \\u2264 10^4\"]"
+  }
+ },
+ "max-distance-to-zero": {
+  "id": "max-distance-to-zero",
+  "contract": {
+   "function_name": "max_dist_to_zero",
+   "parameters": [
+    {
+     "name": "grid",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "integer"
+   }
+  },
+  "problem": {
+   "statement": "Given a grid of 0s and 1s (at least one 0), print the **maximum, over all cells**, of the 4-directional distance from that cell to the nearest 0 cell.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 rows, cols \\u2264 20\", \"at least one cell is 0\"]"
+  }
+ },
+ "merge-sort": {
+  "id": "merge-sort",
+  "contract": {
+   "function_name": "merge_sort",
+   "parameters": [
+    {
+     "name": "arr",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   },
+   "mutates_argument": "arr"
+  },
+  "problem": {
+   "statement": "Given an array of integers, sort it in **ascending order** using **Merge Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+  }
+ },
+ "quick-sort": {
+  "id": "quick-sort",
+  "contract": {
+   "function_name": "quick_sort",
+   "parameters": [
+    {
+     "name": "arr",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "integer"
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   },
+   "mutates_argument": "arr"
+  },
+  "problem": {
+   "statement": "Given an array of integers, sort it in **ascending order** using **Quick Sort** and print the sorted array.\n\nPrint space-separated integers on one line.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 nums.length \\u2264 1000\", \"-10^4 \\u2264 nums[i] \\u2264 10^4\"]"
+  }
+ },
+ "rotate-image-90": {
+  "id": "rotate-image-90",
+  "contract": {
+   "function_name": "rotate",
+   "parameters": [
+    {
+     "name": "matrix",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given an `N x N` matrix, print the matrix **rotated 90 degrees clockwise**, one row per line, space-separated values.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 N \\u2264 200\", \"-10^9 \\u2264 matrix[i][j] \\u2264 10^9\"]"
+  }
+ },
+ "set-matrix-zeroes": {
+  "id": "set-matrix-zeroes",
+  "contract": {
+   "function_name": "set_zeroes",
+   "parameters": [
+    {
+     "name": "matrix",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "array",
+     "items": {
+      "kind": "integer"
+     }
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given an `R x C` matrix, if any cell equals `0`, set its entire row and entire column to `0`. Print the resulting matrix, one row per line, space-separated values.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 R, C \\u2264 200\", \"-10^9 \\u2264 matrix[i][j] \\u2264 10^9\"]"
+  }
+ },
+ "stable-matching": {
+  "id": "stable-matching",
+  "contract": {
+   "function_name": "stable_matching",
+   "parameters": [
+    {
+     "name": "men_prefs",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    },
+    {
+     "name": "women_prefs",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "integer"
+       }
+      }
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "array",
+    "items": {
+     "kind": "integer"
+    }
+   }
+  },
+  "problem": {
+   "statement": "Given `n` men and `n` women, each with a fully-ranked preference list over the other side (`men_prefs[i]`/`women_prefs[i]`, most preferred first), print the **man-optimal stable matching** produced by the Gale-Shapley algorithm (men propose): for each man `0..n-1`, print his assigned woman's index, space-separated.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 n \\u2264 100\"]"
+  }
+ },
+ "word-search-grid": {
+  "id": "word-search-grid",
+  "contract": {
+   "function_name": "exist",
+   "parameters": [
+    {
+     "name": "grid",
+     "type": {
+      "kind": "array",
+      "items": {
+       "kind": "array",
+       "items": {
+        "kind": "string"
+       }
+      }
+     }
+    },
+    {
+     "name": "word",
+     "type": {
+      "kind": "string"
+     }
+    }
+   ],
+   "return_type": {
+    "kind": "boolean"
+   }
+  },
+  "problem": {
+   "statement": "Given an `rows x cols` grid of lowercase letters and a target `word`, print `true` if `word` can be built by moving between **orthogonally adjacent** cells (up, down, left, right) without reusing the same cell twice, else `false`.",
+   "examples": "[]",
+   "constraints": "[\"1 \\u2264 rows, cols \\u2264 12\", \"1 \\u2264 word.length \\u2264 15\"]"
+  }
+ }
+}

@@ -1,9 +1,25 @@
 {
-  "slug": "raft-leader-election",
+  "schema_version": "1.0",
+  "id": "raft-leader-election",
   "name": "Raft Leader Election",
+  "version": "1.0.0",
   "category": "distributed-systems",
-  "tags": ["distributed", "consensus", "raft", "election", "fault-tolerance"],
-  "complexity": "O(n)",
-  "visualization": "NETWORK_TOPOLOGY",
-  "description": "Demonstrates the Raft consensus leader election algorithm. Five nodes start as followers. One node times out, becomes a candidate, solicits votes via RequestVote RPCs, and wins a majority to become the cluster leader."
+  "visualization_type": "NETWORK_TOPOLOGY",
+  "entry_point": "algorithm.py",
+  "class_name": "RaftLeaderElection",
+  "description": "Demonstrates the Raft consensus leader election algorithm. Five nodes start as followers. One node times out, becomes a candidate, solicits votes via RequestVote RPCs, and wins a majority to become the cluster leader.",
+  "complexity": {
+    "time_best": "O(n)",
+    "time_average": "O(n)",
+    "time_worst": "O(n)",
+    "space": "O(n)"
+  },
+  "tags": [
+    "distributed",
+    "consensus",
+    "raft",
+    "election",
+    "fault-tolerance"
+  ],
+  "execution_target": "server"
 }

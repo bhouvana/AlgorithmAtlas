@@ -1,0 +1,1374 @@
+[
+  {
+    "pid": "bubble-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 34/40",
+    "duration_ms": 43789.61689998687
+  },
+  {
+    "pid": "bitonic-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43170.71700000088
+  },
+  {
+    "pid": "bucket-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 42871.53319999925
+  },
+  {
+    "pid": "cocktail-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43275.27749999717
+  },
+  {
+    "pid": "comb-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43135.857899993425
+  },
+  {
+    "pid": "counting-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 42951.49190000666
+  },
+  {
+    "pid": "cycle-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43247.885600008885
+  },
+  {
+    "pid": "gnome-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 42975.44049999851
+  },
+  {
+    "pid": "heap-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43029.01520000887
+  },
+  {
+    "pid": "insertion-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 42906.03009999904
+  },
+  {
+    "pid": "merge-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43068.95280000754
+  },
+  {
+    "pid": "odd-even-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 42984.23569998704
+  },
+  {
+    "pid": "pancake-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 42854.92440000235
+  },
+  {
+    "pid": "patience-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 42753.336699999636
+  },
+  {
+    "pid": "quick-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 42730.66729999846
+  },
+  {
+    "pid": "radix-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43230.64639999939
+  },
+  {
+    "pid": "selection-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43057.388999994146
+  },
+  {
+    "pid": "shell-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 42990.30970000604
+  },
+  {
+    "pid": "stooge-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43859.86289998982
+  },
+  {
+    "pid": "strand-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43051.34609999368
+  },
+  {
+    "pid": "tim-sort",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 43516.45890000509
+  },
+  {
+    "pid": "binary-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 44384.90140000067
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 43619.833999997354
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 43478.20959999808
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 43526.54639999673
+  },
+  {
+    "pid": "jump-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 44174.312599992845
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 43757.08179999492
+  },
+  {
+    "pid": "linear-search",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 43864.58270000003
+  },
+  {
+    "pid": "bubble-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 34/40",
+    "duration_ms": 12522.701699999743
+  },
+  {
+    "pid": "bitonic-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12412.610700004734
+  },
+  {
+    "pid": "bucket-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12231.456699999399
+  },
+  {
+    "pid": "cocktail-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12336.947500007227
+  },
+  {
+    "pid": "comb-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12152.167899999768
+  },
+  {
+    "pid": "counting-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12267.686799998046
+  },
+  {
+    "pid": "cycle-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12301.027800000156
+  },
+  {
+    "pid": "gnome-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12226.3602999883
+  },
+  {
+    "pid": "heap-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12141.02599999751
+  },
+  {
+    "pid": "insertion-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12346.687200013548
+  },
+  {
+    "pid": "merge-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12371.872599993367
+  },
+  {
+    "pid": "odd-even-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12341.036500001792
+  },
+  {
+    "pid": "pancake-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12218.470899999375
+  },
+  {
+    "pid": "patience-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12344.671400001971
+  },
+  {
+    "pid": "quick-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12169.528099999297
+  },
+  {
+    "pid": "radix-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12032.676400005585
+  },
+  {
+    "pid": "selection-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12240.413499996066
+  },
+  {
+    "pid": "shell-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12017.874299999676
+  },
+  {
+    "pid": "stooge-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12224.688100002822
+  },
+  {
+    "pid": "strand-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12201.228899997659
+  },
+  {
+    "pid": "tim-sort",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 12046.78820000845
+  },
+  {
+    "pid": "binary-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 12948.213499999838
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 12307.036300000618
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 11984.451500000432
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 12136.019399986253
+  },
+  {
+    "pid": "jump-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 12364.255199994659
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 12213.897300011013
+  },
+  {
+    "pid": "linear-search",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 12968.714800008456
+  },
+  {
+    "pid": "bubble-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 34/40",
+    "duration_ms": 2281.994399992982
+  },
+  {
+    "pid": "bitonic-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2150.8102000079816
+  },
+  {
+    "pid": "bucket-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2211.5691999933915
+  },
+  {
+    "pid": "cocktail-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2141.5479999996023
+  },
+  {
+    "pid": "comb-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2150.6283999915468
+  },
+  {
+    "pid": "counting-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2182.9069000086747
+  },
+  {
+    "pid": "cycle-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2115.7223000045633
+  },
+  {
+    "pid": "gnome-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2303.124600002775
+  },
+  {
+    "pid": "heap-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2310.0052999943728
+  },
+  {
+    "pid": "insertion-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2161.562100009178
+  },
+  {
+    "pid": "merge-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2226.5486999967834
+  },
+  {
+    "pid": "odd-even-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2315.142300009029
+  },
+  {
+    "pid": "pancake-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2313.0899000097997
+  },
+  {
+    "pid": "patience-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2181.5311999962432
+  },
+  {
+    "pid": "quick-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2222.4469000066165
+  },
+  {
+    "pid": "radix-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2187.7894999925047
+  },
+  {
+    "pid": "selection-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2182.9957000009017
+  },
+  {
+    "pid": "shell-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2203.308100011782
+  },
+  {
+    "pid": "stooge-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2132.2339000034845
+  },
+  {
+    "pid": "strand-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2217.6557000057073
+  },
+  {
+    "pid": "tim-sort",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2120.1242999959504
+  },
+  {
+    "pid": "binary-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 2260.183100006543
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 1969.5737000001827
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 1938.5364000045229
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 2076.3301999977557
+  },
+  {
+    "pid": "jump-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 1933.063200005563
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 1966.7234000080498
+  },
+  {
+    "pid": "linear-search",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 2133.016299994779
+  },
+  {
+    "pid": "bubble-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 34/40",
+    "duration_ms": 12315.069299991592
+  },
+  {
+    "pid": "bitonic-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8366.416100005154
+  },
+  {
+    "pid": "bucket-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8324.450400003116
+  },
+  {
+    "pid": "cocktail-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8141.575400004513
+  },
+  {
+    "pid": "comb-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8310.535500000697
+  },
+  {
+    "pid": "counting-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 10263.424400007352
+  },
+  {
+    "pid": "cycle-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 9554.0522000083
+  },
+  {
+    "pid": "gnome-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 10306.73910000769
+  },
+  {
+    "pid": "heap-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 9902.753100002883
+  },
+  {
+    "pid": "insertion-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 9014.134999990347
+  },
+  {
+    "pid": "merge-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 9950.984900002368
+  },
+  {
+    "pid": "odd-even-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8064.2024999979185
+  },
+  {
+    "pid": "pancake-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 7993.657800005167
+  },
+  {
+    "pid": "patience-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8044.036300008884
+  },
+  {
+    "pid": "quick-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8323.653600004036
+  },
+  {
+    "pid": "radix-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 9109.17640000116
+  },
+  {
+    "pid": "selection-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8419.712300004903
+  },
+  {
+    "pid": "shell-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8866.818199996487
+  },
+  {
+    "pid": "stooge-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8505.353699991247
+  },
+  {
+    "pid": "strand-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8277.201500008232
+  },
+  {
+    "pid": "tim-sort",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8486.48169999069
+  },
+  {
+    "pid": "binary-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 8871.017800003756
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 8718.355599994538
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 8906.66280000005
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 8833.515699996497
+  },
+  {
+    "pid": "jump-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 8785.34080000827
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 8960.2370000066
+  },
+  {
+    "pid": "linear-search",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 8256.703199993353
+  },
+  {
+    "pid": "bubble-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 34/40",
+    "duration_ms": 2087.6816999953007
+  },
+  {
+    "pid": "bitonic-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2024.4328999979189
+  },
+  {
+    "pid": "bucket-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2018.1005000049481
+  },
+  {
+    "pid": "cocktail-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2046.4800000045216
+  },
+  {
+    "pid": "comb-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2181.4252999902237
+  },
+  {
+    "pid": "counting-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2028.33180000016
+  },
+  {
+    "pid": "cycle-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2022.2730000095908
+  },
+  {
+    "pid": "gnome-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2362.756000002264
+  },
+  {
+    "pid": "heap-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2033.7912999966647
+  },
+  {
+    "pid": "insertion-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2067.146400004276
+  },
+  {
+    "pid": "merge-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2124.186600005487
+  },
+  {
+    "pid": "odd-even-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2102.882300008787
+  },
+  {
+    "pid": "pancake-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2251.475199998822
+  },
+  {
+    "pid": "patience-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2628.147000010358
+  },
+  {
+    "pid": "quick-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2455.348299990874
+  },
+  {
+    "pid": "radix-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2391.1975999944843
+  },
+  {
+    "pid": "selection-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2420.9846000012476
+  },
+  {
+    "pid": "shell-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2225.399600007222
+  },
+  {
+    "pid": "stooge-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2108.2715000084136
+  },
+  {
+    "pid": "strand-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2320.600499995635
+  },
+  {
+    "pid": "tim-sort",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2329.5731999969576
+  },
+  {
+    "pid": "binary-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 2369.8552999994718
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 2269.9678000062704
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 2506.1292000027606
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 2427.9008000012254
+  },
+  {
+    "pid": "jump-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 2175.3096000029473
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 2248.365300009027
+  },
+  {
+    "pid": "linear-search",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 2410.1648000068963
+  },
+  {
+    "pid": "bubble-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 34/40",
+    "duration_ms": 1593.7498999992386
+  },
+  {
+    "pid": "bitonic-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1442.967499999213
+  },
+  {
+    "pid": "bucket-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1342.9782000021078
+  },
+  {
+    "pid": "cocktail-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1303.8596999977017
+  },
+  {
+    "pid": "comb-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1371.2648999935482
+  },
+  {
+    "pid": "counting-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1407.2734999936074
+  },
+  {
+    "pid": "cycle-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1303.4391999972286
+  },
+  {
+    "pid": "gnome-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1431.2572999915574
+  },
+  {
+    "pid": "heap-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1346.5792999922996
+  },
+  {
+    "pid": "insertion-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1424.0179000044009
+  },
+  {
+    "pid": "merge-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1324.8120000062045
+  },
+  {
+    "pid": "odd-even-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1717.3497000039788
+  },
+  {
+    "pid": "pancake-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1353.8364999985788
+  },
+  {
+    "pid": "patience-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1475.658099996508
+  },
+  {
+    "pid": "quick-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1497.4794000008842
+  },
+  {
+    "pid": "radix-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1478.2317000062903
+  },
+  {
+    "pid": "selection-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1374.1049999953248
+  },
+  {
+    "pid": "shell-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1486.0788999940269
+  },
+  {
+    "pid": "stooge-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1439.3436000100337
+  },
+  {
+    "pid": "strand-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1479.4284999952652
+  },
+  {
+    "pid": "tim-sort",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1432.520000002114
+  },
+  {
+    "pid": "binary-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 1649.8754000058398
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 1652.430700007244
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 1650.186399987433
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 1663.3945999928983
+  },
+  {
+    "pid": "jump-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 1677.6940999989165
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 1630.2656999905594
+  },
+  {
+    "pid": "linear-search",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 1662.5844999944093
+  },
+  {
+    "pid": "bubble-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 34/40",
+    "duration_ms": 3720.816200002446
+  },
+  {
+    "pid": "bitonic-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 3427.854900000966
+  },
+  {
+    "pid": "bucket-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 3428.2024999993155
+  },
+  {
+    "pid": "cocktail-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 3028.352699999232
+  },
+  {
+    "pid": "comb-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2958.282399995369
+  },
+  {
+    "pid": "counting-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2961.6009000019403
+  },
+  {
+    "pid": "cycle-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2989.988400004222
+  },
+  {
+    "pid": "gnome-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2911.9167999888305
+  },
+  {
+    "pid": "heap-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 3076.5543000015896
+  },
+  {
+    "pid": "insertion-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2977.564500004519
+  },
+  {
+    "pid": "merge-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2976.521699994919
+  },
+  {
+    "pid": "odd-even-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2954.8539999959758
+  },
+  {
+    "pid": "pancake-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2921.9127999967895
+  },
+  {
+    "pid": "patience-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2967.143700007
+  },
+  {
+    "pid": "quick-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2970.59279998939
+  },
+  {
+    "pid": "radix-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2952.2077000001445
+  },
+  {
+    "pid": "selection-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2913.0642999953125
+  },
+  {
+    "pid": "shell-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2939.291400005459
+  },
+  {
+    "pid": "stooge-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2944.443800006411
+  },
+  {
+    "pid": "strand-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2932.806199998595
+  },
+  {
+    "pid": "tim-sort",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2926.666600003955
+  },
+  {
+    "pid": "binary-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 28/40",
+    "duration_ms": 2717.0495000027586
+  },
+  {
+    "pid": "exponential-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 2825.6779000075767
+  },
+  {
+    "pid": "fibonacci-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 2694.817099996726
+  },
+  {
+    "pid": "interpolation-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 26/40",
+    "duration_ms": 2716.8318999902112
+  },
+  {
+    "pid": "jump-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 24/40",
+    "duration_ms": 2714.5695999934105
+  },
+  {
+    "pid": "ternary-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 20/40",
+    "duration_ms": 2689.7594000038225
+  },
+  {
+    "pid": "linear-search",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 23/40",
+    "duration_ms": 2696.3593999971636
+  }
+]

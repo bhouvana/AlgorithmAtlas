@@ -1,0 +1,338 @@
+[
+  {
+    "pid": "two-sum",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 5482.133000012254
+  },
+  {
+    "pid": "two-sum",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 45689.35910001164
+  },
+  {
+    "pid": "two-sum",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 12552.460500010056
+  },
+  {
+    "pid": "two-sum",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 2560.1678999955766
+  },
+  {
+    "pid": "two-sum",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 8317.534599991632
+  },
+  {
+    "pid": "two-sum",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 2098.530400005984
+  },
+  {
+    "pid": "two-sum",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 1391.5861000132281
+  },
+  {
+    "pid": "two-sum",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 2979.7723999945447
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 5504.052600008436
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 44844.72839999944
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 12731.843100002152
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 2295.1077000034275
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 8197.682500001974
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 2109.8300000012387
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 1267.3332999984268
+  },
+  {
+    "pid": "maximum-subarray",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 2716.577999992296
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 5289.271200002986
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 44855.857400005334
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 11949.202799994964
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2152.8882999991765
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 8348.007399996277
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2020.8470999932615
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 1295.6727000128012
+  },
+  {
+    "pid": "prime-factorization",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 35/40",
+    "duration_ms": 2930.396700001438
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 5330.038300002343
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 44516.20180001191
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 12832.645300004515
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 2452.3994000046514
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 8039.024199999403
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 2215.3097999980673
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 1527.475000009872
+  },
+  {
+    "pid": "contains-duplicate-within-k",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 40/40",
+    "duration_ms": 2957.423400002881
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 5428.476999994018
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 45013.18880000326
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 13184.558499997365
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 2550.8135999989463
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "csharp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 8182.30259999109
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "perl",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 2190.918199994485
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "c",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 1286.8153000017628
+  },
+  {
+    "pid": "merge-overlapping-intervals",
+    "lang": "rust",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 8/40",
+    "duration_ms": 2866.5399000019534
+  },
+  {
+    "pid": "max-depth-binary-tree",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 39/40",
+    "duration_ms": 5559.2195999925025
+  },
+  {
+    "pid": "max-depth-binary-tree",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 39/40",
+    "duration_ms": 45467.9962000082
+  },
+  {
+    "pid": "max-depth-binary-tree",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 39/40",
+    "duration_ms": 13024.875000002794
+  },
+  {
+    "pid": "max-depth-binary-tree",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 39/40",
+    "duration_ms": 2379.086799992365
+  },
+  {
+    "pid": "construct-tree-preorder-inorder",
+    "lang": "javascript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 37/40",
+    "duration_ms": 5447.9224999959115
+  },
+  {
+    "pid": "construct-tree-preorder-inorder",
+    "lang": "typescript",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 37/40",
+    "duration_ms": 45076.46379999642
+  },
+  {
+    "pid": "construct-tree-preorder-inorder",
+    "lang": "java",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 37/40",
+    "duration_ms": 12275.221400006558
+  },
+  {
+    "pid": "construct-tree-preorder-inorder",
+    "lang": "cpp",
+    "outcome": "verified",
+    "detail": "40/40 correct, wrong rejected on 37/40",
+    "duration_ms": 2558.0702000006568
+  }
+]
