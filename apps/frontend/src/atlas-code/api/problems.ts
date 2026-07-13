@@ -1,4 +1,10 @@
-const BASE = '/api/v1';
+// Must be an absolute URL, not a bare '/api/v1': on the static-hosted
+// production frontend, a relative fetch resolves against this site's own
+// origin, which has a catch-all SPA rewrite (see render.yaml's frontend
+// `routes`) sending every non-asset path to index.html -- so every AtlasCode
+// call was silently getting back HTML instead of JSON. Same VITE_API_URL
+// env var the working Algorithm Catalog already uses (see core/api/client.ts).
+const BASE = `${import.meta.env.VITE_API_URL ?? 'http://localhost:8000'}/api/v1`;
 
 // ── Dual-mode Run architecture ────────────────────────────────────────────────
 // Function Mode: user writes only the requested function; AtlasCode generates
