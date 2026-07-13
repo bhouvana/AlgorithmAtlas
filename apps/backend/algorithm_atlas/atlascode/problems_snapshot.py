@@ -1,70 +1,87 @@
-"""Loads the committed problems+test_cases snapshot (problems_snapshot.json.gz,
-alongside this file) into the live database via bulk INSERT.
+"""Loads the committed problems+test_cases snapshot (problems_snapshot.db.gz,
+alongside this file) into the live database via SQLite's own ATTACH DATABASE
+bulk copy.
 
-Why this exists: regenerating all 216 problems via assemble_catalog() /
-seed() is real, CPU/memory-heavy work (see scripts/export_problems_snapshot.py's
-docstring) -- confirmed to OOM-kill Render's free-tier 512MB container on
-every boot, in an infinite crash-loop (no persistent disk -> every restart
-starts from an empty DB and retries the same OOM). Loading pre-built rows
-is a plain bulk INSERT -- no test generation, no brute-force adversarial
-search, no dedup-checking -- so it's dramatically cheaper and finishes in
-seconds instead of OOM-crashing partway through an 8-minute generation run.
+Why SQLite-to-SQLite instead of JSON: an earlier version of this snapshot
+shipped as gzip-compressed JSON, decompressed and json.loads()'d in one shot.
+That materializes ~220MB of raw JSON text into hundreds of thousands of
+Python dict/list/str objects all at once -- confirmed via Render's dashboard
+to STILL OOM-kill the free-tier 512MB container even though the actual DB
+insert only took ~3 seconds locally once run; the memory spike was in Python
+object construction during json.loads(), not the insert itself. Copying
+table-to-table with SQLite's own ATTACH DATABASE + INSERT...SELECT does the
+row copy entirely inside the C library's page cache -- no Python object
+materialization of row data at all, and the gzip decompression is streamed
+in fixed-size chunks rather than one giant in-memory blob.
 
-This is preferred over seed_atlascode() whenever the snapshot file exists;
-seed_atlascode() remains the fallback (see main.py's
-_auto_seed_atlascode_if_empty) for environments where the snapshot is
-absent or stale relative to the family builders (e.g. fresh problems added
-locally but not yet re-exported).
+Runs on a worker thread via run_in_executor: sqlite3 (the stdlib sync
+driver) is used directly against the live db file rather than going through
+the app's async SQLAlchemy/aiosqlite engine, both to avoid SQLite's
+restriction on ATTACH inside an already-open transaction (SQLAlchemy's
+engine.begin() always starts one) and to keep this CPU/IO-bound work off
+the event loop -- same reasoning as assemble_catalog() in seed.py.
 """
 from __future__ import annotations
 
+import asyncio
 import gzip
-import json
+import os
+import shutil
+import sqlite3
 from pathlib import Path
 
-from sqlalchemy import text
-from sqlalchemy.ext.asyncio import AsyncConnection
-
-SNAPSHOT_PATH = Path(__file__).parent / "problems_snapshot.json.gz"
+SNAPSHOT_PATH = Path(__file__).parent / "problems_snapshot.db.gz"
 
 
-async def load_problems_snapshot(conn: AsyncConnection) -> int:
-    """Returns the number of problems actually inserted (0 if the snapshot
-    is missing, or every problem already exists)."""
+def _load_sync(db_path: Path) -> int:
+    """Runs on a worker thread. Returns the number of problems inserted
+    (0 if the snapshot is missing, or every problem already exists)."""
     if not SNAPSHOT_PATH.exists():
         return 0
 
-    data = json.loads(gzip.decompress(SNAPSHOT_PATH.read_bytes()))
-    p_cols = data["problems_columns"]
-    p_rows = data["problems_rows"]
-    tc_cols = data["test_cases_columns"]
-    tc_rows = data["test_cases_rows"]
-    if not p_rows:
-        return 0
+    tmp_db_path = db_path.parent / f".problems_snapshot_tmp_{os.getpid()}.db"
+    tmp_db_path.unlink(missing_ok=True)
+    try:
+        # Streamed in fixed-size chunks -- bounded memory regardless of the
+        # decompressed size (~230MB), unlike a single gzip.decompress() call.
+        with gzip.open(SNAPSHOT_PATH, "rb") as f_in, open(tmp_db_path, "wb") as f_out:
+            shutil.copyfileobj(f_in, f_out, length=1024 * 1024)
 
-    # Column names are double-quoted: `order` is an actual column on
-    # test_cases but is also a reserved SQL keyword -- unquoted, SQLite
-    # raises `OperationalError: near "order": syntax error` on every insert.
-    p_placeholders = ", ".join(f":{c}" for c in p_cols)
-    p_stmt = text(
-        f"INSERT OR IGNORE INTO problems ({', '.join(f'\"{c}\"' for c in p_cols)}) "
-        f"VALUES ({p_placeholders})"
-    )
-    tc_placeholders = ", ".join(f":{c}" for c in tc_cols)
-    tc_stmt = text(
-        f"INSERT OR IGNORE INTO test_cases ({', '.join(f'\"{c}\"' for c in tc_cols)}) "
-        f"VALUES ({tc_placeholders})"
-    )
+        con = sqlite3.connect(str(db_path), timeout=30)
+        try:
+            before = con.execute("SELECT COUNT(*) FROM problems").fetchone()[0]
+            con.execute("ATTACH DATABASE ? AS snap", (str(tmp_db_path),))
+            try:
+                # Explicit, name-matched column lists (not `SELECT *`, which
+                # matches by position) -- robust if the live schema has since
+                # gained columns the snapshot predates (they're just left
+                # NULL/default); a genuinely removed column is a real error,
+                # same as it would be for any stale snapshot.
+                p_cols = [r[1] for r in con.execute("PRAGMA snap.table_info(problems)").fetchall()]
+                tc_cols = [r[1] for r in con.execute("PRAGMA snap.table_info(test_cases)").fetchall()]
+                p_col_list = ", ".join(f'"{c}"' for c in p_cols)
+                tc_col_list = ", ".join(f'"{c}"' for c in tc_cols)
+                con.execute(
+                    f'INSERT OR IGNORE INTO problems ({p_col_list}) '
+                    f'SELECT {p_col_list} FROM snap.problems'
+                )
+                con.execute(
+                    f'INSERT OR IGNORE INTO test_cases ({tc_col_list}) '
+                    f'SELECT {tc_col_list} FROM snap.test_cases'
+                )
+                con.commit()
+            finally:
+                con.execute("DETACH DATABASE snap")
+            after = con.execute("SELECT COUNT(*) FROM problems").fetchone()[0]
+        finally:
+            con.close()
+        return after - before
+    finally:
+        tmp_db_path.unlink(missing_ok=True)
 
-    before = (await conn.execute(text("SELECT COUNT(*) FROM problems"))).scalar_one()
 
-    # Passing the full parameter list to a single execute() uses SQLAlchemy's
-    # executemany path -- one driver round-trip setup instead of ~8800
-    # individual awaits, which matters on a memory/time-constrained boot.
-    if p_rows:
-        await conn.execute(p_stmt, [dict(zip(p_cols, row)) for row in p_rows])
-    if tc_rows:
-        await conn.execute(tc_stmt, [dict(zip(tc_cols, row)) for row in tc_rows])
-
-    after = (await conn.execute(text("SELECT COUNT(*) FROM problems"))).scalar_one()
-    return after - before
+async def load_problems_snapshot(db_path: Path) -> int:
+    """Returns the number of problems actually inserted (0 if the snapshot
+    is missing, or every problem already exists)."""
+    loop = asyncio.get_running_loop()
+    return await loop.run_in_executor(None, _load_sync, db_path)

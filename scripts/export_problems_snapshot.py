@@ -1,5 +1,5 @@
-"""Export `problems` + `test_cases` to a compressed, committable snapshot --
-apps/backend/algorithm_atlas/atlascode/problems_snapshot.json.gz.
+"""Export `problems` + `test_cases` to a compressed, committable SQLite
+snapshot -- apps/backend/algorithm_atlas/atlascode/problems_snapshot.db.gz.
 
 Why this exists: regenerating all 216 problems' test data via
 assemble_catalog() (see seed.py) is real, CPU/memory-heavy work -- dozens
@@ -11,66 +11,64 @@ the boot-time auto-seed OOM-killed the container every single time before
 finishing, in an infinite crash-loop (no persistent disk means every
 restart starts from an empty DB and tries again, forever).
 
-This snapshot sidesteps the generation step entirely for a fresh boot --
-loading pre-built rows via bulk INSERT is orders of magnitude cheaper than
-recomputing them. Uncompressed this is ~220MB (8612 test cases, some with
-large "stress"-bucket inputs); gzip -9 brings it to ~75MB, which is under
-GitHub's 100MB hard limit. Still large -- re-run this and re-commit only
-when problem/test-case data actually changes (new problems, corpus
-fixes), not for unrelated commits.
+This is a SQLite database file (not JSON): the loader (problems_snapshot.py)
+copies rows via SQLite's own ATTACH DATABASE + INSERT...SELECT, which never
+materializes the row data as Python objects. An earlier JSON version of this
+snapshot decompressed+json.loads()'d ~220MB of text into hundreds of
+thousands of Python dict/list/str objects in one shot -- confirmed to STILL
+OOM-kill Render's 512MB container even though the actual insert was fast.
+Uncompressed this sqlite file is comparable in size to the raw data
+(~220MB, 8612 test cases, some with large "stress"-bucket inputs); gzip -9
+brings it to ~75MB, under GitHub's 100MB hard limit. Still large -- re-run
+this and re-commit only when problem/test-case data actually changes (new
+problems, corpus fixes), not for unrelated commits.
 
 Usage: python scripts/export_problems_snapshot.py
 """
 from __future__ import annotations
 
 import gzip
-import json
+import shutil
 import sqlite3
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).parent.parent
 DB_PATH = REPO_ROOT / "atlas.db"
-OUT_PATH = REPO_ROOT / "apps" / "backend" / "algorithm_atlas" / "atlascode" / "problems_snapshot.json.gz"
+TMP_SNAPSHOT_DB = REPO_ROOT / "_problems_snapshot_export_tmp.db"
+OUT_PATH = REPO_ROOT / "apps" / "backend" / "algorithm_atlas" / "atlascode" / "problems_snapshot.db.gz"
 
 
 def main() -> None:
-    con = sqlite3.connect(DB_PATH)
-    con.row_factory = sqlite3.Row
+    TMP_SNAPSHOT_DB.unlink(missing_ok=True)
 
-    problems = con.execute("SELECT * FROM problems").fetchall()
-    test_cases = con.execute("SELECT * FROM test_cases").fetchall()
-    con.close()
+    con = sqlite3.connect(TMP_SNAPSHOT_DB)
+    try:
+        con.execute("ATTACH DATABASE ? AS src", (str(DB_PATH),))
+        con.execute("CREATE TABLE problems AS SELECT * FROM src.problems")
+        con.execute("CREATE TABLE test_cases AS SELECT * FROM src.test_cases")
+        p_count = con.execute("SELECT COUNT(*) FROM problems").fetchone()[0]
+        tc_count = con.execute("SELECT COUNT(*) FROM test_cases").fetchone()[0]
+        con.execute("DETACH DATABASE src")
+        con.commit()
+    finally:
+        con.close()
 
-    if not problems:
+    if p_count == 0:
+        TMP_SNAPSHOT_DB.unlink()
         raise SystemExit("atlas.db has zero problems -- refusing to export an empty snapshot")
 
-    p_cols = list(problems[0].keys())
-    tc_cols = list(test_cases[0].keys())
-
-    data = {
-        "generated_from": "scripts/export_problems_snapshot.py (live atlas.db, no hand-typed rows)",
-        "problems_count": len(problems),
-        "test_cases_count": len(test_cases),
-        # Columnar (column names once + plain value-list rows) instead of
-        # list-of-dicts -- measured negligible size difference after gzip,
-        # but keeps the raw (uncompressed, in-memory-at-load-time) form
-        # smaller, which matters more than compressed size for a
-        # memory-constrained boot.
-        "problems_columns": p_cols,
-        "problems_rows": [[r[c] for c in p_cols] for r in problems],
-        "test_cases_columns": tc_cols,
-        "test_cases_rows": [[r[c] for c in tc_cols] for r in test_cases],
-    }
-
-    raw = json.dumps(data, default=str, separators=(",", ":")).encode("utf-8")
-    compressed = gzip.compress(raw, compresslevel=9)
-
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OUT_PATH.write_bytes(compressed)
+    with open(TMP_SNAPSHOT_DB, "rb") as f_in, gzip.open(OUT_PATH, "wb", compresslevel=9) as f_out:
+        shutil.copyfileobj(f_in, f_out, length=1024 * 1024)
+
+    raw_size = TMP_SNAPSHOT_DB.stat().st_size
+    compressed_size = OUT_PATH.stat().st_size
+    TMP_SNAPSHOT_DB.unlink()
+
     print(
-        f"Exported {len(problems)} problems / {len(test_cases)} test cases to {OUT_PATH}\n"
-        f"  raw: {len(raw):,} bytes ({len(raw) / 1024 / 1024:.1f} MB)\n"
-        f"  gzip: {len(compressed):,} bytes ({len(compressed) / 1024 / 1024:.1f} MB)"
+        f"Exported {p_count} problems / {tc_count} test cases to {OUT_PATH}\n"
+        f"  raw sqlite: {raw_size:,} bytes ({raw_size / 1024 / 1024:.1f} MB)\n"
+        f"  gzip: {compressed_size:,} bytes ({compressed_size / 1024 / 1024:.1f} MB)"
     )
 
 

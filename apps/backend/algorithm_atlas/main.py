@@ -92,9 +92,14 @@ async def _load_ledger_snapshot() -> None:
 #
 # Two-tier strategy, tried in order:
 #  1. FAST PATH — load apps/backend/algorithm_atlas/atlascode/
-#     problems_snapshot.json.gz (a committed, pre-built export; see
-#     scripts/export_problems_snapshot.py). Plain bulk INSERT, finishes in
-#     seconds with minimal memory.
+#     problems_snapshot.db.gz (a committed, pre-built SQLite export; see
+#     scripts/export_problems_snapshot.py). Row copy happens entirely
+#     inside SQLite (ATTACH DATABASE + INSERT...SELECT) -- finishes in
+#     seconds with minimal memory, since no row data is ever materialized
+#     as Python objects. (An earlier JSON-based version of this snapshot
+#     WAS Python-object-heavy at load time and still OOM-killed Render's
+#     512MB container despite the DB insert itself being fast -- see
+#     problems_snapshot.py's docstring.)
 #  2. SLOW PATH (fallback if the snapshot is missing/empty) — regenerate
 #     everything via seed_atlascode(), the same logic as
 #     `python scripts/seed_atlas_code.py`. Measured locally: ~8 MINUTES on a
@@ -127,13 +132,19 @@ async def _auto_seed_atlascode_if_empty() -> None:
 
     logger.info("AtlasCode problems table is empty — attempting fast snapshot load")
     try:
-        from .atlascode.problems_snapshot import load_problems_snapshot
-        async with engine.begin() as conn:
-            inserted = await load_problems_snapshot(conn)
-        if inserted:
-            logger.info(f"AtlasCode snapshot load complete — {inserted} problem(s) inserted")
-            return
-        logger.info("Problems snapshot missing or empty — falling back to full generation")
+        db_path = get_settings().resolved_sqlite_path()
+        if db_path is None:
+            logger.info(
+                "DATABASE_URL is non-sqlite — snapshot fast path only supports "
+                "sqlite, falling back to full generation"
+            )
+        else:
+            from .atlascode.problems_snapshot import load_problems_snapshot
+            inserted = await load_problems_snapshot(db_path)
+            if inserted:
+                logger.info(f"AtlasCode snapshot load complete — {inserted} problem(s) inserted")
+                return
+            logger.info("Problems snapshot missing or empty — falling back to full generation")
     except Exception:
         logger.exception("Problems snapshot load failed — falling back to full generation")
 
