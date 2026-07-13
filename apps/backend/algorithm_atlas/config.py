@@ -76,6 +76,14 @@ class Settings(BaseSettings):
     # Logging
     LOG_LEVEL: str = "DEBUG"
 
+    # Consolidated single-service deploy (see repo-root Dockerfile): the built
+    # frontend (apps/frontend/dist) is copied into the backend image and
+    # served from here, so one process/port handles both the API and the
+    # SPA. Empty in local dev (frontend runs on its own via `npm run dev`),
+    # so main.py's create_app() only mounts static serving when this is set
+    # AND the directory actually exists.
+    STATIC_DIR: str = ""
+
     # SQLite (default — zero-config for dev). Relative "./atlas.db" is kept
     # only as the literal default value for backwards compatibility with any
     # existing .env; the value actually used at runtime always goes through

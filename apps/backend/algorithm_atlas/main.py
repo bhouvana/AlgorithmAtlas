@@ -12,9 +12,12 @@ from __future__ import annotations
 import asyncio
 import sys
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from loguru import logger
 
 from .api.v1.router import api_router
@@ -250,6 +253,28 @@ def create_app() -> FastAPI:
             "version": settings.APP_VERSION,
             "algorithms_loaded": len(registry),
         }
+
+    # Consolidated single-service deploy (see repo-root Dockerfile): the
+    # built frontend is copied into this image and served from here, so one
+    # process/port handles both the API and the SPA -- no separate frontend
+    # service, no CORS to configure (same origin). Registered LAST: Starlette
+    # matches routes in registration order, and this catch-all would
+    # otherwise shadow every API route registered above it. Absent in local
+    # dev (STATIC_DIR unset, frontend runs via `npm run dev` instead).
+    if settings.STATIC_DIR and Path(settings.STATIC_DIR).is_dir():
+        static_dir = Path(settings.STATIC_DIR)
+        assets_dir = static_dir / "assets"
+        if assets_dir.is_dir():
+            app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="frontend-assets")
+
+        index_path = static_dir / "index.html"
+
+        @app.get("/{full_path:path}", include_in_schema=False)
+        async def serve_frontend(full_path: str):
+            candidate = static_dir / full_path
+            if candidate.is_file():
+                return FileResponse(candidate)
+            return FileResponse(index_path)
 
     return app
 
