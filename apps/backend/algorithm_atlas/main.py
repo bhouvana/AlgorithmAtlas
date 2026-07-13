@@ -103,6 +103,15 @@ async def _load_ledger_snapshot() -> None:
 #     WAS Python-object-heavy at load time and still OOM-killed Render's
 #     512MB container despite the DB insert itself being fast -- see
 #     problems_snapshot.py's docstring.)
+#
+#     IMPORTANT: this only copies the `problems` table (~1.2MB for 216
+#     rows) — NOT test_cases (~225MB for 8,612 rows of adversarial stress-
+#     test data, almost the entire snapshot). The catalog list/detail views
+#     never read test_cases, so bulk-loading it here was pure waste that
+#     nearly blew the 512MB budget on every single restart even after the
+#     json.loads() OOM above was fixed. test_cases is now loaded lazily,
+#     per problem, the first time that problem's detail/run/submit endpoint
+#     is hit — see problems_snapshot.py's ensure_test_cases_loaded().
 #  2. SLOW PATH (fallback if the snapshot is missing/empty) — regenerate
 #     everything via seed_atlascode(), the same logic as
 #     `python scripts/seed_atlas_code.py`. Measured locally: ~8 MINUTES on a

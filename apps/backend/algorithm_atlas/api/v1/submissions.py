@@ -16,6 +16,7 @@ from pydantic import BaseModel, Field, field_serializer
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from ...atlascode.problems_snapshot import ensure_test_cases_loaded
 from ...database import get_db
 from ...models.atlas_code import Problem, Submission, TestCase, UserProgress
 from ...submission.evaluator import JUDGE_VERSION, TestResult, evaluate
@@ -148,6 +149,10 @@ def _to_test_result_out(r: TestResult) -> TestResultOut:
 
 @router.post("", response_model=SubmissionOut, status_code=201)
 async def submit(body: SubmitRequest, db: AsyncSession = Depends(get_db)) -> SubmissionOut:
+    # Must run before this request's first db.execute() -- see
+    # ensure_test_cases_loaded()'s docstring (problems_snapshot.py).
+    await ensure_test_cases_loaded(body.problem_id)
+
     # Load problem + EVERY persisted test case (visible + hidden) -- Submit is
     # the authoritative judge run, unlike Run which only ever sees a subset.
     prob_result = await db.execute(select(Problem).where(Problem.id == body.problem_id))

@@ -33,7 +33,14 @@ def _make_engine():
     url = settings.resolved_sqlite_url()
     kwargs: dict = {}
     if url.startswith("sqlite"):
-        kwargs["connect_args"] = {"check_same_thread": False}
+        # `timeout` (seconds) maps to sqlite3's busy_timeout: how long a
+        # connection waits on a lock held by another connection before
+        # raising "database is locked", rather than failing immediately.
+        # Needed alongside journal_mode=WAL (set in init_db()) now that
+        # problems_snapshot.py's lazy per-problem test_cases loader opens
+        # its own short-lived sync sqlite3 connection to this same file
+        # mid-request, concurrently with other requests' async sessions.
+        kwargs["connect_args"] = {"check_same_thread": False, "timeout": 30}
     # Loud by design (Phase 1's DB-path resolver requirement): this is the one
     # line that would have made the apps/backend/atlas.db decoy-DB footgun
     # immediately obvious the first time it happened instead of silently
@@ -170,6 +177,18 @@ async def init_db() -> None:
     """Create all tables that don't already exist (idempotent), then apply
     any additive column migrations to tables that already exist."""
     async with engine.begin() as conn:
+        if conn.engine.dialect.name == "sqlite":
+            # WAL lets readers (other requests' async sessions) proceed
+            # while a writer holds the file, and vice versa -- a persistent,
+            # one-time-per-file setting stored in the DB itself. Needed
+            # because problems_snapshot.py's lazy per-problem test_cases
+            # loader now opens a short-lived sync sqlite3 connection to this
+            # same file mid-request, concurrently with other requests'
+            # in-flight async sessions; without WAL, SQLite's default
+            # rollback-journal locking would make that a real risk of
+            # "database is locked" under real traffic instead of just at
+            # boot (when this used to be the only writer).
+            await conn.execute(text("PRAGMA journal_mode=WAL"))
         await conn.run_sync(Base.metadata.create_all)
         await _add_missing_columns(conn)
         await _ensure_ledger_table(conn)

@@ -24,6 +24,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from ...atlascode.function_mode.contracts import FunctionContract, validate_arguments
 from ...atlascode.function_mode.registry import get_adapter
 from ...atlascode.function_mode.runner import FunctionCase, evaluate_function
+from ...atlascode.problems_snapshot import ensure_test_cases_loaded
 from ...database import get_db
 from ...models.atlas_code import Problem, TestCase
 from ...submission.evaluator import JUDGE_VERSION, evaluate
@@ -315,6 +316,11 @@ async def list_problems(
 
 @router.get("/{slug}", response_model=ProblemDetail)
 async def get_problem(slug: str, db: AsyncSession = Depends(get_db)) -> ProblemDetail:
+    # Must run before this request's first db.execute() -- see
+    # ensure_test_cases_loaded()'s docstring for why (avoids a lock race
+    # between this session's about-to-autobegin transaction and the lazy
+    # loader's own short-lived sync sqlite3 connection to the same file).
+    await ensure_test_cases_loaded(slug)
     result = await db.execute(select(Problem).where(Problem.id == slug))
     problem = result.scalar_one_or_none()
     if not problem:
@@ -378,6 +384,9 @@ async def run_problem(slug: str, body: RunRequest, db: AsyncSession = Depends(ge
     execution_mode == "function": a completely separate contract -- see
     _run_function_mode and atlascode/function_mode/.
     """
+    # See get_problem()'s matching call -- must precede this request's first
+    # db.execute().
+    await ensure_test_cases_loaded(slug)
     result = await db.execute(select(Problem).where(Problem.id == slug))
     problem = result.scalar_one_or_none()
     if not problem:
