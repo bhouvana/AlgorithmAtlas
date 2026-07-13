@@ -5,7 +5,7 @@ import { cn } from '../../lib/utils';
 
 // ---------------------------------------------------------------------------
 // The same algorithm (two-sum), told in six languages — proves the "write
-// once, understand everywhere" idea AtlasCode + the Polyglot Notebook are
+// once, understand everywhere" idea AtlasCode + the Polyglot Compiler are
 // built around. A tiny regex tokenizer fakes syntax highlighting without a
 // full highlighter dependency.
 // ---------------------------------------------------------------------------
@@ -189,7 +189,7 @@ export function PolyglotSwitcherSection() {
 
         <AnimateIn direction="left" delay={0.1} className="order-1 lg:order-2">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-medium mb-6">
-            Polyglot Notebook
+            Polyglot Compiler
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-5 leading-tight">
             One idea.

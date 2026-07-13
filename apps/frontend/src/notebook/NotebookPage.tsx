@@ -1,16 +1,15 @@
 /**
  * NotebookPage — polyglot Monaco terminal.
  *
- * Route: /notebook
- * 10 languages, VS Code-quality editor, terminal-style run history.
+ * Route: /compiler
+ * 17 languages, VS Code-quality editor, terminal-style run history.
  * Layout: IDE split — editor left, output right (Programiz-style).
  */
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import Editor, { type OnMount } from '@monaco-editor/react';
-import { Play, Save, ChevronDown, Trash2, X, Clock, AlertCircle, CheckCircle2, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { api, type ExperimentSummary } from '../core/api/client';
+import { Play, ChevronDown, Trash2, Clock, AlertCircle, CheckCircle2, Sparkles } from 'lucide-react';
+import { api } from '../core/api/client';
 import { cn } from '../lib/utils';
 import { registerAtlasCompletionProvider } from '../ai/notebook/InlineCompletionProvider';
 import { useAtlasContext } from '../ai/useAtlasContext';
@@ -338,48 +337,6 @@ interface RunEntry {
 
 let _seq = 0;
 
-// ── Save dialog ────────────────────────────────────────────────────────────────
-
-function SaveDialog({
-  onSave, onClose, saving,
-}: { onSave: (name: string, notes: string) => void; onClose: () => void; saving: boolean }) {
-  const [name, setName] = useState('Untitled Session');
-  const [notes, setNotes] = useState('');
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-      <div className="rounded-2xl bg-[#111113] border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.6)] p-6 w-96">
-        <div className="flex items-center justify-between mb-5">
-          <h3 className="text-white font-semibold">Save Session</h3>
-          <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-white/5 text-zinc-500 hover:text-white transition-colors">
-            <X className="w-4 h-4" />
-          </button>
-        </div>
-        <label className="block text-xs text-zinc-500 mb-1.5">Name</label>
-        <input
-          value={name} onChange={(e) => setName(e.target.value)} autoFocus
-          className="w-full bg-[#18181B] border border-white/8 rounded-xl px-4 py-2.5 text-sm text-white mb-4 outline-none focus:border-indigo-500/50 transition-colors"
-        />
-        <label className="block text-xs text-zinc-500 mb-1.5">Notes</label>
-        <textarea
-          value={notes} onChange={(e) => setNotes(e.target.value)} rows={3}
-          className="w-full bg-[#18181B] border border-white/8 rounded-xl px-4 py-2.5 text-sm text-white mb-5 outline-none focus:border-indigo-500/50 transition-colors resize-none"
-          placeholder="Optional notes…"
-        />
-        <div className="flex justify-end gap-2">
-          <button onClick={onClose} className="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors rounded-xl hover:bg-white/5">Cancel</button>
-          <button
-            onClick={() => onSave(name, notes)} disabled={saving || !name.trim()}
-            className="flex items-center gap-2 px-4 py-2 text-sm bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white rounded-xl transition-colors"
-          >
-            <Save className="w-3.5 h-3.5" />
-            {saving ? 'Saving…' : 'Save'}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 // ── Language dropdown ──────────────────────────────────────────────────────────
 
 function LangPicker({ current, onChange }: { current: LangDef; onChange: (l: LangDef) => void }) {
@@ -427,58 +384,6 @@ function LangPicker({ current, onChange }: { current: LangDef; onChange: (l: Lan
   );
 }
 
-// ── Saved sessions overlay ─────────────────────────────────────────────────────
-
-function LoadPanel({ onLoad, onClose }: { onLoad: (e: ExperimentSummary) => void; onClose: () => void }) {
-  const [exps, setExps] = useState<ExperimentSummary[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    api.experiments.list({ limit: 20 })
-      .then((r) => setExps(r.items))
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, []);
-
-  return (
-    <div className="absolute inset-y-0 right-0 w-72 bg-[#0F0F18] border-l border-white/8 flex flex-col z-20 shadow-[-8px_0_32px_rgba(0,0,0,0.4)]">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-white/8">
-        <span className="text-sm text-white font-medium">Saved Sessions</span>
-        <button onClick={onClose} className="p-1 rounded hover:bg-white/5 text-zinc-500 hover:text-white transition-colors">
-          <X className="w-4 h-4" />
-        </button>
-      </div>
-      <div className="flex-1 overflow-y-auto divide-y divide-white/5">
-        {loading && <div className="px-4 py-4 text-sm text-zinc-500">Loading…</div>}
-        {!loading && exps.length === 0 && (
-          <div className="px-4 py-4 text-sm text-zinc-500">No saved sessions yet.</div>
-        )}
-        {exps.map((e) => (
-          <div key={e.id} className="flex items-center justify-between px-4 py-3 hover:bg-white/3 transition-colors">
-            <div className="min-w-0">
-              <p className="text-sm text-white truncate">{e.name}</p>
-              <p className="text-xs text-zinc-600 mt-0.5">
-                {e.cell_count} cell{e.cell_count !== 1 ? 's' : ''} · {new Date(e.created_at).toLocaleDateString()}
-              </p>
-            </div>
-            <button
-              onClick={() => { onLoad(e); onClose(); }}
-              className="ml-3 flex-shrink-0 px-2.5 py-1 text-xs bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/25 text-indigo-300 rounded-lg transition-colors"
-            >
-              Load
-            </button>
-          </div>
-        ))}
-      </div>
-      <div className="px-4 py-3 border-t border-white/8">
-        <Link to="/experiments" className="block text-center text-xs text-zinc-500 hover:text-indigo-400 transition-colors">
-          View all experiments →
-        </Link>
-      </div>
-    </div>
-  );
-}
-
 // ── Main page ──────────────────────────────────────────────────────────────────
 
 export function NotebookPage() {
@@ -487,9 +392,6 @@ export function NotebookPage() {
   const [runs, setRuns]         = useState<RunEntry[]>([]);
   const [running, setRunning]   = useState(false);
   const [splitPct, setSplitPct] = useState(55); // editor width %
-  const [showSave, setShowSave] = useState(false);
-  const [showLoad, setShowLoad] = useState(false);
-  const [saving, setSaving]     = useState(false);
   const [toast, setToast]       = useState<string | null>(null);
   const [inlineCompletionEnabled, setInlineCompletionEnabled] = useState(false);
   const editorRef       = useRef<Parameters<OnMount>[0] | null>(null);
@@ -695,42 +597,6 @@ export function NotebookPage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleSave = async (name: string, notes: string) => {
-    setSaving(true);
-    const source = editorRef.current?.getValue() ?? code;
-    try {
-      const exp = await api.experiments.create({ name, algorithm_slug: 'notebook', notes, seed: 0, params: { language: lang.id } });
-      await api.experiments.addCell(exp.id, { source, order: 0, language: lang.id });
-      setShowSave(false);
-      flash(`Saved "${name}"`);
-    } catch (e) {
-      flash(`Save failed: ${e}`);
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const handleLoad = async (exp: ExperimentSummary) => {
-    try {
-      const detail = await api.experiments.get(exp.id);
-      const cell = detail.cells.sort((a: { order: number }, b: { order: number }) => a.order - b.order)[0];
-      if (cell) {
-        const loadedLang = LANG_MAP[cell.language] ?? LANGS[0];
-        setLang(loadedLang);
-        setCode(cell.source);
-        editorRef.current?.setValue(cell.source);
-        const model = editorRef.current?.getModel();
-        if (model) {
-          // @ts-expect-error — monaco is global after mount
-          window.monaco?.editor.setModelLanguage(model, loadedLang.monacoId);
-        }
-      }
-      flash(`Loaded "${exp.name}"`);
-    } catch (e) {
-      flash(`Load failed: ${e}`);
-    }
-  };
-
   // ── Horizontal resize handle ──────────────────────────────────────────────────
   const startHorizDrag = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -795,7 +661,7 @@ export function NotebookPage() {
 
         <div className="flex-1" />
 
-        {/* Right cluster: lang picker + AI toggle + Load + Save + Run */}
+        {/* Right cluster: lang picker + AI toggle + Run */}
         <div className="flex items-center gap-2 px-3">
           <LangPicker current={lang} onChange={handleLangChange} />
 
@@ -817,24 +683,6 @@ export function NotebookPage() {
           </button>
 
           <div className="w-px h-5 bg-white/10" />
-
-          <button
-            onClick={() => setShowLoad((v) => !v)}
-            className={cn(
-              'px-3 py-1.5 text-xs rounded-lg border transition-colors font-medium',
-              showLoad
-                ? 'bg-indigo-600/20 border-indigo-500/40 text-indigo-300'
-                : 'bg-[#1A1A2A] border-white/8 text-zinc-400 hover:text-white hover:border-white/15',
-            )}
-          >
-            Load
-          </button>
-          <button
-            onClick={() => setShowSave(true)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#1A1A2A] border border-white/8 text-zinc-400 hover:text-white text-xs font-medium transition-colors hover:border-white/15"
-          >
-            <Save className="w-3.5 h-3.5" /> Save
-          </button>
 
           {/* Run button — prominent, Programiz-style */}
           <button
@@ -1011,9 +859,6 @@ export function NotebookPage() {
             )}
           </div>
         </div>
-
-        {/* Load panel overlay */}
-        {showLoad && <LoadPanel onLoad={handleLoad} onClose={() => setShowLoad(false)} />}
       </div>
 
       {/* ── VS Code-style status bar ───────────────────────────────────── */}
@@ -1049,9 +894,6 @@ export function NotebookPage() {
           </span>
         </div>
       </div>
-
-      {/* Dialogs */}
-      {showSave && <SaveDialog onSave={handleSave} onClose={() => setShowSave(false)} saving={saving} />}
     </div>
     </>
   );

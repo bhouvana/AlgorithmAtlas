@@ -28,8 +28,8 @@ export function FooterSection() {
             <Link to="/compare" className="text-zinc-400 hover:text-white text-sm transition-colors duration-200">
               Compare
             </Link>
-            <Link to="/notebook" className="text-zinc-400 hover:text-white text-sm transition-colors duration-200">
-              Notebook
+            <Link to="/compiler" className="text-zinc-400 hover:text-white text-sm transition-colors duration-200">
+              Compiler
             </Link>
           </nav>
         </div>

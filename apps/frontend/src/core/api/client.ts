@@ -129,19 +129,6 @@ async function post<T>(path: string, body: unknown): Promise<T> {
   return res.json() as Promise<T>;
 }
 
-async function patch<T>(path: string, body: unknown): Promise<T> {
-  const res = await fetch(`${BASE_URL}${path}`, {
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`PATCH ${path} failed (${res.status}): ${text}`);
-  }
-  return res.json() as Promise<T>;
-}
-
 async function del(path: string): Promise<void> {
   const res = await fetch(`${BASE_URL}${path}`, { method: 'DELETE' });
   if (!res.ok && res.status !== 204) {
@@ -194,54 +181,9 @@ export const api = {
       get<BenchmarkConfigResponse>(`/api/v1/benchmarks/config/${slug}`),
   },
 
-  experiments: {
-    create: (body: {
-      name: string;
-      algorithm_slug: string;
-      params?: Record<string, unknown>;
-      seed?: number;
-      notes?: string;
-    }) => post<ExperimentDetail>('/api/v1/experiments', body),
-
-    list: (params?: { algorithm_slug?: string; limit?: number; offset?: number }) => {
-      const qs = new URLSearchParams();
-      if (params?.algorithm_slug) qs.set('algorithm_slug', params.algorithm_slug);
-      if (params?.limit != null) qs.set('limit', String(params.limit));
-      if (params?.offset != null) qs.set('offset', String(params.offset));
-      const q = qs.toString() ? `?${qs}` : '';
-      return get<{ items: ExperimentSummary[]; total: number; limit: number; offset: number }>(
-        `/api/v1/experiments${q}`,
-      );
-    },
-
-    get: (id: string) => get<ExperimentDetail>(`/api/v1/experiments/${id}`),
-
-    update: (id: string, body: { name?: string; notes?: string }) =>
-      patch<ExperimentSummary>(`/api/v1/experiments/${id}`, body),
-
-    delete: (id: string) => del(`/api/v1/experiments/${id}`),
-
-    addCell: (experimentId: string, body: { language?: string; source?: string; order?: number }) =>
-      post<NotebookCellData>(`/api/v1/experiments/${experimentId}/cells`, body),
-
-    updateCell: (experimentId: string, cellId: string, body: { source?: string; output?: string; error?: string }) =>
-      patch<NotebookCellData>(`/api/v1/experiments/${experimentId}/cells/${cellId}`, body),
-
-    deleteCell: (experimentId: string, cellId: string) =>
-      del(`/api/v1/experiments/${experimentId}/cells/${cellId}`),
-  },
-
   notebook: {
     run: (body: { source: string; language?: string; timeout?: number }) =>
       post<{ output: string; error: string; duration_ms: number; language: string }>('/api/v1/notebook/run', body),
-
-    runCell: (experimentId: string, cellId: string, timeout?: number) => {
-      const qs = timeout ? `?timeout=${timeout}` : '';
-      return post<{ output: string; error: string; duration_ms: number; language: string }>(
-        `/api/v1/notebook/run-cell/${experimentId}/${cellId}${qs}`,
-        {},
-      );
-    },
   },
 
   ws: {
@@ -249,32 +191,3 @@ export const api = {
       `${WS_BASE}/ws/v1/simulations/${sessionId}`,
   },
 };
-
-// ── Experiment types ───────────────────────────────────────────────────────────
-
-export interface ExperimentSummary {
-  id: string;
-  name: string;
-  algorithm_slug: string;
-  params: Record<string, unknown>;
-  seed: number;
-  notes: string;
-  created_at: string;
-  updated_at: string;
-  cell_count: number;
-}
-
-export interface ExperimentDetail extends ExperimentSummary {
-  cells: NotebookCellData[];
-}
-
-export interface NotebookCellData {
-  id: string;
-  experiment_id: string;
-  order: number;
-  language: string;
-  source: string;
-  output: string;
-  error: string;
-  executed_at: string | null;
-}

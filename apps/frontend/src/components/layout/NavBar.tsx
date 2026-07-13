@@ -16,8 +16,7 @@ const NAV_LINKS = [
   { to: '/atlas-code', label: 'AtlasCode' },
   { to: '/algorithms', label: 'Catalog' },
   { to: '/compare', label: 'Compare' },
-  { to: '/notebook', label: 'Notebook' },
-  { to: '/experiments', label: 'Experiments' },
+  { to: '/compiler', label: 'Compiler' },
 ];
 
 export function NavBar() {

@@ -5,7 +5,7 @@ import { AnimateIn } from '../../components/ui/AnimateIn';
 const CAPABILITIES = [
   { icon: Play, label: 'Step-by-step simulation', to: '/algorithms', color: 'text-indigo-400' },
   { icon: GitCompare, label: 'Side-by-side comparison', to: '/compare', color: 'text-blue-400' },
-  { icon: Zap, label: 'Real-time execution', to: '/notebook', color: 'text-amber-400' },
+  { icon: Zap, label: 'Real-time execution', to: '/compiler', color: 'text-amber-400' },
   { icon: GraduationCap, label: 'Structured learning', to: '/learning', color: 'text-emerald-400' },
   { icon: Code2, label: 'Verified coding challenges', to: '/atlas-code', color: 'text-rose-400' },
   { icon: Sparkles, label: 'AI co-pilot', to: '/algorithms', color: 'text-purple-400' },

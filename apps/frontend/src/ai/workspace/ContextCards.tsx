@@ -39,7 +39,7 @@ function buildCards(ctx: AtlasContext): Card[] {
   if (ctx.notebook) {
     cards.push({
       icon: <Terminal className="w-3 h-3" />,
-      label: 'Notebook',
+      label: 'Compiler',
       value: ctx.notebook.language.charAt(0).toUpperCase() + ctx.notebook.language.slice(1),
       sub: ctx.notebook.lastError ? 'Has errors' : ctx.notebook.lastOutput ? 'Last run: OK' : undefined,
       accent: ctx.notebook.lastError ? '#ef4444' : '#6366f1',

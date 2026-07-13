@@ -4,7 +4,6 @@ import { AlgorithmDetailPage } from './algorithm/AlgorithmDetailPage';
 import { ComparisonPage } from './comparison/ComparisonPage';
 import { EmbedPage } from './embed/EmbedPage';
 import { NotebookPage } from './notebook/NotebookPage';
-import { ExperimentsPage } from './experiments/ExperimentsPage';
 import { NavBar } from './components/layout/NavBar';
 import { LandingPage } from './landing/LandingPage';
 import { GridBackground } from './components/ui/GridBackground';
@@ -29,8 +28,7 @@ function AppLayout() {
           <Route path="/algorithms" element={<div className="pt-20"><CatalogPage /></div>} />
           <Route path="/algorithms/:slug" element={<div className="pt-20"><AlgorithmDetailPage /></div>} />
           <Route path="/compare" element={<div className="pt-20"><ComparisonPage /></div>} />
-          <Route path="/notebook" element={<div className="pt-20"><NotebookPage /></div>} />
-          <Route path="/experiments" element={<div className="pt-20"><ExperimentsPage /></div>} />
+          <Route path="/compiler" element={<div className="pt-20"><NotebookPage /></div>} />
           <Route path="/learning" element={<div className="pt-20"><LearningPage /></div>} />
           <Route path="/learning/:id" element={<div className="pt-20"><LessonPage /></div>} />
           <Route path="/atlas" element={<AtlasPage />} />

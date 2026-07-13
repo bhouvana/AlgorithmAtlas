@@ -25,8 +25,7 @@ function derivePage(pathname: string): string {
   if (pathname.startsWith('/algorithms/')) return 'algorithm';
   if (pathname.startsWith('/algorithms')) return 'catalog';
   if (pathname.startsWith('/compare')) return 'compare';
-  if (pathname.startsWith('/notebook')) return 'notebook';
-  if (pathname.startsWith('/experiments')) return 'experiments';
+  if (pathname.startsWith('/compiler')) return 'notebook';
   if (pathname.startsWith('/learning/')) return 'lesson';
   if (pathname.startsWith('/learning')) return 'learning';
   return 'landing';

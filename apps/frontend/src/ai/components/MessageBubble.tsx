@@ -85,7 +85,7 @@ function CodeBlock({ lang, content }: { lang: string; content: string }) {
   const [copied, setCopied] = useState(false);
   const [written, setWritten] = useState(false);
   const { pathname } = useLocation();
-  const isNotebook = pathname === '/notebook';
+  const isNotebook = pathname === '/compiler';
 
   const copy = () => {
     navigator.clipboard.writeText(content);
@@ -114,7 +114,7 @@ function CodeBlock({ lang, content }: { lang: string; content: string }) {
               onClick={writeToEditor}
               className="flex items-center gap-1 text-[10px] transition-colors"
               style={{ color: written ? '#34d399' : '#6366f1' }}
-              title="Write to notebook editor"
+              title="Write to compiler editor"
             >
               {written ? <Check className="w-3 h-3" /> : <FileEdit className="w-3 h-3" />}
               {written ? 'Written!' : 'Write to editor'}
