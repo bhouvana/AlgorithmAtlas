@@ -66,7 +66,7 @@ class ProblemErrorBoundaryInner extends Component<Props, State> {
             </button>
             <Link
               to="/atlas-code/catalog"
-              className="text-sm text-zinc-400 hover:text-white px-4 py-2 rounded-lg border border-white/10 hover:border-white/20 transition-colors"
+              className="text-sm text-zinc-400 hover:text-white px-4 py-2 rounded-lg border border-charcoal/10 hover:border-white/20 transition-colors"
             >
               Back to Catalog
             </Link>

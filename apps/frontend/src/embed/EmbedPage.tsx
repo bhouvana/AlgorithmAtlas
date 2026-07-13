@@ -70,7 +70,7 @@ export function EmbedPage() {
   return (
     <div className="h-screen bg-neutral-950 flex flex-col">
       {/* Minimal header */}
-      <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 shrink-0">
+      <div className="flex items-center justify-between px-4 py-2 border-b border-charcoal/10 shrink-0">
         <span className="text-sm font-medium text-neutral-300">{algorithm.name}</span>
         <div className="flex items-center gap-3">
           <span className="text-xs font-mono text-neutral-600">

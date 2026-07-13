@@ -22,7 +22,7 @@ export function CapabilityBarSection() {
               <Link
                 key={c.label}
                 to={c.to}
-                className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/8 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/15 transition-colors duration-200"
+                className="flex items-center gap-2 px-4 py-2 rounded-full border border-charcoal/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/15 transition-colors duration-200"
               >
                 <Icon size={14} className={c.color} />
                 <span className="text-xs font-medium text-zinc-300 whitespace-nowrap">{c.label}</span>

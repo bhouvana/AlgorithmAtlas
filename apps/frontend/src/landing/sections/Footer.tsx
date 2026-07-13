@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export function FooterSection() {
   return (
-    <footer className="border-t border-white/5 py-12 px-4">
+    <footer className="border-t border-charcoal/10 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-8">
           <div className="flex flex-col gap-2">
@@ -34,7 +34,7 @@ export function FooterSection() {
           </nav>
         </div>
 
-        <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="border-t border-charcoal/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <span className="text-zinc-600 text-sm">© 2026 Algorithm Atlas</span>
           <span className="text-zinc-600 text-sm">Built with React + FastAPI</span>
         </div>

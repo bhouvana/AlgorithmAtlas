@@ -46,7 +46,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
   return (
     <div className="flex flex-col h-full">
       {/* Case tab strip */}
-      <div className="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 border-b border-white/8 overflow-x-auto">
+      <div className="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 border-b border-charcoal/10 overflow-x-auto">
         {visible.map((tc, i) => {
           const k: CaseKey = { kind: 'visible', index: i };
           const isActive = active.kind === 'visible' && active.index === i;
@@ -57,7 +57,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
               onClick={() => setActive(k)}
               className={cn(
                 'flex-shrink-0 flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg border transition-colors',
-                isActive ? 'border-indigo-500/40 bg-indigo-500/10 text-white' : 'border-white/8 text-zinc-500 hover:text-zinc-300'
+                isActive ? 'border-indigo-500/40 bg-indigo-500/10 text-white' : 'border-charcoal/10 text-zinc-500 hover:text-zinc-300'
               )}
             >
               <input
@@ -81,7 +81,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
               onClick={() => setActive(k)}
               className={cn(
                 'flex-shrink-0 text-sm px-3 py-1.5 rounded-lg border transition-colors',
-                isActive ? 'border-violet-500/40 bg-violet-500/10 text-white' : 'border-white/8 text-zinc-500 hover:text-zinc-300'
+                isActive ? 'border-violet-500/40 bg-violet-500/10 text-white' : 'border-charcoal/10 text-zinc-500 hover:text-zinc-300'
               )}
             >
               Custom {i + 1}
@@ -92,7 +92,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
           onClick={() => {
             addCustomCase(problem.id);
           }}
-          className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-lg border border-white/8 text-zinc-500 hover:text-white hover:border-white/20 transition-colors"
+          className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-lg border border-charcoal/10 text-zinc-500 hover:text-white hover:border-white/20 transition-colors"
           title="Add custom case"
         >
           <Plus className="w-3.5 h-3.5" />
@@ -101,7 +101,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
 
       {/* Batch action bar */}
       {selectedCaseIndices.length > 0 && (
-        <div className="flex-shrink-0 flex items-center justify-between px-3 py-1.5 border-b border-white/8 bg-indigo-500/5">
+        <div className="flex-shrink-0 flex items-center justify-between px-3 py-1.5 border-b border-charcoal/10 bg-indigo-500/5">
           <span className="text-sm text-zinc-400">{selectedCaseIndices.length} case(s) selected</span>
           <div className="flex items-center gap-2">
             <button
@@ -191,7 +191,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
                   placeholder={JSON.stringify(problem.function_contract?.parameters.reduce(
                     (acc, p) => ({ ...acc, [p.name]: null }), {} as Record<string, null>
                   ) ?? {})}
-                  className="w-full text-sm text-zinc-200 bg-white/3 rounded-lg px-3 py-2 font-mono resize-y border border-white/6 focus:border-violet-500/40 focus:outline-none"
+                  className="w-full text-sm text-zinc-200 bg-white/3 rounded-lg px-3 py-2 font-mono resize-y border border-charcoal/10 focus:border-violet-500/40 focus:outline-none"
                 />
                 {!parsedArgs.ok && activeCustom.arguments_json.trim() !== '' && (
                   <div className="text-sm text-rose-400 mt-1">Invalid JSON: {parsedArgs.error}</div>
@@ -214,7 +214,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
                   onChange={(e) => updateCustomCase(problem.id, activeCustom.id, { expected_return_json: e.target.value })}
                   rows={2}
                   placeholder="Leave blank to just see the return value, no pass/fail"
-                  className="w-full text-sm text-zinc-200 bg-white/3 rounded-lg px-3 py-2 font-mono resize-y border border-white/6 focus:border-violet-500/40 focus:outline-none"
+                  className="w-full text-sm text-zinc-200 bg-white/3 rounded-lg px-3 py-2 font-mono resize-y border border-charcoal/10 focus:border-violet-500/40 focus:outline-none"
                 />
                 {hasExpectedText && parsedExpected && !parsedExpected.ok && (
                   <div className="text-sm text-rose-400 mt-1">Invalid JSON: {parsedExpected.error}</div>
@@ -274,7 +274,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
                 onChange={(e) => updateCustomCase(problem.id, activeCustom.id, { input_data: e.target.value })}
                 rows={4}
                 placeholder="stdin for your program"
-                className="w-full text-sm text-zinc-200 bg-white/3 rounded-lg px-3 py-2 font-mono resize-y border border-white/6 focus:border-violet-500/40 focus:outline-none"
+                className="w-full text-sm text-zinc-200 bg-white/3 rounded-lg px-3 py-2 font-mono resize-y border border-charcoal/10 focus:border-violet-500/40 focus:outline-none"
               />
             </div>
             <div>
@@ -294,7 +294,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
                 onChange={(e) => updateCustomCase(problem.id, activeCustom.id, { expected_output: e.target.value })}
                 rows={3}
                 placeholder="Leave blank to just see program output, no pass/fail"
-                className="w-full text-sm text-zinc-200 bg-white/3 rounded-lg px-3 py-2 font-mono resize-y border border-white/6 focus:border-violet-500/40 focus:outline-none"
+                className="w-full text-sm text-zinc-200 bg-white/3 rounded-lg px-3 py-2 font-mono resize-y border border-charcoal/10 focus:border-violet-500/40 focus:outline-none"
               />
             </div>
             <div className="flex items-center gap-2">

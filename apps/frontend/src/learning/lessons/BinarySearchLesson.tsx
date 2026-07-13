@@ -89,7 +89,7 @@ export function BinarySearchLesson() {
         <h2 className="text-xl font-bold text-white mb-5">Binary Search in Code</h2>
         <div className="space-y-4">
           <div className="rounded-xl border border-charcoal/10 bg-zinc-950/60 overflow-hidden">
-            <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-zinc-900/40">
+            <div className="flex items-center justify-between px-4 py-2 border-b border-charcoal/10 bg-zinc-900/40">
               <span className="text-xs text-zinc-400">Iterative (recommended)</span>
               <code className="text-xs font-mono text-cyan-400">O(log n)</code>
             </div>
@@ -109,7 +109,7 @@ export function BinarySearchLesson() {
           </div>
 
           <div className="rounded-xl border border-charcoal/10 bg-zinc-950/60 overflow-hidden">
-            <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-zinc-900/40">
+            <div className="flex items-center justify-between px-4 py-2 border-b border-charcoal/10 bg-zinc-900/40">
               <span className="text-xs text-zinc-400">Recursive version</span>
               <code className="text-xs font-mono text-violet-400">O(log n) time, O(log n) space</code>
             </div>
@@ -133,7 +133,7 @@ export function BinarySearchLesson() {
         <div className="overflow-x-auto mb-5">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-white/8">
+              <tr className="border-b border-charcoal/10">
                 <th className="text-left py-2 px-3 text-zinc-400 font-medium text-xs">Array Size</th>
                 <th className="text-left py-2 px-3 text-zinc-400 font-medium text-xs">Linear Search (worst)</th>
                 <th className="text-left py-2 px-3 text-zinc-400 font-medium text-xs text-cyan-400">Binary Search (worst)</th>
@@ -147,7 +147,7 @@ export function BinarySearchLesson() {
                 { n: '1,000,000', lin: '1,000,000', bin: '20', ratio: '50,000×' },
                 { n: '1,000,000,000', lin: '1 billion', bin: '30', ratio: '33 million×' },
               ].map((row) => (
-                <tr key={row.n} className="border-b border-white/5">
+                <tr key={row.n} className="border-b border-charcoal/10">
                   <td className="py-2.5 px-3 text-zinc-300 font-mono text-xs">{row.n}</td>
                   <td className="py-2.5 px-3 text-orange-400 font-mono text-xs">{row.lin}</td>
                   <td className="py-2.5 px-3 text-cyan-400 font-mono text-xs font-bold">{row.bin}</td>
@@ -205,11 +205,11 @@ export function BinarySearchLesson() {
                   const chosen = quizAnswers[qi] === ai;
                   const revealed = quizRevealed[qi];
                   const correct = ai === q.correct;
-                  let style = 'border-white/10 text-zinc-400 hover:border-white/20 hover:text-zinc-200';
+                  let style = 'border-charcoal/10 text-zinc-400 hover:border-white/20 hover:text-zinc-200';
                   if (revealed) {
                     if (correct) style = 'border-emerald-500/50 bg-emerald-500/10 text-emerald-300';
                     else if (chosen) style = 'border-red-500/50 bg-red-500/10 text-red-300';
-                    else style = 'border-white/5 text-zinc-600';
+                    else style = 'border-charcoal/10 text-zinc-600';
                   }
                   return (
                     <button key={ai} onClick={() => answer(qi, ai)} disabled={revealed}

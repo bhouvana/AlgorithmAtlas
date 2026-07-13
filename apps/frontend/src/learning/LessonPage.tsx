@@ -103,7 +103,7 @@ export function LessonPage() {
   return (
     <div className="min-h-screen">
       {/* ── Header ─────────────────────────────────────────────────────────── */}
-      <div className="border-b border-white/6 bg-[#09090B]">
+      <div className="border-b border-charcoal/10 bg-[#09090B]">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
             <button onClick={() => navigate('/learning')} className="flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors text-sm flex-shrink-0">
@@ -202,7 +202,7 @@ export function LessonPage() {
 
         {/* ── Complete Button ─────────────────────────────────────────────── */}
         {(LessonComponent || lessonData) && (
-          <div className="mt-20 pt-10 border-t border-white/8">
+          <div className="mt-20 pt-10 border-t border-charcoal/10">
             {lessonDone ? (
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-3">

@@ -57,7 +57,7 @@ export function QuickActions({ context, onAction, disabled }: Props) {
           key={action.label}
           onClick={() => onAction(action.message)}
           disabled={disabled}
-          className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/8 text-zinc-400 hover:text-white hover:bg-white/[0.08] hover:border-white/15 text-xs transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-charcoal/10 text-zinc-400 hover:text-white hover:bg-white/[0.08] hover:border-white/15 text-xs transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           <span className="text-sm leading-none">{action.icon}</span>
           <span>{action.label}</span>

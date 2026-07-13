@@ -216,7 +216,7 @@ export function ProblemCatalogPage() {
               value={searchQuery}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search problems…"
-              className="w-full bg-white/5 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500/50"
+              className="w-full bg-white/5 border border-charcoal/10 rounded-xl pl-9 pr-4 py-2 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500/50"
             />
           </div>
 
@@ -244,7 +244,7 @@ export function ProblemCatalogPage() {
             <select
               value={selectedCategory}
               onChange={(e) => setCategory(e.target.value)}
-              className="bg-white/5 border border-white/10 rounded-xl pl-8 pr-4 py-2 text-sm text-white appearance-none focus:outline-none focus:border-indigo-500/50 cursor-pointer"
+              className="bg-white/5 border border-charcoal/10 rounded-xl pl-8 pr-4 py-2 text-sm text-white appearance-none focus:outline-none focus:border-indigo-500/50 cursor-pointer"
             >
               {categories.map((c) => (
                 <option key={c} value={c} className="bg-[#09090B]">
@@ -256,7 +256,7 @@ export function ProblemCatalogPage() {
         </div>
 
         {/* Table header */}
-        <div className="flex items-center gap-4 px-4 pb-2 border-b border-white/8 text-xs text-zinc-600 font-medium">
+        <div className="flex items-center gap-4 px-4 pb-2 border-b border-charcoal/10 text-xs text-zinc-600 font-medium">
           <div className="w-5 flex-shrink-0" />
           <div className="flex-1">Problem</div>
           <div className="flex items-center gap-4 flex-shrink-0">
@@ -287,7 +287,7 @@ export function ProblemCatalogPage() {
 
         {/* Pagination */}
         {!loading && total > PAGE_SIZE && (
-          <div className="flex items-center justify-between pt-6 mt-2 border-t border-white/8">
+          <div className="flex items-center justify-between pt-6 mt-2 border-t border-charcoal/10">
             <span className="text-xs text-zinc-500">
               Page {page + 1} of {totalPages} · showing {problems.length} of {total}
             </span>

@@ -185,7 +185,7 @@ function renderTokens(tokens: Token[]): React.ReactNode {
         break;
 
       case 'hr':
-        nodes.push(<hr key={key++} className="my-3 border-white/8" />);
+        nodes.push(<hr key={key++} className="my-3 border-charcoal/10" />);
         break;
 
       case 'blank':

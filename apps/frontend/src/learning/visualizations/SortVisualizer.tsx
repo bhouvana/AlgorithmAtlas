@@ -165,7 +165,7 @@ export function SortVisualizer({ algorithm = 'bubble', showAlgoSelector = true, 
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 border ${
                 algo === a.id
                   ? 'bg-indigo-500/20 border-indigo-500/40 text-indigo-300'
-                  : 'border-white/10 text-zinc-400 hover:text-zinc-200 hover:border-white/20'
+                  : 'border-charcoal/10 text-zinc-400 hover:text-zinc-200 hover:border-white/20'
               }`}
             >
               {a.label} Sort
@@ -263,10 +263,10 @@ export function SortVisualizer({ algorithm = 'bubble', showAlgoSelector = true, 
           </button>
         </div>
 
-        <button onClick={shuffle} className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-white/10 text-xs text-zinc-400 hover:text-white hover:border-white/20 transition-all">
+        <button onClick={shuffle} className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-charcoal/10 text-xs text-zinc-400 hover:text-white hover:border-white/20 transition-all">
           <Shuffle size={12} /> Shuffle
         </button>
-        <button onClick={() => reset()} className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-white/10 text-xs text-zinc-400 hover:text-white hover:border-white/20 transition-all">
+        <button onClick={() => reset()} className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-charcoal/10 text-xs text-zinc-400 hover:text-white hover:border-white/20 transition-all">
           <RotateCcw size={12} /> Reset
         </button>
 

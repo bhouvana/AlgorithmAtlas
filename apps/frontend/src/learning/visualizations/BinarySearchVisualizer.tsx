@@ -142,14 +142,14 @@ export function BinarySearchVisualizer() {
             const isFound = frame?.found === i;
             const isTarget = !searching && i === targetIdx;
 
-            let bg = 'bg-zinc-800/80 border-white/8 text-zinc-300';
+            let bg = 'bg-zinc-800/80 border-charcoal/10 text-zinc-300';
             if (isTarget) bg = 'bg-indigo-500/30 border-indigo-500/50 text-indigo-300';
             if (searching) {
-              if (isElim)  bg = 'bg-zinc-900/40 border-white/4 text-zinc-600';
+              if (isElim)  bg = 'bg-zinc-900/40 border-charcoal/10 text-zinc-600';
               else if (isFound) bg = 'bg-emerald-500/30 border-emerald-500/50 text-emerald-300 ring-1 ring-emerald-500/50';
               else if (isMid)   bg = 'bg-amber-500/30 border-amber-500/50 text-amber-300 ring-1 ring-amber-500/50';
               else if (isActive) bg = 'bg-indigo-500/20 border-indigo-500/30 text-indigo-300';
-              else bg = 'bg-zinc-900/40 border-white/4 text-zinc-600';
+              else bg = 'bg-zinc-900/40 border-charcoal/10 text-zinc-600';
             }
 
             return (
@@ -225,7 +225,7 @@ export function BinarySearchVisualizer() {
           { color: 'bg-amber-500/40 border-amber-500/50',   label: 'Mid pointer' },
           { color: 'bg-indigo-500/20 border-indigo-500/30', label: 'Active range' },
           { color: 'bg-emerald-500/30 border-emerald-500/50',label: 'Found' },
-          { color: 'bg-zinc-900/40 border-white/4',         label: 'Eliminated' },
+          { color: 'bg-zinc-900/40 border-charcoal/10',         label: 'Eliminated' },
         ].map((item) => (
           <span key={item.label} className="flex items-center gap-1.5">
             <span className={`w-3 h-3 rounded border ${item.color}`} />

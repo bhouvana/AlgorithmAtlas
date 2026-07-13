@@ -44,7 +44,7 @@ export function StateMachineRenderer({ state }: Props) {
       <div className="grid grid-cols-2 gap-3">
         {/* Variable table */}
         <div className="rounded-xl border border-charcoal/10 bg-neutral-900/60 overflow-hidden">
-          <div className="px-3 py-1.5 border-b border-white/5 text-xs text-neutral-500">Variables</div>
+          <div className="px-3 py-1.5 border-b border-charcoal/10 text-xs text-neutral-500">Variables</div>
           <div className="divide-y divide-white/5 max-h-48 overflow-y-auto">
             {vars.length === 0 && (
               <div className="px-3 py-2 text-neutral-600 text-xs">No variables yet</div>

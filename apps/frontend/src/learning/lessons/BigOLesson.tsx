@@ -91,7 +91,7 @@ export function BigOLesson() {
               key={c.name}
               onClick={() => setActiveComplexity(activeComplexity === c.name ? null : c.name)}
               className={`w-full text-left rounded-xl border p-4 transition-all duration-200 ${
-                activeComplexity === c.name ? c.bg : 'border-white/8 bg-zinc-900/30 hover:bg-zinc-900/50'
+                activeComplexity === c.name ? c.bg : 'border-charcoal/10 bg-zinc-900/30 hover:bg-zinc-900/50'
               }`}
               layout
             >
@@ -106,7 +106,7 @@ export function BigOLesson() {
                 <motion.p
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
-                  className="text-zinc-300 text-sm mt-3 pt-3 border-t border-white/10"
+                  className="text-zinc-300 text-sm mt-3 pt-3 border-t border-charcoal/10"
                 >
                   {c.desc}
                 </motion.p>
@@ -157,7 +157,7 @@ export function BigOLesson() {
             },
           ].map((ex) => (
             <div key={ex.label} className="rounded-xl border border-charcoal/10 bg-zinc-950/60 overflow-hidden">
-              <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-zinc-900/40">
+              <div className="flex items-center justify-between px-4 py-2 border-b border-charcoal/10 bg-zinc-900/40">
                 <span className="text-xs text-zinc-400">{ex.label}</span>
                 <code className={`text-xs font-mono font-bold ${ex.color}`}>{ex.complexity}</code>
               </div>
@@ -216,11 +216,11 @@ export function BigOLesson() {
                   const chosen = quizAnswers[qi] === ai;
                   const revealed = quizRevealed[qi];
                   const correct = ai === q.correct;
-                  let style = 'border-white/10 text-zinc-400 hover:border-white/20 hover:text-zinc-200';
+                  let style = 'border-charcoal/10 text-zinc-400 hover:border-white/20 hover:text-zinc-200';
                   if (revealed) {
                     if (correct) style = 'border-emerald-500/50 bg-emerald-500/10 text-emerald-300';
                     else if (chosen) style = 'border-red-500/50 bg-red-500/10 text-red-300';
-                    else style = 'border-white/5 text-zinc-600';
+                    else style = 'border-charcoal/10 text-zinc-600';
                   }
                   return (
                     <button

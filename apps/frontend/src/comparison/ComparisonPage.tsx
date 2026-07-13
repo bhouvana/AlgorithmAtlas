@@ -189,7 +189,7 @@ function CompactControls({ sim, syncTarget, hideSpeedRow }: CompactControlsProps
           onClick={handleReset}
           disabled={!hasCtrl || isAtStart}
           title="Reset"
-          className="w-8 h-8 rounded-lg bg-[#18181B] border border-white/8 text-zinc-400 hover:text-white hover:border-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs flex items-center justify-center"
+          className="w-8 h-8 rounded-lg bg-[#18181B] border border-charcoal/10 text-zinc-400 hover:text-white hover:border-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-xs flex items-center justify-center"
         >
           <RotateCcw className="w-3.5 h-3.5" />
         </button>
@@ -243,7 +243,7 @@ function CompactControls({ sim, syncTarget, hideSpeedRow }: CompactControlsProps
                 'px-2 py-0.5 rounded-lg text-xs font-mono transition-colors',
                 playbackSpeed === s
                   ? 'bg-indigo-600 text-white'
-                  : 'bg-[#18181B] border border-white/8 text-zinc-500 hover:text-white hover:border-white/20',
+                  : 'bg-[#18181B] border border-charcoal/10 text-zinc-500 hover:text-white hover:border-white/20',
               )}
             >
               ×{s}
@@ -273,7 +273,7 @@ function AlgorithmPanel({
   return (
     <div className="rounded-2xl bg-[#111113] border border-charcoal/10 overflow-hidden">
       {/* Panel header */}
-      <div className="px-5 py-3 border-b border-white/8 flex items-center justify-between">
+      <div className="px-5 py-3 border-b border-charcoal/10 flex items-center justify-between">
         <span className="text-sm font-medium text-white">
           {algorithmName ?? slug}
         </span>
@@ -318,13 +318,13 @@ function ComplexityTable({ algoA, algoB }: { algoA: AlgorithmSummary; algoB: Alg
   return (
     <div className="max-w-7xl mx-auto px-6 pb-8">
       <div className="rounded-2xl bg-[#111113] border border-charcoal/10 overflow-hidden">
-        <div className="px-5 py-3 border-b border-white/8">
+        <div className="px-5 py-3 border-b border-charcoal/10">
           <span className="text-sm font-medium text-white">Complexity Comparison</span>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-white/8">
+              <tr className="border-b border-charcoal/10">
                 <th className="text-left px-5 py-3 text-zinc-500 font-medium text-xs uppercase tracking-wider">Metric</th>
                 <th className="text-center px-5 py-3 text-indigo-300 font-medium text-xs uppercase tracking-wider">{algoA.name}</th>
                 <th className="text-center px-5 py-3 text-indigo-300 font-medium text-xs uppercase tracking-wider">{algoB.name}</th>
@@ -332,7 +332,7 @@ function ComplexityTable({ algoA, algoB }: { algoA: AlgorithmSummary; algoB: Alg
             </thead>
             <tbody>
               {rows.map(([label, a, b]) => (
-                <tr key={label} className="border-b border-white/5 last:border-0">
+                <tr key={label} className="border-b border-charcoal/10 last:border-0">
                   <td className="px-5 py-3 text-zinc-500 text-sm">{label}</td>
                   <td className="px-5 py-3 text-center font-mono text-sky-300 text-sm">{a}</td>
                   <td className="px-5 py-3 text-center font-mono text-sky-300 text-sm">{b}</td>
@@ -431,7 +431,7 @@ export function ComparisonPage() {
               <select
                 value={slugA}
                 onChange={(e) => setSlug('a', e.target.value)}
-                className="w-full bg-[#18181B] border border-white/8 text-white text-sm rounded-xl px-4 h-10 focus:border-indigo-500/50 focus:outline-none appearance-none cursor-pointer"
+                className="w-full bg-[#18181B] border border-charcoal/10 text-white text-sm rounded-xl px-4 h-10 focus:border-indigo-500/50 focus:outline-none appearance-none cursor-pointer"
               >
                 {algorithms.map((a) => (
                   <option key={a.slug} value={a.slug}>{a.name}</option>
@@ -448,7 +448,7 @@ export function ComparisonPage() {
               <select
                 value={slugB}
                 onChange={(e) => setSlug('b', e.target.value)}
-                className="w-full bg-[#18181B] border border-white/8 text-white text-sm rounded-xl px-4 h-10 focus:border-indigo-500/50 focus:outline-none appearance-none cursor-pointer"
+                className="w-full bg-[#18181B] border border-charcoal/10 text-white text-sm rounded-xl px-4 h-10 focus:border-indigo-500/50 focus:outline-none appearance-none cursor-pointer"
               >
                 {algorithms.map((a) => (
                   <option key={a.slug} value={a.slug}>{a.name}</option>
@@ -465,7 +465,7 @@ export function ComparisonPage() {
                 'flex items-center gap-2 px-4 h-10 rounded-xl border text-sm font-medium transition-colors shrink-0',
                 locked
                   ? 'bg-indigo-600/20 border-indigo-500/40 text-indigo-300 hover:bg-indigo-600/30'
-                  : 'bg-[#18181B] border-white/8 text-zinc-400 hover:text-white hover:border-white/20',
+                  : 'bg-[#18181B] border-charcoal/10 text-zinc-400 hover:text-white hover:border-white/20',
               )}
             >
               {locked ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5" />}

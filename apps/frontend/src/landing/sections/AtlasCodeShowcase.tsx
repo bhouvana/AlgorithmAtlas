@@ -10,7 +10,7 @@ const ATLASCODE_JOURNEY = ['Learn', 'Visualize', 'Code', 'Run', 'Debug', 'Improv
 function AtlasCodeMockPanel() {
   return (
     <div className="rounded-2xl border border-charcoal/10 bg-[#0D0D10] shadow-card overflow-hidden aspect-square flex flex-col">
-      <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5 bg-white/[0.02]">
+      <div className="flex items-center gap-1.5 px-4 py-3 border-b border-charcoal/10 bg-white/[0.02]">
         <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
         <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
@@ -18,7 +18,7 @@ function AtlasCodeMockPanel() {
       </div>
 
       <div className="flex flex-col flex-1 min-h-0">
-        <div className="p-6 border-b border-white/5">
+        <div className="p-6 border-b border-charcoal/10">
           <div className="flex items-center gap-2 mb-3">
             <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
               Easy

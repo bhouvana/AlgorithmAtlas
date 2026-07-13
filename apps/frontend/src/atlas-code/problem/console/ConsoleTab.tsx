@@ -46,7 +46,7 @@ export function ConsoleTab({ result }: Props) {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex-shrink-0 flex items-center gap-2 px-3 py-2 border-b border-white/8">
+      <div className="flex-shrink-0 flex items-center gap-2 px-3 py-2 border-b border-charcoal/10">
         <span className="text-sm text-zinc-500">Execution Console</span>
         <div className="flex-1" />
         <button

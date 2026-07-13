@@ -171,7 +171,7 @@ export function AtlasCodePage() {
                 <Link
                   key={p.id}
                   to={`/atlas-code/problem/${p.id}`}
-                  className="bg-white/4 border border-white/8 rounded-xl p-4 hover:border-indigo-500/40 hover:bg-white/6 transition-all group"
+                  className="bg-white/4 border border-charcoal/10 rounded-xl p-4 hover:border-indigo-500/40 hover:bg-white/6 transition-all group"
                 >
                   <div className="flex items-start justify-between mb-2">
                     <span className={`text-xs font-medium ${DIFFICULTY_COLOR[p.difficulty]}`}>{p.difficulty}</span>

@@ -180,11 +180,11 @@ function Quiz({ questions }: { questions: QuizQuestion[] }) {
               const chosen = answers[qi] === ai;
               const revealed = answers[qi] !== null;
               const correct = ai === q.correct;
-              let style = 'border-white/10 text-zinc-400 hover:border-white/20 hover:text-zinc-200';
+              let style = 'border-charcoal/10 text-zinc-400 hover:border-white/20 hover:text-zinc-200';
               if (revealed) {
                 if (correct) style = 'border-emerald-500/50 bg-emerald-500/10 text-emerald-300';
                 else if (chosen) style = 'border-red-500/50 bg-red-500/10 text-red-300';
-                else style = 'border-white/5 text-zinc-600';
+                else style = 'border-charcoal/10 text-zinc-600';
               }
               return (
                 <button key={ai} onClick={() => pick(qi, ai)} disabled={revealed}
@@ -336,7 +336,7 @@ function ExamplesSection({ data }: { data: LessonData }) {
     <div className="space-y-4">
       <div className="mb-4"><span className="text-xs font-mono text-violet-400 uppercase tracking-widest">Implementation</span></div>
       {data.codeExamples.map((ex, i) => {
-        const borderColor = ex.variant === 'good' ? 'border-emerald-500/20' : ex.variant === 'warn' ? 'border-amber-500/20' : 'border-white/8';
+        const borderColor = ex.variant === 'good' ? 'border-emerald-500/20' : ex.variant === 'warn' ? 'border-amber-500/20' : 'border-charcoal/10';
         const headerBg   = ex.variant === 'good' ? 'bg-emerald-500/5'      : ex.variant === 'warn' ? 'bg-amber-500/5'      : 'bg-zinc-900/40';
         const complexityColor = ex.complexity?.startsWith('O(1)') ? 'text-emerald-400'
           : ex.complexity?.includes('log') ? 'text-cyan-400'
@@ -344,7 +344,7 @@ function ExamplesSection({ data }: { data: LessonData }) {
           : 'text-violet-400';
         return (
           <div key={i} className={`rounded-xl border ${borderColor} bg-zinc-950/60 overflow-hidden`}>
-            <div className={`flex items-center justify-between px-4 py-2 border-b border-white/5 ${headerBg}`}>
+            <div className={`flex items-center justify-between px-4 py-2 border-b border-charcoal/10 ${headerBg}`}>
               <span className="text-xs text-zinc-400">{ex.label}</span>
               {ex.complexity && <code className={`text-xs font-mono font-bold ${complexityColor}`}>{ex.complexity}</code>}
             </div>
@@ -365,7 +365,7 @@ function ComplexitySection({ data }: { data: LessonData }) {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-white/8">
+                <tr className="border-b border-charcoal/10">
                   <th className="text-left py-2 px-3 text-zinc-400 font-medium text-xs">Case</th>
                   <th className="text-left py-2 px-3 text-zinc-400 font-medium text-xs">Complexity</th>
                   <th className="text-left py-2 px-3 text-zinc-400 font-medium text-xs">When / Why</th>
@@ -373,7 +373,7 @@ function ComplexitySection({ data }: { data: LessonData }) {
               </thead>
               <tbody>
                 {data.complexity.rows.map((row) => (
-                  <tr key={row.case} className="border-b border-white/5">
+                  <tr key={row.case} className="border-b border-charcoal/10">
                     <td className="py-2.5 px-3 text-zinc-300 font-medium text-xs">{row.case}</td>
                     <td className="py-2.5 px-3"><code className={`font-mono font-bold text-sm ${row.color}`}>{row.value}</code></td>
                     <td className="py-2.5 px-3 text-zinc-400 text-xs">{row.note}</td>

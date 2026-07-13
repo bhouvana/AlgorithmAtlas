@@ -191,7 +191,7 @@ export function LiveVisualizationSection() {
         <AnimateIn delay={0.1}>
           <div className="rounded-2xl border border-charcoal/10 bg-[#0D0D10] shadow-card overflow-hidden">
             {/* window chrome + algo tabs */}
-            <div className="flex flex-wrap items-center gap-2 px-5 py-3.5 border-b border-white/5 bg-white/[0.02]">
+            <div className="flex flex-wrap items-center gap-2 px-5 py-3.5 border-b border-charcoal/10 bg-white/[0.02]">
               <div className="flex items-center gap-1.5 mr-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
                 <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
@@ -234,7 +234,7 @@ export function LiveVisualizationSection() {
             </div>
 
             {/* stats row */}
-            <div className="flex items-center justify-center gap-8 px-6 py-4 border-t border-white/5 bg-white/[0.02] font-mono text-sm">
+            <div className="flex items-center justify-center gap-8 px-6 py-4 border-t border-charcoal/10 bg-white/[0.02] font-mono text-sm">
               <span className="text-zinc-500">
                 comparisons <span className="text-zinc-200 font-semibold">{frame.comparisons}</span>
               </span>

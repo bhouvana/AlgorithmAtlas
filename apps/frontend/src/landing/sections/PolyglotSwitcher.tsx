@@ -168,7 +168,7 @@ export function PolyglotSwitcherSection() {
                 </button>
               ))}
             </div>
-            <div className="border-t border-white/5 p-6 min-h-[240px]">
+            <div className="border-t border-charcoal/10 p-6 min-h-[240px]">
               <AnimatePresence mode="wait">
                 <motion.pre
                   key={snippet.id}

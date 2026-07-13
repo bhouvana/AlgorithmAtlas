@@ -355,7 +355,7 @@ function LangPicker({ current, onChange }: { current: LangDef; onChange: (l: Lan
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1A1A2A] border border-white/10 hover:border-white/20 transition-colors text-sm"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1A1A2A] border border-charcoal/10 hover:border-white/20 transition-colors text-sm"
       >
         <i className={cn(current.devicon, 'text-base leading-none')} />
         <span className="text-white font-medium">{current.label}</span>
@@ -641,11 +641,11 @@ export function NotebookPage() {
     <div className="flex flex-col" style={{ height: 'calc(100vh - 5rem)' }}>
 
       {/* ── Top bar: file tab + language picker + Run button ──────────── */}
-      <div className="flex items-stretch bg-[#0D0D14] border-b border-white/8 flex-shrink-0 select-none" style={{ height: 44 }}>
+      <div className="flex items-stretch bg-[#0D0D14] border-b border-charcoal/10 flex-shrink-0 select-none" style={{ height: 44 }}>
 
         {/* File tab — styled like VS Code active tab */}
         <div
-          className="flex items-center gap-2 px-4 border-r border-white/8 relative"
+          className="flex items-center gap-2 px-4 border-r border-charcoal/10 relative"
           style={{ borderBottom: `2px solid ${lang.accentHex}` }}
         >
           <i className={cn(lang.devicon, 'text-base leading-none flex-shrink-0')} />
@@ -675,7 +675,7 @@ export function NotebookPage() {
               'flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all',
               inlineCompletionEnabled
                 ? 'bg-indigo-600/20 border-indigo-500/40 text-indigo-300 hover:bg-indigo-600/30'
-                : 'bg-[#1A1A2A] border-white/8 text-zinc-500 hover:text-zinc-300 hover:border-white/15',
+                : 'bg-[#1A1A2A] border-charcoal/10 text-zinc-500 hover:text-zinc-300 hover:border-white/15',
             )}
           >
             <Sparkles className="w-3 h-3" />
@@ -764,7 +764,7 @@ export function NotebookPage() {
         <div className="flex-1 min-w-0 flex flex-col bg-[#080810]">
 
           {/* Output header */}
-          <div className="flex items-center justify-between px-4 py-2 border-b border-white/8 flex-shrink-0 bg-[#0C0C16]">
+          <div className="flex items-center justify-between px-4 py-2 border-b border-charcoal/10 flex-shrink-0 bg-[#0C0C16]">
             <div className="flex items-center gap-3">
               <span className="text-xs font-mono text-zinc-500 tracking-widest uppercase">Output</span>
               {runs.length > 0 && (
@@ -813,7 +813,7 @@ export function NotebookPage() {
                   return (
                     <div
                       key={run.id}
-                      className={cn('border-b border-white/4', isLatest && 'border-b-0')}
+                      className={cn('border-b border-charcoal/10', isLatest && 'border-b-0')}
                     >
                       {/* Run header line — terminal prompt style */}
                       <div className={cn(
@@ -863,7 +863,7 @@ export function NotebookPage() {
 
       {/* ── VS Code-style status bar ───────────────────────────────────── */}
       <div
-        className="flex items-center justify-between px-4 flex-shrink-0 text-[10px] font-mono border-t border-white/5"
+        className="flex items-center justify-between px-4 flex-shrink-0 text-[10px] font-mono border-t border-charcoal/10"
         style={{ height: 24, backgroundColor: lang.accentHex + '22' }}
       >
         <div className="flex items-center gap-3">

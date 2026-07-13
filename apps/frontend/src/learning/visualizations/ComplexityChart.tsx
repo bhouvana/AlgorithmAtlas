@@ -76,8 +76,8 @@ export function ComplexityChart() {
             onClick={() => toggle(f.id)}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all duration-200 border ${
               f.enabled
-                ? 'border-white/20 text-white bg-white/5'
-                : 'border-white/5 text-zinc-500 bg-transparent'
+                ? 'border-charcoal/10 text-white bg-white/5'
+                : 'border-charcoal/10 text-zinc-500 bg-transparent'
             }`}
           >
             <span

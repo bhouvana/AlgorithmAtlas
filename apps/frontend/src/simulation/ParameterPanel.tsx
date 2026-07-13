@@ -208,7 +208,7 @@ function ParamControl({
             'px-3 py-0.5 rounded text-xs font-mono transition-colors border',
             current
               ? 'bg-indigo-600 text-white border-indigo-500'
-              : 'text-neutral-400 border-white/10 hover:bg-white/10',
+              : 'text-neutral-400 border-charcoal/10 hover:bg-white/10',
           ].join(' ')}
         >
           {current ? 'on' : 'off'}

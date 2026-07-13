@@ -99,7 +99,7 @@ function ArrayPlayground() {
               <motion.div
                 animate={{ backgroundColor: highlighted === i ? 'rgba(99,102,241,0.3)' : 'rgba(39,39,42,0.6)' }}
                 className={`w-12 h-12 rounded-lg flex items-center justify-center font-mono font-semibold text-sm border transition-colors duration-200 ${
-                  highlighted === i ? 'border-indigo-500/60 text-indigo-200' : 'border-white/10 text-zinc-200'
+                  highlighted === i ? 'border-indigo-500/60 text-indigo-200' : 'border-charcoal/10 text-zinc-200'
                 }`}
               >
                 {val}
@@ -115,12 +115,12 @@ function ArrayPlayground() {
         <input
           type="number" placeholder="Value" value={inputVal}
           onChange={(e) => setInputVal(e.target.value)}
-          className="w-20 px-2 py-1.5 bg-zinc-900 border border-white/10 rounded-lg text-white text-xs font-mono focus:outline-none focus:border-indigo-500/50"
+          className="w-20 px-2 py-1.5 bg-zinc-900 border border-charcoal/10 rounded-lg text-white text-xs font-mono focus:outline-none focus:border-indigo-500/50"
         />
         <input
           type="number" placeholder="Index" value={inputIdx}
           onChange={(e) => setInputIdx(e.target.value)}
-          className="w-20 px-2 py-1.5 bg-zinc-900 border border-white/10 rounded-lg text-white text-xs font-mono focus:outline-none focus:border-indigo-500/50"
+          className="w-20 px-2 py-1.5 bg-zinc-900 border border-charcoal/10 rounded-lg text-white text-xs font-mono focus:outline-none focus:border-indigo-500/50"
         />
         <button onClick={access}     className="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 rounded-lg text-xs hover:bg-emerald-500/20 transition-colors">Access[i]</button>
         <button onClick={search}     className="px-3 py-1.5 bg-violet-500/10 border border-violet-500/20 text-violet-300 rounded-lg text-xs hover:bg-violet-500/20 transition-colors">Search</button>
@@ -215,7 +215,7 @@ export function ArraysLesson() {
               key={op.id}
               onClick={() => setActiveOp(activeOp === op.id ? null : op.id)}
               className={`w-full text-left rounded-xl border p-4 transition-all duration-200 ${
-                activeOp === op.id ? 'border-indigo-500/40 bg-indigo-500/8' : 'border-white/8 bg-zinc-900/30 hover:bg-zinc-900/50'
+                activeOp === op.id ? 'border-indigo-500/40 bg-indigo-500/8' : 'border-charcoal/10 bg-zinc-900/30 hover:bg-zinc-900/50'
               }`}
               layout
             >
@@ -229,7 +229,7 @@ export function ArraysLesson() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="text-zinc-400 text-xs mt-3 pt-3 border-t border-white/8"
+                    className="text-zinc-400 text-xs mt-3 pt-3 border-t border-charcoal/10"
                   >
                     {op.desc}
                   </motion.p>
@@ -247,7 +247,7 @@ export function ArraysLesson() {
         <div className="overflow-x-auto">
           <table className="w-full text-xs">
             <thead>
-              <tr className="border-b border-white/8">
+              <tr className="border-b border-charcoal/10">
                 <th className="text-left py-2 px-3 text-zinc-400 font-medium">Use case</th>
                 <th className="text-left py-2 px-3 text-zinc-400 font-medium">Best choice</th>
                 <th className="text-left py-2 px-3 text-zinc-400 font-medium">Why</th>
@@ -262,7 +262,7 @@ export function ArraysLesson() {
                 { use: 'Stack (LIFO)', best: '✓ Array with push/pop', why: 'push/pop are both O(1) amortized' },
                 { use: 'Queue (FIFO)', best: '✗ Array → Deque', why: 'dequeue from front is O(n) in arrays' },
               ].map((row) => (
-                <tr key={row.use} className="border-b border-white/5">
+                <tr key={row.use} className="border-b border-charcoal/10">
                   <td className="py-2.5 px-3 text-zinc-300">{row.use}</td>
                   <td className="py-2.5 px-3">
                     <span className={row.best.startsWith('✓') ? 'text-emerald-400' : 'text-rose-400'}>{row.best}</span>
@@ -288,11 +288,11 @@ export function ArraysLesson() {
                   const chosen = quizAnswers[qi] === ai;
                   const revealed = quizRevealed[qi];
                   const correct = ai === q.correct;
-                  let style = 'border-white/10 text-zinc-400 hover:border-white/20 hover:text-zinc-200';
+                  let style = 'border-charcoal/10 text-zinc-400 hover:border-white/20 hover:text-zinc-200';
                   if (revealed) {
                     if (correct) style = 'border-emerald-500/50 bg-emerald-500/10 text-emerald-300';
                     else if (chosen) style = 'border-red-500/50 bg-red-500/10 text-red-300';
-                    else style = 'border-white/5 text-zinc-600';
+                    else style = 'border-charcoal/10 text-zinc-600';
                   }
                   return (
                     <button key={ai} onClick={() => answer(qi, ai)} disabled={revealed}

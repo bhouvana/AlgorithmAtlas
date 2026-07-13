@@ -165,7 +165,7 @@ export function CodeViewer({ slug }: CodeViewerProps) {
             {lines.map((line, idx) => (
               <tr key={idx} className="hover:bg-white/[0.02]">
                 <td
-                  className="select-none text-right pr-4 pl-3 text-neutral-700 border-r border-white/5"
+                  className="select-none text-right pr-4 pl-3 text-neutral-700 border-r border-charcoal/10"
                   style={{ minWidth: '3rem', userSelect: 'none' }}
                 >
                   {idx + 1}

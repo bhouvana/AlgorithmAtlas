@@ -50,7 +50,7 @@ export function BottomConsole({ problem, isRunning, onRun, onResizeDeltaY }: Pro
       </div>
 
       {/* Tab bar */}
-      <div className="flex-shrink-0 flex items-center border-b border-white/8 bg-[#09090B]">
+      <div className="flex-shrink-0 flex items-center border-b border-charcoal/10 bg-[#09090B]">
         {TABS.map((t) => (
           <button
             key={t.key}

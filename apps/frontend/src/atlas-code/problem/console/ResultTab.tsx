@@ -283,7 +283,7 @@ export function ResultTab({ result }: Props) {
               onClick={() => setActiveKey(c.key)}
               className={cn(
                 'flex-shrink-0 flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg border transition-colors',
-                activeKey === c.key ? 'border-indigo-500/40 bg-indigo-500/10 text-white' : 'border-white/8 text-zinc-500 hover:text-zinc-300'
+                activeKey === c.key ? 'border-indigo-500/40 bg-indigo-500/10 text-white' : 'border-charcoal/10 text-zinc-500 hover:text-zinc-300'
               )}
             >
               <StatusIcon status={c.status} />

@@ -122,7 +122,7 @@ export function AtlasAIShowcaseSection() {
 
         <AnimateIn direction="left" delay={0.1}>
           <div className="rounded-2xl border border-charcoal/10 bg-[#0D0D10] shadow-card overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-white/[0.02]">
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-charcoal/10 bg-white/[0.02]">
               <AtlasAvatar />
               <span className="text-sm text-white font-medium">Atlas AI</span>
               <span className="ml-auto flex items-center gap-1.5 text-xs text-emerald-400">

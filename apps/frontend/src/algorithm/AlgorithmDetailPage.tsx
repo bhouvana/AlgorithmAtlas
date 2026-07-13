@@ -100,7 +100,7 @@ export function AlgorithmDetailPage() {
               <EmbedButton slug={algorithm.slug} />
               <Link
                 to={`/compare?a=${algorithm.slug}`}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#18181B] border border-white/8 text-zinc-400 hover:text-white hover:border-white/20 text-xs transition-all"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#18181B] border border-charcoal/10 text-zinc-400 hover:text-white hover:border-white/20 text-xs transition-all"
               >
                 <GitCompare className="w-3 h-3" /> Compare
               </Link>
@@ -205,7 +205,7 @@ export function AlgorithmDetailPage() {
               {/* Main simulation area */}
               <div className="rounded-2xl bg-[#111113] border border-charcoal/10 overflow-hidden">
                 {/* Top bar */}
-                <div className="flex items-center justify-between px-5 py-3 border-b border-white/8">
+                <div className="flex items-center justify-between px-5 py-3 border-b border-charcoal/10">
                   <div className="flex items-center gap-2">
                     <span className="text-xs text-zinc-500 font-mono uppercase tracking-wider">
                       Simulation
@@ -256,7 +256,7 @@ export function AlgorithmDetailPage() {
               transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="rounded-2xl bg-[#111113] border border-charcoal/10 overflow-hidden">
-                <div className="flex items-center gap-2 px-5 py-3 border-b border-white/8">
+                <div className="flex items-center gap-2 px-5 py-3 border-b border-charcoal/10">
                   <Code2 className="w-4 h-4 text-zinc-500" />
                   <span className="text-xs text-zinc-500 font-mono uppercase tracking-wider">
                     Source Code
@@ -378,7 +378,7 @@ function EmbedButton({ slug }: { slug: string }) {
     <div className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#18181B] border border-white/8 text-zinc-400 hover:text-white hover:border-white/20 text-xs transition-all"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#18181B] border border-charcoal/10 text-zinc-400 hover:text-white hover:border-white/20 text-xs transition-all"
       >
         <Share2 className="w-3 h-3" /> Embed
       </button>

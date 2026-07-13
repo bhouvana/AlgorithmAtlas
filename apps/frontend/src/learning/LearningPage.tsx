@@ -77,7 +77,7 @@ function ModuleCard({ module, isDone, isStarted }: {
       className={`group relative rounded-2xl border bg-zinc-900/50 p-4 transition-all duration-200 ${
         isDone
           ? 'border-emerald-500/20 hover:border-emerald-500/30 cursor-pointer'
-          : 'border-white/8 hover:border-white/16 cursor-pointer'
+          : 'border-charcoal/10 hover:border-white/16 cursor-pointer'
       }`}
     >
       {/* Top row */}
@@ -210,7 +210,7 @@ export function LearningPage() {
             placeholder="Search algorithms, topics…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-2.5 bg-zinc-900/60 border border-white/8 rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
+            className="w-full pl-9 pr-4 py-2.5 bg-zinc-900/60 border border-charcoal/10 rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
           />
         </div>
 
@@ -220,8 +220,8 @@ export function LearningPage() {
             onClick={() => setActiveTrack('all')}
             className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all border ${
               activeTrack === 'all'
-                ? 'bg-white/10 border-white/20 text-white'
-                : 'border-white/6 text-zinc-500 hover:text-zinc-300 hover:border-white/12'
+                ? 'bg-white/10 border-charcoal/10 text-white'
+                : 'border-charcoal/10 text-zinc-500 hover:text-zinc-300 hover:border-white/12'
             }`}
           >
             All Tracks
@@ -232,8 +232,8 @@ export function LearningPage() {
               onClick={() => setActiveTrack(activeTrack === t.id ? 'all' : t.id)}
               className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all border ${
                 activeTrack === t.id
-                  ? 'bg-white/10 border-white/20 text-white'
-                  : 'border-white/6 text-zinc-500 hover:text-zinc-300 hover:border-white/12'
+                  ? 'bg-white/10 border-charcoal/10 text-white'
+                  : 'border-charcoal/10 text-zinc-500 hover:text-zinc-300 hover:border-white/12'
               }`}
             >
               {t.icon} {t.label}
@@ -252,8 +252,8 @@ export function LearningPage() {
                   ? d.value === 'beginner'     ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-300'
                   : d.value === 'intermediate' ? 'bg-amber-500/20 border-amber-500/40 text-amber-300'
                   : d.value === 'advanced'     ? 'bg-rose-500/20 border-rose-500/40 text-rose-300'
-                  :                              'bg-white/10 border-white/20 text-white'
-                  : 'border-white/6 text-zinc-500 hover:text-zinc-300 hover:border-white/12'
+                  :                              'bg-white/10 border-charcoal/10 text-white'
+                  : 'border-charcoal/10 text-zinc-500 hover:text-zinc-300 hover:border-white/12'
               }`}
             >
               {d.label}

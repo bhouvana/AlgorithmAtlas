@@ -36,7 +36,7 @@ function LangPicker({ value, onChange }: { value: string; onChange: (v: string) 
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1A1A2A] border border-white/10 hover:border-white/20 transition-colors text-sm"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1A1A2A] border border-charcoal/10 hover:border-white/20 transition-colors text-sm"
       >
         <i className={cn(current.devicon, 'text-base leading-none')} />
         <span className="text-white font-medium">{current.label}</span>
@@ -312,7 +312,7 @@ export function ProblemPage() {
   return (
     <div className="h-screen pt-16 flex flex-col overflow-hidden">
       {/* Top bar */}
-      <div className="flex-shrink-0 border-b border-white/8 bg-[#09090B] px-4 h-11 flex items-center gap-4">
+      <div className="flex-shrink-0 border-b border-charcoal/10 bg-[#09090B] px-4 h-11 flex items-center gap-4">
         <Link
           to="/atlas-code/catalog"
           className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-white transition-colors"
@@ -467,7 +467,7 @@ export function ProblemPage() {
               flexGrow: consoleCollapsed ? 1 : 0,
             }}
           >
-            <div className="flex-shrink-0 flex items-center gap-3 px-4 py-2.5 border-b border-white/8 bg-[#09090B]">
+            <div className="flex-shrink-0 flex items-center gap-3 px-4 py-2.5 border-b border-charcoal/10 bg-[#09090B]">
               <div className="flex-1" />
 
               <ModeToggle
@@ -541,7 +541,7 @@ export function ProblemPage() {
 
           {/* Bottom execution console -- confined to this column's width */}
           <div
-            className="flex-shrink-0 border-t border-white/8 flex flex-col overflow-hidden"
+            className="flex-shrink-0 border-t border-charcoal/10 flex flex-col overflow-hidden"
             style={{
               height: consoleCollapsed ? undefined : `${consoleHeightPct}%`,
               flexGrow: consoleCollapsed ? 1 : 0,

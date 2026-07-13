@@ -235,7 +235,7 @@ export function CatalogPage() {
             {activeFilterCount > 0 && (
               <button
                 onClick={clearAllFilters}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-800/60 border border-white/8 text-zinc-400 text-xs hover:text-white hover:border-white/15 transition-all duration-200"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-800/60 border border-charcoal/10 text-zinc-400 text-xs hover:text-white hover:border-white/15 transition-all duration-200"
               >
                 <X className="w-3 h-3" />
                 Clear {activeFilterCount} filter{activeFilterCount > 1 ? 's' : ''}
@@ -260,7 +260,7 @@ export function CatalogPage() {
               placeholder="Search algorithms, categories, complexity..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-11 pr-10 h-12 rounded-2xl bg-[#18181B] border border-white/8 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-200"
+              className="w-full pl-11 pr-10 h-12 rounded-2xl bg-[#18181B] border border-charcoal/10 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-200"
             />
             {search && (
               <button
@@ -283,7 +283,7 @@ export function CatalogPage() {
                 'relative shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all duration-200',
                 selectedCat === null
                   ? 'bg-indigo-600/20 border-indigo-500/50 text-indigo-300'
-                  : 'bg-[#18181B] border-white/8 text-zinc-400 hover:border-indigo-500/30 hover:text-white',
+                  : 'bg-[#18181B] border-charcoal/10 text-zinc-400 hover:border-indigo-500/30 hover:text-white',
               )}
             >
               {selectedCat === null && (
@@ -305,7 +305,7 @@ export function CatalogPage() {
                   'relative shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all duration-200',
                   selectedCat === cat.slug
                     ? 'bg-indigo-600/20 border-indigo-500/50 text-indigo-300'
-                    : 'bg-[#18181B] border-white/8 text-zinc-400 hover:border-indigo-500/30 hover:text-white',
+                    : 'bg-[#18181B] border-charcoal/10 text-zinc-400 hover:border-indigo-500/30 hover:text-white',
                 )}
               >
                 {selectedCat === cat.slug && (
@@ -333,7 +333,7 @@ export function CatalogPage() {
               <select
                 value={selectedComplexity ?? ''}
                 onChange={(e) => setSelectedComplexity(e.target.value || null)}
-                className="appearance-none bg-[#18181B] border border-white/8 text-white text-sm rounded-xl pl-3 pr-8 h-9 focus:border-indigo-500/50 focus:outline-none transition-colors cursor-pointer"
+                className="appearance-none bg-[#18181B] border border-charcoal/10 text-white text-sm rounded-xl pl-3 pr-8 h-9 focus:border-indigo-500/50 focus:outline-none transition-colors cursor-pointer"
               >
                 <option value="">Any complexity</option>
                 {allComplexities.map((c) => (
@@ -347,7 +347,7 @@ export function CatalogPage() {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortBy)}
-                className="appearance-none bg-[#18181B] border border-white/8 text-white text-sm rounded-xl pl-3 pr-8 h-9 focus:border-indigo-500/50 focus:outline-none transition-colors cursor-pointer"
+                className="appearance-none bg-[#18181B] border border-charcoal/10 text-white text-sm rounded-xl pl-3 pr-8 h-9 focus:border-indigo-500/50 focus:outline-none transition-colors cursor-pointer"
               >
                 <option value="name">Sort: A–Z</option>
                 <option value="complexity">Sort: Complexity</option>
@@ -457,7 +457,7 @@ function Pagination({ current, total, onChange }: { current: number; total: numb
       <button
         onClick={() => onChange(current - 1)}
         disabled={current === 1}
-        className={cn(btn, 'border border-white/8 text-zinc-400 disabled:opacity-25 hover:border-white/20 hover:text-white')}
+        className={cn(btn, 'border border-charcoal/10 text-zinc-400 disabled:opacity-25 hover:border-white/20 hover:text-white')}
         aria-label="Previous page"
       >
         <ChevronLeft className="w-4 h-4" />
@@ -474,7 +474,7 @@ function Pagination({ current, total, onChange }: { current: number; total: numb
               btn,
               p === current
                 ? 'bg-indigo-600/20 border border-indigo-500/50 text-indigo-300'
-                : 'border border-white/8 text-zinc-400 hover:border-white/20 hover:text-white',
+                : 'border border-charcoal/10 text-zinc-400 hover:border-white/20 hover:text-white',
             )}
           >
             {p}
@@ -485,7 +485,7 @@ function Pagination({ current, total, onChange }: { current: number; total: numb
       <button
         onClick={() => onChange(current + 1)}
         disabled={current === total}
-        className={cn(btn, 'border border-white/8 text-zinc-400 disabled:opacity-25 hover:border-white/20 hover:text-white')}
+        className={cn(btn, 'border border-charcoal/10 text-zinc-400 disabled:opacity-25 hover:border-white/20 hover:text-white')}
         aria-label="Next page"
       >
         <ChevronRight className="w-4 h-4" />

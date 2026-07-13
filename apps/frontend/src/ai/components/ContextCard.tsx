@@ -39,7 +39,7 @@ export function ContextCard({ context }: Props) {
   if (parts.length === 0) return null;
 
   return (
-    <div className="px-4 py-2 border-b border-white/6 bg-white/[0.02]">
+    <div className="px-4 py-2 border-b border-charcoal/10 bg-white/[0.02]">
       <p className="text-[10px] text-zinc-500 font-mono leading-relaxed truncate">
         {parts.join('  ·  ')}
       </p>
