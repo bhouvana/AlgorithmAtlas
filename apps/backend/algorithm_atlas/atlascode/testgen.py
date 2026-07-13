@@ -188,7 +188,26 @@ def manifest_entries_for(problem_id: str, rows: list[dict]) -> list[dict]:
 
 # ── Manifest persistence ──────────────────────────────────────────────────────
 
-MANIFEST_PATH = Path(__file__).parents[4] / "atlascode_test_manifest.json"
+def _repo_root_manifest_path() -> Path:
+    """atlascode_test_manifest.json lives at the repo root locally, 4 parents
+    up from this file (used only by the one-off scripts/migrate_*_to_forty.py
+    scripts, run from a full checkout). In the deployed Docker image,
+    apps/backend/ is flattened directly onto /app (Dockerfile: `COPY
+    apps/backend .`), so this file's parent chain is 2 levels shallower there
+    and .parents[4] doesn't exist -- IndexError. Nothing in the deployed app
+    ever calls write_manifest/load_manifest, so a fallback path here is
+    harmless; what's NOT harmless is this module failing to import at all,
+    which previously took down every AtlasCode problem-family import behind
+    it (including the boot-time auto-seed) with a crash that had nothing to
+    do with test manifests.
+    """
+    try:
+        return Path(__file__).parents[4] / "atlascode_test_manifest.json"
+    except IndexError:
+        return Path(__file__).parent / "atlascode_test_manifest.json"
+
+
+MANIFEST_PATH = _repo_root_manifest_path()
 
 
 def write_manifest(entries_by_problem: dict[str, list[dict]], path: Path = MANIFEST_PATH) -> None:

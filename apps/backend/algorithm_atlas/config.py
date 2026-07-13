@@ -9,6 +9,42 @@ from pydantic import field_validator
 from pydantic_settings import BaseSettings
 
 
+def _find_repo_root() -> Path:
+    """Locates the directory that actually contains `plugins/`, walking up
+    from this file rather than assuming a fixed parent-count.
+
+    A fixed-depth guess (`.parent.parent.parent.parent`, "4 levels up from
+    config.py") is correct for a local checkout
+    (algorithm-atlas/apps/backend/algorithm_atlas/config.py -> repo root)
+    but WRONG under Docker: `COPY apps/backend .` (see apps/backend/
+    Dockerfile) flattens the apps/backend/ prefix away, so config.py lives
+    at /app/algorithm_atlas/config.py -- only 2 real parents before hitting
+    filesystem root. Chained `.parent` access doesn't raise past root (`/`
+    .parent is `/` itself), so this silently resolved to `/` instead of
+    `/app` -- REPO_ROOT anchors the sqlite path (see resolved_sqlite_url
+    below), so the deployed DB was silently living at `/atlas.db` instead
+    of `/app/atlas.db`. Not a crash, just wrong; walking up for the real
+    `plugins/` marker is correct in both layouts without hardcoding either
+    one's depth (Docker's `COPY plugins /plugins` puts it 2 levels up from
+    config.py; local dev's `plugins/` is 4 levels up).
+    """
+    here = Path(__file__).resolve()
+    all_parents = list(here.parents)
+    # A specific, unambiguous file inside a real algorithm's plugin folder --
+    # NOT just "a directory named plugins/", which also matches
+    # algorithm_atlas/plugins/ (the loader/registry CODE package, one level
+    # up from this file) and would false-positive on that instead of the
+    # real content directory (repo root locally, /plugins in Docker).
+    marker = Path("plugins") / "sorting" / "bubble-sort" / "manifest.json"
+    for candidate in all_parents:
+        if (candidate / marker).is_file():
+            return candidate
+    # Marker not found up the chain at all (e.g. a partial checkout) --
+    # fall back to the historical local-dev depth if it exists, so this
+    # never raises regardless of how shallow the real path turns out to be.
+    return all_parents[3] if len(all_parents) > 3 else (all_parents[-1] if all_parents else here.parent)
+
+
 class Settings(BaseSettings):
     # Application
     APP_NAME: str = "Algorithm Atlas"
@@ -27,13 +63,15 @@ class Settings(BaseSettings):
         "http://localhost:5176", "http://127.0.0.1:5176",
     ]
 
-    # Plugin discovery root — 4 levels up from config.py reaches algorithm-atlas/
-    PLUGIN_ROOT: Path = Path(__file__).parent.parent.parent.parent / "plugins"
+    # Plugin discovery root — see _find_repo_root() above for why this isn't
+    # a fixed parent-count. In production this is overridden by the
+    # PLUGIN_ROOT env var (render.yaml sets it to /plugins) regardless.
+    PLUGIN_ROOT: Path = _find_repo_root() / "plugins"
 
-    # Repo root — same 4-levels-up anchor as PLUGIN_ROOT, reused so every
-    # cwd-sensitive default (DB path, etc.) resolves identically regardless of
-    # the process's working directory at startup.
-    REPO_ROOT: Path = Path(__file__).parent.parent.parent.parent
+    # Repo root — same anchor as PLUGIN_ROOT, reused so every cwd-sensitive
+    # default (DB path, etc.) resolves identically regardless of the
+    # process's working directory at startup.
+    REPO_ROOT: Path = _find_repo_root()
 
     # Logging
     LOG_LEVEL: str = "DEBUG"
