@@ -56,6 +56,11 @@ export interface LessonData {
   };
   realWorld?: RealWorldItem[];
   commonMistakes?: MistakeItem[];
+  // YouTube video ID (the part after `v=` in a youtube.com/watch?v=... URL,
+  // or the full youtu.be/... slug) for the Video tab below. Undefined shows
+  // a "no video yet" placeholder rather than a broken embed.
+  videoId?: string;
+  videoTitle?: string;
   quiz: QuizQuestion[];
 }
 
@@ -427,6 +432,37 @@ function ComplexitySection({ data }: { data: LessonData }) {
   );
 }
 
+function VideoSection({ data }: { data: LessonData }) {
+  if (!data.videoId) {
+    return (
+      <div className="flex flex-col items-center justify-center py-20 text-center gap-3">
+        <div className="text-4xl mb-1">🎬</div>
+        <p className="text-zinc-500 text-sm max-w-sm">
+          No video picked for this lesson yet — check back soon, or use Concept and Visualization in the meantime.
+        </p>
+      </div>
+    );
+  }
+  return (
+    <div>
+      <div className="mb-4"><span className="text-xs font-mono text-red-400 uppercase tracking-widest">Video</span></div>
+      <div className="rounded-xl border border-white/8 bg-black overflow-hidden aspect-video">
+        <iframe
+          className="w-full h-full"
+          src={`https://www.youtube.com/embed/${data.videoId}`}
+          title={data.videoTitle ?? 'Lesson video'}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
+      {data.videoTitle && (
+        <p className="mt-3 text-xs text-zinc-500">{data.videoTitle}</p>
+      )}
+    </div>
+  );
+}
+
 // ── Main GenericLesson renderer ──────────────────────────────────────────────
 export function GenericLesson({
   data,
@@ -464,7 +500,8 @@ export function GenericLesson({
       )}
       {activeSection === 2 && <ExamplesSection data={data} />}
       {activeSection === 3 && <ComplexitySection data={data} />}
-      {activeSection === 4 && (
+      {activeSection === 4 && <VideoSection data={data} />}
+      {activeSection === 5 && (
         <div>
           <div className="mb-4"><span className="text-xs font-mono text-rose-400 uppercase tracking-widest">Quiz</span></div>
           <h2 className="text-xl font-bold text-white mb-6">Test Your Understanding</h2>

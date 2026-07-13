@@ -113,6 +113,8 @@ export const foundationsLessons: Record<string, LessonData> = {
         desc: 'Spotify and YouTube run collaborative-filtering algorithms that compare your listening history with millions of other users to compute a ranked list of songs you are likely to enjoy next.',
       },
     ],
+    videoId: '6hfOvs8pY1k',
+    videoTitle: "What's an Algorithm? — David J. Malan (TED-Ed)",
     quiz: [
       {
         q: 'Which property is REQUIRED for a procedure to be called an algorithm?',
@@ -284,6 +286,8 @@ export const foundationsLessons: Record<string, LessonData> = {
         desc: 'Streaming services buffer (pre-load) video data into memory before playback. Extra RAM usage prevents mid-playback stalls — space is traded for smoother time performance.',
       },
     ],
+    videoId: 'msVKyUnOjOU',
+    videoTitle: 'Time Complexity vs. Space Complexity Explained',
     quiz: [
       {
         q: 'You have two algorithms for the same problem: Algorithm A takes O(n) time and O(n) space; Algorithm B takes O(n²) time and O(1) space. Which uses more memory but runs faster for large n?',
@@ -451,6 +455,8 @@ export const foundationsLessons: Record<string, LessonData> = {
         desc: 'Regular expressions compile a pattern into a state machine that can find and replace substrings in O(n) time. Every code editor, grep, and sed command relies on efficient string search algorithms.',
       },
     ],
+    videoId: '2o1mC5ipweQ',
+    videoTitle: 'The String Data Structure in 4 Minutes',
     quiz: [
       {
         q: 'What is the time complexity of building a string by concatenating n single-character strings one at a time using "+"?',
@@ -635,6 +641,8 @@ export const foundationsLessons: Record<string, LessonData> = {
         desc: 'Operating system free-list allocators track available memory blocks as a linked list of (address, size) pairs. Allocating memory removes a block; freeing adds one back — both O(1) at the correct position.',
       },
     ],
+    videoId: 'njTh_OwMljA',
+    videoTitle: 'Data Structures: Linked Lists — HackerRank',
     quiz: [
       {
         q: 'Why is accessing the element at index i in a linked list O(n)?',
@@ -837,6 +845,8 @@ export const foundationsLessons: Record<string, LessonData> = {
         desc: 'Compilers and calculators use stacks to evaluate arithmetic expressions. Operands are pushed; when an operator is encountered, two operands are popped, the result computed, and pushed back. Shunting-yard algorithm uses this pattern.',
       },
     ],
+    videoId: '5m_5r3pCXa0',
+    videoTitle: 'Stack Data Structure Explained | Push, Pop & Peek Operations',
     quiz: [
       {
         q: 'What does LIFO stand for and what does it mean for a stack?',
@@ -1032,6 +1042,8 @@ export const foundationsLessons: Record<string, LessonData> = {
         desc: 'Systems like RabbitMQ and AWS SQS let microservices communicate asynchronously. Producers enqueue messages; consumers dequeue and process them at their own pace, decoupling the two services.',
       },
     ],
+    videoId: 'nqXaPZi99JI',
+    videoTitle: 'Learn Queue Data Structures in 10 Minutes',
     quiz: [
       {
         q: 'What does FIFO mean?',
@@ -1236,6 +1248,8 @@ export const foundationsLessons: Record<string, LessonData> = {
         explain: 'Quicksort is O(n log n) on average but O(n²) in the worst case (sorted input with bad pivot choice). Big O without qualification means worst case. Always state the case explicitly when it matters.',
       },
     ],
+    videoId: 'D6xkbGLQesk',
+    videoTitle: 'Introduction to Big O Notation and Time Complexity — CS Dojo',
     quiz: [
       {
         q: 'What is the time complexity of accessing an element in an array by index, e.g. arr[42]?',
@@ -1408,6 +1422,8 @@ export const foundationsLessons: Record<string, LessonData> = {
         explain: 'Inserting or deleting elements during a for-loop changes the indices of subsequent elements, causing skipped or double-processed items. Always iterate over a copy or collect indices first: for item in arr[:]: or indices = [i for i, v in enumerate(arr) if condition].',
       },
     ],
+    videoId: 'sTSLRDgfOyE',
+    videoTitle: 'How Do Arrays Work? — Data Structures Tutorial',
     quiz: [
       {
         q: 'Why is arr[i] O(1) for any index i?',
@@ -1605,6 +1621,8 @@ export const foundationsLessons: Record<string, LessonData> = {
         desc: 'When a compiler processes your code, it stores every variable name and its type, scope, and memory location in a hash table called a symbol table. Lookups during compilation are O(1) thanks to hashing.',
       },
     ],
+    videoId: 'sfWyugl4JWA',
+    videoTitle: 'Introduction to Hash Tables and Dictionaries — CS Dojo',
     quiz: [
       {
         q: 'What is a hash collision?',

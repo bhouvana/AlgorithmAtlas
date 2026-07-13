@@ -45,6 +45,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Dense Connectivity', desc: 'Flight route matrices between all major airports: adjacency matrix for quick route existence checks.' },
       { title: 'Dependency Graphs', desc: 'Package managers (npm, pip) store directed edges from package to its dependencies in an adjacency list.' },
     ],
+    videoId: "g7VAuxFeAD0",
+    videoTitle: "Graph Representations Explained: Edge Lists, Adjacency Lists & Adjacency Matrices",
     quiz: [
       { q: 'Which representation is better for a sparse graph with 1000 nodes but only 2000 edges?', options: ['Adjacency Matrix', 'Adjacency List', 'Both are equivalent', 'Edge weights matrix'], correct: 1, explanation: 'Adjacency list uses O(V+E) = O(3000) space vs O(V²) = O(1,000,000) for matrix.' },
       { q: 'What is the time complexity of checking if an edge (u,v) exists in an adjacency matrix?', options: ['O(n)', 'O(log n)', 'O(1)', 'O(degree)'], correct: 2, explanation: 'Direct index: matrix[u][v] is a constant-time array lookup.' },
@@ -97,6 +99,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Web Crawlers', desc: 'Google crawls the web level-by-level from seed URLs, discovering linked pages.' },
       { title: 'Network Broadcasting', desc: 'Broadcasting packets in a network layer by layer to all reachable nodes.' },
     ],
+    videoId: "xlVX7dXLS64",
+    videoTitle: "Breadth First Search (BFS): Visualized and Explained",
     quiz: [
       { q: 'What data structure does BFS use internally?', options: ['Stack', 'Queue', 'Priority Queue', 'Array'], correct: 1, explanation: 'BFS uses a FIFO queue to ensure nodes are visited in order of increasing distance.' },
       { q: 'What does BFS guarantee in an unweighted graph?', options: ['Minimum total weight path', 'Shortest path by edge count', 'All paths found', 'Topological order'], correct: 1, explanation: 'BFS explores level-by-level, so the first path found to any node uses the fewest edges.' },
@@ -148,6 +152,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Topological Sort', desc: 'Post-order DFS on a DAG gives reverse topological order — basis for build systems.' },
       { title: 'Connected Components', desc: 'Each DFS call from an unvisited node discovers one connected component of the graph.' },
     ],
+    videoId: "by93qH4ACxo",
+    videoTitle: "Learn Depth First Search in 7 Minutes",
     quiz: [
       { q: 'What is the key difference between DFS and BFS?', options: ['DFS uses a queue, BFS uses a stack', 'DFS uses a stack, BFS uses a queue', 'DFS is faster', 'DFS finds shortest paths'], correct: 1, explanation: 'DFS uses a stack (or recursion) exploring deep first. BFS uses a queue exploring wide first.' },
       { q: 'What does a back edge in a DFS tree indicate?', options: ['Disconnected component', 'Cycle in the graph', 'Shortest path', 'Tree edge'], correct: 1, explanation: 'A back edge points from a node to one of its ancestors in the DFS tree, indicating a cycle.' },
@@ -198,6 +204,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Course Prerequisites', desc: 'University course catalogs enforce prerequisite chains — a topological ordering of courses.' },
       { title: 'Spreadsheets', desc: 'Excel evaluates cell formulas in topological order — referenced cells before the ones that use them.' },
     ],
+    videoId: "7J3GadLzydI",
+    videoTitle: "Topological Sort Visualized and Explained",
     quiz: [
       { q: 'What type of graph is topological sort applicable to?', options: ['Any directed graph', 'Undirected graphs only', 'Directed Acyclic Graphs (DAGs)', 'Weighted graphs only'], correct: 2, explanation: 'Topological sort requires no cycles. A cycle makes total ordering impossible.' },
       { q: 'In Kahn\'s algorithm, how is a cycle detected?', options: ['By checking visited nodes', 'If result length < V after processing', 'By finding back edges', 'By checking in-degrees'], correct: 1, explanation: 'Nodes in a cycle always have in-degree > 0 and are never added to the queue, so they never appear in the result.' },
@@ -250,6 +258,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Flight Optimization', desc: 'Airlines compute cheapest or shortest-time flight paths on weighted route graphs.' },
       { title: 'Game Pathfinding', desc: 'A* algorithm (heuristic-augmented Dijkstra) powers NPC pathfinding in video games.' },
     ],
+    videoId: "0W8WoRaw5Es",
+    videoTitle: "Dijkstra's Shortest Path Algorithm Visually Explained",
     quiz: [
       { q: 'Why doesn\'t Dijkstra\'s algorithm work with negative edge weights?', options: ['It cannot handle non-integer weights', 'A finalized node might later receive a shorter path via negative edges', 'It requires sorted edge lists', 'The heap cannot store negative values'], correct: 1, explanation: 'Dijkstra\'s greedy assumption (finalized distances cannot decrease) breaks with negative edges.' },
       { q: 'What data structure optimizes Dijkstra to O((V+E) log V)?', options: ['Stack', 'Queue', 'Min-heap priority queue', 'Hash table'], correct: 2, explanation: 'A min-heap extracts the minimum-distance node in O(log V), making V extractions O(V log V) and E relaxations O(E log V).' },
@@ -300,6 +310,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Network Delay', desc: 'Computing minimum delay through networks where some links have latency benefits.' },
       { title: 'Scheduling with Constraints', desc: 'Difference constraints (xi - xj <= w) can be modeled as Bellman-Ford shortest path problems.' },
     ],
+    videoId: "Mn9bFIIyXIM",
+    videoTitle: "Bellman-Ford Shortest Path Algorithm Visually Explained",
     quiz: [
       { q: 'How many relaxation iterations does Bellman-Ford perform?', options: ['V', 'V-1', 'E', 'E-1'], correct: 1, explanation: 'A shortest path visits at most V-1 edges, so V-1 full relaxation passes suffices.' },
       { q: 'How does Bellman-Ford detect negative cycles?', options: ['Counts visited nodes', 'Checks if distance decreases on V-th relaxation', 'Uses DFS back edges', 'Checks for infinite loops'], correct: 1, explanation: 'If the V-th relaxation still decreases any distance, a cycle with negative total weight exists.' },
@@ -351,6 +363,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Transitive Closure', desc: 'Finding which vertices are reachable from which in a DAG (used in compilers).' },
       { title: 'Game AI', desc: 'Precomputing all-pairs distances for game maps where NPCs need to know distances to all players.' },
     ],
+    videoId: "8kO5nCIMbH8",
+    videoTitle: "Floyd-Warshall Algorithm Visually Explained",
     quiz: [
       { q: 'What is the recurrence relation used in Floyd-Warshall?', options: ['dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])', 'dist[i][j] = dist[i][k] * dist[k][j]', 'dist[i][j] = max(dist[i][k], dist[k][j])', 'dist[i][j] = dist[i][k] - dist[k][j]'], correct: 0, explanation: 'For each intermediate k, we check if routing through k improves the i→j distance.' },
       { q: 'What does a negative value on the diagonal (dist[i][i] < 0) indicate?', options: ['Disconnected graph', 'Negative edge from i', 'Negative-weight cycle reachable from i', 'Initialization error'], correct: 2, explanation: 'dist[i][i] starts at 0. It can only decrease if there\'s a negative cycle that passes through i.' },
@@ -402,6 +416,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Cluster Analysis', desc: 'Single-link hierarchical clustering removes the longest MST edge to create clusters.' },
       { title: 'Water/Power Distribution', desc: 'Designing distribution networks connecting all households with minimum pipeline length.' },
     ],
+    videoId: "peRQhzzUYL0",
+    videoTitle: "Minimum Spanning Tree Algorithms: Prim's and Kruskal's Explained",
     quiz: [
       { q: 'How many edges does a spanning tree of V vertices have?', options: ['V', 'V+1', 'V-1', 'V²'], correct: 2, explanation: 'A tree connecting V vertices has exactly V-1 edges — enough to connect all without cycles.' },
       { q: 'What data structure does Kruskal\'s use to detect cycles?', options: ['Stack', 'Queue', 'Union-Find', 'Hash Table'], correct: 2, explanation: 'Union-Find efficiently tracks which component each vertex belongs to, detecting cycles in near O(1).' },
@@ -454,6 +470,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Percolation', desc: 'Physics simulations of fluid flow through random media use Union-Find to detect connected paths.' },
       { title: 'Image Segmentation', desc: 'Merge adjacent similar-color pixels into regions for computer vision segmentation.' },
     ],
+    videoId: "nIYUYRw3d1c",
+    videoTitle: "Union Find Data Structure (Disjoint Set Union) - Explained Simply",
     quiz: [
       { q: 'What does path compression do in Union-Find?', options: ['Sorts elements', 'Makes all nodes on find path point directly to root', 'Merges two trees', 'Removes duplicate elements'], correct: 1, explanation: 'Path compression flattens the tree so future find operations are O(1).' },
       { q: 'What is the amortized time complexity with both path compression and union by rank?', options: ['O(1)', 'O(log n)', 'O(α(n))', 'O(n)'], correct: 2, explanation: 'The inverse Ackermann function α(n) grows so slowly that it\'s effectively constant for all real inputs.' },
@@ -507,6 +525,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Compiler Optimization', desc: 'Parsers cache partial parse results (Packrat parsing) for O(n) grammar matching.' },
       { title: 'Recursive Algorithms', desc: 'Any divide-and-conquer algorithm with overlapping subproblems benefits — coin change, Fibonacci, LCS.' },
     ],
+    videoId: "WbwP4w6TpCk",
+    videoTitle: "Memoization and Dynamic Programming Explained",
     quiz: [
       { q: 'What problem does memoization primarily solve?', options: ['Memory overflow', 'Recomputing overlapping subproblems', 'Stack overflow', 'Integer overflow'], correct: 1, explanation: 'Memoization caches computed results, preventing redundant work on repeated subproblems.' },
       { q: 'What is the space overhead of memoization?', options: ['O(1)', 'O(log n)', 'O(number of unique subproblems)', 'O(n²)'], correct: 2, explanation: 'The cache stores one entry per unique subproblem. Fibonacci memo stores O(n) entries.' },
@@ -560,6 +580,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Options Pricing', desc: 'Binomial tree options pricing models fill tables from expiry date backwards.' },
       { title: 'Path Counting', desc: 'Counting paths in grids or DAGs: fill table cell by cell from top-left to bottom-right.' },
     ],
+    videoId: "PsHkCXEdf78",
+    videoTitle: "Dynamic Programming: Tabulation vs Memoization",
     quiz: [
       { q: 'What direction does tabulation fill its table?', options: ['Top-down (recursive)', 'Bottom-up (iterative)', 'Random order', 'Right to left only'], correct: 1, explanation: 'Tabulation fills from smallest subproblems (base cases) up to the target problem.' },
       { q: 'What is the main advantage of tabulation over memoization?', options: ['Always uses less space', 'No recursion overhead or stack overflow risk', 'Faster asymptotically', 'Easier to write'], correct: 1, explanation: 'Tabulation avoids recursion depth limits and function call overhead, making it more efficient in practice.' },
@@ -613,6 +635,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Ad Bidding', desc: 'Selecting which ads to show within a page\'s space budget to maximize revenue.' },
       { title: 'Cargo Loading', desc: 'Loading trucks/ships with integer-weight items to maximize value within weight limit.' },
     ],
+    videoId: "qxWu-SeAqe4",
+    videoTitle: "0/1 Knapsack Problem Explained Visually",
     quiz: [
       { q: 'What does dp[i][w] represent in the 0/1 knapsack table?', options: ['Weight of item i', 'Max value using first i items with capacity w', 'Number of items fitting in w', 'Minimum weight for value w'], correct: 1, explanation: 'dp[i][w] captures the optimal selection from the first i items with a capacity constraint of w.' },
       { q: 'Why is 0/1 knapsack called "pseudopolynomial"?', options: ['It has two dimensions', 'W can be exponentially large relative to input bits', 'It uses floating point', 'It requires sorting'], correct: 1, explanation: 'The O(nW) complexity looks polynomial but W itself can require log₂W bits, making it exponential in input size.' },
@@ -665,6 +689,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'File Comparison', desc: 'Unix diff, WinMerge, and similar tools use LCS to identify changed sections.' },
       { title: 'Plagiarism Detection', desc: 'Computing LCS between student submissions reveals copied sections.' },
     ],
+    videoId: "7uQ1Lehw7_k",
+    videoTitle: "Longest Common Subsequence Visually Explained | Dynamic Programming",
     quiz: [
       { q: 'What is the recurrence when characters at s1[i] and s2[j] match?', options: ['dp[i][j] = dp[i-1][j-1]', 'dp[i][j] = 1 + dp[i-1][j-1]', 'dp[i][j] = max(dp[i-1][j], dp[i][j-1])', 'dp[i][j] = dp[i][j-1] + 1'], correct: 1, explanation: 'When characters match, we extend the LCS of the prefixes by 1.' },
       { q: 'What is the difference between LCS and longest common substring?', options: ['LCS is always shorter', 'LCS elements need not be contiguous, substring must be', 'They are the same', 'Substring allows gaps'], correct: 1, explanation: 'LCS preserves relative order but allows gaps. Substring requires all characters to be adjacent.' },
@@ -716,6 +742,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'DNA Mutation Analysis', desc: 'Measuring evolutionary distance between DNA sequences as the number of mutations needed.' },
       { title: 'Fuzzy String Matching', desc: 'Search engines tolerate typos by matching queries to indexed terms within small edit distances.' },
     ],
+    videoId: "K21k-5s9w6g",
+    videoTitle: "Edit Distance (Levenshtein) - Dynamic Programming Visualized",
     quiz: [
       { q: 'What are the three operations in edit distance?', options: ['Insert, delete, swap', 'Insert, delete, substitute', 'Rotate, delete, insert', 'Split, merge, swap'], correct: 1, explanation: 'Levenshtein distance counts insertions, deletions, and substitutions each with cost 1.' },
       { q: 'What is the edit distance between identical strings?', options: ['1', 'Length of string', '0', '-1'], correct: 2, explanation: 'No operations needed to transform a string to itself, so distance is 0.' },
@@ -768,6 +796,8 @@ export const graphsDpLessons: Record<string, LessonData> = {
       { title: 'Box Stacking', desc: '3D box stacking problem reduces to LIS on one dimension after sorting by another.' },
       { title: 'Chain of Pairs', desc: 'Scheduling tasks where each task requires the previous one\'s output to be a certain minimum.' },
     ],
+    videoId: "cjWnW0hdF1Y",
+    videoTitle: "Longest Increasing Subsequence - Dynamic Programming (NeetCode)",
     quiz: [
       { q: 'What is the LIS of [5, 1, 4, 2, 8]?', options: ['[5,4,8]', '[1,2,8]', '[5,8]', '[1,4,8]'], correct: 3, explanation: '[1,4,8] is a strictly increasing subsequence of length 3, which is the longest.' },
       { q: 'What does the "tails" array represent in the O(n log n) solution?', options: ['The actual LIS elements', 'Smallest tail of all increasing subsequences of each length', 'Sorted input array', 'Prefix maxima'], correct: 1, explanation: 'tails[k] stores the smallest possible tail element of any LIS of length k+1 seen so far.' },

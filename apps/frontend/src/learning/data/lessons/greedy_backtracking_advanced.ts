@@ -43,6 +43,8 @@ export const greedyBacktrackingAdvancedLessons: Record<string, LessonData> = {
       { title: 'Event Planning', desc: 'Maximize events attended at a conference given overlapping session times.' },
       { title: 'Classroom Allocation', desc: 'Assign maximum courses to a classroom by picking non-overlapping time slots.' },
     ],
+    videoId: "Qz6D7mrxaJM",
+    videoTitle: "Greedy Algorithm: Activity Selection",
     quiz: [
       { q: 'What is the greedy choice for activity selection?', options: ['Activity with earliest start time', 'Shortest duration activity', 'Activity with earliest finish time', 'Activity with latest start time'], correct: 2, explanation: 'Choosing earliest finish time leaves maximum remaining time for future activities.' },
       { q: 'Why does the greedy algorithm work for activity selection?', options: ['Because it tries all combinations', 'Exchange argument shows earliest-finish never worse than any other choice', 'Because activities are sorted', 'It only works for small inputs'], correct: 1, explanation: 'Any solution using a different first activity can be swapped to use earliest-finish without reducing count.' },
@@ -94,6 +96,8 @@ export const greedyBacktrackingAdvancedLessons: Record<string, LessonData> = {
       { title: 'MP3 Audio', desc: 'MP3 uses Huffman coding for entropy coding of audio spectral coefficients.' },
       { title: 'HTTP/2', desc: 'HPACK header compression in HTTP/2 uses a static Huffman code for header field values.' },
     ],
+    videoId: "EqnqeH9nwpc",
+    videoTitle: "Data Compression: Huffman Coding Explained - Tree Construction & Analysis",
     quiz: [
       { q: 'What makes Huffman coding "prefix-free"?', options: ['All codes have the same length', 'No codeword is a prefix of another', 'Codes use no zeros', 'Characters are sorted alphabetically'], correct: 1, explanation: 'Prefix-free means the encoding is unambiguously decodable — each code is a leaf in the binary tree, never an internal node.' },
       { q: 'What greedy choice does Huffman coding make at each step?', options: ['Merge two highest-frequency nodes', 'Merge two lowest-frequency nodes', 'Add the most frequent character first', 'Assign shortest code to rarest character'], correct: 1, explanation: 'Merging the two nodes with lowest frequency minimizes the total weighted path length.' },
@@ -144,6 +148,8 @@ export const greedyBacktrackingAdvancedLessons: Record<string, LessonData> = {
       { title: 'Cargo Loading', desc: 'Load a ship with divisible bulk goods (grain, liquid) to maximize value within weight capacity.' },
       { title: 'Ad Budget Allocation', desc: 'Spend a fixed marketing budget across campaigns where partial spending is allowed.' },
     ],
+    videoId: "ujHQlfR3qfo",
+    videoTitle: "Greedy Algorithms Visually Explained: Fractional Knapsack Problem",
     quiz: [
       { q: 'Why does greedy work for fractional knapsack but not 0/1 knapsack?', options: ['Fractional has fewer items', 'Divisibility ensures partial items don\'t block future optimal choices', 'Fractional is always faster', 'The weights are different'], correct: 1, explanation: 'When items are divisible, taking a fraction never prevents an optimal future choice — greedy is globally optimal.' },
       { q: 'What is the greedy criterion for fractional knapsack?', options: ['Sort by value descending', 'Sort by weight ascending', 'Sort by value/weight ratio descending', 'Sort by weight/value ratio'], correct: 2, explanation: 'Value density (value/weight) determines how much value you get per unit of capacity used.' },
@@ -196,6 +202,8 @@ export const greedyBacktrackingAdvancedLessons: Record<string, LessonData> = {
       { title: 'Puzzle Solving', desc: 'N-Queens engines are used in puzzle solving platforms and AI textbook examples of backtracking.' },
       { title: 'Test Case Generation', desc: 'Combinatorial testing uses similar constraint-based backtracking to generate test cases covering all constraints.' },
     ],
+    videoId: "aJqTc4YI2BM",
+    videoTitle: "N-Queens Problem | Backtracking Algorithm Explained (4x4 Example)",
     quiz: [
       { q: 'How does backtracking improve over brute force for N-Queens?', options: ['It uses parallel processing', 'It prunes branches early when constraints are violated', 'It sorts queens by value', 'It uses dynamic programming'], correct: 1, explanation: 'Backtracking stops exploring a branch the moment a conflict is detected, avoiding millions of wasted placements.' },
       { q: 'What three constraints must be satisfied for each queen?', options: ['Same row, column, and rank', 'Different row, different column, different diagonal', 'Adjacent rows only', 'Queens in corners only'], correct: 1, explanation: 'No two queens can share a row, column, or diagonal (both main and anti-diagonal).' },
@@ -248,6 +256,8 @@ export const greedyBacktrackingAdvancedLessons: Record<string, LessonData> = {
       { title: 'Logic Puzzles', desc: 'Similar constraint-satisfaction backtracking solves Kakuro, Nonograms, and other logic puzzles.' },
       { title: 'Formal Verification', desc: 'SAT solvers (like those used in chip design verification) use similar DPLL backtracking algorithms.' },
     ],
+    videoId: "rctRBFE7wmg",
+    videoTitle: "Sudoku Solver (Algorithm Explained with Code)",
     quiz: [
       { q: 'What is the backtracking step in Sudoku solving?', options: ['Scan for empty cells', 'Reset cell to 0 and return False when no digit works', 'Check all constraints', 'Fill with random digit'], correct: 1, explanation: 'When no valid digit (1-9) can be placed in the current empty cell, reset it to 0 and return False to trigger backtracking.' },
       { q: 'What three constraints must each digit satisfy?', options: ['Row, column, 3x3 box', 'Row, color, position', 'Top half, bottom half, middle', 'Size, shape, value'], correct: 0, explanation: 'Each digit 1-9 must appear exactly once in its row, once in its column, and once in its 3×3 box.' },
@@ -299,6 +309,8 @@ export const greedyBacktrackingAdvancedLessons: Record<string, LessonData> = {
       { title: 'Test Case Generation', desc: 'Combinatorial testing generates all permutations/subsets of input parameters.' },
       { title: 'Scheduling', desc: 'Enumerating all possible job schedules to find the optimal ordering under constraints.' },
     ],
+    videoId: "gFm1lEfnzUQ",
+    videoTitle: "Permutations - Leetcode 46 - Recursive Backtracking (Python)",
     quiz: [
       { q: 'How many permutations does a set of 5 distinct elements have?', options: ['25', '120', '10', '32'], correct: 1, explanation: '5! = 5 × 4 × 3 × 2 × 1 = 120. Factorial grows very rapidly.' },
       { q: 'What is the purpose of swapping back after recursion?', options: ['To sort the array', 'To restore the original order (backtracking)', 'To generate duplicates', 'To mark visited elements'], correct: 1, explanation: 'After exploring a branch with a particular swap, we undo it to explore other possibilities at the same level.' },
@@ -351,6 +363,8 @@ export const greedyBacktrackingAdvancedLessons: Record<string, LessonData> = {
       { title: 'Network Intrusion Detection', desc: 'Deep packet inspection scans network traffic for known attack signature patterns.' },
       { title: 'File Search', desc: 'Searching for byte sequences in binary files uses multi-pattern KMP variants (Aho-Corasick).' },
     ],
+    videoId: "vsKshRcboNA",
+    videoTitle: "KMP Algorithm Explained: Linear Time String Matching Made Simple",
     quiz: [
       { q: 'What does the failure function fail[j] represent?', options: ['Number of matches at position j', 'Length of longest proper prefix of pattern[0..j] that is also a suffix', 'Number of characters to skip', 'Pattern length minus j'], correct: 1, explanation: 'The failure function encodes where to resume matching in the pattern after a mismatch, avoiding redundant character comparisons.' },
       { q: 'Why is KMP O(n+m) instead of O(nm)?', options: ['It uses hashing', 'The text pointer never moves backward', 'It only processes unique characters', 'It skips every other character'], correct: 1, explanation: 'Text pointer i only advances. On mismatch, pattern pointer j jumps back via failure function, never moving i backward.' },
@@ -402,6 +416,8 @@ export const greedyBacktrackingAdvancedLessons: Record<string, LessonData> = {
       { title: 'File Deduplication', desc: 'Rsync uses a rolling checksum (similar to Rabin-Karp) to find matching blocks between files.' },
       { title: 'Network Security', desc: 'Intrusion detection systems scan packet payloads for multiple attack signatures using rolling hashes.' },
     ],
+    videoId: "5VF-vA0oUSo",
+    videoTitle: "Rabin-Karp Algorithm Explained: Rolling Hash Pattern Matching",
     quiz: [
       { q: 'What is a spurious hit in Rabin-Karp?', options: ['A missed match', 'A hash match that is not an actual string match', 'A pattern longer than text', 'Negative hash value'], correct: 1, explanation: 'A spurious hit occurs when hash(window) == hash(pattern) but the actual characters don\'t match — a hash collision.' },
       { q: 'Why is Rabin-Karp worst case O(nm)?', options: ['Sorting takes O(nm)', 'All windows cause hash collisions requiring O(m) verification each', 'The rolling hash fails', 'The modulus is too small'], correct: 1, explanation: 'If every window hash matches the pattern hash (e.g., all same character), every position requires O(m) verification.' },
@@ -453,6 +469,8 @@ export const greedyBacktrackingAdvancedLessons: Record<string, LessonData> = {
       { title: 'Airline Scheduling', desc: 'Maximize passengers routed through a hub-and-spoke network with flight capacity constraints.' },
       { title: 'Image Segmentation', desc: 'Graph cuts for image segmentation use min-cut (dual of max-flow) to separate foreground/background.' },
     ],
+    videoId: "oHy3ddI9X3o",
+    videoTitle: "Network Flows: Max-Flow Min-Cut Theorem (& Ford-Fulkerson Algorithm)",
     quiz: [
       { q: 'What is a residual graph in network flow?', options: ['The original flow network', 'A graph showing remaining capacity on edges and possible flow reversal', 'The shortest path tree', 'The minimum spanning tree'], correct: 1, explanation: 'The residual graph includes forward edges (remaining capacity) and backward edges (current flow, allowing cancellation).' },
       { q: 'What does the Max-Flow Min-Cut theorem state?', options: ['Maximum flow equals number of vertices', 'Maximum flow equals minimum cut capacity', 'Flow can exceed cut capacity', 'Every cut equals the flow'], correct: 1, explanation: 'The maximum amount of flow from s to t exactly equals the minimum capacity of any s-t cut.' },
@@ -505,6 +523,8 @@ export const greedyBacktrackingAdvancedLessons: Record<string, LessonData> = {
       { title: 'Data Compression', desc: 'Burrows-Wheeler Transform (BWT, used in bzip2) is computed efficiently via suffix arrays.' },
       { title: 'Plagiarism Detection', desc: 'Finding longest common substrings between documents uses LCP arrays built from their concatenation.' },
     ],
+    videoId: "6W6eG8WMkxs",
+    videoTitle: "Suffix Array & Suffix Tree with Example",
     quiz: [
       { q: 'What does a suffix array contain?', options: ['All substrings sorted', 'Starting indices of all suffixes in lexicographic order', 'Character frequencies', 'Prefix sums of the string'], correct: 1, explanation: 'SA[i] gives the starting position in the original string of the i-th lexicographically smallest suffix.' },
       { q: 'How do you search for a pattern using a suffix array?', options: ['Linear scan of SA', 'Binary search on the suffix array', 'Hash the pattern', 'DFS on suffix tree'], correct: 1, explanation: 'All occurrences of a pattern form a contiguous range in the suffix array. Binary search finds this range in O(m log n).' },

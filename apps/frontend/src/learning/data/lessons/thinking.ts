@@ -118,6 +118,8 @@ def sum_tree(node):
       { wrong: 'Tracing through all recursive calls mentally', right: 'Trust the recursive leap of faith', explain: 'Expert recursive thinkers don\'t trace every call. They define the base case, trust that the recursive call returns the correct answer, and write the combining step. Trust the abstraction.' },
       { wrong: 'Missing the base case', explain: 'Without a base case, recursion runs forever. Every recursive function needs at least one case where it returns a value directly without calling itself.' },
     ],
+    videoId: "u8Xam9EsqXQ",
+    videoTitle: "Learn Recursion in 8 Minutes",
     quiz: [
       { q: 'What is the "base case" in a recursive function?', options: ['The first call to the function', 'The condition where recursion stops and returns a value directly', 'The most complex input the function handles', 'The case where the function calls itself twice'], correct: 1, explanation: 'The base case is the simplest version of the problem where the answer is immediately known, stopping the recursion. Without it, the function recurses infinitely.' },
       { q: 'What happens when a recursive function has no base case?', options: ['It returns None', 'It runs once and stops', 'It recurses infinitely until a stack overflow error occurs', 'The compiler catches the error before running'], correct: 2, explanation: 'Without a base case, the function never stops calling itself. The call stack grows until the program runs out of stack memory, causing a stack overflow (RecursionError in Python, StackOverflowError in Java).' },
@@ -245,6 +247,8 @@ def merge(left, right):
       { wrong: 'Using D&C when subproblems aren\'t independent', explain: 'D&C requires subproblems that don\'t need each other\'s results. When there\'s overlap (like in Fibonacci), you need Dynamic Programming with memoization instead.' },
       { wrong: 'Expensive combine step killing the O(n log n) advantage', explain: 'If combining costs O(n²), the total is O(n² log n) — worse than brute force in many cases. The combine step must be O(n) or O(n log n) for D&C to pay off.' },
     ],
+    videoId: "TvQesCFPgLg",
+    videoTitle: "Divide and Conquer Explained in 100 Seconds",
     quiz: [
       { q: 'What are the three steps of divide and conquer?', options: ['Read, Process, Write', 'Divide, Conquer, Combine', 'Init, Recurse, Return', 'Split, Merge, Sort'], correct: 1, explanation: 'Divide: break the problem into subproblems. Conquer: recursively solve each subproblem. Combine: merge the subproblem solutions into the final answer.' },
       { q: 'Why does merge sort achieve O(n log n) instead of O(n²)?', options: ['It avoids comparisons entirely', 'The array is always pre-sorted', 'The recursion tree has log₂ n levels, each doing O(n) merge work', 'It uses a hash table for sorting'], correct: 2, explanation: 'The array is halved each level, creating log₂ n levels of recursion. Each level merges all elements in O(n) total. So total work = O(n) × O(log n) = O(n log n).' },
@@ -377,6 +381,8 @@ def has_cycle(head):
       { wrong: 'Applying two pointers to unsorted arrays for sum problems', right: 'Sort first, then apply two pointers', explain: 'Two pointers for sum problems relies on sorted order to know which direction to move. On unsorted arrays, moving left right doesn\'t guarantee increasing the sum.' },
       { wrong: 'Terminating when left == right instead of left >= right', explain: 'When left equals right, both pointers point to the same element. You\'re looking for pairs (two distinct elements), so terminate when they meet (left >= right), not after.' },
     ],
+    videoId: "QzZ7nmouLTI",
+    videoTitle: "Two Pointers in 7 Minutes | LeetCode Pattern",
     quiz: [
       { q: 'What is the primary advantage of the two-pointer technique over nested loops?', options: ['It works on unsorted data', 'It reduces O(n²) pair-finding to O(n) with one pass', 'It uses less memory than a single loop', 'It avoids all comparisons'], correct: 1, explanation: 'Nested loops check every pair in O(n²). Two pointers use directional control to eliminate entire categories of pairs with each move, solving the same problem in O(n).' },
       { q: 'For two-sum on a sorted array, why does moving the left pointer right always increase the potential sum?', options: ['The left element is always smaller than the right element', 'Arrays are sorted ascending, so elements increase left to right', 'Moving left right decreases the range between pointers', 'The right pointer compensates by moving left'], correct: 1, explanation: 'In a sorted ascending array, elements increase from left to right. Moving the left pointer right gives a larger left element, which increases arr[left] + arr[right].' },
@@ -519,6 +525,8 @@ def find_anagrams(s: str, p: str) -> list:
       { wrong: 'Using sliding window on non-contiguous subsets', explain: 'Sliding window only works for contiguous subarrays/substrings. If the problem asks for subsequences (non-contiguous), a different approach (DP or two-pointers with a different structure) is needed.' },
       { wrong: 'Shrinking the window too aggressively', explain: 'After shrinking to restore the constraint, don\'t shrink further — the window is now valid and you want it as large as possible. Shrink only while constraint is violated.' },
     ],
+    videoId: "FjlPyEHZ8e8",
+    videoTitle: "Sliding Window Technique Explained Simply",
     quiz: [
       { q: 'What is the key operation that makes sliding window O(n) instead of O(n²)?', options: ['Using binary search inside the window', 'Adding one element and removing one element per step — O(1) per slide', 'Sorting the window at each step', 'Pre-computing prefix sums'], correct: 1, explanation: 'Each slide adds one element (right++) and removes one element (left++). If both add/remove are O(1) (using counters, sets, or arithmetic), the total work per slide is O(1), giving O(n) overall.' },
       { q: 'When should you use a fixed-size sliding window vs a variable-size one?', options: ['Fixed when data is sorted, variable when unsorted', 'Fixed when the window size is specified (e.g., k consecutive), variable when you\'re optimizing the window size', 'Always use fixed — it\'s simpler', 'Fixed for arrays, variable for strings'], correct: 1, explanation: 'Fixed-size windows are for "exactly k elements" problems. Variable-size windows are for "find the shortest/longest window satisfying a constraint" — the window shrinks or grows based on validity.' },
@@ -645,6 +653,8 @@ def coin_change_dp(coins, amount):
       { wrong: 'Assuming greedy always gives the optimal answer', explain: 'Greedy gives optimal only when the greedy choice property holds. Always test with counterexamples. The coin change problem (with non-standard denominations) is a classic greedy failure.' },
       { wrong: 'Confusing greedy with dynamic programming', explain: 'Greedy makes one irreversible choice per step and doesn\'t reconsider. DP considers all possibilities and picks the best. Use greedy when you can prove it\'s safe; use DP when you cannot.' },
     ],
+    videoId: "bC7o8P_Ste4",
+    videoTitle: "Greedy Algorithms Tutorial - Solve Coding Challenges",
     quiz: [
       { q: 'What is the "greedy choice property"?', options: ['The greedy algorithm always makes the fastest choice', 'Making the locally optimal choice at each step never prevents finding the global optimum', 'Greedy algorithms never need to sort their input', 'Greedy works only when all choices are equal'], correct: 1, explanation: 'The greedy choice property guarantees that the locally optimal choice is always compatible with some globally optimal solution. This is what makes greedy algorithms correct — it must be proven, not assumed.' },
       { q: 'In the activity selection problem, what is the greedy criterion?', options: ['Pick the activity with the earliest start time', 'Pick the activity with the shortest duration', 'Pick the activity with the earliest end time', 'Pick the activity with the latest end time'], correct: 2, explanation: 'Picking the earliest end time leaves the most remaining time for future activities. This greedy choice can be proven optimal via an exchange argument.' },
@@ -769,6 +779,8 @@ def rect_sum(prefix, r1, c1, r2, c2):
       { wrong: 'Off-by-one in prefix array indexing', explain: 'The prefix array has n+1 elements (prefix[0..n]). prefix[0]=0 represents "sum of first 0 elements". range_sum(L,R) = prefix[R+1] - prefix[L], NOT prefix[R] - prefix[L].' },
       { wrong: 'Computing range sum from scratch each time', explain: 'Building the prefix array takes O(n) once. Answering q queries then costs O(q) total. Without prefix sums, q queries each taking O(n) = O(nq) total — often catastrophically slower.' },
     ],
+    videoId: "yuws7YK0Yng",
+    videoTitle: "Prefix Sum in 4 Minutes | LeetCode Pattern",
     quiz: [
       { q: 'Given prefix = [0, 3, 4, 8, 9, 14], what is the sum of arr[2..4]?', options: ['prefix[4] - prefix[2] = 9 - 4 = 5', 'prefix[5] - prefix[2] = 14 - 4 = 10', 'prefix[4] - prefix[1] = 9 - 3 = 6', 'prefix[3] - prefix[1] = 8 - 3 = 5'], correct: 1, explanation: 'sum(L..R) = prefix[R+1] - prefix[L]. For L=2, R=4: prefix[5] - prefix[2] = 14 - 4 = 10. Check: arr = [3,1,4,1,5,...] so arr[2]+arr[3]+arr[4] = 4+1+5 = 10 ✓' },
       { q: 'What is the time complexity of building a prefix sum array of size n?', options: ['O(1)', 'O(log n)', 'O(n)', 'O(n²)'], correct: 2, explanation: 'Building the prefix array requires a single left-to-right pass over the n-element input array, computing prefix[i] = prefix[i-1] + arr[i-1] at each step. Total: O(n).' },
@@ -896,6 +908,8 @@ def matrix_mul(A, B):
       { wrong: 'Jumping to optimization before getting a correct solution', right: 'Write brute force first, then optimize', explain: 'An optimized solution that\'s incorrect is useless. Write brute force first — it gives you a correctness oracle, forces you to understand the problem, and often reveals the structure of the optimization.' },
       { wrong: 'Stopping after the first optimization', explain: 'O(n²) → O(n log n) is good progress, but many problems have O(n) solutions waiting to be found with one more insight. Keep asking: "what\'s still redundant?"' },
     ],
+    videoId: "N7kBg905XRY",
+    videoTitle: "How to Optimize Coding Interview Solutions (Brute Force to Optimal)",
     quiz: [
       { q: 'What is the best strategy for solving a new algorithmic problem you\'ve never seen?', options: ['Guess the optimal algorithm immediately', 'Write a correct brute force first, then optimize by identifying redundancy', 'Look up the problem online', 'Use recursion with memoization for all problems'], correct: 1, explanation: 'Brute force first establishes correctness. Then you can profile, identify the bottleneck, and apply optimizations systematically. Jumping to optimization without correctness risks solving the wrong problem.' },
       { q: 'Kadane\'s algorithm achieves O(n) for maximum subarray using what key insight?', options: ['It sorts the array first', 'A subarray with a negative current sum should be abandoned — starting fresh is always better', 'It uses dynamic programming with O(n) space', 'It applies binary search to find the boundaries'], correct: 1, explanation: 'Kadane\'s insight: if the running sum of a subarray goes negative, any extension that includes it is worse than starting fresh from the next element. This lets us make O(1) decisions at each element.' },

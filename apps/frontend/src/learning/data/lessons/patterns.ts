@@ -106,6 +106,8 @@ a ^= b; b ^= a; a ^= b
       { wrong: 'Using & instead of && (bitwise AND vs logical AND)', explain: 'In Python, & is bitwise (operates on each bit). and is logical (treats entire value as bool). 4 & 2 = 0 (false in bool context), but 4 and 2 = 2 (truthy). Always know which one you need.' },
       { wrong: 'Forgetting that ~ flips ALL bits including the sign bit', explain: '~n = -(n+1) in two\'s complement. ~0 = -1, ~7 = -8. When using ~ to create masks, use & with 0xFF...F to limit to the bit width you need.' },
     ],
+    videoId: "NLKQEOgBAnw",
+    videoTitle: "Algorithms: Bit Manipulation",
     quiz: [
       { q: 'What does the expression n & (n-1) accomplish?', options: ['Checks if n is odd', 'Clears the lowest set bit of n', 'Sets the highest bit of n', 'Doubles n'], correct: 1, explanation: 'n has some lowest set bit at position k. n-1 flips bit k to 0 and sets all bits below k. AND-ing them clears bit k and keeps everything above k. This is Brian Kernighan\'s bit clearing trick.' },
       { q: 'Why does XOR-ing all numbers in an array (where each appears twice except one) leave the unique number?', options: ['XOR adds duplicate values together', 'x^x = 0 for any x, so duplicates cancel out, leaving only the unique value', 'XOR sorts the bits in ascending order', 'XOR is commutative but not associative'], correct: 1, explanation: 'XOR properties: x^x=0 (same values cancel), x^0=x (XOR with 0 is identity), commutative and associative. So a^b^c^b^a = a^a ^ b^b ^ c = 0^0^c = c.' },
@@ -215,6 +217,8 @@ Once you see this pattern, you'll recognize it in: "largest rectangle in histogr
       { wrong: 'Confusing increasing vs decreasing stack', explain: 'Next GREATER uses a DECREASING stack (small elements at top, large at bottom). When a larger value arrives, smaller values are popped because their "next greater" has been found. It feels backwards at first.' },
       { wrong: 'Forgetting to handle elements remaining in the stack', explain: 'After iterating the full array, elements still in the stack have no next greater/smaller element to their right. Iterate the remaining stack and mark their answers as -1 or use a sentinel value at the end of the array.' },
     ],
+    videoId: "DtJVwbbicjQ",
+    videoTitle: "Monotonic Stack in 6 Minutes | LeetCode Pattern",
     quiz: [
       { q: 'What does a "monotonic stack" maintain?', options: ['A stack with at most one element', 'A stack where elements are always in sorted order (all increasing or all decreasing)', 'A stack that never grows beyond O(log n) size', 'A stack that can only hold unique values'], correct: 1, explanation: 'A monotonic stack enforces a sorted order invariant. When a new element would violate the order, elements are popped until the invariant is restored.' },
       { q: 'For the "next greater element" problem, which type of stack is used?', options: ['Increasing stack', 'Decreasing stack', 'Random-order stack', 'Min-heap instead of stack'], correct: 1, explanation: 'A decreasing stack (largest at bottom, smallest at top) is used. When a new element is larger than the top, the top is popped and that element\'s "next greater" is answered.' },
@@ -328,6 +332,8 @@ def min_meeting_rooms(intervals):
       { wrong: 'Forgetting to sort before sweeping', explain: 'Without sorting, you need to check every interval against every other (O(n²)). Sorting by start time enables the linear sweep by guaranteeing that overlapping intervals appear consecutively.' },
       { wrong: 'Off-by-one with inclusive vs exclusive endpoints', explain: 'Be clear: [1,3] and [3,5] — do they overlap? If endpoints are inclusive, yes (they share point 3). If [1,3) is half-open, no. This distinction affects the overlap check condition.' },
     ],
+    videoId: "hG9QDwiE28w",
+    videoTitle: "Merge Interval Algorithm In 4 Minutes",
     quiz: [
       { q: 'What is the first step in solving most interval problems?', options: ['Build a graph of interval relationships', 'Sort intervals by their start time', 'Count the total span of all intervals', 'Apply binary search for overlap detection'], correct: 1, explanation: 'Sorting by start time is the foundational step. It ensures overlapping intervals are adjacent in the sorted list, enabling a single O(n) scan instead of O(n²) pairwise comparisons.' },
       { q: 'When do two intervals [a,b] and [c,d] overlap (assuming inclusive endpoints)?', options: ['Only when a == c', 'When a ≤ d AND c ≤ b', 'When |a-c| < |b-d|', 'When b - a == d - c'], correct: 1, explanation: 'Two intervals overlap when neither ends before the other starts. They do NOT overlap only if b < c or d < a. The overlap condition is: start of one ≤ end of the other (both directions).' },
@@ -451,6 +457,8 @@ def inorder_iterative(root):
       { wrong: 'Pushing left before right for pre-order traversal', right: 'Push right first, then left', explain: 'Stacks are LIFO. To process left before right, you must push right first (so it\'s processed last). If you push left first, right is processed first — giving reverse pre-order.' },
       { wrong: 'Assuming iterative is always faster than recursive', explain: 'The algorithmic complexity is identical. Iterative may be slightly faster in practice (avoiding function call overhead), but the difference is usually negligible. The real advantage is avoiding stack overflow, not raw speed.' },
     ],
+    videoId: "1rWjjO-rZk0",
+    videoTitle: "Recursion vs Iteration: Explained Simply for Beginners",
     quiz: [
       { q: 'What data structure makes recursive algorithms equivalent to iterative ones?', options: ['Queue (FIFO)', 'Hash map', 'Explicit stack (LIFO)', 'Priority heap'], correct: 2, explanation: 'The call stack is a LIFO (Last In First Out) structure. Replacing it with an explicit LIFO stack (list/deque with push/pop) gives an equivalent iterative algorithm.' },
       { q: 'Why might you prefer an iterative DFS over recursive DFS for very deep trees?', options: ['Iterative DFS has better time complexity', 'Recursive DFS can cause a stack overflow when the tree depth exceeds the OS call stack limit', 'Recursive DFS doesn\'t visit all nodes', 'Iterative DFS uses less total memory'], correct: 1, explanation: 'Python\'s recursion limit defaults to ~1000 frames. For a tree with depth 10,000, recursive DFS hits this limit and crashes. Iterative DFS uses a heap-allocated stack with no such limitation.' },
@@ -557,6 +565,8 @@ This thinking pattern unlocks understanding of hash table resizing, union-find p
       { wrong: 'Thinking amortized O(1) means every operation is O(1)', explain: 'Amortized O(1) means the average over a sequence is O(1). Individual operations can be O(n). For latency-sensitive systems (real-time, game engines), worst-case O(n) spikes matter — consider pre-allocated fixed-size structures instead.' },
       { wrong: 'Using +1 growth instead of doubling in a custom dynamic array', explain: 'Adding 1 element per resize causes O(n²) total copies for n inserts — catastrophically slow. Always use multiplicative growth (doubling or 1.5×) to ensure amortized O(1).' },
     ],
+    videoId: "Gep3j6JYfSk",
+    videoTitle: "Amortized Time Complexity Explained - Algorithm Analysis for Beginners",
     quiz: [
       { q: 'What does "O(1) amortized" mean for a dynamic array\'s append operation?', options: ['Every single append completes in exactly 1 step', 'The worst-case append is O(1)', 'Averaged over n appends, each append costs O(1) total work', 'Amortized is a stricter guarantee than worst-case O(1)'], correct: 2, explanation: 'Amortized O(1) means: if you perform n append operations, the total cost is O(n). Individual appends can be O(n) (when resizing occurs), but these are rare enough that the average per-operation cost is O(1).' },
       { q: 'A dynamic array doubles capacity (from size n to 2n) when full. What is the total number of element copies for n consecutive appends?', options: ['O(n²)', 'O(n log n)', 'O(n)', 'O(1)'], correct: 2, explanation: 'Copies at each doubling: 1+2+4+8+...+n/2 (geometric series) ≈ n. Total copies ≤ 2n = O(n). Dividing by n appends: O(1) amortized per append.' },
@@ -677,6 +687,8 @@ def matmul_cache_friendly(A, B):
       { wrong: 'Using linked lists for sequential traversal when performance matters', right: 'Use arrays/vectors for cache-friendly traversal', explain: 'Linked list traversal is O(n) like array traversal, but causes n cache misses instead of n/16. For 100M elements, this is a 6× difference in cache misses and often a 3-5× difference in wall-clock time.' },
       { wrong: 'Assuming O notation captures all performance differences', explain: 'Two O(n) algorithms can differ by 10-100× in real performance due to cache behavior. Always profile after optimizing big-O — cache effects often dominate constants on modern hardware.' },
     ],
+    videoId: "ZI9R-ErbKV4",
+    videoTitle: "Cache Friendly Algorithm",
     quiz: [
       { q: 'What is a "cache line" and why does it matter for performance?', options: ['A line of code that accesses the cache', 'A 64-byte block of contiguous memory loaded together from RAM into L1 cache', 'The maximum number of cache entries', 'The time it takes to load one byte from memory'], correct: 1, explanation: 'A cache line is 64 bytes of contiguous memory loaded atomically. Reading any one byte loads the entire line. This means sequential array access amortizes each cache miss over ~16 integers — a 16× advantage over random access.' },
       { q: 'Why is sequential array traversal faster than linked list traversal for the same n elements?', options: ['Arrays support parallelism; linked lists don\'t', 'Arrays are contiguous in memory (cache-friendly); linked list nodes are scattered (random pointer dereferences cause cache misses)', 'Linked lists have O(n²) traversal time', 'Arrays don\'t need pointer arithmetic'], correct: 1, explanation: 'Array elements sit consecutively in memory. After the first cache miss, the next 15 elements are already in L1 cache. Linked list nodes are malloc\'d randomly; each pointer dereference jumps to an arbitrary memory location, causing a new cache miss.' },

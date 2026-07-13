@@ -68,6 +68,7 @@ export function LessonPage() {
     { id: 'visualization', label: 'Visualization' },
     { id: 'examples', label: 'Examples' },
     { id: 'complexity', label: 'Complexity' },
+    { id: 'video', label: 'Video' },
     { id: 'quiz', label: 'Quiz' },
   ];
 

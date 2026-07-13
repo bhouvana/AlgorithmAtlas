@@ -122,6 +122,8 @@ def web_crawl(seeds, max_pages=1000):
       { wrong: 'Thinking Google reads your query in real time', right: 'All work is done in advance', explain: 'When you search, Google looks up pre-built indexes and pre-computed PageRanks. The hard work happens before you ever search.' },
       { wrong: 'Assuming more links always = higher rank', explain: 'PageRank cares about the quality of links, not just quantity. A link from one authoritative site can outweigh 1000 links from spam blogs.' },
     ],
+    videoId: "meonLcN7LD4",
+    videoTitle: "How Google's PageRank Algorithm Works",
     quiz: [
       { q: 'What traversal algorithm does a web crawler use to discover new pages?', options: ['DFS (depth-first)', 'BFS (breadth-first)', 'Dijkstra', 'A*'], correct: 1, explanation: 'Web crawlers use BFS via a URL queue — they process pages level by level, discovering new links and adding them to the queue.' },
       { q: 'What does an inverted index map?', options: ['Page URL → content', 'Word → list of pages containing it', 'Page → its PageRank score', 'URL → all outbound links'], correct: 1, explanation: 'An inverted index maps each word to the list of pages (documents) that contain it, enabling O(1) lookup for any search term.' },
@@ -266,6 +268,8 @@ def astar(graph, coords, start, goal):
       { wrong: 'Using BFS for weighted shortest paths', right: 'Use Dijkstra or A*', explain: 'BFS finds the path with fewest hops, not shortest time. On a road network where a short road might take longer due to traffic, BFS gives wrong answers.' },
       { wrong: 'Forgetting to check for stale heap entries', explain: 'When you update a node\'s distance, the old entry stays in the heap. Always check if the popped cost matches the current known distance before processing.' },
     ],
+    videoId: "o851fcOooRc",
+    videoTitle: "Real Life Applications of Dijkstra's Algorithm",
     quiz: [
       { q: 'What does "edge weight" represent in a GPS road graph?', options: ['The physical length of the road in meters', 'The number of traffic lights on the road', 'The estimated travel time on that road segment', 'The speed limit of the road'], correct: 2, explanation: 'GPS graphs use travel time (not distance) as edge weights, incorporating speed limits, traffic, and road type.' },
       { q: "What data structure does Dijkstra's algorithm use to always process the nearest node next?", options: ['Stack (LIFO)', 'Regular queue (FIFO)', 'Min-heap priority queue', 'Hash map'], correct: 2, explanation: 'A min-heap lets Dijkstra always extract the unvisited node with the lowest cumulative cost in O(log V) time.' },
@@ -366,6 +370,8 @@ def user_similarity(ratings, user_a, user_b):
       { wrong: 'Thinking Netflix just recommends what is "popular"', explain: 'Popularity-based recommendations work poorly. Most people don\'t want to watch the same blockbuster everyone else is watching. Collaborative filtering finds your specific niche.' },
       { wrong: 'Cold start problem: recommending to new users', explain: 'With no rating history, similarity can\'t be computed. Netflix solves this by asking new users to rate a few titles during onboarding — gathering just enough data to bootstrap recommendations.' },
     ],
+    videoId: "bbRqC_pJXMM",
+    videoTitle: "How Netflix's Recommendation Algorithm Built Its Empire",
     quiz: [
       { q: 'What does "collaborative filtering" mean in recommendation systems?', options: ['Users explicitly collaborate to write reviews together', 'Users who liked what you liked tend to like similar things', 'The algorithm filters out content you have already watched', 'Netflix employees manually curate recommendations'], correct: 1, explanation: 'Collaborative filtering leverages the collective behavior of similar users: find people who rated things like you did, then recommend what they loved that you haven\'t seen.' },
       { q: 'What type of graph structure represents users and movies in collaborative filtering?', options: ['Directed graph', 'Bipartite graph', 'Complete graph', 'Tree'], correct: 1, explanation: 'A bipartite graph has two distinct node sets (users and movies) with edges only between sets (user rated movie), never within the same set.' },
@@ -478,6 +484,8 @@ def huffman_encode(text):
       { wrong: 'Thinking Huffman is lossy (loses data)', right: 'Huffman is lossless', explain: 'Huffman coding is perfectly lossless — the original data can be perfectly reconstructed. JPEG feels lossy because of the DCT quantization step before Huffman, not Huffman itself.' },
       { wrong: 'Compressing already-compressed data', explain: 'If you ZIP a JPEG or MP3, the file barely shrinks. The entropy is already minimized. Huffman can only compress when frequencies are unequal — already-compressed data looks random.' },
     ],
+    videoId: "Lto-ajuqW3w",
+    videoTitle: "Compression - Computerphile",
     quiz: [
       { q: 'What is the core idea behind Huffman coding?', options: ['Assign equal-length codes to all characters', 'Assign shorter codes to more frequent characters', 'Remove duplicate characters from the text', 'Encrypt data to make it smaller'], correct: 1, explanation: 'Huffman assigns shorter bit sequences to more frequent characters and longer sequences to rarer ones, reducing total bits while preserving all information.' },
       { q: 'What data structure is used to build the Huffman tree efficiently?', options: ['Stack', 'Queue', 'Min-heap (priority queue)', 'Hash table'], correct: 2, explanation: 'A min-heap always gives O(log k) access to the two lowest-frequency nodes, which is exactly what the greedy merging step needs.' },
@@ -582,6 +590,8 @@ def login(username: str, password: str) -> bool:
       { wrong: 'Storing passwords in plaintext "encrypted"', right: 'Hash passwords, never encrypt', explain: 'Encryption is two-way — if you have the key, you can decrypt. Hashing is one-way — even the server can\'t recover the password. Use hashing, not encryption, for passwords.' },
       { wrong: 'Using MD5 or SHA-1 for passwords', right: 'Use bcrypt, Argon2, or scrypt', explain: 'MD5 and SHA-1 are fast (billions per second on a GPU). That\'s great for checksums, terrible for passwords. Use password-specific algorithms designed to be slow.' },
     ],
+    videoId: "ugrVwwoSHoc",
+    videoTitle: "Password Hashing and Salting Explained (With Real-World Examples)",
     quiz: [
       { q: 'Why is a hash function called "one-way"?', options: ['It only accepts one type of input', 'You can compute hash(input) easily but not input from hash(input)', 'It can only hash each password once', 'It runs on a single CPU core'], correct: 1, explanation: 'Computing the hash from input is trivial (milliseconds). Finding an input that produces a given hash requires trying ~2^256 possibilities — computationally infeasible.' },
       { q: 'What is the purpose of a "salt" in password hashing?', options: ['To speed up the hashing process', 'To encrypt the password before hashing', 'To ensure identical passwords produce different hashes, defeating precomputed rainbow tables', 'To add an extra layer of encryption'], correct: 2, explanation: 'A salt is a unique random value mixed into each password before hashing. Two users with the same password get different hashes, making mass lookup attacks (rainbow tables) useless.' },
@@ -688,6 +698,8 @@ print(recommend_friends(graph, 'Alice'))
       { wrong: 'Thinking social networks just track followers/friends', explain: 'Social networks build full graph indices and run graph algorithms at massive scale. The friend list is just the raw data; the BFS, centrality, and community detection are the intelligence layer.' },
       { wrong: 'Ignoring the cold-start problem', explain: 'New users with few friends have limited 2-hop neighborhoods. Social networks use phone contacts, email imports, and demographic data to seed initial recommendations.' },
     ],
+    videoId: "VKDgrTwUjJM",
+    videoTitle: "Social Network Connections: Friend Suggestions Using Graph Theory",
     quiz: [
       { q: 'In a social network graph, what do nodes and edges represent?', options: ['Nodes = posts, edges = likes', 'Nodes = users, edges = friendships', 'Nodes = interests, edges = users who share them', 'Nodes = messages, edges = replies'], correct: 1, explanation: 'In a friendship graph, each user is a node and each friendship (or follow) is an edge connecting two user nodes.' },
       { q: 'What algorithm finds "people who share mutual friends with you"?', options: ['Dijkstra\'s shortest path', '2-hop BFS and counting repeated nodes', 'Merge sort on friend lists', 'Topological sort'], correct: 1, explanation: 'BFS to depth 2 from your node discovers all friends-of-friends. Nodes that appear multiple times at depth 2 are people who share multiple mutual friends with you.' },
@@ -826,6 +838,8 @@ print(ac.search("alg"))
       { wrong: 'Using binary search on a sorted word list for autocomplete', explain: 'Binary search finds the prefix\'s position in O(log n) but collecting all completions then requires scanning forward — O(k). A Trie\'s O(m) lookup and O(k) collection is faster and more natural.' },
       { wrong: 'Storing full words at every node', explain: 'A Trie shares prefixes between words — "cat", "catch", and "category" share the path "cat". Storing full words at each node wastes memory and misses the point of the structure.' },
     ],
+    videoId: "zoKXsbZCbk0",
+    videoTitle: "How to Design Google Autocomplete Feature? | Trie Data Structure",
     quiz: [
       { q: 'What is the key property that makes a Trie perfect for autocomplete?', options: ['It stores words in sorted order', 'All words sharing a prefix share a path, making prefix lookup O(prefix length)', 'It uses less memory than a hash table', 'It supports in-order traversal'], correct: 1, explanation: 'In a Trie, the prefix path is shared by all words starting with that prefix. Finding completions means traversing one edge per character then collecting the entire subtree.' },
       { q: 'How fast is a Trie prefix lookup compared to a hash table lookup?', options: ['Slower — O(n) vs O(1)', 'The same — both O(1)', 'Depends on the prefix length — O(m) where m is prefix length', 'Faster — O(log n) vs O(1)'], correct: 2, explanation: 'Trie lookup is O(m) where m is the prefix length, completely independent of how many words are stored. A hash table gives O(m) per exact match but can\'t enumerate all prefix completions efficiently.' },

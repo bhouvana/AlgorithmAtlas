@@ -97,6 +97,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       { title: 'Checking Value Existence', desc: 'Verifying whether a value exists in a small collection before inserting or updating uses linear scan.' },
       { title: 'Small Datasets', desc: 'When n is small (e.g., a list of menu options), the overhead of sorting or hashing outweighs the O(n) scan cost.' },
     ],
+    videoId: "246V51AWwZM",
+    videoTitle: "Learn Linear Search in 3 Minutes",
     quiz: [
       {
         q: 'When is linear search preferred over binary search?',
@@ -265,6 +267,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       { title: 'Numerical Analysis', desc: 'Root-finding and optimisation routines in scientific computing apply ternary search over continuous intervals.' },
       { title: 'Game AI', desc: 'Some adversarial search evaluations model a score function that rises then falls with search depth; ternary search finds the sweet spot.' },
     ],
+    videoId: "o3HPRpbGlbI",
+    videoTitle: "Ternary Search in 4 Minutes (Python)",
     quiz: [
       {
         q: 'How does ternary search compare to binary search in practice?',
@@ -436,6 +440,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       { title: 'Numerical Tables', desc: 'Scientific lookup tables with evenly spaced x-values allow extremely fast probing via interpolation.' },
       { title: 'Log File Analysis', desc: 'Searching for a specific timestamp in a uniformly distributed log file benefits from interpolation since timestamps grow at a roughly constant rate.' },
     ],
+    videoId: "IjrF0Cazy-k",
+    videoTitle: "Interpolation Search Algorithm | Explanation, Working & Code",
     quiz: [
       {
         q: 'When does interpolation search outperform binary search?',
@@ -613,6 +619,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       { title: 'Expression Parsing', desc: 'Arithmetic expressions like (a + b) * c are stored as expression trees where leaves are operands and internal nodes are operators.' },
       { title: 'Decision Trees in Machine Learning', desc: 'Decision tree classifiers partition data by asking binary questions at each node, forming a binary tree that maps features to predictions.' },
     ],
+    videoId: "H5JubkIy_p8",
+    videoTitle: "Data Structures: Binary Tree",
     quiz: [
       {
         q: 'What is the height of a balanced binary tree containing n nodes?',
@@ -784,6 +792,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       { title: 'Set and Map Data Structures', desc: 'C++ std::set and std::map, Java TreeSet and TreeMap are backed by balanced BSTs (typically Red-Black trees).' },
       { title: 'Auto-Complete Systems', desc: 'BSTs and their balanced variants support lexicographic ordering, enabling efficient prefix search for auto-complete features.' },
     ],
+    videoId: "Gt2yBZAhsGM",
+    videoTitle: "Learn Binary Search Trees in 20 Minutes",
     quiz: [
       {
         q: 'What is the BST property that every BST must maintain?',
@@ -971,6 +981,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       { title: 'Priority Scheduling', desc: 'Operating system schedulers use balanced trees to manage process queues where priorities change dynamically.' },
       { title: 'Order Statistics', desc: 'Augmented AVL trees support finding the k-th smallest element in O(log n), useful in rank-based data retrieval.' },
     ],
+    videoId: "CVA85JuJEn0",
+    videoTitle: "AVL Trees Tutorial | Self Balancing Binary Search Trees",
     quiz: [
       {
         q: 'What is the balance factor of an AVL node?',
@@ -1155,6 +1167,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       { title: 'Heap Sort', desc: 'Build a max-heap from the array then repeatedly extract the maximum. Gives O(n log n) in-place sort with O(1) extra space.' },
       { title: 'Median Finding with Two Heaps', desc: 'Maintain a max-heap of the lower half and a min-heap of the upper half to find the running median of a data stream in O(log n) per element.' },
     ],
+    videoId: "3cR8V8hzwQ4",
+    videoTitle: "Heap Data Structure Explained: Min-Heap & Max-Heap Operations",
     quiz: [
       {
         q: 'What is the heap property in a min-heap?',
@@ -1353,6 +1367,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       { title: 'IP Routing Tables', desc: 'Network routers use binary tries (Patricia trees) to perform longest-prefix matching on IP addresses in O(32) = O(1) steps.' },
       { title: 'Word Games', desc: 'Games like Boggle and Scrabble use tries for rapid valid-word lookup during board traversal, pruning paths whose prefixes have no valid completions.' },
     ],
+    videoId: "3CbFFVHQrk4",
+    videoTitle: "The Trie Data Structure (Prefix Tree)",
     quiz: [
       {
         q: 'What is the time complexity of searching for a word of length L in a trie?',
@@ -1532,6 +1548,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       { title: 'Computational Geometry', desc: 'Rectangle union area, interval stabbing, and sweepline algorithms use segment trees as a core data structure.' },
       { title: 'Competitive Programming', desc: 'Segment trees appear in roughly 20% of competitive programming problems that involve intervals, making them one of the most important structures to master.' },
     ],
+    videoId: "Ic7OO3Uw6J0",
+    videoTitle: "Segment Trees - The Best Introduction in 10 Minutes",
     quiz: [
       {
         q: 'What is the time complexity of a range query on a segment tree?',
@@ -1711,6 +1729,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
       { title: 'Range Sum Queries on Changing Data', desc: 'Financial systems tracking cumulative totals with frequent point updates use BITs for their simplicity and cache efficiency.' },
       { title: 'Competitive Programming Favourite', desc: 'BITs appear frequently in contest problems involving frequency tables, rank queries, and dynamic prefix sums due to their minimal code footprint.' },
     ],
+    videoId: "IvBrbRfZgD4",
+    videoTitle: "Master the Fenwick Tree (Binary Indexed Tree) - Efficient Prefix Sums",
     quiz: [
       {
         q: 'What does BIT stand for in the context of Fenwick trees?',
@@ -1905,6 +1925,8 @@ export const searchingTreesLessons: Record<string, LessonData> = {
         explain: 'The loop must run while low <= high. Using strict < causes the algorithm to skip the last remaining element when low == high, potentially missing the target.',
       },
     ],
+    videoId: "xrMppTpoqdw",
+    videoTitle: "Learn Binary Search in 10 Minutes",
     quiz: [
       {
         q: 'What precondition must the input satisfy before applying binary search?',

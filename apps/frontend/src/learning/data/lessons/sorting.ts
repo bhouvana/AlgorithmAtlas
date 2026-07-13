@@ -120,6 +120,8 @@ selection_sort(arr)
         explain: 'The outer loop should run from 0 to n-2 inclusive. When i = n-1 there is only one element left and it is already in the correct position. Iterating to n causes an unnecessary (harmless but wasted) pass.',
       },
     ],
+    videoId: "EwjnF7rFLns",
+    videoTitle: "Learn Selection Sort in 8 Minutes",
     quiz: [
       {
         q: 'Why is selection sort O(n²) even when the input array is already sorted?',
@@ -306,6 +308,8 @@ insertion_sort(arr)
         desc: 'Python\'s built-in sort and Java\'s Arrays.sort use TimSort, which applies insertion sort on small subarrays (< 64 elements) where its cache-friendly sequential access pattern beats merge sort\'s overhead.',
       },
     ],
+    videoId: "Ph0mCreBQdM",
+    videoTitle: "Insertion Sort with Visualization and Animation",
     quiz: [
       {
         q: 'When is insertion sort O(n)?',
@@ -499,6 +503,8 @@ def merge(left, right):
         desc: 'Three-way file merging in Git and other VCS tools is conceptually similar to merge sort\'s merge step: two sequences of lines are compared and combined while preserving order.',
       },
     ],
+    videoId: "3j0SWDX4AtU",
+    videoTitle: "Learn Merge Sort in 13 Minutes",
     quiz: [
       {
         q: 'What is the time complexity of the merge step alone (merging two sorted halves of total size n)?',
@@ -699,6 +705,8 @@ def quicksort_random(arr, low, high):
         explain: 'Sorted or nearly-sorted input is extremely common in practice. With a fixed first/last pivot selection, sorted input triggers O(n²) performance. Randomisation or median-of-three avoids this pathological case.',
       },
     ],
+    videoId: "Vtckgz38QHs",
+    videoTitle: "Learn Quick Sort in 13 Minutes",
     quiz: [
       {
         q: 'What is the role of the pivot in quick sort?',
@@ -886,6 +894,8 @@ def heap_sort(arr):
         desc: 'Real-time systems with hard timing constraints need predictable worst-case performance. Heap sort provides O(n log n) guaranteed with O(1) space, unlike quicksort.',
       },
     ],
+    videoId: "2DmK_H7IdTo",
+    videoTitle: "Heap Sort in 4 Minutes",
     quiz: [
       {
         q: 'What heap property does heap sort rely on?',
@@ -1090,6 +1100,8 @@ print(counting_sort(scores))  # [1, 2, 2, 3, 3, 4, 8]`,
         desc: 'Counting sort is used as the stable intermediate sorting step inside radix sort. Each digit pass uses counting sort over the range 0-9 (or 0-255 for byte-level radix sort).',
       },
     ],
+    videoId: "OKd534EWcdk",
+    videoTitle: "Learn Counting Sort Algorithm in Less Than 6 Minutes",
     quiz: [
       {
         q: 'What does k represent in the O(n + k) complexity of counting sort?',
@@ -1287,6 +1299,8 @@ bubble_sort(arr)  # exits after one pass — O(n)`,
         explain: 'Bubble sort\'s O(n²) average complexity makes it impractically slow for large arrays. Even on modern hardware, sorting 100,000 elements takes ~10 billion operations versus ~1.7 million for O(n log n) algorithms.',
       },
     ],
+    videoId: "Dv4qLJcxus8",
+    videoTitle: "Learn Bubble Sort in 7 Minutes",
     quiz: [
       {
         q: 'What is the worst-case time complexity of bubble sort and what input triggers it?',
@@ -1483,6 +1497,8 @@ def radix_sort(arr):
         desc: 'Punched card sorters from the 1890s (used for census tabulation) sorted cards one column at a time — exactly the LSD radix sort principle applied to physical cards.',
       },
     ],
+    videoId: "XiuSW_mEn7g",
+    videoTitle: "Radix Sort Algorithm Introduction in 5 Minutes",
     quiz: [
       {
         q: 'What does "radix" mean in radix sort?',
