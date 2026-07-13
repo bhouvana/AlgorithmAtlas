@@ -86,27 +86,35 @@ async def _load_ledger_snapshot() -> None:
 # carries the multi-language verification ledger which is separately rebuilt
 # over time — not something to fake at boot). init_db() above only creates
 # empty tables, so a fresh deploy (Render, or any first-time clone) would
-# otherwise boot with a completely empty AtlasCode catalog. This runs the
-# same idempotent logic as `python scripts/seed_atlas_code.py` (skips rows
-# that already exist), so it's always safe to call on every boot, not just
-# the first one — the emptiness check below just avoids the catalog-assembly
-# cost on every restart once it's already seeded.
+# otherwise boot with a completely empty AtlasCode catalog. The emptiness
+# check below is what makes this safe to call on every boot, not just the
+# first one — a non-empty problems table means it's already been seeded.
 #
-# Measured locally: a genuinely fresh database takes ~8 MINUTES to fully
-# seed (250-plugin discovery/import + 216 problems' worth of family builders,
-# some of which do real adversarial-test generation, e.g. bfs-graph-variants
-# alone took ~60s). That is why the caller below fires this as a background
-# task via asyncio.create_task() instead of awaiting it directly inside
-# lifespan(): anything awaited before `yield` blocks the ASGI server from
-# ever opening its port, so an 8-minute await here would fail Render's
-# deploy health check (which expects the port to open within a much shorter
-# window) and likely crash-loop the service — worse, seed()'s DB writes are
-# one single transaction that only commits at the very end, so a kill
-# mid-seed loses ALL progress and the next boot starts over from zero.
-# Running this in the background lets the server start accepting requests
-# immediately (with an empty AtlasCode catalog for a few minutes) while
-# seeding finishes asynchronously — the same tradeoff Render itself expects
-# from long-running startup work.
+# Two-tier strategy, tried in order:
+#  1. FAST PATH — load apps/backend/algorithm_atlas/atlascode/
+#     problems_snapshot.json.gz (a committed, pre-built export; see
+#     scripts/export_problems_snapshot.py). Plain bulk INSERT, finishes in
+#     seconds with minimal memory.
+#  2. SLOW PATH (fallback if the snapshot is missing/empty) — regenerate
+#     everything via seed_atlascode(), the same logic as
+#     `python scripts/seed_atlas_code.py`. Measured locally: ~8 MINUTES on a
+#     genuinely fresh database (250-plugin discovery/import + 216 problems'
+#     worth of family builders doing real adversarial-test generation).
+#     CONFIRMED to OOM-kill Render's free-tier 512MB container before
+#     finishing, every single time, in an infinite crash-loop (no
+#     persistent disk means every restart starts from an empty DB and
+#     retries the same OOM) -- this is why the fast path exists and is
+#     always tried first. The slow path remains for environments where the
+#     snapshot is absent or stale relative to the family builders.
+#
+# Both tiers run as a background task via asyncio.create_task() rather than
+# being awaited directly inside lifespan(): anything awaited before `yield`
+# blocks the ASGI server from ever opening its port, so an 8-minute (slow
+# path) or even a few-second (fast path, but still non-zero) await here
+# risks failing Render's deploy health check. Running this in the
+# background lets the server start accepting requests immediately (with an
+# empty AtlasCode catalog until seeding finishes) — the same tradeoff
+# Render itself expects from long-running startup work.
 async def _auto_seed_atlascode_if_empty() -> None:
     from sqlalchemy import func, select
 
@@ -117,7 +125,19 @@ async def _auto_seed_atlascode_if_empty() -> None:
         logger.info(f"AtlasCode already seeded ({existing} problems) — skipping auto-seed")
         return
 
-    logger.info("AtlasCode problems table is empty — auto-seeding on boot (first deploy or fresh volume, ~1-2 minutes)")
+    logger.info("AtlasCode problems table is empty — attempting fast snapshot load")
+    try:
+        from .atlascode.problems_snapshot import load_problems_snapshot
+        async with engine.begin() as conn:
+            inserted = await load_problems_snapshot(conn)
+        if inserted:
+            logger.info(f"AtlasCode snapshot load complete — {inserted} problem(s) inserted")
+            return
+        logger.info("Problems snapshot missing or empty — falling back to full generation")
+    except Exception:
+        logger.exception("Problems snapshot load failed — falling back to full generation")
+
+    logger.info("AtlasCode auto-seeding via full generation on boot (memory-heavy, ~8 minutes)")
     try:
         from .atlascode.seed import seed as seed_atlascode
         await seed_atlascode()
