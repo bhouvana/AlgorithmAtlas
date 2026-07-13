@@ -3,6 +3,7 @@ import { CheckCircle2, XCircle, AlertTriangle, Clock, Cpu } from 'lucide-react';
 import { cn } from '../../../lib/utils';
 import type { ExecutionMode } from '../../api/problems';
 import type { NormalizedResult, NormalizedCase } from './resultNormalize';
+import { formatCompactJson } from './formatJson';
 
 const STATUS_STYLE: Record<string, { icon: 'pass' | 'fail' | 'warn'; color: string }> = {
   passed: { icon: 'pass', color: 'text-emerald-400' },
@@ -98,7 +99,7 @@ function Diff({ expected, actual }: { expected: string; actual: string }) {
 
 function jsonPreview(value: unknown): string {
   if (value === undefined) return '(none)';
-  return JSON.stringify(value, null, 2);
+  return formatCompactJson(value);
 }
 
 // Function Mode case detail -- deliberately labeled "Arguments"/"Expected

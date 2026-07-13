@@ -4,6 +4,7 @@ import type { ProblemDetail, TestCaseOut } from '../../api/problems';
 import { useAtlasCodeStore, type CustomCase } from '../../store/atlasCodeStore';
 import { cn } from '../../../lib/utils';
 import type { RunSpec } from './types';
+import { formatCompactJson } from './formatJson';
 
 interface Props {
   problem: ProblemDetail;
@@ -121,13 +122,13 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
             <div>
               <div className="text-sm text-zinc-600 mb-1">Arguments</div>
               <pre className="text-sm text-zinc-300 bg-white/3 rounded-lg px-3 py-2 font-mono overflow-x-auto whitespace-pre-wrap">
-                {JSON.stringify(activeVisible.function_args, null, 2)}
+                {formatCompactJson(activeVisible.function_args)}
               </pre>
             </div>
             <div>
               <div className="text-sm text-zinc-600 mb-1">Expected Return</div>
               <pre className="text-sm text-zinc-300 bg-white/3 rounded-lg px-3 py-2 font-mono overflow-x-auto whitespace-pre-wrap">
-                {JSON.stringify(activeVisible.function_expected, null, 2)}
+                {formatCompactJson(activeVisible.function_expected)}
               </pre>
             </div>
             {activeVisible.explanation && (
