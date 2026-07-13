@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FileCode2, Cog, Boxes, Scale, CheckCircle2 } from 'lucide-react';
 import { AnimateIn } from '../../components/ui/AnimateIn';
@@ -76,30 +76,30 @@ export function ExecutionPipelineSection() {
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <div className="relative">
-            {/* rail — spans exactly from the first icon's center to the last icon's
-               center (10% to 90% of this row), so the animated fill below can
-               never overshoot past the Verdict icon. */}
-            <div className="absolute top-8 left-[10%] right-[10%] h-px bg-white/10 hidden sm:block" />
-            <motion.div
-              className="absolute top-8 left-[10%] h-px hidden sm:block"
-              style={{ background: 'linear-gradient(90deg, #6366f1, #38bdf8)' }}
-              animate={{ width: `${Math.min(active, STAGES.length - 1) * (80 / (STAGES.length - 1))}%` }}
-              transition={{ duration: STEP_MS / 1000, ease: 'easeInOut' }}
-            />
-
-            <div className="grid grid-cols-1 sm:grid-cols-5 gap-8 sm:gap-4 relative">
-              {STAGES.map((stage, i) => {
-                const Icon = stage.icon;
-                const lit = i <= active;
-                return (
-                  <div key={stage.title} className="flex flex-col items-center text-center gap-3">
+          {/* flex row of [icon column, connector, icon column, connector, ...] —
+             each connector is its own small element living ONLY in the gap
+             between two icon boxes, so the line can never visually cross
+             behind/through a square (the old single full-width rail did,
+             since it ran at the icons' vertical center the whole way). */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:gap-0">
+            {STAGES.map((stage, i) => {
+              const Icon = stage.icon;
+              const lit = i <= active;
+              const isCurrent = i === active;
+              const nextStage = STAGES[i + 1];
+              const connectorFilled = active > i;
+              return (
+                <Fragment key={stage.title}>
+                  <div className="flex flex-col items-center text-center gap-3 sm:flex-1 sm:min-w-0">
                     <motion.div
                       className="relative w-16 h-16 rounded-2xl flex items-center justify-center border flex-shrink-0"
                       animate={{
                         borderColor: lit ? `${stage.color}66` : 'rgba(255,255,255,0.08)',
                         backgroundColor: lit ? `${stage.color}14` : 'rgba(255,255,255,0.02)',
-                        scale: lit && i === active ? 1.08 : 1,
+                        scale: isCurrent ? 1.08 : 1,
+                        boxShadow: isCurrent
+                          ? `0 0 0 1px ${stage.color}55, 0 0 22px 4px ${stage.color}40`
+                          : '0 0 0 0 transparent',
                       }}
                       transition={{ duration: 0.3 }}
                     >
@@ -113,9 +113,22 @@ export function ExecutionPipelineSection() {
                        text wraps to 3 lines at this width). */}
                     <p className="text-xs text-zinc-500 leading-relaxed max-w-[160px] min-h-[58px]">{stage.detail}</p>
                   </div>
-                );
-              })}
-            </div>
+
+                  {nextStage && (
+                    <div className="hidden sm:flex flex-shrink-0 w-8 md:w-12 items-center" style={{ marginTop: '31px' }}>
+                      <div className="relative w-full h-px bg-white/10 rounded-full overflow-hidden">
+                        <motion.div
+                          className="absolute inset-y-0 left-0 h-px"
+                          style={{ background: `linear-gradient(90deg, ${stage.color}, ${nextStage.color})` }}
+                          animate={{ width: connectorFilled ? '100%' : '0%' }}
+                          transition={{ duration: STEP_MS / 1000, ease: 'easeInOut' }}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </Fragment>
+              );
+            })}
           </div>
         </AnimateIn>
       </div>
