@@ -108,6 +108,15 @@ COPY plugins /plugins
 
 # Install all backend dependencies explicitly so they land in Python 3.11's
 # site-packages regardless of the pyproject.toml parsing issue above.
+# Keep this list in exact sync with apps/backend/pyproject.toml's
+# [project.dependencies] -- pyproject.toml is not read at all here (that's
+# the whole reason this explicit list exists), so a dependency added there
+# without also being added here installs fine locally (pip install -e .
+# reads pyproject.toml correctly) but silently ModuleNotFoundErrors in the
+# deployed container. Confirmed twice already: psutil (judge memory
+# sampling, apps/backend/algorithm_atlas/api/v1/notebook.py) and httpx
+# (Ollama Cloud provider, apps/backend/algorithm_atlas/ai/provider.py) were
+# both in pyproject.toml but missing here.
 RUN python3.11 -m pip install --no-cache-dir \
     "fastapi>=0.111.0" \
     "uvicorn[standard]>=0.29.0" \
@@ -121,7 +130,9 @@ RUN python3.11 -m pip install --no-cache-dir \
     "sympy>=1.12.0" \
     "sqlalchemy>=2.0.0" \
     "aiosqlite>=0.20.0" \
-    "alembic>=1.13.0"
+    "alembic>=1.13.0" \
+    "psutil>=6.0.0" \
+    "httpx>=0.27"
 
 # Atlas AI dependency — separate layer so it doesn't invalidate the heavy install above
 RUN python3.11 -m pip install --no-cache-dir "groq>=0.9.0"
