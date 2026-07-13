@@ -66,9 +66,9 @@ export function LessonPage() {
   const SECTIONS = [
     { id: 'concept', label: 'Concept' },
     { id: 'visualization', label: 'Visualization' },
+    { id: 'video', label: 'Video' },
     { id: 'examples', label: 'Examples' },
     { id: 'complexity', label: 'Complexity' },
-    { id: 'video', label: 'Video' },
     { id: 'quiz', label: 'Quiz' },
   ];
 

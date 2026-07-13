@@ -498,9 +498,9 @@ export function GenericLesson({
           toggleStep={toggleStep}
         />
       )}
-      {activeSection === 2 && <ExamplesSection data={data} />}
-      {activeSection === 3 && <ComplexitySection data={data} />}
-      {activeSection === 4 && <VideoSection data={data} />}
+      {activeSection === 2 && <VideoSection data={data} />}
+      {activeSection === 3 && <ExamplesSection data={data} />}
+      {activeSection === 4 && <ComplexitySection data={data} />}
       {activeSection === 5 && (
         <div>
           <div className="mb-4"><span className="text-xs font-mono text-rose-400 uppercase tracking-widest">Quiz</span></div>
