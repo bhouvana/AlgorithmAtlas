@@ -399,14 +399,22 @@ async def run_problem(slug: str, body: RunRequest, db: AsyncSession = Depends(ge
 
 async def _run_program_mode(problem: Problem, body: RunRequest, db: AsyncSession) -> RunResult:
     """
-    Evaluates only visible/selected/custom cases through the exact same judge
-    as Submit (`submission.evaluator.evaluate`), but:
-      - never loads or executes hidden test cases
-      - never persists a Submission row
-      - never updates UserProgress, solved state, or acceptance stats
+    Evaluates through the exact same judge as before Function Mode existed
+    (`submission.evaluator.evaluate`), never persists a Submission row, never
+    updates UserProgress/solved state/acceptance stats.
 
-    Unchanged from before Function Mode existed -- only extracted into its
-    own function so run_problem() could dispatch on execution_mode.
+    mode='visible' (the main Run action) is graded against the FULL
+    persisted suite -- visible + hidden -- not just the visible subset, so
+    Run reports an honest Accepted/Partial/Wrong verdict against all cases,
+    the same way a real judge would (see docs/atlascode-complete-matrix.md's
+    "5 visible + 35 hidden = 40" per-problem split). Hidden case content
+    stays redacted: evaluate() already blanks TestResult.input_data/
+    expected_output/actual_output per-case based on TestCase.is_hidden (see
+    evaluator.py), and RunCaseResult.is_hidden is set from the real
+    tc.is_hidden below so the frontend renders it as "Hidden" (see
+    ResultTab.tsx) rather than the redacted empty string. mode='selected'/
+    'custom' are unaffected -- still scoped to the visible cases shown in
+    the Testcase tab, or user-authored scratch cases.
     """
     slug = problem.id
     tc_result = await db.execute(
@@ -443,10 +451,13 @@ async def _run_program_mode(problem: Problem, body: RunRequest, db: AsyncSession
         cases = [visible_tcs[i] for i in selected_idx]
         labels = {tc.id: f"Case {idx + 1}" for tc, idx in zip(cases, selected_idx)}
         has_expected = {tc.id: True for tc in cases}
-    else:  # "visible"
-        if not visible_tcs:
-            raise HTTPException(status_code=400, detail="This problem has no visible test cases to run")
-        cases = visible_tcs
+    else:  # "visible" -- the main Run action, graded against ALL cases
+        all_result = await db.execute(
+            select(TestCase).where(TestCase.problem_id == slug).order_by(TestCase.order)
+        )
+        cases = list(all_result.scalars().all())
+        if not cases:
+            raise HTTPException(status_code=400, detail="This problem has no test cases to run")
         labels = {tc.id: f"Case {i + 1}" for i, tc in enumerate(cases)}
         has_expected = {tc.id: True for tc in cases}
 
@@ -461,11 +472,11 @@ async def _run_program_mode(problem: Problem, body: RunRequest, db: AsyncSession
         case_results.append(RunCaseResult(
             case_index=i,
             label=labels.get(tc.id, f"Case {i + 1}"),
-            is_hidden=False,
+            is_hidden=tc.is_hidden,
             has_expected=expects,
             status=status,
-            input_data=tc.input_data,
-            expected_output=tc.expected_output if expects else None,
+            input_data=tr.input_data,
+            expected_output=tr.expected_output if expects else None,
             actual_output=tr.actual_output,
             stdout=tr.stdout,
             stderr=tr.stderr,
@@ -508,8 +519,15 @@ async def _run_program_mode(problem: Problem, body: RunRequest, db: AsyncSession
 async def _run_function_mode(problem: Problem, body: RunRequest, db: AsyncSession) -> RunResult:
     """
     Function Mode's Run path -- typed arguments in, typed return out, judged
-    by atlascode/function_mode/runner.evaluate_function. Never touches hidden
-    test cases, never persists anything (same guarantees as Program Mode).
+    by atlascode/function_mode/runner.evaluate_function. Never persists
+    anything (same guarantee as Program Mode).
+
+    mode='visible' is graded against the FULL persisted suite -- visible +
+    hidden -- same reasoning as _run_program_mode's matching mode. Hidden
+    case content stays redacted by _judge_case (runner.py), which keys off
+    FunctionCase.is_hidden -- so that must be the real per-case flag below,
+    not hardcoded False, both when building the case list and when mapping
+    results back to RunCaseResult.is_hidden for the frontend.
     """
     if not problem.function_contract:
         raise HTTPException(
@@ -568,19 +586,24 @@ async def _run_function_mode(problem: Problem, body: RunRequest, db: AsyncSessio
                 has_expected=True, is_hidden=False, order=idx,
             ))
             labels[tc.id] = f"Case {idx + 1}"
-    else:  # "visible"
-        if not visible_tcs:
-            raise HTTPException(status_code=400, detail="This problem has no visible test cases to run")
-        for i, tc in enumerate(visible_tcs):
+    else:  # "visible" -- the main Run action, graded against ALL cases
+        all_result = await db.execute(
+            select(TestCase).where(TestCase.problem_id == problem.id).order_by(TestCase.order)
+        )
+        all_tcs = list(all_result.scalars().all())
+        if not all_tcs:
+            raise HTTPException(status_code=400, detail="This problem has no test cases to run")
+        for i, tc in enumerate(all_tcs):
             function_cases.append(FunctionCase(
                 id=tc.id, arguments=tc.function_args or {}, expected=tc.function_expected,
-                has_expected=True, is_hidden=False, order=i,
+                has_expected=True, is_hidden=tc.is_hidden, order=i,
             ))
             labels[tc.id] = f"Case {i + 1}"
 
     eval_result = await evaluate_function(body.code, body.language, contract, function_cases)
 
     has_expected_by_id = {fc.id: fc.has_expected for fc in function_cases}
+    is_hidden_by_id = {fc.id: fc.is_hidden for fc in function_cases}
 
     case_results: list[RunCaseResult] = []
     for i, r in enumerate(eval_result.case_results):
@@ -595,7 +618,7 @@ async def _run_function_mode(problem: Problem, body: RunRequest, db: AsyncSessio
         case_results.append(RunCaseResult(
             case_index=i,
             label=labels.get(r.case_id, f"Case {i + 1}"),
-            is_hidden=False,
+            is_hidden=is_hidden_by_id.get(r.case_id, False),
             has_expected=expects,
             status=status,
             input_data=json.dumps(r.arguments),
