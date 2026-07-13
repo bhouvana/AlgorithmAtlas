@@ -34,8 +34,9 @@ export function LearningJourneySection() {
             One path, from first principles to mastery.
           </h2>
           <p className="text-zinc-400 text-lg max-w-xl mx-auto">
-            73 lessons across 12 tracks. Every lesson pairs an interactive visualization with
-            worked examples, complexity analysis, and a quiz that actually checks understanding.
+            73 lessons across 12 tracks. Every lesson pairs an interactive visualization with a
+            hand-picked video walkthrough, worked examples, complexity analysis, and a quiz that
+            actually checks understanding.
           </p>
         </AnimateIn>
 
