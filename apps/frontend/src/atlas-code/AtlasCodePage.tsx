@@ -13,7 +13,7 @@ const DIFFICULTY_COLOR: Record<string, string> = {
 
 function StatCard({ icon: Icon, label, value }: { icon: React.ElementType; label: string; value: string | number }) {
   return (
-    <div className="flex flex-col gap-1 bg-white/5 rounded-2xl p-4 border border-white/8">
+    <div className="flex flex-col gap-1 bg-white/5 rounded-2xl p-4 border border-charcoal/10">
       <Icon className="w-5 h-5 text-indigo-400 mb-1" />
       <div className="text-2xl font-bold text-white">{value}</div>
       <div className="text-xs text-zinc-500">{label}</div>
@@ -61,7 +61,7 @@ export function AtlasCodePage() {
             {daily && (
               <Link
                 to={`/atlas-code/problem/${daily.problem_id}`}
-                className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-3 rounded-xl font-medium transition-colors"
+                className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-charcoal/10 text-white px-6 py-3 rounded-xl font-medium transition-colors"
               >
                 <Calendar className="w-4 h-4 text-amber-400" />
                 Daily Challenge
@@ -143,7 +143,7 @@ export function AtlasCodePage() {
               desc: 'Atlas AI reviews your code, explains failing cases, and suggests improvements.',
             },
           ].map(({ icon: Icon, color, bg, title, desc }) => (
-            <div key={title} className="bg-white/4 border border-white/8 rounded-2xl p-5">
+            <div key={title} className="bg-white/4 border border-charcoal/10 rounded-2xl p-5">
               <div className={`w-10 h-10 rounded-xl ${bg} flex items-center justify-center mb-3`}>
                 <Icon className={`w-5 h-5 ${color}`} />
               </div>

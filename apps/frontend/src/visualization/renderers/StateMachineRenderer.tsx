@@ -43,7 +43,7 @@ export function StateMachineRenderer({ state }: Props) {
 
       <div className="grid grid-cols-2 gap-3">
         {/* Variable table */}
-        <div className="rounded-xl border border-white/5 bg-neutral-900/60 overflow-hidden">
+        <div className="rounded-xl border border-charcoal/10 bg-neutral-900/60 overflow-hidden">
           <div className="px-3 py-1.5 border-b border-white/5 text-xs text-neutral-500">Variables</div>
           <div className="divide-y divide-white/5 max-h-48 overflow-y-auto">
             {vars.length === 0 && (
@@ -73,7 +73,7 @@ export function StateMachineRenderer({ state }: Props) {
 
         {/* Operation box */}
         <div className="flex flex-col gap-2">
-          <div className="rounded-xl border border-white/5 bg-neutral-900/60 p-3 flex-1">
+          <div className="rounded-xl border border-charcoal/10 bg-neutral-900/60 p-3 flex-1">
             <div className="text-xs text-neutral-500 mb-2">Operation</div>
             <pre className="text-xs text-indigo-200 whitespace-pre-wrap break-all leading-relaxed">
               {s.operation || '—'}
@@ -84,7 +84,7 @@ export function StateMachineRenderer({ state }: Props) {
 
       {/* Bits visualization */}
       {bits && (
-        <div className="rounded-xl border border-white/5 bg-neutral-950 p-3 overflow-x-auto">
+        <div className="rounded-xl border border-charcoal/10 bg-neutral-950 p-3 overflow-x-auto">
           <div className="text-xs text-neutral-500 mb-2">Bit pattern</div>
           <div className="flex flex-wrap gap-0.5">
             {bits.split('').map((bit, i) => (

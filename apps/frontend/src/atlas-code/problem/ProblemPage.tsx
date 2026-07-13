@@ -44,7 +44,7 @@ function LangPicker({ value, onChange }: { value: string; onChange: (v: string) 
       </button>
 
       {open && (
-        <div className="absolute top-full mt-1 right-0 z-40 w-48 max-h-80 overflow-y-auto rounded-xl bg-[#1A1A2E] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-1">
+        <div className="absolute top-full mt-1 right-0 z-40 w-48 max-h-80 overflow-y-auto rounded-xl bg-[#1A1A2E] border border-charcoal/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-1">
           {ALL_LANGUAGES.map((l) => (
             <button
               key={l.value}
@@ -96,7 +96,7 @@ function ModeToggle({
   ];
 
   return (
-    <div className="flex items-center rounded-lg border border-white/10 bg-[#1A1A2A] p-0.5">
+    <div className="flex items-center rounded-lg border border-charcoal/10 bg-[#1A1A2A] p-0.5">
       {options.map((opt) => (
         <button
           key={opt.key}
@@ -363,11 +363,11 @@ export function ProblemPage() {
                 )}>
                   {problem.difficulty}
                 </span>
-                <span className="text-sm px-2.5 py-1 rounded-full border border-white/10 text-zinc-400 capitalize">
+                <span className="text-sm px-2.5 py-1 rounded-full border border-charcoal/10 text-zinc-400 capitalize">
                   {problem.category.replace(/-/g, ' ')}
                 </span>
                 {problem.estimated_minutes > 0 && (
-                  <span className="text-sm px-2.5 py-1 rounded-full border border-white/10 text-zinc-400 flex items-center gap-1">
+                  <span className="text-sm px-2.5 py-1 rounded-full border border-charcoal/10 text-zinc-400 flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5" />{problem.estimated_minutes}m
                   </span>
                 )}
@@ -383,7 +383,7 @@ export function ProblemPage() {
                     <div className="mb-5">
                       <h3 className="text-sm font-semibold text-zinc-500 uppercase tracking-wider mb-3">Examples</h3>
                       {problem.examples.map((ex, i) => (
-                        <div key={i} className="mb-3 rounded-xl bg-white/3 border border-white/6 p-3">
+                        <div key={i} className="mb-3 rounded-xl bg-white/3 border border-charcoal/10 p-3">
                           <div className="text-sm text-zinc-500 mb-1.5 font-medium">Example {i + 1}</div>
                           <div className="space-y-1">
                             <div className="text-sm font-mono text-zinc-400">
@@ -422,7 +422,7 @@ export function ProblemPage() {
                       </h3>
                       <div className="flex flex-wrap gap-1.5">
                         {problem.companies.map((c) => (
-                          <span key={c} className="text-sm px-2.5 py-1 rounded-md bg-white/4 border border-white/8 text-zinc-400">
+                          <span key={c} className="text-sm px-2.5 py-1 rounded-md bg-white/4 border border-charcoal/10 text-zinc-400">
                             {c}
                           </span>
                         ))}

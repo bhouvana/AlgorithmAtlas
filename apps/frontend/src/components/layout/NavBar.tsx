@@ -38,7 +38,7 @@ export function NavBar() {
             scale: scrolled ? 0.99 : 1,
           }}
           transition={{ duration: 0.2, ease: 'easeOut' }}
-          className="backdrop-blur-xl bg-[#09090B]/80 border border-white/10 rounded-2xl px-4 h-12 flex items-center justify-between shadow-card"
+          className="backdrop-blur-xl bg-[#09090B]/80 border border-charcoal/10 rounded-2xl px-4 h-12 flex items-center justify-between shadow-card"
         >
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group flex-shrink-0">

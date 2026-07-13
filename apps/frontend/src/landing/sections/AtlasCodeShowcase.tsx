@@ -9,12 +9,12 @@ const ATLASCODE_JOURNEY = ['Learn', 'Visualize', 'Code', 'Run', 'Debug', 'Improv
 
 function AtlasCodeMockPanel() {
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#0D0D10] shadow-card overflow-hidden aspect-square flex flex-col">
+    <div className="rounded-2xl border border-charcoal/10 bg-[#0D0D10] shadow-card overflow-hidden aspect-square flex flex-col">
       <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5 bg-white/[0.02]">
         <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
         <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
-        <span className="ml-3 text-xs text-zinc-500 font-mono">two-sum.py — AtlasCode</span>
+        <span className="ml-3 text-xs text-zinc-500 font-mono">two-sum.py · AtlasCode</span>
       </div>
 
       <div className="flex flex-col flex-1 min-h-0">
@@ -76,9 +76,9 @@ export function AtlasCodeShowcaseSection() {
             <p className="text-zinc-400 text-lg mb-6 leading-relaxed">
               Visualize an algorithm, then write real code against it.{' '}
               {ATLASCODE_VERIFIED_PROBLEMS}+ independently verified challenges,
-              each judged against 40 hand-designed test cases — basic
+              each judged against 40 hand-designed test cases (basic
               correctness, boundary conditions, adversarial inputs, and
-              performance stress — across up to 17 supported languages.
+              performance stress) across up to 17 supported languages.
             </p>
             <p className="text-zinc-500 text-sm mb-6 leading-relaxed">
               Solve in <span className="text-zinc-300 font-medium">LeetCode Mode</span> (write
@@ -91,7 +91,7 @@ export function AtlasCodeShowcaseSection() {
             <div className="flex flex-wrap items-center gap-2 mb-8">
               {ATLASCODE_JOURNEY.map((step, i) => (
                 <div key={step} className="flex items-center gap-2">
-                  <span className="text-sm font-medium text-zinc-300 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+                  <span className="text-sm font-medium text-zinc-300 px-3 py-1.5 rounded-lg bg-white/5 border border-charcoal/10">
                     {step}
                   </span>
                   {i < ATLASCODE_JOURNEY.length - 1 && (

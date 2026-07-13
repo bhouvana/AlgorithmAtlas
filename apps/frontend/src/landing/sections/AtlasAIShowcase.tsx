@@ -14,17 +14,17 @@ const EXCHANGES: Exchange[] = [
   {
     question: 'Why is my quicksort O(n²) on a sorted array?',
     answer:
-      "Because you're picking the last element as the pivot. On already-sorted input, every partition splits n elements into 1 and n-1 — that's n nested passes instead of log n. Pick a random or median-of-three pivot to fix it.",
+      "Because you're picking the last element as the pivot. On already-sorted input, every partition splits n elements into 1 and n-1, so that's n nested passes instead of log n. Pick a random or median-of-three pivot to fix it.",
   },
   {
     question: "What's the difference between BFS and Dijkstra?",
     answer:
-      'BFS finds the shortest path by edge count, assuming every edge costs 1. Dijkstra finds the shortest path by total weight, using a priority queue instead of a plain queue — it degrades to BFS when all weights are equal.',
+      'BFS finds the shortest path by edge count, assuming every edge costs 1. Dijkstra finds the shortest path by total weight, using a priority queue instead of a plain queue. It degrades to BFS when all weights are equal.',
   },
   {
     question: 'Give me a hint for Longest Increasing Subsequence.',
     answer:
-      "Try dp[i] = length of the LIS ending at index i. For each j < i where nums[j] < nums[i], dp[i] = max(dp[i], dp[j] + 1). That's O(n²) — there's an O(n log n) version using binary search if you want the harder version.",
+      "Try dp[i] = length of the LIS ending at index i. For each j < i where nums[j] < nums[i], dp[i] = max(dp[i], dp[j] + 1). That's O(n²), though there's an O(n log n) version using binary search if you want the harder version.",
   },
 ];
 
@@ -110,7 +110,7 @@ export function AtlasAIShowcaseSection() {
           </h2>
           <p className="text-zinc-400 text-lg mb-6 leading-relaxed">
             Stuck on a bug, a proof, or a Big-O question? Atlas AI sees the algorithm you're
-            visualizing or the code you're running and answers in context — no tab-switching,
+            visualizing or the code you're running and answers in context, no tab-switching,
             no copy-pasting your problem into a generic chatbot.
           </p>
           <Link to="/algorithms">
@@ -121,7 +121,7 @@ export function AtlasAIShowcaseSection() {
         </AnimateIn>
 
         <AnimateIn direction="left" delay={0.1}>
-          <div className="rounded-2xl border border-white/10 bg-[#0D0D10] shadow-card overflow-hidden">
+          <div className="rounded-2xl border border-charcoal/10 bg-[#0D0D10] shadow-card overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-white/[0.02]">
               <AtlasAvatar />
               <span className="text-sm text-white font-medium">Atlas AI</span>
@@ -147,7 +147,7 @@ export function AtlasAIShowcaseSection() {
 
               <div className="flex items-start gap-2.5 max-w-[90%]">
                 <AtlasAvatar />
-                <div className="rounded-2xl rounded-tl-sm bg-white/[0.04] border border-white/5 text-zinc-300 text-sm leading-relaxed px-4 py-2.5 min-h-[2.5rem]">
+                <div className="rounded-2xl rounded-tl-sm bg-white/[0.04] border border-charcoal/10 text-zinc-300 text-sm leading-relaxed px-4 py-2.5 min-h-[2.5rem]">
                   {answer}
                   {phase === 'typing' && (
                     <span className="inline-block w-1.5 h-3.5 ml-0.5 bg-indigo-400 align-text-bottom animate-pulse-slow" />

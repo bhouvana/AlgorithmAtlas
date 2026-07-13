@@ -365,7 +365,7 @@ export function CatalogPage() {
             {Array.from({ length: 12 }).map((_, i) => (
               <div
                 key={i}
-                className="h-44 rounded-2xl bg-[#18181B] border border-white/5 animate-pulse"
+                className="h-44 rounded-2xl bg-[#18181B] border border-charcoal/10 animate-pulse"
               />
             ))}
           </div>
@@ -379,7 +379,7 @@ export function CatalogPage() {
           </div>
         ) : filtered.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-64 gap-4 text-center">
-            <div className="w-16 h-16 rounded-2xl bg-[#18181B] border border-white/8 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-2xl bg-[#18181B] border border-charcoal/10 flex items-center justify-center">
               <Search className="w-7 h-7 text-zinc-600" />
             </div>
             <p className="text-zinc-400 font-medium">No algorithms match your search</p>

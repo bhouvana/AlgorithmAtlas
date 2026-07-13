@@ -197,7 +197,7 @@ function CompactControls({ sim, syncTarget, hideSpeedRow }: CompactControlsProps
           onClick={() => step('bwd')}
           disabled={!hasCtrl || isAtStart}
           title="Step ←"
-          className="px-4 py-2 rounded-xl bg-[#18181B] border border-white/8 text-zinc-400 hover:text-white text-sm disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="px-4 py-2 rounded-xl bg-[#18181B] border border-charcoal/10 text-zinc-400 hover:text-white text-sm disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
         >
           ← Step
         </button>
@@ -212,7 +212,7 @@ function CompactControls({ sim, syncTarget, hideSpeedRow }: CompactControlsProps
           onClick={() => step('fwd')}
           disabled={!hasCtrl || isAtEnd}
           title="Step →"
-          className="px-4 py-2 rounded-xl bg-[#18181B] border border-white/8 text-zinc-400 hover:text-white text-sm disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="px-4 py-2 rounded-xl bg-[#18181B] border border-charcoal/10 text-zinc-400 hover:text-white text-sm disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
         >
           Step →
         </button>
@@ -271,7 +271,7 @@ function AlgorithmPanel({
   const Renderer = getRenderer(visualizationType);
 
   return (
-    <div className="rounded-2xl bg-[#111113] border border-white/8 overflow-hidden">
+    <div className="rounded-2xl bg-[#111113] border border-charcoal/10 overflow-hidden">
       {/* Panel header */}
       <div className="px-5 py-3 border-b border-white/8 flex items-center justify-between">
         <span className="text-sm font-medium text-white">
@@ -317,7 +317,7 @@ function ComplexityTable({ algoA, algoB }: { algoA: AlgorithmSummary; algoB: Alg
 
   return (
     <div className="max-w-7xl mx-auto px-6 pb-8">
-      <div className="rounded-2xl bg-[#111113] border border-white/8 overflow-hidden">
+      <div className="rounded-2xl bg-[#111113] border border-charcoal/10 overflow-hidden">
         <div className="px-5 py-3 border-b border-white/8">
           <span className="text-sm font-medium text-white">Complexity Comparison</span>
         </div>
@@ -499,7 +499,7 @@ export function ComparisonPage() {
           'w-full max-w-xl mx-auto rounded-2xl p-4',
           locked
             ? 'bg-[#111113] border border-indigo-500/20'
-            : 'bg-[#111113] border border-white/8',
+            : 'bg-[#111113] border border-charcoal/10',
         )}>
           {locked && (
             <div className="flex items-center justify-center gap-2 mb-3">

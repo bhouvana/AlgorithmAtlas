@@ -184,12 +184,12 @@ export function LiveVisualizationSection() {
           </h2>
           <p className="text-zinc-400 text-lg max-w-xl mx-auto">
             Every comparison, every swap, captured as a frame and played back at your pace.
-            This is a live, running simulation — not a recording.
+            This is a live, running simulation, not a recording.
           </p>
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <div className="rounded-2xl border border-white/10 bg-[#0D0D10] shadow-card overflow-hidden">
+          <div className="rounded-2xl border border-charcoal/10 bg-[#0D0D10] shadow-card overflow-hidden">
             {/* window chrome + algo tabs */}
             <div className="flex flex-wrap items-center gap-2 px-5 py-3.5 border-b border-white/5 bg-white/[0.02]">
               <div className="flex items-center gap-1.5 mr-2">

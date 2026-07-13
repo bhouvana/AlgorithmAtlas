@@ -52,7 +52,7 @@ export function AlgorithmDetailPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-[#18181B] border border-white/8 flex items-center justify-center animate-pulse">
+          <div className="w-12 h-12 rounded-2xl bg-[#18181B] border border-charcoal/10 flex items-center justify-center animate-pulse">
             <span className="text-indigo-400 text-xl">⬡</span>
           </div>
           <p className="text-zinc-500 text-sm">Loading algorithm...</p>
@@ -151,7 +151,7 @@ export function AlgorithmDetailPage() {
 
         {/* Tab navigation — floating pill style */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1 p-1 rounded-2xl bg-[#18181B] border border-white/8">
+          <div className="flex items-center gap-1 p-1 rounded-2xl bg-[#18181B] border border-charcoal/10">
             {[
               { key: 'simulate', label: 'Simulation', icon: <Play className="w-3.5 h-3.5" /> },
               { key: 'code',     label: 'Code',       icon: <Code2 className="w-3.5 h-3.5" /> },
@@ -168,7 +168,7 @@ export function AlgorithmDetailPage() {
                 {activeTab === key && (
                   <motion.div
                     layoutId="tab-active"
-                    className="absolute inset-0 bg-[#09090B] rounded-xl border border-white/10"
+                    className="absolute inset-0 bg-[#09090B] rounded-xl border border-charcoal/10"
                     transition={{ type: 'spring', stiffness: 500, damping: 35 }}
                   />
                 )}
@@ -194,7 +194,7 @@ export function AlgorithmDetailPage() {
             >
               {/* Parameter panel */}
               {Object.keys(algorithm.default_params).length > 0 && (
-                <div className="rounded-2xl bg-[#18181B] border border-white/8 p-4">
+                <div className="rounded-2xl bg-[#18181B] border border-charcoal/10 p-4">
                   <ParameterPanel
                     schema={algorithm.default_params}
                     onApply={handleParamApply}
@@ -203,7 +203,7 @@ export function AlgorithmDetailPage() {
               )}
 
               {/* Main simulation area */}
-              <div className="rounded-2xl bg-[#111113] border border-white/8 overflow-hidden">
+              <div className="rounded-2xl bg-[#111113] border border-charcoal/10 overflow-hidden">
                 {/* Top bar */}
                 <div className="flex items-center justify-between px-5 py-3 border-b border-white/8">
                   <div className="flex items-center gap-2">
@@ -255,7 +255,7 @@ export function AlgorithmDetailPage() {
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="rounded-2xl bg-[#111113] border border-white/8 overflow-hidden">
+              <div className="rounded-2xl bg-[#111113] border border-charcoal/10 overflow-hidden">
                 <div className="flex items-center gap-2 px-5 py-3 border-b border-white/8">
                   <Code2 className="w-4 h-4 text-zinc-500" />
                   <span className="text-xs text-zinc-500 font-mono uppercase tracking-wider">
@@ -323,7 +323,7 @@ export function AlgorithmDetailPage() {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl bg-[#18181B] border border-white/8 p-6 flex flex-col gap-3">
+    <div className="rounded-2xl bg-[#18181B] border border-charcoal/10 p-6 flex flex-col gap-3">
       <h2 className="text-xs font-mono uppercase tracking-wider text-zinc-500">{title}</h2>
       {children}
     </div>
@@ -386,7 +386,7 @@ function EmbedButton({ slug }: { slug: string }) {
       {open && (
         <div
           ref={dialogRef}
-          className="absolute right-0 top-10 z-50 w-80 rounded-2xl border border-white/10 bg-[#111113] shadow-[0_24px_64px_rgba(0,0,0,0.6)] p-5 flex flex-col gap-3"
+          className="absolute right-0 top-10 z-50 w-80 rounded-2xl border border-charcoal/10 bg-[#111113] shadow-[0_24px_64px_rgba(0,0,0,0.6)] p-5 flex flex-col gap-3"
         >
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-zinc-300">Embed this visualization</span>
@@ -398,7 +398,7 @@ function EmbedButton({ slug }: { slug: string }) {
             </button>
           </div>
 
-          <pre className="rounded-lg bg-[#09090B] border border-white/5 p-3 text-xs text-zinc-400 whitespace-pre-wrap break-all font-mono leading-relaxed select-all">
+          <pre className="rounded-lg bg-[#09090B] border border-charcoal/10 p-3 text-xs text-zinc-400 whitespace-pre-wrap break-all font-mono leading-relaxed select-all">
             {snippet}
           </pre>
 

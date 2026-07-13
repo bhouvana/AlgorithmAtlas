@@ -82,7 +82,7 @@ function ArrayPlayground() {
   const reset = () => { setArr([3, 7, 1, 9, 4, 6]); setOperation(''); setHighlighted(null); };
 
   return (
-    <div className="rounded-xl border border-white/8 bg-zinc-950/50 p-5 space-y-4">
+    <div className="rounded-xl border border-charcoal/10 bg-zinc-950/50 p-5 space-y-4">
       {/* Array display */}
       <div className="flex gap-2 flex-wrap items-end">
         <AnimatePresence mode="popLayout">
@@ -127,7 +127,7 @@ function ArrayPlayground() {
         <button onClick={insertFront} className="px-3 py-1.5 bg-orange-500/10 border border-orange-500/20 text-orange-300 rounded-lg text-xs hover:bg-orange-500/20 transition-colors">Insert Front</button>
         <button onClick={push}       className="px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 rounded-lg text-xs hover:bg-cyan-500/20 transition-colors">Push End</button>
         <button onClick={deleteFirst} className="px-3 py-1.5 bg-rose-500/10 border border-rose-500/20 text-rose-300 rounded-lg text-xs hover:bg-rose-500/20 transition-colors">Delete Front</button>
-        <button onClick={reset}      className="px-3 py-1.5 border border-white/10 text-zinc-400 rounded-lg text-xs hover:text-white transition-colors ml-auto">Reset</button>
+        <button onClick={reset}      className="px-3 py-1.5 border border-charcoal/10 text-zinc-400 rounded-lg text-xs hover:text-white transition-colors ml-auto">Reset</button>
       </div>
 
       {/* Operation output */}
@@ -136,7 +136,7 @@ function ArrayPlayground() {
           key={operation}
           initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
-          className="px-3 py-2 rounded-lg bg-zinc-900/60 border border-white/5 text-xs text-zinc-300 font-mono"
+          className="px-3 py-2 rounded-lg bg-zinc-900/60 border border-charcoal/10 text-xs text-zinc-300 font-mono"
         >
           → {operation}
         </motion.div>
@@ -171,7 +171,7 @@ export function ArraysLesson() {
         </p>
 
         {/* Memory visualization */}
-        <div className="mt-6 rounded-xl border border-white/8 bg-zinc-950/60 p-5 overflow-x-auto">
+        <div className="mt-6 rounded-xl border border-charcoal/10 bg-zinc-950/60 p-5 overflow-x-auto">
           <div className="text-xs text-zinc-500 mb-3 font-mono">Memory layout (4 bytes each for 32-bit integers)</div>
           <div className="flex gap-0 min-w-max">
             {[42, 17, 83, 5, 61, 29].map((val, i) => (
@@ -281,7 +281,7 @@ export function ArraysLesson() {
         <h2 className="text-xl font-bold text-white mb-6">Test Your Understanding</h2>
         <div className="space-y-6">
           {QUIZ_QUESTIONS.map((q, qi) => (
-            <div key={qi} className="rounded-xl border border-white/8 bg-zinc-900/30 p-5">
+            <div key={qi} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-5">
               <div className="font-medium text-white mb-4 text-sm">{q.q}</div>
               <div className="grid grid-cols-2 gap-2">
                 {q.options.map((opt, ai) => {
@@ -305,7 +305,7 @@ export function ArraysLesson() {
               </div>
               {quizRevealed[qi] && (
                 <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
-                  className="mt-3 px-3 py-2 rounded-lg bg-zinc-800/50 text-xs text-zinc-300 border border-white/5">
+                  className="mt-3 px-3 py-2 rounded-lg bg-zinc-800/50 text-xs text-zinc-300 border border-charcoal/10">
                   💡 {q.explanation}
                 </motion.div>
               )}

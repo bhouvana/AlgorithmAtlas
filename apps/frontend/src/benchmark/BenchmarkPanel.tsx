@@ -250,7 +250,7 @@ export function BenchmarkPanel({ algorithmSlug, executionTarget = 'server' }: Be
   const sizeLabel = benchConfig?.label ?? 'n';
 
   return (
-    <div className="flex flex-col gap-3 p-4 bg-neutral-900 rounded-xl border border-white/5">
+    <div className="flex flex-col gap-3 p-4 bg-neutral-900 rounded-xl border border-charcoal/10">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">

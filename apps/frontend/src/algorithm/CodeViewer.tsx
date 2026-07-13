@@ -157,7 +157,7 @@ export function CodeViewer({ slug }: CodeViewerProps) {
         <span className="text-xs text-neutral-600 font-mono">{source.line_count} lines</span>
       </div>
       <div
-        className="overflow-x-auto overflow-y-auto rounded-xl border border-white/5 bg-neutral-950"
+        className="overflow-x-auto overflow-y-auto rounded-xl border border-charcoal/10 bg-neutral-950"
         style={{ maxHeight: '520px' }}
       >
         <table className="text-xs font-mono w-full border-collapse" style={{ lineHeight: '1.6' }}>

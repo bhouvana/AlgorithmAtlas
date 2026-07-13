@@ -73,7 +73,7 @@ export function StatsSection() {
   return (
     <section className="py-20 px-4">
       <AnimateIn className="max-w-4xl mx-auto">
-        <div className="rounded-2xl border border-white/8 bg-[#18181B] grid grid-cols-2 sm:grid-cols-5 divide-x divide-y sm:divide-y-0 divide-white/8 overflow-hidden shadow-card">
+        <div className="rounded-2xl border border-charcoal/10 bg-[#18181B] grid grid-cols-2 sm:grid-cols-5 divide-x divide-y sm:divide-y-0 divide-white/8 overflow-hidden shadow-card">
           {STATS.map((stat) => (
             <StatCard key={stat.label} {...stat} />
           ))}

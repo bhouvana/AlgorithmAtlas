@@ -175,7 +175,7 @@ export function SortVisualizer({ algorithm = 'bubble', showAlgoSelector = true, 
       )}
 
       {/* Array bars */}
-      <div className="relative rounded-xl bg-zinc-950/60 border border-white/8 p-4 pt-6 overflow-hidden">
+      <div className="relative rounded-xl bg-zinc-950/60 border border-charcoal/10 p-4 pt-6 overflow-hidden">
         <div className="flex items-end justify-center gap-1 h-40">
           {frame.array.map((val, i) => {
             const isComparing = frame.comparing.includes(i);
@@ -218,7 +218,7 @@ export function SortVisualizer({ algorithm = 'bubble', showAlgoSelector = true, 
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -4 }}
           transition={{ duration: 0.15 }}
-          className="min-h-[2.5rem] px-3 py-2 rounded-lg bg-zinc-900/50 border border-white/5 text-sm text-zinc-300"
+          className="min-h-[2.5rem] px-3 py-2 rounded-lg bg-zinc-900/50 border border-charcoal/10 text-sm text-zinc-300"
         >
           {frame.description}
         </motion.div>
@@ -241,7 +241,7 @@ export function SortVisualizer({ algorithm = 'bubble', showAlgoSelector = true, 
 
       {/* Controls */}
       <div className="flex items-center gap-2 flex-wrap">
-        <div className="flex items-center gap-1 bg-zinc-900/60 rounded-lg p-1 border border-white/8">
+        <div className="flex items-center gap-1 bg-zinc-900/60 rounded-lg p-1 border border-charcoal/10">
           <button onClick={() => setFrameIdx(0)} className="p-1.5 text-zinc-400 hover:text-white rounded transition-colors" title="Restart">
             <SkipBack size={14} />
           </button>

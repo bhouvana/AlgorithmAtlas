@@ -175,7 +175,7 @@ export function NetworkTopologyRenderer({ state }: Props) {
 
       {/* Message log */}
       {messages.length > 0 && (
-        <div className="w-full rounded-lg border border-white/5 bg-neutral-900/50 p-2 max-h-24 overflow-y-auto">
+        <div className="w-full rounded-lg border border-charcoal/10 bg-neutral-900/50 p-2 max-h-24 overflow-y-auto">
           {messages.map((m) => (
             <div key={m.msg_id} className="text-xs font-mono text-neutral-400 leading-relaxed">
               <span className="text-neutral-300">{m.src}</span>

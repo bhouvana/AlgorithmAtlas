@@ -47,7 +47,7 @@ export function AlgorithmMarqueeSection() {
           The complete catalog
         </h2>
         <p className="text-zinc-400 text-lg max-w-lg mx-auto">
-          From classic sorting to cutting-edge distributed consensus — every algorithm visualized.
+          From classic sorting to cutting-edge distributed consensus, every algorithm visualized.
         </p>
       </AnimateIn>
 

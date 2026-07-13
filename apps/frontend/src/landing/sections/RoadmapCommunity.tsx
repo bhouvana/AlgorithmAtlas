@@ -7,7 +7,7 @@ const COMMUNITY_POINTS = [
   {
     icon: GitFork,
     title: 'Open plugin directory',
-    detail: 'Any algorithm can ship as a self-contained plugin under plugins/community/<category>/<slug>/ — manifest, implementation, and tests, reviewed via a real PR checklist.',
+    detail: 'Any algorithm can ship as a self-contained plugin under plugins/community/<category>/<slug>/: manifest, implementation, and tests, reviewed via a real PR checklist.',
   },
   {
     icon: FileJson2,
@@ -17,7 +17,7 @@ const COMMUNITY_POINTS = [
   {
     icon: ShieldCheck,
     title: 'Validate before you submit',
-    detail: 'scripts/validate_plugin.py checks structure, manifest schema, and import safety locally — no waiting on CI to find a typo. The same validator runs automatically the moment you open a PR.',
+    detail: 'scripts/validate_plugin.py checks structure, manifest schema, and import safety locally, no waiting on CI to find a typo. The same validator runs automatically the moment you open a PR.',
   },
   {
     icon: Lock,
@@ -27,7 +27,7 @@ const COMMUNITY_POINTS = [
   {
     icon: Code2,
     title: 'Embed anywhere',
-    detail: 'Every algorithm — first-party or community — gets a drop-in <iframe> with seed, size, and autoplay as query params. No extra work for contributors.',
+    detail: 'Every algorithm, first-party or community, gets a drop-in <iframe> with seed, size, and autoplay as query params. No extra work for contributors.',
   },
 ];
 
@@ -42,7 +42,7 @@ export function RoadmapCommunitySection() {
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Built in the open.</h2>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            Every algorithm in the catalog — first-party or contributed — goes through the exact
+            Every algorithm in the catalog, first-party or contributed, goes through the exact
             same pipeline: a schema-checked manifest, a sandboxed import scan, and an automated
             validator that runs locally before it ever touches CI.
           </p>
@@ -67,7 +67,7 @@ export function RoadmapCommunitySection() {
           })}
         </div>
 
-        <AnimateIn delay={0.2} className="max-w-xl mx-auto rounded-xl border border-white/10 bg-[#0D0D10] p-4 font-mono text-xs text-zinc-400 overflow-x-auto text-center">
+        <AnimateIn delay={0.2} className="max-w-xl mx-auto rounded-xl border border-charcoal/10 bg-[#0D0D10] p-4 font-mono text-xs text-zinc-400 overflow-x-auto text-center">
           <span className="text-zinc-600">{'<iframe '}</span>
           <span className="text-emerald-400">src</span>
           <span className="text-zinc-600">=</span>

@@ -68,7 +68,7 @@ export function BigOLesson() {
             { title: 'Drop Non-Dominants', code: 'n² + n → O(n²)', desc: 'At large n, the biggest term wins.' },
             { title: 'Worst Case', code: 'We measure the ceiling', desc: 'Big O describes the upper bound on time.' },
           ].map((rule) => (
-            <div key={rule.title} className="rounded-xl border border-white/8 bg-zinc-900/40 p-4">
+            <div key={rule.title} className="rounded-xl border border-charcoal/10 bg-zinc-900/40 p-4">
               <div className="font-semibold text-white text-sm mb-1">{rule.title}</div>
               <div className="font-mono text-indigo-300 text-sm mb-2">{rule.code}</div>
               <div className="text-zinc-400 text-xs">{rule.desc}</div>
@@ -156,7 +156,7 @@ export function BigOLesson() {
               code: `function hasDuplicate(arr) {\n  for (let i = 0; i < arr.length; i++) {\n    for (let j = i + 1; j < arr.length; j++) {\n      if (arr[i] === arr[j]) return true; // n * n iterations\n    }\n  }\n  return false;\n}`,
             },
           ].map((ex) => (
-            <div key={ex.label} className="rounded-xl border border-white/8 bg-zinc-950/60 overflow-hidden">
+            <div key={ex.label} className="rounded-xl border border-charcoal/10 bg-zinc-950/60 overflow-hidden">
               <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-zinc-900/40">
                 <span className="text-xs text-zinc-400">{ex.label}</span>
                 <code className={`text-xs font-mono font-bold ${ex.color}`}>{ex.complexity}</code>
@@ -182,7 +182,7 @@ export function BigOLesson() {
             { company: 'Social Networks', scenario: 'Finding mutual friends', bad: 'O(n³) naive = unusable at scale', good: 'Graph algorithms + distributed compute' },
             { company: 'GPS/Navigation', scenario: 'Shortest path through a city', bad: 'O(n!) brute force = impossible', good: "O(E log V) Dijkstra's = instant directions" },
           ].map((item) => (
-            <div key={item.company} className="rounded-xl border border-white/8 bg-zinc-900/30 p-4">
+            <div key={item.company} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-4">
               <div className="font-semibold text-white text-sm mb-2">{item.company}</div>
               <div className="text-zinc-400 text-xs mb-3">{item.scenario}</div>
               <div className="space-y-1.5">
@@ -209,7 +209,7 @@ export function BigOLesson() {
 
         <div className="space-y-6">
           {QUIZ_QUESTIONS.map((q, qi) => (
-            <div key={qi} className="rounded-xl border border-white/8 bg-zinc-900/30 p-5">
+            <div key={qi} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-5">
               <div className="font-medium text-white mb-4 text-sm">{q.q}</div>
               <div className="grid grid-cols-2 gap-2">
                 {q.options.map((opt, ai) => {
@@ -239,7 +239,7 @@ export function BigOLesson() {
                 <motion.div
                   initial={{ opacity: 0, y: 4 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-3 px-3 py-2 rounded-lg bg-zinc-800/50 text-xs text-zinc-300 border border-white/5"
+                  className="mt-3 px-3 py-2 rounded-lg bg-zinc-800/50 text-xs text-zinc-300 border border-charcoal/10"
                 >
                   💡 {q.explanation}
                 </motion.div>

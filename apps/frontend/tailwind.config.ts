@@ -13,6 +13,13 @@ export default {
       colors: {
         surface: { DEFAULT: '#111113', card: '#18181B', elevated: '#1C1C1F' },
         brand: { indigo: '#4F46E5', blue: '#3B82F6', purple: '#8B5CF6', cyan: '#22D3EE' },
+        // Static card/panel border color (design feedback, 2026-07-13). Used
+        // as `border-charcoal/10`, a barely-visible accent, not a solid
+        // outline. Interactive borders that change on hover/focus (buttons,
+        // nav pills, inputs) intentionally keep the layered white-opacity
+        // treatment instead, since a flat color can't express that state
+        // change the same way.
+        charcoal: '#36454F',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

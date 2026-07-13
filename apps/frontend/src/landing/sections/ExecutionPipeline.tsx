@@ -31,7 +31,7 @@ const STAGES = [
   {
     icon: Scale,
     title: 'Compare',
-    detail: 'One shared comparator normalizes output — never a per-language drift.',
+    detail: 'One shared comparator normalizes output, never a per-language drift.',
     color: '#f472b6',
   },
   {
@@ -64,14 +64,14 @@ export function ExecutionPipelineSection() {
           </h2>
           <p className="text-zinc-400 text-lg max-w-xl mx-auto">
             Every submission compiles once, runs sandboxed per test case, and is scored by a
-            single comparator shared across every language — so "correct" means the same thing
+            single comparator shared across every language, so "correct" means the same thing
             everywhere.
           </p>
           <p className="text-zinc-500 text-sm max-w-xl mx-auto mt-3">
             Available in both{' '}
             <span className="text-zinc-300 font-medium">LeetCode Mode</span> (function only) and{' '}
             <span className="text-zinc-300 font-medium">Codeforces Mode</span> (full stdin/stdout
-            program) — same pipeline, same comparator, either way.
+            program): same pipeline, same comparator, either way.
           </p>
         </AnimateIn>
 

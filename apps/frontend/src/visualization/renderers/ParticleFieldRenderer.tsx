@@ -98,7 +98,7 @@ export function ParticleFieldRenderer({ state }: Props) {
 
       {/* Grid */}
       <div
-        className="overflow-auto rounded-lg border border-white/5 bg-neutral-950"
+        className="overflow-auto rounded-lg border border-charcoal/10 bg-neutral-950"
         style={{ maxWidth: '100%', maxHeight: 420 }}
       >
         <svg

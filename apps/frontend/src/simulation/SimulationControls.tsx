@@ -113,7 +113,7 @@ export function SimulationControls() {
   const hasController = controller !== null;
 
   return (
-    <div className="flex flex-col gap-3 p-4 bg-neutral-900 rounded-xl border border-white/5">
+    <div className="flex flex-col gap-3 p-4 bg-neutral-900 rounded-xl border border-charcoal/10">
       {/* Primary controls row */}
       <div className="flex items-center justify-center gap-1">
         {/* Reset to start */}

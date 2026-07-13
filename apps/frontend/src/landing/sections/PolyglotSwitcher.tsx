@@ -143,7 +143,7 @@ export function PolyglotSwitcherSection() {
     <section className="py-24 px-4">
       <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <AnimateIn direction="right" className="order-2 lg:order-1">
-          <div className="rounded-2xl border border-white/10 bg-[#0D0D10] shadow-card overflow-hidden">
+          <div className="rounded-2xl border border-charcoal/10 bg-[#0D0D10] shadow-card overflow-hidden">
             <div className="flex items-center gap-1 px-3 pt-3 flex-wrap">
               {SNIPPETS.map((s, i) => (
                 <button
@@ -199,7 +199,7 @@ export function PolyglotSwitcherSection() {
           <p className="text-zinc-400 text-lg mb-6 leading-relaxed">
             The same solution, expressed idiomatically in every language AtlasCode judges
             against. Learn a pattern once in Python, then see exactly how it looks in Rust,
-            Go, or C++ — the calling convention, the standard library, the idioms all differ,
+            Go, or C++: the calling convention, the standard library, the idioms all differ,
             but the algorithm never does.
           </p>
           <div className="flex flex-wrap gap-2">

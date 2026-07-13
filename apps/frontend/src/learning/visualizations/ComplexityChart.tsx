@@ -90,7 +90,7 @@ export function ComplexityChart() {
       </div>
 
       {/* Chart */}
-      <div className="relative rounded-xl overflow-hidden bg-zinc-950/60 border border-white/8">
+      <div className="relative rounded-xl overflow-hidden bg-zinc-950/60 border border-charcoal/10">
         <svg
           ref={svgRef}
           viewBox={`0 0 ${W} ${H}`}
@@ -182,7 +182,7 @@ export function ComplexityChart() {
 
         {/* Hover tooltip */}
         {hoverN !== null && (
-          <div className="absolute top-2 right-2 bg-zinc-900/95 border border-white/10 rounded-lg px-3 py-2 text-xs font-mono space-y-0.5 backdrop-blur">
+          <div className="absolute top-2 right-2 bg-zinc-900/95 border border-charcoal/10 rounded-lg px-3 py-2 text-xs font-mono space-y-0.5 backdrop-blur">
             <div className="text-zinc-400 mb-1">n = {hoverN}</div>
             {fns.filter((f) => f.enabled).map((f) => {
               const val = f.fn(hoverN);

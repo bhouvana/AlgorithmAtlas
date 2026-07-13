@@ -112,7 +112,7 @@ export function BinarySearchVisualizer() {
             </button>
           ) : (
             <>
-              <button onClick={() => setFrameIdx((i) => Math.max(0, i - 1))} className="p-2 text-zinc-400 hover:text-white border border-white/10 rounded-lg transition-colors">
+              <button onClick={() => setFrameIdx((i) => Math.max(0, i - 1))} className="p-2 text-zinc-400 hover:text-white border border-charcoal/10 rounded-lg transition-colors">
                 <ChevronLeft size={14} />
               </button>
               <button
@@ -121,19 +121,19 @@ export function BinarySearchVisualizer() {
               >
                 {playing ? <Pause size={13} /> : <Play size={13} />}
               </button>
-              <button onClick={() => setFrameIdx((i) => Math.min(frames.length - 1, i + 1))} className="p-2 text-zinc-400 hover:text-white border border-white/10 rounded-lg transition-colors">
+              <button onClick={() => setFrameIdx((i) => Math.min(frames.length - 1, i + 1))} className="p-2 text-zinc-400 hover:text-white border border-charcoal/10 rounded-lg transition-colors">
                 <ChevronRight size={14} />
               </button>
             </>
           )}
-          <button onClick={reset} className="flex items-center gap-1.5 px-3 py-2 border border-white/10 rounded-lg text-sm text-zinc-400 hover:text-white transition-colors">
+          <button onClick={reset} className="flex items-center gap-1.5 px-3 py-2 border border-charcoal/10 rounded-lg text-sm text-zinc-400 hover:text-white transition-colors">
             <RotateCcw size={13} /> New Array
           </button>
         </div>
       </div>
 
       {/* Array display */}
-      <div className="rounded-xl bg-zinc-950/60 border border-white/8 p-4 overflow-x-auto">
+      <div className="rounded-xl bg-zinc-950/60 border border-charcoal/10 p-4 overflow-x-auto">
         <div className="flex gap-1 min-w-max mx-auto" style={{ width: 'fit-content' }}>
           {displayArray.map((val, i) => {
             const isElim  = frame?.eliminated.includes(i);
@@ -206,7 +206,7 @@ export function BinarySearchVisualizer() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.15 }}
-            className="px-4 py-3 rounded-lg bg-zinc-900/50 border border-white/5 text-sm text-zinc-300"
+            className="px-4 py-3 rounded-lg bg-zinc-900/50 border border-charcoal/10 text-sm text-zinc-300"
           >
             {frame.description}
           </motion.div>

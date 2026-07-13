@@ -7,7 +7,7 @@ export function FinalCTASection() {
   return (
     <section className="py-24 px-4">
       <AnimateIn className="max-w-4xl mx-auto">
-        <div className="relative rounded-3xl border border-white/10 bg-[#111113] overflow-hidden px-8 py-16 sm:py-20 text-center">
+        <div className="relative rounded-3xl border border-charcoal/10 bg-[#111113] overflow-hidden px-8 py-16 sm:py-20 text-center">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute -top-24 left-1/4 w-72 h-72 bg-indigo-600/15 rounded-full blur-3xl" />
             <div className="absolute -bottom-24 right-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl" />

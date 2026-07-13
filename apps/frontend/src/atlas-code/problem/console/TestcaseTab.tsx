@@ -137,7 +137,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
             <button
               onClick={() => onRun({ mode: 'selected', indices: [active.kind === 'visible' ? active.index : 0] })}
               disabled={isRunning}
-              className="flex items-center gap-1.5 text-sm bg-white/8 hover:bg-white/12 border border-white/10 text-white px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
+              className="flex items-center gap-1.5 text-sm bg-white/8 hover:bg-white/12 border border-charcoal/10 text-white px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
             >
               <Play className="w-3.5 h-3.5" />
               Run This Case
@@ -165,7 +165,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
             <button
               onClick={() => onRun({ mode: 'selected', indices: [active.kind === 'visible' ? active.index : 0] })}
               disabled={isRunning}
-              className="flex items-center gap-1.5 text-sm bg-white/8 hover:bg-white/12 border border-white/10 text-white px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
+              className="flex items-center gap-1.5 text-sm bg-white/8 hover:bg-white/12 border border-charcoal/10 text-white px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
             >
               <Play className="w-3.5 h-3.5" />
               Run This Case
@@ -234,7 +234,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
                     });
                   }}
                   disabled={isRunning || !canRun}
-                  className="flex items-center gap-1.5 text-sm bg-white/8 hover:bg-white/12 border border-white/10 text-white px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
+                  className="flex items-center gap-1.5 text-sm bg-white/8 hover:bg-white/12 border border-charcoal/10 text-white px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
                 >
                   <Play className="w-3.5 h-3.5" />
                   Run This Case
@@ -306,7 +306,7 @@ export function TestcaseTab({ problem, isRunning, onRun }: Props) {
                   })
                 }
                 disabled={isRunning}
-                className="flex items-center gap-1.5 text-sm bg-white/8 hover:bg-white/12 border border-white/10 text-white px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
+                className="flex items-center gap-1.5 text-sm bg-white/8 hover:bg-white/12 border border-charcoal/10 text-white px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
               >
                 <Play className="w-3.5 h-3.5" />
                 Run This Case

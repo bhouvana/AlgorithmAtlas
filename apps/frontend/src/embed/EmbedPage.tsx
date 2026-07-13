@@ -89,7 +89,7 @@ export function EmbedPage() {
 
       {/* Visualization */}
       <div className="flex-1 min-h-0 p-3 flex flex-col gap-2">
-        <div className="flex-1 min-h-0 bg-neutral-900 rounded-xl border border-white/5 overflow-hidden">
+        <div className="flex-1 min-h-0 bg-neutral-900 rounded-xl border border-charcoal/10 overflow-hidden">
           <SimulationCanvas
             algorithmSlug={slug}
             visualizationType={algorithm.visualization_type as VisualizationType}

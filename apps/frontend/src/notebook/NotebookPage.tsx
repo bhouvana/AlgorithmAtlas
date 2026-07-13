@@ -363,7 +363,7 @@ function LangPicker({ current, onChange }: { current: LangDef; onChange: (l: Lan
       </button>
 
       {open && (
-        <div className="absolute top-full mt-1 left-0 z-40 w-44 rounded-xl bg-[#1A1A2E] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden py-1">
+        <div className="absolute top-full mt-1 left-0 z-40 w-44 rounded-xl bg-[#1A1A2E] border border-charcoal/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden py-1">
           {LANGS.map((l) => (
             <button
               key={l.id}
@@ -787,7 +787,7 @@ export function NotebookPage() {
           <div ref={outputRef} className="flex-1 overflow-y-auto font-mono text-sm leading-relaxed">
             {runs.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full gap-4 text-center px-6">
-                <div className="w-10 h-10 rounded-xl bg-white/3 border border-white/8 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-white/3 border border-charcoal/10 flex items-center justify-center">
                   <Play className="w-4 h-4 text-zinc-600" />
                 </div>
                 <div>

@@ -50,7 +50,7 @@ export function BubbleSortLesson() {
             { step: '2', label: 'Swap if needed',    desc: 'If left > right, swap them' },
             { step: '3', label: 'Repeat',            desc: 'Continue until no swaps needed' },
           ].map((s) => (
-            <div key={s.step} className="rounded-xl border border-white/8 bg-zinc-900/40 p-4 flex gap-3">
+            <div key={s.step} className="rounded-xl border border-charcoal/10 bg-zinc-900/40 p-4 flex gap-3">
               <div className="w-7 h-7 rounded-full bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-xs font-bold text-indigo-300 flex-shrink-0">{s.step}</div>
               <div>
                 <div className="font-medium text-white text-sm mb-0.5">{s.label}</div>
@@ -68,7 +68,7 @@ export function BubbleSortLesson() {
         <p className="text-zinc-400 text-sm mb-5">
           Use Play/Pause or step through frame-by-frame. Compare how Bubble, Insertion, and Selection sort handle the same array.
         </p>
-        <div className="rounded-xl border border-white/8 bg-zinc-950/50 p-5">
+        <div className="rounded-xl border border-charcoal/10 bg-zinc-950/50 p-5">
           <SortVisualizer showAlgoSelector={true} size={14} />
         </div>
       </section>
@@ -78,7 +78,7 @@ export function BubbleSortLesson() {
         <div className="mb-3"><span className="text-xs font-mono text-violet-400 uppercase tracking-widest">Implementation</span></div>
         <h2 className="text-xl font-bold text-white mb-5">Bubble Sort in Code</h2>
         <div className="space-y-4">
-          <div className="rounded-xl border border-white/8 bg-zinc-950/60 overflow-hidden">
+          <div className="rounded-xl border border-charcoal/10 bg-zinc-950/60 overflow-hidden">
             <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-zinc-900/40">
               <span className="text-xs text-zinc-400">Basic version</span>
               <code className="text-xs font-mono text-orange-400">O(n²)</code>
@@ -171,7 +171,7 @@ export function BubbleSortLesson() {
               explain: 'Using >= instead of > destroys stability: equal elements get unnecessarily swapped, changing their relative order.',
             },
           ].map((m) => (
-            <div key={m.bad} className="rounded-xl border border-white/8 bg-zinc-900/30 p-4">
+            <div key={m.bad} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-4">
               <div className="flex gap-3 mb-2">
                 <div className="font-mono text-xs text-red-400 bg-red-500/10 px-2 py-1 rounded flex-1">✗ {m.bad}</div>
               </div>
@@ -190,7 +190,7 @@ export function BubbleSortLesson() {
         <h2 className="text-xl font-bold text-white mb-6">Test Your Understanding</h2>
         <div className="space-y-6">
           {QUIZ_QUESTIONS.map((q, qi) => (
-            <div key={qi} className="rounded-xl border border-white/8 bg-zinc-900/30 p-5">
+            <div key={qi} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-5">
               <div className="font-medium text-white mb-4 text-sm">{q.q}</div>
               <div className="grid grid-cols-2 gap-2">
                 {q.options.map((opt, ai) => {
@@ -214,7 +214,7 @@ export function BubbleSortLesson() {
               </div>
               {quizRevealed[qi] && (
                 <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
-                  className="mt-3 px-3 py-2 rounded-lg bg-zinc-800/50 text-xs text-zinc-300 border border-white/5">
+                  className="mt-3 px-3 py-2 rounded-lg bg-zinc-800/50 text-xs text-zinc-300 border border-charcoal/10">
                   💡 {q.explanation}
                 </motion.div>
               )}

@@ -173,7 +173,7 @@ function Quiz({ questions }: { questions: QuizQuestion[] }) {
   return (
     <div className="space-y-6">
       {questions.map((q, qi) => (
-        <div key={qi} className="rounded-xl border border-white/8 bg-zinc-900/30 p-5">
+        <div key={qi} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-5">
           <div className="font-medium text-white mb-4 text-sm">{q.q}</div>
           <div className="grid grid-cols-2 gap-2">
             {q.options.map((opt, ai) => {
@@ -197,7 +197,7 @@ function Quiz({ questions }: { questions: QuizQuestion[] }) {
           </div>
           {answers[qi] !== null && (
             <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
-              className="mt-3 px-3 py-2 rounded-lg bg-zinc-800/50 text-xs text-zinc-300 border border-white/5">
+              className="mt-3 px-3 py-2 rounded-lg bg-zinc-800/50 text-xs text-zinc-300 border border-charcoal/10">
               💡 {q.explanation}
             </motion.div>
           )}
@@ -215,7 +215,7 @@ function ConceptSection({ data }: { data: LessonData }) {
       {data.concept.keyPoints && (
         <div className="grid md:grid-cols-3 gap-3">
           {data.concept.keyPoints.map((kp) => (
-            <div key={kp.title} className="rounded-xl border border-white/8 bg-zinc-900/40 p-4">
+            <div key={kp.title} className="rounded-xl border border-charcoal/10 bg-zinc-900/40 p-4">
               <div className="font-semibold text-white text-sm mb-1">{kp.title}</div>
               {kp.code && <pre className="font-mono text-indigo-300 text-xs mb-2 overflow-x-auto leading-relaxed whitespace-pre">{kp.code}</pre>}
               <div className="text-zinc-400 text-xs">{kp.desc}</div>
@@ -246,7 +246,7 @@ function VisualizationSection({
         <div className="mb-2">
           <span className="text-xs font-mono text-amber-400 uppercase tracking-widest">Interactive Visualization</span>
         </div>
-        <div className="rounded-xl border border-white/8 bg-zinc-950/60 overflow-hidden">
+        <div className="rounded-xl border border-charcoal/10 bg-zinc-950/60 overflow-hidden">
           <SimulationCanvas
             algorithmSlug={catalog.slug}
             visualizationType={catalog.vizType}
@@ -265,7 +265,7 @@ function VisualizationSection({
               <motion.button
                 key={s.n}
                 onClick={() => toggleStep(s.n)}
-                className="w-full text-left rounded-xl border border-white/8 bg-zinc-900/30 hover:bg-zinc-900/50 p-4 transition-all duration-150"
+                className="w-full text-left rounded-xl border border-charcoal/10 bg-zinc-900/30 hover:bg-zinc-900/50 p-4 transition-all duration-150"
                 layout
               >
                 <div className="flex items-start gap-4">
@@ -303,7 +303,7 @@ function VisualizationSection({
         <motion.button
           key={s.n}
           onClick={() => toggleStep(s.n)}
-          className="w-full text-left rounded-xl border border-white/8 bg-zinc-900/30 hover:bg-zinc-900/50 p-4 transition-all duration-150"
+          className="w-full text-left rounded-xl border border-charcoal/10 bg-zinc-900/30 hover:bg-zinc-900/50 p-4 transition-all duration-150"
           layout
         >
           <div className="flex items-start gap-4">
@@ -397,7 +397,7 @@ function ComplexitySection({ data }: { data: LessonData }) {
           <div className="mb-4"><span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Real World</span></div>
           <div className="grid md:grid-cols-2 gap-4">
             {data.realWorld.map((item) => (
-              <div key={item.title} className="rounded-xl border border-white/8 bg-zinc-900/30 p-4">
+              <div key={item.title} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-4">
                 <div className="font-semibold text-white text-sm mb-2">{item.title}</div>
                 <div className="text-zinc-400 text-xs leading-relaxed">{item.desc}</div>
               </div>
@@ -411,7 +411,7 @@ function ComplexitySection({ data }: { data: LessonData }) {
           <div className="mb-4"><span className="text-xs font-mono text-rose-400 uppercase tracking-widest">Common Mistakes</span></div>
           <div className="space-y-3">
             {data.commonMistakes.map((m, i) => (
-              <div key={i} className="rounded-xl border border-white/8 bg-zinc-900/30 p-4">
+              <div key={i} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-4">
                 <div className="flex gap-2 items-start mb-2">
                   <span className="text-red-400 text-xs mt-0.5">✗</span>
                   <code className="font-mono text-xs text-red-300 bg-red-500/10 px-1.5 py-0.5 rounded">{m.wrong}</code>
@@ -446,7 +446,7 @@ function VideoSection({ data }: { data: LessonData }) {
   return (
     <div>
       <div className="mb-4"><span className="text-xs font-mono text-red-400 uppercase tracking-widest">Video</span></div>
-      <div className="rounded-xl border border-white/8 bg-black overflow-hidden aspect-video">
+      <div className="rounded-xl border border-charcoal/10 bg-black overflow-hidden aspect-video">
         <iframe
           className="w-full h-full"
           src={`https://www.youtube.com/embed/${data.videoId}`}

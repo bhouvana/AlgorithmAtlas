@@ -47,7 +47,7 @@ export function InterviewOverlay() {
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
-      className="mx-3 mb-2 rounded-xl border border-white/10 bg-[#0c0c18] overflow-hidden"
+      className="mx-3 mb-2 rounded-xl border border-charcoal/10 bg-[#0c0c18] overflow-hidden"
     >
       {/* Header */}
       <div className="flex items-center justify-between px-3 py-2 border-b border-white/8">
@@ -102,7 +102,7 @@ export function InterviewOverlay() {
             <p className="text-xs text-zinc-400 leading-relaxed">{problem.description}</p>
 
             {problem.examples.slice(0, 1).map((ex, i) => (
-              <div key={i} className="rounded-lg bg-black/30 border border-white/6 p-2 text-xs font-mono">
+              <div key={i} className="rounded-lg bg-black/30 border border-charcoal/10 p-2 text-xs font-mono">
                 <div className="text-zinc-500 mb-0.5">Example:</div>
                 <div className="text-zinc-300">In: {ex.input}</div>
                 <div className="text-emerald-400">Out: {ex.output}</div>

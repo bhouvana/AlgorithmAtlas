@@ -84,7 +84,7 @@ export function WhiteboardView({ code }: Props) {
 
   return (
     <div
-      className="rounded-xl overflow-hidden bg-[#0f0f18] border border-white/8 p-4 my-2"
+      className="rounded-xl overflow-hidden bg-[#0f0f18] border border-charcoal/10 p-4 my-2"
       dangerouslySetInnerHTML={{ __html: svg }}
     />
   );

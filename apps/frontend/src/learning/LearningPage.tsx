@@ -8,7 +8,7 @@ import { useProgressStore, useCompletionStats, xpProgressPercent, xpForNextLevel
 // ── Hero stat card ──────────────────────────────────────────────────────────
 function StatCard({ icon, label, value, accent }: { icon: React.ReactNode; label: string; value: string | number; accent: string }) {
   return (
-    <div className={`rounded-2xl border border-white/8 bg-zinc-900/40 p-4 flex items-center gap-3`}>
+    <div className={`rounded-2xl border border-charcoal/10 bg-zinc-900/40 p-4 flex items-center gap-3`}>
       <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${accent}`}>{icon}</div>
       <div>
         <div className="text-xl font-bold text-white leading-none">{value}</div>
@@ -26,7 +26,7 @@ function XPSection() {
   const nextLevel = level + 1;
 
   return (
-    <div className="rounded-2xl border border-white/8 bg-gradient-to-br from-indigo-500/10 to-violet-500/5 p-5">
+    <div className="rounded-2xl border border-charcoal/10 bg-gradient-to-br from-indigo-500/10 to-violet-500/5 p-5">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center">
@@ -83,7 +83,7 @@ function ModuleCard({ module, isDone, isStarted }: {
       {/* Top row */}
       <div className="flex items-start justify-between gap-2 mb-3">
         <div className="flex items-center gap-2.5">
-          <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg bg-gradient-to-br ${module.accent} border border-white/8`}>
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg bg-gradient-to-br ${module.accent} border border-charcoal/10`}>
             {module.icon}
           </div>
           <div>
@@ -125,7 +125,7 @@ function ModuleCard({ module, isDone, isStarted }: {
       {/* Not yet available overlay for modules without full lessons */}
       {!module.hasFullLesson && (
         <div className="absolute top-2 right-2">
-          <span className="text-[9px] font-mono text-zinc-600 bg-zinc-800/60 px-1.5 py-0.5 rounded border border-white/5">soon</span>
+          <span className="text-[9px] font-mono text-zinc-600 bg-zinc-800/60 px-1.5 py-0.5 rounded border border-charcoal/10">soon</span>
         </div>
       )}
     </motion.div>

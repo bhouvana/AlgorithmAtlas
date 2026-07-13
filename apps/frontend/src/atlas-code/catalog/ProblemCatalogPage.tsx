@@ -221,7 +221,7 @@ export function ProblemCatalogPage() {
           </div>
 
           {/* Difficulty pills */}
-          <div className="flex gap-1.5 bg-white/5 border border-white/10 rounded-xl p-1">
+          <div className="flex gap-1.5 bg-white/5 border border-charcoal/10 rounded-xl p-1">
             {DIFFICULTIES.map((d) => (
               <button
                 key={d}

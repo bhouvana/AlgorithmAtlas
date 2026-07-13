@@ -108,7 +108,7 @@ function jsonPreview(value: unknown): string {
 function FunctionCaseDetail({ c }: { c: NormalizedCase }) {
   if (c.isHidden) {
     return (
-      <div className="rounded-lg border border-white/8 bg-white/3 p-3 text-sm text-zinc-500 space-y-1">
+      <div className="rounded-lg border border-charcoal/10 bg-white/3 p-3 text-sm text-zinc-500 space-y-1">
         <div><span className="text-zinc-600">Arguments: </span>Hidden</div>
         <div><span className="text-zinc-600">Expected Return: </span>Hidden</div>
         <div><span className="text-zinc-600">Actual Return: </span>Hidden</div>
@@ -188,7 +188,7 @@ function CaseInspector({ c, executionMode }: { c: NormalizedCase; executionMode:
       {executionMode === 'function' ? (
         <FunctionCaseDetail c={c} />
       ) : c.isHidden ? (
-        <div className="rounded-lg border border-white/8 bg-white/3 p-3 text-sm text-zinc-500 space-y-1">
+        <div className="rounded-lg border border-charcoal/10 bg-white/3 p-3 text-sm text-zinc-500 space-y-1">
           <div><span className="text-zinc-600">Input: </span>Hidden</div>
           <div><span className="text-zinc-600">Expected: </span>Hidden</div>
           <div><span className="text-zinc-600">Actual: </span>Hidden</div>

@@ -103,7 +103,7 @@ export function ParameterPanel({ schema, onApply }: ParameterPanelProps) {
   if (entries.length === 0) return null;
 
   return (
-    <div className="flex flex-col gap-3 p-4 bg-neutral-900 rounded-xl border border-white/5">
+    <div className="flex flex-col gap-3 p-4 bg-neutral-900 rounded-xl border border-charcoal/10">
       <div className="flex items-center justify-between">
         <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">
           Parameters
@@ -186,7 +186,7 @@ function ParamControl({
                 'px-2 py-0.5 rounded text-xs font-mono transition-colors',
                 current === choice
                   ? 'bg-indigo-600 text-white'
-                  : 'text-neutral-400 hover:text-white hover:bg-white/10 border border-white/10',
+                  : 'text-neutral-400 hover:text-white hover:bg-white/10 border border-charcoal/10',
               ].join(' ')}
             >
               {choice}

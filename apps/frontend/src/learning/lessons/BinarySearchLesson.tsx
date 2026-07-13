@@ -59,7 +59,7 @@ export function BinarySearchLesson() {
             { n: '4', label: 'Eliminate half', desc: 'Discard the half that cannot contain target', code: 'if arr[mid] < target: low = mid + 1\nelse: high = mid - 1' },
             { n: '5', label: 'Repeat or fail', desc: 'Continue until found or low > high (not found)', code: 'while (low <= high)' },
           ].map((s) => (
-            <div key={s.n} className="flex gap-4 rounded-xl border border-white/8 bg-zinc-900/30 p-3.5 items-start">
+            <div key={s.n} className="flex gap-4 rounded-xl border border-charcoal/10 bg-zinc-900/30 p-3.5 items-start">
               <div className="w-6 h-6 rounded-full bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-xs font-bold text-indigo-300 flex-shrink-0 mt-0.5">{s.n}</div>
               <div className="flex-1 min-w-0">
                 <div className="font-medium text-white text-sm">{s.label}</div>
@@ -78,7 +78,7 @@ export function BinarySearchLesson() {
         <p className="text-zinc-400 text-sm mb-5">
           Hit "Start Search" to see exactly which elements get eliminated each step. Notice how the active range shrinks by half each comparison.
         </p>
-        <div className="rounded-xl border border-white/8 bg-zinc-950/50 p-5">
+        <div className="rounded-xl border border-charcoal/10 bg-zinc-950/50 p-5">
           <BinarySearchVisualizer />
         </div>
       </section>
@@ -88,7 +88,7 @@ export function BinarySearchLesson() {
         <div className="mb-3"><span className="text-xs font-mono text-violet-400 uppercase tracking-widest">Implementation</span></div>
         <h2 className="text-xl font-bold text-white mb-5">Binary Search in Code</h2>
         <div className="space-y-4">
-          <div className="rounded-xl border border-white/8 bg-zinc-950/60 overflow-hidden">
+          <div className="rounded-xl border border-charcoal/10 bg-zinc-950/60 overflow-hidden">
             <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-zinc-900/40">
               <span className="text-xs text-zinc-400">Iterative (recommended)</span>
               <code className="text-xs font-mono text-cyan-400">O(log n)</code>
@@ -108,7 +108,7 @@ export function BinarySearchLesson() {
 }`}</pre>
           </div>
 
-          <div className="rounded-xl border border-white/8 bg-zinc-950/60 overflow-hidden">
+          <div className="rounded-xl border border-charcoal/10 bg-zinc-950/60 overflow-hidden">
             <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-zinc-900/40">
               <span className="text-xs text-zinc-400">Recursive version</span>
               <code className="text-xs font-mono text-violet-400">O(log n) time, O(log n) space</code>
@@ -164,7 +164,7 @@ export function BinarySearchLesson() {
             { label: 'Worst Case', val: 'O(log n)', color: 'text-cyan-400', note: 'Target at edges or not present' },
             { label: 'Space', val: 'O(1)', color: 'text-indigo-400', note: 'Iterative version uses no extra space' },
           ].map((c) => (
-            <div key={c.label} className="rounded-xl border border-white/8 bg-zinc-900/30 p-4 text-center">
+            <div key={c.label} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-4 text-center">
               <div className="text-zinc-500 text-xs mb-1">{c.label}</div>
               <div className={`font-mono font-bold text-2xl ${c.color} mb-1`}>{c.val}</div>
               <div className="text-zinc-500 text-xs">{c.note}</div>
@@ -184,7 +184,7 @@ export function BinarySearchLesson() {
             { title: 'Git bisect', desc: "git bisect uses binary search to find which commit introduced a bug. You get O(log n) commits to check instead of O(n)." },
             { title: 'Finding cutoffs', desc: 'Binary search on the answer: "what is the minimum speed to finish in time?" — a common interview and competitive programming pattern.' },
           ].map((item) => (
-            <div key={item.title} className="rounded-xl border border-white/8 bg-zinc-900/30 p-4">
+            <div key={item.title} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-4">
               <div className="font-semibold text-white text-sm mb-2">{item.title}</div>
               <div className="text-zinc-400 text-xs leading-relaxed">{item.desc}</div>
             </div>
@@ -198,7 +198,7 @@ export function BinarySearchLesson() {
         <h2 className="text-xl font-bold text-white mb-6">Test Your Understanding</h2>
         <div className="space-y-6">
           {QUIZ_QUESTIONS.map((q, qi) => (
-            <div key={qi} className="rounded-xl border border-white/8 bg-zinc-900/30 p-5">
+            <div key={qi} className="rounded-xl border border-charcoal/10 bg-zinc-900/30 p-5">
               <div className="font-medium text-white mb-4 text-sm">{q.q}</div>
               <div className="grid grid-cols-2 gap-2">
                 {q.options.map((opt, ai) => {
@@ -222,7 +222,7 @@ export function BinarySearchLesson() {
               </div>
               {quizRevealed[qi] && (
                 <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
-                  className="mt-3 px-3 py-2 rounded-lg bg-zinc-800/50 text-xs text-zinc-300 border border-white/5">
+                  className="mt-3 px-3 py-2 rounded-lg bg-zinc-800/50 text-xs text-zinc-300 border border-charcoal/10">
                   💡 {q.explanation}
                 </motion.div>
               )}
